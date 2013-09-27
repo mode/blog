@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+  background: #C2CBCE;
+}
+
+p {
+  font-size: 12px;
+  margin: 20px auto;
+  width: 500px;
+  margin-left: 5px;
+}
+
+table {
+  font-size: 12px;
+  margin: 10px auto;
+  word-wrap: break-word;
+  margin-left: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+path {
+  stroke-linejoin: round;
+}
+
+.ys_vote { fill: #622A1E; } 
+.no_vote { fill: #F8A692; } 
+.na_vote { fill: gray; }
+
+.districts :hover {
+  fill: orange;
+}
+
+.active {
+  fill: orange;
+}
+
+.district-boundaries {
+  pointer-events: none;
+  fill: none;
+  stroke: gray;
+  stroke-width: .5px;
+}
+ 
+.state-boundaries {
+  pointer-events: none;
+  fill: none;
+  stroke: white;
+  stroke-width: 1px;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.original {
+    fill: #fff;
+}
+.change {
+    fill: #000;
+}
+ 
+</style>
+<body>
+   
+  <p style="font-size:18px"><strong>Vote Results</strong></p>
+  <p>
+  </br>
+    Dark districts voted for the cuts. Light districts voted against.
+  </br></br></br>
+  <p>
+    <strong>Median Household Income:</strong>&nbsp;&nbsp;&nbsp;$65,326 </br>
+    <strong>Median SNAP Participation:</strong>&nbsp;&nbsp;&nbsp;13.2% of households
+  </p>
+  <p>Hover over districts to see details. Click to zoom.</p>
+  <table>
+   <tr>
+     <td colspan="5"><strong>View Map By:</strong><td>
+   <tr>
+    <td class="maps"><a href= "/snap.html">SNAP Participation</a></td>
+    <td class="maps"><a href= "/income.html">Income</a></td>
+    <td class="maps"><a href= "/vote.html"><strong>Votes</strong></a></td>
+    <td class="maps"><a href= "/income_layer.html">Income Layered Over Votes</a></td>
+    <td class="maps"><a href= "/snap_layer.html">SNAP Participation Layered Over Votes</a></td>
+   </tr>
+ </table>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+ 
+$("#showVotes").click(function(){
+  yuck = d3.selectAll("path").attr("id","beez")
+  $('#dis').addClass('.no_vote');
+  console.log(yuck)
+  console.log("c")
+});
+
+$(function() {
+    d3.selectAll("path").attr("id","beez")
+    $("#btnChange").click(function(e) {
+        $("#beez").toggleClass( "original change", 2000 );
+    });
+});
+
+var width = 960,
+    height = 500,
+    centered;
+
+var whichMap = 'snap';
+
+var path = d3.geo.path();
+var voteById = d3.map();
+var memberById = d3.map();
+var partyById = d3.map();
+var stateById = d3.map();
+var districtById = d3.map();
+var snapById = d3.map();
+var incomeById = d3.map();
+
+var formatNumber = d3.format(",d");
+
+function hasDistricts(d) {
+  if (districtById.get(d) != 0) { 
+    return districtById.get(d);
+  } else {
+    return " ";
+  }}
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .html(function(d) { 
+    return "Vote: <strong>" + voteById.get(d.id) +"</strong></br>" + 
+           memberById.get(d.id) + " (" + partyById.get(d.id) + ")</br>" +
+           stateById.get(d.id) + " " + hasDistricts(d.id) +
+           "</br>Households on SNAP: " + Math.round(snapById.get(d.id)*1000)/10 + "%</br>" + 
+           "Mean household income: $" + formatNumber(incomeById.get(d.id));
+         })
+  .direction('s')
+ 
+queue()
+    .defer(d3.json, "us.json")
+    .defer(d3.json, "us-congress-113_s.json")
+    .defer(d3.csv, "snap_vote.csv", function(d) { voteById.set(d.district_code,d.vote); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { memberById.set(d.district_code,d.member); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { partyById.set(d.district_code,d.party); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { stateById.set(d.district_code,d.state_name); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { districtById.set(d.district_code,d.district); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { snapById.set(d.district_code,d.snap_percent); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { incomeById.set(d.district_code,d.mean_income); })
+    .await(ready);
+ 
+function ready(error, us, congress) {
+  
+  svg.call(tip);
+  
+  var quantize = d3.scale.quantize()
+     // .domain([.25, 0])
+      .domain([40000,100000])
+      .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+  
+  var projection = d3.geo.albersUsa()
+      .scale(1070)
+      .translate([width / 2, height / 2]);
+  
+  var path = d3.geo.path()
+      .projection(projection);
+  
+  svg.append("defs").append("path")
+      .attr("id", "land")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("d", path);
+      
+ 
+  svg.append("clipPath")
+      .attr("id", "clip-land")
+    .append("use")
+      .attr("xlink:href", "#land")
+      .on("click", clicked);
+      
+  g = svg.append("g");
+      
+  g.append("g")
+      .attr("clip-path", "url(#clip-land)")
+      .attr("class","districts")
+    .selectAll("path")
+      .data(topojson.feature(congress, congress.objects.districts).features)
+    .enter().append("path")
+      .attr("d", path)
+      //  .attr("class",function(d) { return quantize(Math.min(snapById.get(d.id)),.25);})
+      //  .attr("class",function(d) { return quantize(Math.max(Math.min(incomeById.get(d.id),100000),40000));})
+      .attr("class",function(d) {
+        var vote = voteById.get(d.id)
+        if ( vote == "No") { 
+          return "no_vote";
+        } else if (vote == "Yes") {
+          return "ys_vote";
+        } else {
+          return "na_vote";
+        }
+      })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
+      .on("click", clicked)
+    .append("title")
+      .text(function(d) { return d.id; });
+
+  g.append("path")
+      .attr("class", "district-boundaries")
+      .attr("clip-path", "url(#clip-land)")
+      .datum(topojson.mesh(congress, congress.objects.districts, function(a, b) { return (a.id / 100 | 0) === (b.id / 100 | 0); }))
+      .attr("d", path);
+ 
+  g.append("path")
+      .attr("class", "state-boundaries")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("d", path);
+}
+
+function clicked(d) {
+  var x, y, k;
+  console.log("click!")
+  if (d && centered !== d) {
+    var centroid = path.centroid(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = 3.5;
+    centered = d;
+    console.log("if?")
+  } else {
+    x = width / 2;
+    y = height / 2;
+    k = 1;
+    centered = null;
+  }
+
+  g.selectAll("path")
+      .classed("active", centered && function(d) { return d === centered; });
+
+  g.transition()
+      .duration(750)
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+      .style("stroke-width", 1.5 / k + "px");
+}
+ 
+</script>
