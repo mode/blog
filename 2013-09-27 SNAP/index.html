@@ -9,6 +9,52 @@ body {
   background-color:#f4f4f4;
   width: 960px;
   line-height: 1.7;
+  font-size: 11px;
+}
+
+.menu-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filter-menu {
+  height:38px;
+  overflow:hidden;
+  font-size: 11px;
+  list-style-type:none;
+  text-align: center;
+}
+
+.filter-menu li {
+  line-height:20px;
+  float:left;
+  margin-right:-1px;
+  border:1px solid #ddd;
+
+}
+
+.filter-menu li:last-child {
+  margin-right:0
+}
+
+.filter-menu li.active {
+  border:1px solid #ccc;
+  -moz-box-shadow:0 0 11px #ddd inset;
+  -webkit-box-shadow:0 0 11px #ddd inset;
+  box-shadow:0 0 11px #ddd inset;
+}
+
+.filter-menu a {
+  display:block;color:#848484;
+  padding:7px 12px;
+  text-decoration:none}
+
+.filter-menu a:hover {
+  color:#222
+}
+
+.filter-menu .active a {
+  color:#000
 }
 
 p {
@@ -26,17 +72,6 @@ table {
   margin-left:5px;
 }
 
-.maps {
-  color:blue;
-  text-decoration:underline;
-  cursor:pointer;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-
 .background {
   fill: none;
   pointer-events: all;
@@ -44,6 +79,16 @@ table {
 
 path {
   stroke-linejoin: round;
+}
+
+.see {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+}
+
+.hid {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
 }
 
 .ys_vote { fill: #AB4A34; } 
@@ -70,11 +115,11 @@ path {
 .vt_na_dist_ys { fill: #B95D4A;}
 
 .districts :hover {
-  fill: orange;
+  fill: #AACB37;
 }
 
 .active {
-  fill: orange;
+  fill: #AACB37;
 }
 
 .district-boundaries {
@@ -100,47 +145,33 @@ path {
   border-radius: 0px;
   text-align: center;
 }
-
-.original {
-    fill: #fff;
-}
-.change {
-    fill: #000;
-}
  
 </style>
- <table>
-  <tr>
-    <td colspan="5"><strong>View Map By:</strong><td>
-  <tr id="toggle">
-   <td class="maps" id="snap">SNAP Participation</td>
-   <td class="maps" id="income">Income</td>
-   <td class="maps" id="vote">Votes</td>
-   <td class="maps" id="snap_ol">Income Layered Over Votes</td>
-   <td class="maps" id="income_ol" href>SNAP Participation Layered Over Votes</td>
-  </tr>
-</table>
 <body>
+  <div class="menu-wrapper">
+    <ul class="filter-menu" id= "toggle">
+      <li id="snap" class="bn"><a href="#">SNAP Participation</a></li>
+      <li id="income" class="bn"><a href="#">Income By District</a></li>
+      <li id="vote" class="bn active"><a href="#">HR 3102 Vote</a></li>
+      <li id="snap_ol" class="bn"><a href="#">SNAP Participation & Congressional Vote</a></li>
+      <li id="income_ol" class="bn"><a href="#">Income & Congressional Vote</a></li>
+    </ul>
+  </div>
   <p style="font-size:18px" id="content">
-    <strong class = "snap hide">Food Stamp Participation</strong>
+    <strong class = "snap hide" style="display:none;">Food Stamp Participation</strong>
     <strong class = "income hide" style="display:none;">Average Incomes</strong>
-    <strong class = "vote hide" style="display:none;">Vote Results</strong>
+    <strong class = "vote hide">Vote Results</strong>
     <strong class = "snap_ol hide" style="display:none;">Food Stamp Partipcation And Vote Results</strong>
     <strong class = "income_ol hide" style="display:none;">Incomes and Vote Results</strong>
   </p>
 
-  <p>&nbsp;&nbsp;&nbsp;</p>
   <div id="content">
-    <p class="snap hide">Dark districts have fewer households participating in the food stamp program.</br></br></p>
+    <p class="snap hide" style="display:none;">Dark districts have fewer households participating in the food stamp program.</br></br></p>
     <p class="income hide" style="display:none;">Dark distrincts have higher average household incomes.</br></br></p>
-    <p class="vote hide" style="display:none;">Dark districts voted for the bill to cut food stamp funding.</br></br></p>
+    <p class="vote hide">Dark districts voted for the bill to cut food stamp funding.</br></br></p>
     <p class="snap_ol hide" style="display:none;">Dark red districts fewer SNAP participants than the median district and voted for the cuts; dark blue districts have more participants and voted against them. Dark purple districts have more participants but voted for cuts; reddish-purple districts voted against the bill despite having fewer participants.</p>
     <p class="income_ol hide" style="display:none;">Dark red districts have incomes above the district median and voted for the cuts; dark blue districts have incomes below the median and voted against them; dark purple districts have average incomes below the median but voted for cuts; reddish-purple districts voted against the bill despite having incomes above the median.</p>
   </div>
-  <p>&nbsp;&nbsp;&nbsp;</p>
-  <p>Hover over districts to see details. Click to zoom.</p>
-   
-
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
@@ -150,11 +181,13 @@ path {
 
 <script>
  
-$("#toggle td").click(function(){
+$("#toggle li").click(function(){
   $(".hide").hide();
+  $(".bn").removeClass('active');
+  $(this).addClass('active');
   c = $(this).attr('id');
-  renderMain(us_m,congress_m,c);
   $("#content ." + c).show();
+  renderMain(us_m,congress_m,c);
 });
 
 var width = 960,
@@ -294,7 +327,21 @@ function ready(error, us, congress) {
     .append("use")
       .attr("xlink:href", "#land")
       .on("click", clicked);
+      
+  svg.append("text")
+    .attr("x","600")
+    .attr("y","40")
+    .attr("id","tooltip")
+    .attr("style","font-style:italic;")
+    .text("Hover over districts to see details.")
     
+  svg.append("text")
+    .attr("x","600")
+    .attr("y","55")
+    .attr("id","tooltip")
+    .attr("style","font-style:italic;")
+    .text("Click to zoom.")
+  
   g = svg.append("g");
     
   g.attr("clip-path", "url(#clip-land)")
@@ -303,7 +350,7 @@ function ready(error, us, congress) {
       .data(topojson.feature(congress, congress.objects.districts).features)
     .enter().append("path")
       .attr("d", path)
-      .attr("class",function(d) {return pickClassMain(d,"snap"); })
+      .attr("class",function(d) {return pickClassMain(d,"vote"); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
       .on("click", clicked)
@@ -335,20 +382,33 @@ function renderMain(us, congress,view) {
     .attr("class",function(d) {return pickClassMain(d,view); });
 };
 
+function hideTip() {
+  t = svg.selectAll("text")
+    .attr("class","hid")
+};
+
+function showTip() {
+  t = svg.selectAll("text")
+    .attr("class","see")
+};
+
 function clicked(d) {
   var x, y, k;
-  console.log("click!")
+  
   if (d && centered !== d) {
     var centroid = path.centroid(d);
     x = centroid[0];
     y = centroid[1];
     k = 3.5;
     centered = d;
+    hideTip();
   } else {
+
     x = width / 2;
     y = height / 2;
     k = 1;
     centered = null;
+    showTip();    
   }
 
   g.selectAll("path")
