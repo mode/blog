@@ -2,27 +2,38 @@
 <meta charset="utf-8">
 <style>
 
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Open+Sans:400italic,700italic,400,700);
+
 body {
-  font: 10px sans-serif;
-  background: #C2CBCE;
+  font-family: Antenna;
+  background-color:#f4f4f4;
+  width: 960px;
+  line-height: 1.7;
 }
 
 p {
-  font-size: 12px;
-  margin: 20px auto;
-  width: 500px;
-  margin-left: 5px;
+  font-size: 11px;
+  margin: 1px auto;
+  width: 960px;
+  margin-left: 0px;
 }
 
 table {
   font-size: 12px;
   margin: 10px auto;
   word-wrap: break-word;
-  margin-left: 10px;
+  width:700px;
+  margin-left:5px;
 }
 
-td {
-  padding: 5px;
+.maps {
+  color:blue;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 
@@ -35,9 +46,28 @@ path {
   stroke-linejoin: round;
 }
 
-.ys_vote { fill: #622A1E; } 
+.ys_vote { fill: #AB4A34; } 
 .no_vote { fill: #F8A692; } 
 .na_vote { fill: gray; }
+
+.q8-9 { fill:#622A1E; }
+.q7-9 { fill:#92402C; }
+.q6-9 { fill:#AB4A34; }
+.q5-9 { fill:#DC5F43; }
+.q4-9 { fill:#F46A4A; }
+.q3-9 { fill:#F6886E; }
+.q2-9 { fill:#F8A692; }
+.q1-9 { fill:#FBC3B7; }
+.q0-9 { fill:#FDE1DB; }
+
+.no_fill { fill: none;}
+
+.vt_no_dist_no { fill: #3235A5;}
+.vt_ys_dist_no { fill: #5A438D;}
+.vt_na_dist_no { fill: #3E4193;}
+.vt_no_dist_ys { fill: #A54F61;}
+.vt_ys_dist_ys { fill: #EA5E43;}
+.vt_na_dist_ys { fill: #B95D4A;}
 
 .districts :hover {
   fill: orange;
@@ -64,6 +94,7 @@ path {
 .d3-tip {
   line-height: 1.5;
   padding: 8px;
+  font-size: 11px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 0px;
@@ -78,56 +109,66 @@ path {
 }
  
 </style>
+ <table>
+  <tr>
+    <td colspan="5"><strong>View Map By:</strong><td>
+  <tr id="toggle">
+   <td class="maps" id="snap">SNAP Participation</td>
+   <td class="maps" id="income">Income</td>
+   <td class="maps" id="vote">Votes</td>
+   <td class="maps" id="snap_ol">Income Layered Over Votes</td>
+   <td class="maps" id="income_ol" href>SNAP Participation Layered Over Votes</td>
+  </tr>
+</table>
 <body>
-   
-  <p style="font-size:18px"><strong>Vote Results</strong></p>
-  <p>
-  </br>
-    Dark districts voted for the cuts. Light districts voted against.
-  </br></br></br>
-  <p>
-    <strong>Median Household Income:</strong>&nbsp;&nbsp;&nbsp;$65,326 </br>
-    <strong>Median SNAP Participation:</strong>&nbsp;&nbsp;&nbsp;13.2% of households
+  <p style="font-size:18px" id="content">
+    <strong class = "snap hide">Food Stamp Participation</strong>
+    <strong class = "income hide" style="display:none;">Average Incomes</strong>
+    <strong class = "vote hide" style="display:none;">Vote Results</strong>
+    <strong class = "snap_ol hide" style="display:none;">Food Stamp Partipcation And Vote Results</strong>
+    <strong class = "income_ol hide" style="display:none;">Incomes and Vote Results</strong>
   </p>
+
+  <p>&nbsp;&nbsp;&nbsp;</p>
+  <div id="content">
+    <p class="snap hide">Dark districts have fewer households participating in the food stamp program.</br></br></p>
+    <p class="income hide" style="display:none;">Dark distrincts have higher average household incomes.</br></br></p>
+    <p class="vote hide" style="display:none;">Dark districts voted for the bill to cut food stamp funding.</br></br></p>
+    <p class="snap_ol hide" style="display:none;">Dark red districts fewer SNAP participants than the median district and voted for the cuts; dark blue districts have more participants and voted against them. Dark purple districts have more participants but voted for cuts; reddish-purple districts voted against the bill despite having fewer participants.</p>
+    <p class="income_ol hide" style="display:none;">Dark red districts have incomes above the district median and voted for the cuts; dark blue districts have incomes below the median and voted against them; dark purple districts have average incomes below the median but voted for cuts; reddish-purple districts voted against the bill despite having incomes above the median.</p>
+  </div>
+  <p>&nbsp;&nbsp;&nbsp;</p>
   <p>Hover over districts to see details. Click to zoom.</p>
-  <button id="switch">toggle class</button>
-  WHAT
-  <table>
-   <tr>
-     <td colspan="5"><strong>View Map By:</strong><td>
-   <tr>
-    <td class="maps"><a href= "snap.html">SNAP Participation</a></td>
-    <td class="maps"><a href= "income.html">Income</a></td>
-    <td class="maps"><a href= "vote.html"><strong>Votes</strong></a></td>
-    <td class="maps"><a href= "income_layer.html">Income Layered Over Votes</a></td>
-    <td class="maps"><a href= "snap_layer.html">SNAP Participation Layered Over Votes</a></td>
-   </tr>
- </table>
+   
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
 <script>
-
-("#switch").on( "click", function() {
-  render();
+ 
+$("#toggle td").click(function(){
+  $(".hide").hide();
+  c = $(this).attr('id');
+  renderMain(us_m,congress_m,c);
+  $("#content ." + c).show();
 });
-
 
 var width = 960,
     height = 500,
     centered;
 
-var path = d3.geo.path();
-var voteById = d3.map();
-var memberById = d3.map();
-var partyById = d3.map();
-var stateById = d3.map();
-var districtById = d3.map();
-var snapById = d3.map();
-var incomeById = d3.map();
+path = d3.geo.path();
+voteById = d3.map();
+memberById = d3.map();
+partyById = d3.map();
+stateById = d3.map();
+districtById = d3.map();
+snapById = d3.map();
+incomeById = d3.map();
 
 var formatNumber = d3.format(",d");
 
@@ -136,108 +177,163 @@ function hasDistricts(d) {
     return districtById.get(d);
   } else {
     return " ";
-  }}
-
-
-function render() {
-  
-  var svg = d3.select("body").append("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-  var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .html(function(d) { 
-      return "Vote: <strong>" + voteById.get(d.id) +"</strong></br>" + 
-             memberById.get(d.id) + " (" + partyById.get(d.id) + ")</br>" +
-             stateById.get(d.id) + " " + hasDistricts(d.id) +
-             "</br>Households on SNAP: " + Math.round(snapById.get(d.id)*1000)/10 + "%</br>" + 
-             "Mean household income: $" + formatNumber(incomeById.get(d.id));
-           })
-    .direction('s')
- 
-  queue()
-      .defer(d3.json, "us.json")
-      .defer(d3.json, "us-congress-113_s.json")
-      .defer(d3.csv, "snap_vote.csv", function(d) { voteById.set(d.district_code,d.vote); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { memberById.set(d.district_code,d.member); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { partyById.set(d.district_code,d.party); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { stateById.set(d.district_code,d.state_name); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { districtById.set(d.district_code,d.district); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { snapById.set(d.district_code,d.snap_percent); })
-      .defer(d3.csv, "snap_vote.csv", function(d) { incomeById.set(d.district_code,d.mean_income); })
-      .await(ready);
- 
-  function ready(error, us, congress) {
-  
-    svg.call(tip);
-  
-    var quantize = d3.scale.quantize()
-       // .domain([.25, 0])
-        .domain([40000,100000])
-        .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
-  
-    var projection = d3.geo.albersUsa()
-        .scale(1070)
-        .translate([width / 2, height / 2]);
-  
-    var path = d3.geo.path()
-        .projection(projection);
-  
-    svg.append("defs").append("path")
-        .attr("id", "land")
-        .datum(topojson.feature(us, us.objects.land))
-        .attr("d", path);
-      
- 
-    svg.append("clipPath")
-        .attr("id", "clip-land")
-      .append("use")
-        .attr("xlink:href", "#land")
-        .on("click", clicked);
-      
-    g = svg.append("g");
-      
-    g.append("g")
-        .attr("clip-path", "url(#clip-land)")
-        .attr("class","districts")
-      .selectAll("path")
-        .data(topojson.feature(congress, congress.objects.districts).features)
-      .enter().append("path")
-        .attr("d", path)
-        //  .attr("class",function(d) { return quantize(Math.min(snapById.get(d.id)),.25);})
-        //  .attr("class",function(d) { return quantize(Math.max(Math.min(incomeById.get(d.id),100000),40000));})
-        .attr("class",function(d) {
-          var vote = voteById.get(d.id)
-          if ( vote == "No") { 
-            return "no_vote";
-          } else if (vote == "Yes") {
-            return "ys_vote";
-          } else {
-            return "na_vote";
-          }
-        })
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
-        .on("click", clicked)
-      .append("title")
-        .text(function(d) { return d.id; });
-
-    g.append("path")
-        .attr("class", "district-boundaries")
-        .attr("clip-path", "url(#clip-land)")
-        .datum(topojson.mesh(congress, congress.objects.districts, function(a, b) { return (a.id / 100 | 0) === (b.id / 100 | 0); }))
-        .attr("d", path);
- 
-    g.append("path")
-        .attr("class", "state-boundaries")
-        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-        .attr("d", path);
-  } 
-  
+  }
 }
 
-render();
+function pickClassMain(d,view) {
+  if (view == "snap") {
+    return snap_scale(Math.min(snapById.get(d.id)),.25);
+  } else if (view == "income") {
+    return income_scale(Math.max(Math.min(incomeById.get(d.id),100000),40000));
+  } else if (view == "vote") {
+    vote = voteById.get(d.id);
+    if (vote == "No") {
+      return "no_vote";
+    } else if (vote == "Yes") {
+      return "ys_vote";
+    } else {
+      return "na_vote";
+    }
+  } else if (view == "snap_ol") {
+    vote = voteById.get(d.id);
+    snap = snapById.get(d.id);
+    if (vote == "No" && snap >= .1317 ) {
+      return "vt_no_dist_no";
+    } else if (vote == "No" && snap <= .1317 ) {
+      return "vt_no_dist_ys";
+    } else if (vote == "Yes" && snap >= .1317 ) {
+      return "vt_ys_dist_no";
+    } else if (vote == "Yes" && snap <= .1317 ) {
+      return "vt_ys_dist_ys";
+    } else if (snap >= .1317 ) {
+      return "vt_na_dist_no";
+    } else if (snap <= .1317 ) {
+      return "vt_na_dist_ys";
+    } else {
+      return "no_fill";
+    }
+  } else if (view == "income_ol") {
+    vote = voteById.get(d.id);
+    income = incomeById.get(d.id);
+    if (vote == "No" && income <= 65326 ) {
+      return "vt_no_dist_no";
+    } else if (vote == "No" && income >= 65326 ) {
+      return "vt_no_dist_ys";
+    } else if (vote == "Yes" && income <= 65326 ) {
+      return "vt_ys_dist_no";
+    } else if (vote == "Yes" && income >= 65326 ) {
+      return "vt_ys_dist_ys";
+    } else if (income <= 65326 ) {
+      return "vt_na_dist_no";
+    } else if (income >= 65326 ) {
+      return "vt_na_dist_ys";
+    } else {
+      return "no_fill";
+    }
+  } else {
+    return "no_fill";
+  }    
+}
+
+snap_scale = d3.scale.quantize()
+    .domain([.25, 0])
+    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+
+income_scale = d3.scale.quantize()
+    .domain([40000,100000])
+    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .html(function(d) { 
+    return "Vote: <strong>" + voteById.get(d.id) +"</strong></br>" + 
+           memberById.get(d.id) + " (" + partyById.get(d.id) + ")</br>" +
+           stateById.get(d.id) + " " + hasDistricts(d.id) +
+           "</br>Households on SNAP: " + Math.round(snapById.get(d.id)*1000)/10 + "%</br>" + 
+           "Mean household income: $" + formatNumber(incomeById.get(d.id));
+         })
+  .direction('n')
+
+queue()
+    .defer(d3.json, "us.json")
+    .defer(d3.json, "us-congress-113_s.json")
+    .defer(d3.csv, "snap_vote.csv", function(d) { voteById.set(d.district_code,d.vote); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { memberById.set(d.district_code,d.member); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { partyById.set(d.district_code,d.party); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { stateById.set(d.district_code,d.state_name); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { districtById.set(d.district_code,d.district); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { snapById.set(d.district_code,d.snap_percent); })
+    .defer(d3.csv, "snap_vote.csv", function(d) { incomeById.set(d.district_code,d.mean_income); })
+    .await(ready);
+
+function ready(error, us, congress) {
+  
+  svg.call(tip);
+  
+  us_m = us;
+  congress_m = congress;
+
+  var projection = d3.geo.albersUsa()
+      .scale(1070)
+      .translate([width / 2, height / 2]);
+
+  var path = d3.geo.path()
+      .projection(projection);
+
+  svg.append("defs").append("path")
+      .attr("id", "land")
+      .datum(topojson.feature(us, us.objects.land))
+      .attr("d", path);
+
+  svg.append("clipPath")
+      .attr("id", "clip-land")
+    .append("use")
+      .attr("xlink:href", "#land")
+      .on("click", clicked);
+    
+  g = svg.append("g");
+    
+  g.attr("clip-path", "url(#clip-land)")
+      .attr("class","districts")
+    .selectAll("path")
+      .data(topojson.feature(congress, congress.objects.districts).features)
+    .enter().append("path")
+      .attr("d", path)
+      .attr("class",function(d) {return pickClassMain(d,"snap"); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
+      .on("click", clicked)
+    .append("title")
+      .text(function(d) { return d.id; });
+  
+  g.append("path")
+      .attr("class", "district-boundaries")
+      .attr("clip-path", "url(#clip-land)")
+      .datum(topojson.mesh(congress, congress.objects.districts, function(a, b) { return (a.id / 100 | 0) === (b.id / 100 | 0); }))
+      .attr("d", path);
+
+  g.append("path")
+      .attr("class", "state-boundaries")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("d", path);
+}
+  
+function renderMain(us, congress,view) {
+  
+  g = svg.select("g")
+    .attr("class","main")
+  
+  g.attr("clip-path", "url(#clip-land)")
+    .attr("class","districts")
+  .selectAll("path")
+    .data(topojson.feature(congress, congress.objects.districts).features)
+    .attr("d", path)
+    .attr("class",function(d) {return pickClassMain(d,view); });
+};
 
 function clicked(d) {
   var x, y, k;
@@ -248,7 +344,6 @@ function clicked(d) {
     y = centroid[1];
     k = 3.5;
     centered = d;
-    console.log("if?")
   } else {
     x = width / 2;
     y = height / 2;
@@ -264,5 +359,5 @@ function clicked(d) {
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
       .style("stroke-width", 1.5 / k + "px");
 }
- 
+
 </script>
