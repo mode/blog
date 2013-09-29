@@ -147,6 +147,9 @@ path {
 }
  
 </style>
+<head>
+<title>Food Stamp Vote</title>
+</head>
 <body>
   <div class="menu-wrapper">
     <ul class="filter-menu" id= "toggle">
@@ -284,7 +287,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .html(function(d) { 
     return "Vote: <strong>" + voteById.get(d.id) +"</strong></br>" + 
-           memberById.get(d.id) + " (" + partyById.get(d.id) + ")</br>" +
+           memberById.get(d.id) + " (" + partyById.get(d.id) + "), " +
            stateById.get(d.id) + " " + hasDistricts(d.id) +
            "</br>Households on SNAP: " + Math.round(snapById.get(d.id)*1000)/10 + "%</br>" + 
            "Mean household income: $" + formatNumber(incomeById.get(d.id));
@@ -408,7 +411,7 @@ function clicked(d) {
     y = height / 2;
     k = 1;
     centered = null;
-    showTip();    
+    setTimeout(function(){showTip()},700);   
   }
 
   g.selectAll("path")
