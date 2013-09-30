@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Benn</title>
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+
+body {
+  font-family: "Helvetica Neue";
+  margin: 40px auto;
+  width: 960px;
+  min-height: 1500px;
+}
+
+#body {
+  position: relative;
+}
+
+footer {
+  padding: 2em 0 1em 0;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 96px;
+  margin-top: .3em;
+  margin-bottom: 0;
+}
+
+h1 + h2 {
+  margin-top: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+h1, h2 {
+  font-family: "Yanone Kaffeesatz";
+  text-rendering: optimizeLegibility;
+}
+
+#body > p {
+  line-height: 1.5em;
+  width: 640px;
+  text-rendering: optimizeLegibility;
+}
+
+#charts {
+  padding: 10px 0;
+}
+
+.chart {
+  display: inline-block;
+  height: 151px;
+  margin-bottom: 20px;
+}
+
+.reset {
+  padding-left: 1em;
+  font-size: smaller;
+  color: #ccc;
+}
+
+.background.bar {
+  fill: #ccc;
+}
+
+.foreground.bar {
+  fill: #345D63;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.brush rect.extent {
+  fill: #345D63;
+  fill-opacity: .125;
+}
+
+.brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+#quality-chart {
+  width: 150px;
+}
+
+#ppo-chart {
+  width: 230px;
+}
+
+#amount-chart {
+  width: 150px;
+}
+
+#price-chart {
+  width: 1020px;
+}
+
+#date-chart {
+  width: 920px;
+}
+
+#map-chart {
+  height: 500px;
+}
+
+#sale-list {
+  min-height: 400px;
+}
+
+#sale-list .date,
+#sale-list .day {
+  margin-bottom: .4em;
+}
+
+#sale-list .sale {
+  line-height: 1.5em;
+  background: #eee;
+  width: 1000px;
+  margin-bottom: 1px;
+}
+
+#sale-list .time {
+  color: #999;
+}
+
+#sale-list .sale div {
+  display: inline-block;
+  width: 220px;
+}
+
+#sale-list div.amount,
+#sale-list div.ppo {
+  width: 160px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#sale-list .early {
+  color: green;
+}
+
+aside {
+  position: absolute;
+  left: 740px;
+  font-size: smaller;
+  width: 220px;
+}
+
+.counties {
+  fill: none;
+}
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+.q0-9 { fill:#EEF5D7; }
+.q1-9 { fill:#DDEAAF; }
+.q2-9 { fill:#CCE087; }
+.q3-9 { fill:#BBd55F; }
+.q4-9 { fill:#AACB37; }
+.q5-9 { fill:#88A22C; }
+.q6-9 { fill:#667A21; }
+.q7-9 { fill:#445516; }
+.q8-9 { fill:#22290B; }
+
+.q0-9:hover { fill:#DD5426; }
+.q1-9:hover { fill:#DD5426; }
+.q2-9:hover { fill:#DD5426; }
+.q3-9:hover { fill:#DD5426; }
+.q4-9:hover { fill:#DD5426; }
+.q5-9:hover { fill:#DD5426; }
+.q6-9:hover { fill:#DD5426; }
+.q7-9:hover { fill:#DD5426; }
+.q8-9:hover { fill:#DD5426; }
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+</style>
+
+<div id="body">
+
+<p>Some questions to consider: How does time-of-day correlate with <a href="javascript:filter([null, [100, 150], null, null])">arrival score</a>? Are <a href="javascript:filter([null, null, [1700, 2000], null])">longer</a> or <a href="javascript:filter([null, null, [0, 300], null])">shorter</a> sales more likely to arrive early? What happened on <a href="javascript:filter([null, [80, 150], null, [new Date(2001, 0, 12), new Date(2001, 0, 13)]])">January 12</a>? How do sale patterns differ between <a href="javascript:filter([null, null, null, [new Date(2001, 0, 27), new Date(2001, 0, 29)]])">weekends</a> and <a href="javascript:filter([null, null, null, [new Date(2001, 0, 29), new Date(2001, 1, 3)]])">weekdays</a>, or <a href="javascript:filter([[4, 7], null, null, null])">mornings</a> and <a href="javascript:filter([[21, 24], null, null, null])">nights</a>? <a href="https://github.com/square/crossfilter/tree/gh-pages">Fork this example</a> and try your own data!
+
+<div id="charts">
+  <div id="quality-chart" class="chart">
+    <div class="title">Quality</div>
+  </div>
+  <div id="amount-chart" class="chart">
+    <div class="title">Amount (oz.)</div>
+  </div>
+  <div id="ppo-chart" class="chart">
+    <div class="title">Price Per Ounce</div>
+  </div>
+  <div id="price-chart" class="chart">
+    <div class="title">Total Price ($)</div>
+  </div>
+  </br>
+  <div id="date-chart" class="chart">
+    <div class="title">Date</div>
+  </div>
+  <div id="map-chart" class="chart">
+    <div class="title">Map</div>
+  </div>
+</div>
+
+<aside id="totals"><span id="active">-</span> of <span id="total">-</span> sales selected.</aside>
+
+<div id="lists">
+  <div id="sale-list" class="list"></div>
+  <div id="sale-list" class="list"></div>
+  </div>
+</div>
+
+<footer>
+  <span style="float:right;">
+    Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</a>.
+  </span>
+  Copyright 2012 <a href="http://squareup.com">Square, Inc.</a>
+</footer>
+
+</div>
+
+
+<script src="http://square.github.io/crossfilter/crossfilter.v1.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<script>
+
+// (It's CSV, but GitHub Pages only gzip's JSON at the moment.)
+d3.csv("all_prices_map.csv", function(error, sales) {  
+d3.csv("state_codes.csv", function(error, codes) { 
+  // Various formatters.
+  var formatNumber = d3.format(",d"),
+      formatChange = d3.format("+,d"),
+      formatDate = d3.time.format("%B %d, %Y"),
+      formatTime = d3.time.format("%I:%M %p");
+
+  // A nest operator, for grouping the sale list.
+  var nestByDate = d3.nest()
+      .key(function(d) { return d3.time.day(d.date); });
+      
+  // A little coercion, since the CSV is untyped.
+  sales.forEach(function(d, i) {
+    d.index = i;
+    d.date = parseDate(d.date);
+    d.ppo = +d.ppo;
+    d.amount = +d.amount;
+  });
+
+  // Create the crossfilter for the relevant dimensions and groups.
+  var sale = crossfilter(sales),
+      all = sale.groupAll(),
+      date = sale.dimension(function(d) { return d.date; }),
+      dates = date.group(d3.time.week),
+      qual = sale.dimension(function(d) { return d.quality_score; }),
+      quals = qual.group(function(d) {return d}),
+      ppo = sale.dimension(function(d) { return Math.min(d.ppo,590); }),
+      ppos = ppo.group(function(d) { return Math.round(Math.floor(d/10))*10; }),
+      price = sale.dimension(function(d) { return Math.min(d.price,395); }),
+      prices = price.group(function(d) { return Math.round(Math.floor(d/5))*5; }),      
+      amount = sale.dimension(function(d) { return Math.min(d.amount,.99); }),
+      amounts = amount.group(function(d) { return Math.floor(d*10)/10; }),
+      state = sale.dimension(function(d) { return d.state_code; }),
+      states = state.group(),
+      statesCount = states.reduceCount(),
+      ppoSum = state.group().reduceSum(function(d) { return Math.min(d.ppo,600); });
+      
+  var charts = [
+
+    barChart()
+        .dimension(qual)
+        .group(quals)
+      .x(d3.scale.linear()
+        .domain([1, 4])
+        .rangeRound([0, 30 * 3])),
+
+    barChart()
+        .dimension(amount)
+        .group(amounts)
+      .x(d3.scale.linear()
+        .domain([0, 1])
+        .rangeRound([0, 10 * 10])),
+
+    barChart()
+        .dimension(ppo)
+        .group(ppos)
+      .x(d3.scale.linear()
+        .domain([0, 600])
+        .rangeRound([0, 10 * 60])),
+
+    barChart()
+        .dimension(price)
+        .group(prices)
+      .x(d3.scale.linear()
+        .domain([0, 400])
+        .rangeRound([0, 10 * 80])),
+
+    barChart()
+        .dimension(date)
+        .group(dates)
+      .x(d3.time.scale()
+        .domain([new Date(2012, 0, 1), new Date(2013, 9, 1 )])
+        .rangeRound([0, 10 * 104 ]))
+        .filter([new Date(2013, 0, 1), new Date(2013, 4, 1)]),
+
+    stateMap()
+  
+  ];
+  
+  // Given our array of charts, which we assume are in the same order as the
+  // .chart elements in the DOM, bind the charts to the DOM and render them.
+  // We also listen to the chart's brush events to update the display.
+  var chart = d3.selectAll(".chart")
+      .data(charts)
+      .each(function(chart) { chart.on("brush", renderAll).on("brushend", renderAll); });
+
+  // Render the initial lists.
+  var list = d3.selectAll(".list")
+      .data([saleList]);
+
+  // Render the total.
+  d3.selectAll("#total")
+      .text(formatNumber(sale.size()));
+
+  renderAll();
+
+  // Renders the specified chart or list.
+  function render(method) {
+    d3.select(this).call(method);
+  }
+
+  // Whenever the brush moves, re-rendering everything.
+  function renderAll() {
+    chart.each(render);
+    list.each(render);
+    d3.select("#active").text(formatNumber(all.value()));
+  }
+
+  // Like d3.time.format, but faster.
+  function parseDate(d) {
+    return new Date(
+        d.substring(0,4),
+        d.substring(4, 6) - 1,
+        d.substring(6, 8),
+        d.substring(8, 10),
+        d.substring(10, 12));
+  }
+
+  window.filter = function(filters) {
+    filters.forEach(function(d, i) { charts[i].filter(d); });
+    renderAll();
+  };
+
+  window.reset = function(i) {
+    charts[i].filter(null);
+    renderAll();
+  };
+
+  function saleList(div) {
+    var salesByDate = nestByDate.entries(date.top(10));
+
+    div.each(function() {
+      var date = d3.select(this).selectAll(".date")
+          .data(salesByDate, function(d) { return d.key; });
+
+      date.enter().append("div")
+          .attr("class", "date")
+        .append("div")
+          .attr("class", "day")
+          .text(function(d) { return formatDate(d.values[0].date); });
+
+      date.exit().remove();
+
+      var sale = date.order().selectAll(".sale")
+          .data(function(d) { return d.values; }, function(d) { return d.index; });
+
+      var saleEnter = sale.enter().append("div")
+          .attr("class", "sale");
+
+      saleEnter.append("div")
+          .attr("class", "time")
+          .text(function(d) { return formatDate(d.date); });
+
+      saleEnter.append("div")
+          .attr("class", "origin")
+          .text(function(d) { return d.location; });
+
+      saleEnter.append("div")
+          .attr("class", "destination")
+          .text(function(d) { return d.quality; });
+
+      saleEnter.append("div")
+          .attr("class", "amount")
+          .text(function(d) { return Math.round(d.amount*100,1)/100 + " ounces"; });
+
+      saleEnter.append("div")
+          .attr("class", "ppo")
+          .classed("early", function(d) { return d.ppo < 0; })
+          .text(function(d) { return "$" + Math.round(d.ppo); });
+
+      sale.exit().remove();
+
+      sale.order();
+    });
+  }
+
+  function barChart() {
+    if (!barChart.id) barChart.id = 0;
+
+    var margin = {top: 10, right: 10, bottom: 20, left: 10},
+        x,
+        y = d3.scale.linear().range([100, 0]),
+        id = barChart.id++,
+        axis = d3.svg.axis().orient("bottom"),
+        brush = d3.svg.brush(),
+        brushDirty,
+        dimension,
+        group,
+        round;
+
+    function chart(div) {
+      var width = x.range()[1],
+          height = y.range()[0];
+
+      y.domain([0, group.top(1)[0].value]);
+
+      div.each(function() {
+        var div = d3.select(this),
+            g = div.select("g");
+
+        // Create the skeletal chart.
+        if (g.empty()) {
+          div.select(".title").append("a")
+              .attr("href", "javascript:reset(" + id + ")")
+              .attr("class", "reset")
+              .text("reset")
+              .style("display", "none");
+
+          g = div.append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          g.append("clipPath")
+              .attr("id", "clip-" + id)
+            .append("rect")
+              .attr("width", width)
+              .attr("height", height);
+
+          g.selectAll(".bar")
+              .data(["background", "foreground"])
+            .enter().append("path")
+              .attr("class", function(d) { return d + " bar"; })
+              .datum(group.all());
+
+          g.selectAll(".foreground.bar")
+              .attr("clip-path", "url(#clip-" + id + ")");
+
+          g.append("g")
+              .attr("class", "axis")
+              .attr("transform", "translate(0," + height + ")")
+              .call(axis);
+
+          // Initialize the brush component with pretty resize handles.
+          var gBrush = g.append("g").attr("class", "brush").call(brush);
+          gBrush.selectAll("rect").attr("height", height);
+          gBrush.selectAll(".resize").append("path").attr("d", resizePath);
+        }
+
+        // Only redraw the brush if set externally.
+        if (brushDirty) {
+          brushDirty = false;
+          g.selectAll(".brush").call(brush);
+          div.select(".title a").style("display", brush.empty() ? "none" : null);
+          if (brush.empty()) {
+            g.selectAll("#clip-" + id + " rect")
+                .attr("x", 0)
+                .attr("width", width);
+          } else {
+            var extent = brush.extent();
+            g.selectAll("#clip-" + id + " rect")
+                .attr("x", x(extent[0]))
+                .attr("width", x(extent[1]) - x(extent[0]));
+          }
+        }
+
+        g.selectAll(".bar").attr("d", barPath);
+      });
+
+      function barPath(groups) {
+        var path = [],
+            i = -1,
+            n = groups.length,
+            d;
+        while (++i < n) {
+          d = groups[i];
+          path.push("M", x(d.key), ",", height, "V", y(d.value), "h9V", height);
+        }
+        return path.join("");
+      }
+
+      function resizePath(d) {
+        var e = +(d == "e"),
+            x = e ? 1 : -1,
+            y = height / 3;
+        return "M" + (.5 * x) + "," + y
+            + "A6,6 0 0 " + e + " " + (6.5 * x) + "," + (y + 6)
+            + "V" + (2 * y - 6)
+            + "A6,6 0 0 " + e + " " + (.5 * x) + "," + (2 * y)
+            + "Z"
+            + "M" + (2.5 * x) + "," + (y + 8)
+            + "V" + (2 * y - 8)
+            + "M" + (4.5 * x) + "," + (y + 8)
+            + "V" + (2 * y - 8);
+      }
+    }
+
+    brush.on("brushstart.chart", function() {
+      var div = d3.select(this.parentNode.parentNode.parentNode);
+      div.select(".title a").style("display", null);
+    });
+
+    brush.on("brush.chart", function() {
+      var g = d3.select(this.parentNode),
+          extent = brush.extent();
+      if (round) g.select(".brush")
+          .call(brush.extent(extent = extent.map(round)))
+        .selectAll(".resize")
+          .style("display", null);
+      g.select("#clip-" + id + " rect")
+          .attr("x", x(extent[0]))
+          .attr("width", x(extent[1]) - x(extent[0]));
+      dimension.filterRange(extent);
+    });
+
+    brush.on("brushend.chart", function() {
+      if (brush.empty()) {
+        var div = d3.select(this.parentNode.parentNode.parentNode);
+        div.select(".title a").style("display", "none");
+        div.select("#clip-" + id + " rect").attr("x", null).attr("width", "100%");
+        dimension.filterAll();
+      }
+    });
+
+    chart.margin = function(_) {
+      if (!arguments.length) return margin;
+      margin = _;
+      return chart;
+    };
+
+    chart.x = function(_) {
+      if (!arguments.length) return x;
+      x = _;
+      axis.scale(x);
+      brush.x(x);
+      return chart;
+    };
+
+    chart.y = function(_) {
+      if (!arguments.length) return y;
+      y = _;
+      return chart;
+    };
+
+    chart.dimension = function(_) {
+      if (!arguments.length) return dimension;
+      dimension = _;
+      return chart;
+    };
+
+    chart.filter = function(_) {
+      if (_) {
+        brush.extent(_);
+        dimension.filterRange(_);
+      } else {
+        brush.clear();
+        dimension.filterAll();
+      }
+      brushDirty = true;
+      return chart;
+    };
+
+    chart.group = function(_) {
+      if (!arguments.length) return group;
+      group = _;
+      return chart;
+    };
+
+    chart.round = function(_) {
+      if (!arguments.length) return round;
+      round = _;
+      return chart;
+    };
+
+    return d3.rebind(chart, brush, "on");
+  }
+
+  function stateMap() {
+
+    var mapLoad = queue()
+        .defer(d3.json, "us.json")
+    
+    function aMap(div) {
+      
+      div.each(function() {
+        var div = d3.select(this),
+            g = div.select("g");
+        
+        if (g.empty()) {
+
+          var width = 960,
+              height = 500;
+          
+          var svg = div.append("svg")
+              .attr("width", width)
+              .attr("height", height);
+              
+          var path = d3.geo.path();
+          
+          mapLoad.await(ready)
+          
+          function ready(error, us) {
+            svg.append("g")
+                .attr("class", "states")
+                .selectAll("path")
+                .data(topojson.feature(us, us.objects.states).features)
+              .enter().append("path")
+                .attr("id",us.objects.states)
+                .attr("class", "q5-9")
+                .attr("d", path); 
+          };
+
+        }
+          
+        var svg = div.select("svg")
+        
+        var arr = []
+        max_val = 0;
+        min_val = 1000;
+        
+        var ppoAvg = statesCount.all().forEach( function(d, i) { 
+          var sums = ppoSum.all()
+          
+          obj = {};
+          obj.key = d.key;
+          
+          obj.value = (sums[i].value/Math.max(d.value,1));
+          
+          if (obj.value > max_val) {
+            max_val = obj.value
+          }
+          
+          if (obj.value < min_val) {
+            min_val = obj.value
+          }
+          
+          arr.push(obj);
+        });
+        
+        var highState = Math.min(max_val,600);
+        var lowState = min_val;
+        
+        var tip = d3.tip()
+          .attr('class', 'd3-tip')
+          .offset([-10, 0])
+          .html(function(d) {
+            return nameById.get(+d.id) + "</br>Sales: " + countById.get(+d.id) + "</br>Price per ounce: $" + Math.round(rateById.get(+d.id));
+          })
+          .direction('n')
+        
+        var rateById = d3.map();
+        var countById = d3.map();
+        var nameById = d3.map();
+        
+        arr.forEach(function(state) { rateById.set(+state.key,+state.value); })
+        statesCount.all().forEach(function(state) { countById.set(+state.key,+state.value)})
+        codes.forEach(function(state) { nameById.set(+state.key,state.value)})
+        
+        var quantize = d3.scale.quantize()
+            .domain([lowState, highState])
+            .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+        
+        svg.call(tip);
+        
+        var s = svg.select("g")
+                  .selectAll("path")
+                  .attr("id",function(d) {return +d.id; })
+                  .attr("class", function(d) { return quantize(rateById.get(+d.id)); })
+                  .on('mouseover', tip.show)
+                  .on('mouseout', tip.hide);
+          
+       //  function ready(error, us) {
+       //  svg.append("g")
+       //      .attr("class", "states")
+       //      .selectAll("path")
+       //      .data(topojson.feature(us, us.objects.states).features)
+       //    .enter().append("path")
+       //      .attr("id", function(d) { return +d.id; })
+       //      .attr("class", function(d) { return quantize(rateById.get(+d.id)); })
+       //      //.attr("class","q4-9")
+       //      .attr("d", path); 
+       //    */  
+       //      svg.append("path")
+       //        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+       //        .attr("class", "states")
+       //        .attr("d", path);
+       //  };
+      
+      });
+    };
+    
+    return d3.rebind(aMap, d3.svg.brush(), "on");
+  
+  };
+});  
+});
+</script>
