@@ -11,12 +11,12 @@ body {
   font-size: 11px;
 }
 
-.menu-wrapper {
+.filter-wrapper {
   margin: 0 auto;
   text-align: center;
 }
 
-.filter-menu {
+.filter-button {
   height:38px;
   overflow:hidden;
   font-size: 11px;
@@ -24,7 +24,7 @@ body {
   text-align: center;
 }
 
-.filter-menu li {
+.filter-button li {
   line-height:20px;
   float:left;
   margin-right:-1px;
@@ -32,27 +32,27 @@ body {
 
 }
 
-.filter-menu li:last-child {
+.filter-button li:last-child {
   margin-right:0
 }
 
-.filter-menu li.active {
+.filter-button li.active {
   border:1px solid #ccc;
   -moz-box-shadow:0 0 11px #ddd inset;
   -webkit-box-shadow:0 0 11px #ddd inset;
   box-shadow:0 0 11px #ddd inset;
 }
 
-.filter-menu a {
+.filter-button a {
   display:block;color:#848484;
   padding:7px 12px;
   text-decoration:none}
 
-.filter-menu a:hover {
+.filter-button a:hover {
   color:#222
 }
 
-.filter-menu .active a {
+.filter-button .active a {
   color:#000
 }
 
@@ -94,15 +94,15 @@ path {
 .no_vote { fill: #344886; } 
 .na_vote { fill: gray; }
 
-.q8-9 { fill:#450F0E; }
-.q7-9 { fill:#671715; }
-.q6-9 { fill:#8A1E1C; }
-.q5-9 { fill:#AC2623; }
-.q4-9 { fill:#BD514F; }
-.q3-9 { fill:#CD7D7B; }
-.q2-9 { fill:#DEA8A7; }
-.q1-9 { fill:#E6BEBD; }
-.q0-9 { fill:#EED4D3; }
+.s9 { fill:#450F0E; }
+.q8 { fill:#671715; }
+.s7 { fill:#8A1E1C; }
+.s6 { fill:#AC2623; }
+.s5 { fill:#BD514F; }
+.s4 { fill:#CD7D7B; }
+.s3 { fill:#DEA8A7; }
+.s2 { fill:#E6BEBD; }
+.s1 { fill:#EED4D3; }
 
 .no_fill { fill: none;}
 
@@ -150,8 +150,8 @@ path {
 <title>Food Stamp Vote</title>
 </head>
 <body>
-  <div class="menu-wrapper">
-    <ul class="filter-menu" id= "toggle">
+  <div class="filter-wrapper">
+    <ul class="filter-button" id= "toggle">
       <li id="snap" class="bn"><a href="#">SNAP Participation</a></li>
       <li id="income" class="bn"><a href="#">Income By District</a></li>
       <li id="vote" class="bn active"><a href="#">HR 3102 Vote</a></li>
@@ -172,7 +172,7 @@ path {
     <p class="income hide" style="display:none;">Dark distrincts have higher average household incomes.</br></br></p>
     <p class="vote hide">Red districts voted for the bill to cut food stamp funding.</br></br></p>
     <p class="snap_ol hide" style="display:none;">Red districts have fewer SNAP participants than the median district and voted for the cuts; blue districts have more participants and voted against them; reddish-purple districts have more participants but voted for cuts; bluish-purple districts voted against the bill despite having fewer participants.</p>
-    <p class="income_ol hide" style="display:none;">Red districts have incomes above the district median and voted for the cuts; blue districts have incomes below the median and voted against them; reddish-purple districts have average incomes below the median but voted for cuts; bluish-purple districts voted against the bill despite having incomes above the median.</p>
+    <p class="income_ol hide" style="display:none;">Red districts have incomes above the district median and voted for the cuts;  blue districts have incomes below the median and voted against them; reddish-purple districts have average incomes below the median but voted for cuts; bluish-purple districts voted against the bill despite having incomes above the median.</p>
   </div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
@@ -272,11 +272,11 @@ function pickClassMain(d,view) {
 
 snap_scale = d3.scale.quantize()
     .domain([.25, 0])
-    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+    .range(d3.range(9).map(function(i) { return "s" + (i+1); }));
 
 income_scale = d3.scale.quantize()
     .domain([40000,100000])
-    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+    .range(d3.range(9).map(function(i) { return "s" + (i+1); }));
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
