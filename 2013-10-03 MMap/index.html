@@ -3,10 +3,11 @@
 <title>Benn</title>
 <style>
 
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic|Open+Sans:400italic,700italic,400,700);
 
 body {
-  font-family: "Helvetica Neue";
+  font-family: Antenna;
+  font-size: 11px;
   margin: 40px auto;
   width: 960px;
   min-height: 1500px;
@@ -37,7 +38,7 @@ h2 {
 }
 
 h1, h2 {
-  font-family: "Yanone Kaffeesatz";
+  font-family: Antenna;
   text-rendering: optimizeLegibility;
 }
 
@@ -53,14 +54,17 @@ h1, h2 {
 
 .chart {
   display: inline-block;
-  height: 151px;
+  height: 111px;
   margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .reset {
   padding-left: 1em;
   font-size: smaller;
   color: #ccc;
+  font-weight: normal;
 }
 
 .background.bar {
@@ -79,6 +83,7 @@ h1, h2 {
 
 .axis text {
   font: 10px sans-serif;
+  font-family: Antenna;
 }
 
 .brush rect.extent {
@@ -113,6 +118,9 @@ h1, h2 {
 
 #map-chart {
   height: 500px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1.5em;
 }
 
 #sale-list {
@@ -221,9 +229,11 @@ aside {
 
 <div id="body">
 
+  
+
 <p>Some questions to consider: How does time-of-day correlate with <a href="javascript:filter([null, [100, 150], null, null])">arrival score</a>? Are <a href="javascript:filter([null, null, [1700, 2000], null])">longer</a> or <a href="javascript:filter([null, null, [0, 300], null])">shorter</a> sales more likely to arrive early? What happened on <a href="javascript:filter([null, [80, 150], null, [new Date(2001, 0, 12), new Date(2001, 0, 13)]])">January 12</a>? How do sale patterns differ between <a href="javascript:filter([null, null, null, [new Date(2001, 0, 27), new Date(2001, 0, 29)]])">weekends</a> and <a href="javascript:filter([null, null, null, [new Date(2001, 0, 29), new Date(2001, 1, 3)]])">weekdays</a>, or <a href="javascript:filter([[4, 7], null, null, null])">mornings</a> and <a href="javascript:filter([[21, 24], null, null, null])">nights</a>? <a href="https://github.com/square/crossfilter/tree/gh-pages">Fork this example</a> and try your own data!
 
-<div id="charts">
+<div id="charts">  
   <div id="quality-chart" class="chart">
     <div class="title">Quality</div>
   </div>
@@ -233,15 +243,20 @@ aside {
   <div id="ppo-chart" class="chart">
     <div class="title">Price Per Ounce</div>
   </div>
-  <div id="price-chart" class="chart">
+<!--
+  <div id="price-chart" class="chart">     
     <div class="title">Total Price ($)</div>
-  </div>
+  </div> 
+-->
   </br>
   <div id="date-chart" class="chart">
-    <div class="title">Date</div>
+    <div class="title">Date of Purchase</div>
   </div>
   <div id="map-chart" class="chart">
-    <div class="title">Map</div>
+    <div class="title"><span style="font-weight: bold;">Average Price by State</span>
+      </br>Tranactions: <span id="active">-</span>
+      </br>Average Price: $<span id="avg_price">-</span>
+    </div>
   </div>
 </div>
 
@@ -290,6 +305,7 @@ d3.csv("state_codes.csv", function(error, codes) {
     d.date = parseDate(d.date);
     d.ppo = +d.ppo;
     d.amount = +d.amount;
+    d.quality_score = d.quality_score -.3
   });
 
   // Create the crossfilter for the relevant dimensions and groups.
@@ -298,7 +314,7 @@ d3.csv("state_codes.csv", function(error, codes) {
       date = sale.dimension(function(d) { return d.date; }),
       dates = date.group(d3.time.week),
       qual = sale.dimension(function(d) { return d.quality_score; }),
-      quals = qual.group(function(d) {return d}),
+      quals = qual.group(function(d) {return d} ),
       ppo = sale.dimension(function(d) { return Math.min(d.ppo,590); }),
       ppos = ppo.group(function(d) { return Math.round(Math.floor(d/10))*10; }),
       price = sale.dimension(function(d) { return Math.min(d.price,395); }),
@@ -308,50 +324,51 @@ d3.csv("state_codes.csv", function(error, codes) {
       state = sale.dimension(function(d) { return d.state_code; }),
       states = state.group(),
       statesCount = states.reduceCount(),
-      ppoSum = state.group().reduceSum(function(d) { return Math.min(d.ppo,600); });
+      ppoSum = state.group().reduceSum(function(d) { return Math.min(d.ppo,600); }),
+      totalSum = sale.groupAll().reduceSum(function(d) { return Math.min(d.ppo,600  );});
       
   var charts = [
 
-    barChart()
+    barChart(20,3)
         .dimension(qual)
         .group(quals)
+        .round(function(qual) {return Math.round(qual)-.5;})
       .x(d3.scale.linear()
-        .domain([1, 4])
-        .rangeRound([0, 30 * 3])),
-
-    barChart()
+        .domain([0.5,3.5])
+        .rangeRound([0, 10 * 9])),
+        
+    barChart(9,2)
         .dimension(amount)
         .group(amounts)
       .x(d3.scale.linear()
         .domain([0, 1])
         .rangeRound([0, 10 * 10])),
 
-    barChart()
+    barChart(9)
         .dimension(ppo)
         .group(ppos)
       .x(d3.scale.linear()
         .domain([0, 600])
         .rangeRound([0, 10 * 60])),
-
-    barChart()
+        /*
+    barChart(9)
         .dimension(price)
         .group(prices)
       .x(d3.scale.linear()
         .domain([0, 400])
         .rangeRound([0, 10 * 80])),
-
-    barChart()
+*/
+    barChart(9)
         .dimension(date)
         .group(dates)
       .x(d3.time.scale()
         .domain([new Date(2012, 0, 1), new Date(2013, 9, 1 )])
         .rangeRound([0, 10 * 104 ]))
         .filter([new Date(2013, 0, 1), new Date(2013, 4, 1)]),
-
+        
     stateMap()
   
   ];
-  
   // Given our array of charts, which we assume are in the same order as the
   // .chart elements in the DOM, bind the charts to the DOM and render them.
   // We also listen to the chart's brush events to update the display.
@@ -379,6 +396,7 @@ d3.csv("state_codes.csv", function(error, codes) {
     chart.each(render);
     list.each(render);
     d3.select("#active").text(formatNumber(all.value()));
+    d3.select("#avg_price").text(formatNumber(Math.round(totalSum.value()/all.value())));
   }
 
   // Like d3.time.format, but faster.
@@ -403,6 +421,8 @@ d3.csv("state_codes.csv", function(error, codes) {
 
   function saleList(div) {
     var salesByDate = nestByDate.entries(date.top(10));
+    console.log(date.top(10));
+    console.log(salesByDate);
 
     div.each(function() {
       var date = d3.select(this).selectAll(".date")
@@ -449,14 +469,14 @@ d3.csv("state_codes.csv", function(error, codes) {
     });
   }
 
-  function barChart() {
+  function barChart(barWidth,ticks) {
     if (!barChart.id) barChart.id = 0;
 
     var margin = {top: 10, right: 10, bottom: 20, left: 10},
         x,
-        y = d3.scale.linear().range([100, 0]),
+        y = d3.scale.linear().range([60, 0]),
         id = barChart.id++,
-        axis = d3.svg.axis().orient("bottom"),
+        axis = d3.svg.axis().orient("bottom").ticks(ticks),
         brush = d3.svg.brush(),
         brushDirty,
         dimension,
@@ -497,7 +517,8 @@ d3.csv("state_codes.csv", function(error, codes) {
               .data(["background", "foreground"])
             .enter().append("path")
               .attr("class", function(d) { return d + " bar"; })
-              .datum(group.all());
+              .datum(group.all())
+              .attr("width",20);
 
           g.selectAll(".foreground.bar")
               .attr("clip-path", "url(#clip-" + id + ")");
@@ -540,7 +561,7 @@ d3.csv("state_codes.csv", function(error, codes) {
             d;
         while (++i < n) {
           d = groups[i];
-          path.push("M", x(d.key), ",", height, "V", y(d.value), "h9V", height);
+          path.push("M", x(d.key), ",", height, "V", y(d.value), "h" + barWidth + "V", height);
         }
         return path.join("");
       }
