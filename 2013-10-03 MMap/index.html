@@ -10,41 +10,38 @@ body {
   font-size: 11px;
   margin: 40px auto;
   width: 960px;
-  min-height: 1500px;
+  min-height: 1200px;
+}
+
+footer {
+  margin-top: 20px;
+  width: 700px;
+  line-height: 1.5em;
+}
+
+a {
+  color: #345D63;
 }
 
 #body {
   position: relative;
 }
 
-footer {
-  padding: 2em 0 1em 0;
-  font-size: 12px;
-}
-
 h1 {
-  font-size: 96px;
+  font-size: 18px;
   margin-top: .3em;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
-h1 + h2 {
-  margin-top: 0;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 28px;
-}
-
-h1, h2 {
-  font-family: Antenna;
-  text-rendering: optimizeLegibility;
+hr {
+  width: 480px;
+  border-color: #345D63;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #body > p {
   line-height: 1.5em;
-  width: 640px;
   text-rendering: optimizeLegibility;
 }
 
@@ -52,12 +49,59 @@ h1, h2 {
   padding: 10px 0;
 }
 
+.filter-wrapper {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+.filter-button {
+  height:38px;
+  overflow:hidden;
+  font-size: 11px;
+  list-style-type:none;
+  text-align: center;
+}
+
+.filter-button li {
+  line-height:30px;
+  float:left;
+  margin-right:-1px;
+  border:1px solid #ddd;
+
+}
+
+.filter-button li:last-child {
+  margin-right:0
+}
+
+.filter-button li:active {
+  border:1px solid #ccc;
+  -moz-box-shadow:0 0 11px #ddd inset;
+  -webkit-box-shadow:0 0 11px #ddd inset;
+  box-shadow:0 0 11px #ddd inset;
+}
+
+.filter-button a {
+  padding:7px 12px;
+  text-decoration:none;
+  color:#000
+}
+.filter-button a:active {
+  color: #DD5426;
+}
+
 .chart {
-  display: inline-block;
   height: 111px;
-  margin-bottom: 20px;
-  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.title {
+  text-align: left;
   font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 12px;
 }
 
 .reset {
@@ -97,23 +141,19 @@ h1, h2 {
 }
 
 #quality-chart {
-  width: 150px;
+  width: 130px;
 }
 
 #ppo-chart {
-  width: 230px;
+  width: 674px;
 }
 
 #amount-chart {
   width: 150px;
 }
 
-#price-chart {
-  width: 1020px;
-}
-
 #date-chart {
-  width: 920px;
+  width: 960px;
 }
 
 #map-chart {
@@ -124,50 +164,36 @@ h1, h2 {
 }
 
 #sale-list {
-  min-height: 400px;
-}
-
-#sale-list .date,
-#sale-list .day {
-  margin-bottom: .4em;
+  min-height: 100px;
 }
 
 #sale-list .sale {
   line-height: 1.5em;
   background: #eee;
-  width: 1000px;
+  width: 960px;
   margin-bottom: 1px;
-}
-
-#sale-list .time {
-  color: #999;
 }
 
 #sale-list .sale div {
   display: inline-block;
-  width: 220px;
-}
-
-#sale-list div.amount,
-#sale-list div.ppo {
-  width: 160px;
+  width: 130px;
   padding-right: 10px;
+  padding-left: 10px;
   text-align: right;
 }
 
-#sale-list .early {
-  color: green;
+#sale-list .day {
+  margin-bottom: 1px;
 }
 
-aside {
-  position: absolute;
-  left: 740px;
-  font-size: smaller;
-  width: 220px;
+#sale-list div.time {
+  color: #999;
+  text-align: left;
 }
 
-.counties {
-  fill: none;
+#sale-list div.location {
+  width: 340px;
+  text-align: left;
 }
 
 .states {
@@ -228,66 +254,68 @@ aside {
 </style>
 
 <div id="body">
-
-  
-
-<p>Some questions to consider: How does time-of-day correlate with <a href="javascript:filter([null, [100, 150], null, null])">arrival score</a>? Are <a href="javascript:filter([null, null, [1700, 2000], null])">longer</a> or <a href="javascript:filter([null, null, [0, 300], null])">shorter</a> sales more likely to arrive early? What happened on <a href="javascript:filter([null, [80, 150], null, [new Date(2001, 0, 12), new Date(2001, 0, 13)]])">January 12</a>? How do sale patterns differ between <a href="javascript:filter([null, null, null, [new Date(2001, 0, 27), new Date(2001, 0, 29)]])">weekends</a> and <a href="javascript:filter([null, null, null, [new Date(2001, 0, 29), new Date(2001, 1, 3)]])">weekdays</a>, or <a href="javascript:filter([[4, 7], null, null, null])">mornings</a> and <a href="javascript:filter([[21, 24], null, null, null])">nights</a>? <a href="https://github.com/square/crossfilter/tree/gh-pages">Fork this example</a> and try your own data!
-
-<div id="charts">  
-  <div id="quality-chart" class="chart">
-    <div class="title">Quality</div>
-  </div>
-  <div id="amount-chart" class="chart">
-    <div class="title">Amount (oz.)</div>
-  </div>
-  <div id="ppo-chart" class="chart">
-    <div class="title">Price Per Ounce</div>
-  </div>
-<!--
-  <div id="price-chart" class="chart">     
-    <div class="title">Total Price ($)</div>
-  </div> 
--->
-  </br>
-  <div id="date-chart" class="chart">
-    <div class="title">Date of Purchase</div>
-  </div>
-  <div id="map-chart" class="chart">
-    <div class="title"><span style="font-weight: bold;">Average Price by State</span>
-      </br>Tranactions: <span id="active">-</span>
-      </br>Average Price: $<span id="avg_price">-</span>
+  <h1>Mapping Marijuana Sales</h1>
+  <p>
+    Drag over selections in the bar charts to filter the dataset. The map below updates to show how states' average prices for that selection.
+  </p>
+  <div id="charts">  
+    <div id="quality-chart" class="chart">
+      <div class="title">Quality</div>
     </div>
+    <div id="amount-chart" class="chart">
+      <div class="title">Amount (oz.)</div>
+    </div>
+    <div id="ppo-chart" class="chart">
+      <div class="title">Price per Ounce</div>
+    </div>
+    <div id="date-chart" class="chart">
+      <div class="title" >Date of Purchase</div>
+    </div>
+    
+    <p>Filters to try:</p>
+    <div class="filter-wrapper">
+      <ul class="filter-button" id= "toggle">
+        <li id="f1" class="bn">
+          <a href="javascript:filter([null, null, null, [new Date(2012,6,0), new Date(2012,9,10)]])">July-Oct. 2012</a> vs.
+          <a href="javascript:filter([null, null, null, [new Date(2013,6,0), new Date(2013,9,0)]])">July-Oct. 2013</a>
+        </li>
+        <li id="f2" class="bn">
+          <a href="javascript:filter([null, [.8,1], null, null])">Large purchases</a> vs.
+          <a href="javascript:filter([null, [0,.2], null, null])">Small purchases</a>
+        <li id="f3" class="bn">
+          <a href="javascript:filter([[0.5,1.5], null, null, null])">Low quality</a> vs.
+          <a href="javascript:filter([[2.5,3.5], null, null, null])">High quality</a>
+        </li>
+        <li id="ra" class="bn"><a style="font-weight: bold;" href="javascript:filter([null, null, null, null])">reset all</a></li>
+      </ul>
+    </div>
+    <div class="title" style="text-align: center;">Average Price per Ounce by State</div>
+    <div id="map-chart" class="chart"></div>
+  </div>
+
+  <div id="lists">
+    <div class="title" >Recent Transactions</div>
+    <div id="sale-list" class="list"></div>
   </div>
 </div>
-
-<aside id="totals"><span id="active">-</span> of <span id="total">-</span> sales selected.</aside>
-
-<div id="lists">
-  <div id="sale-list" class="list"></div>
-  <div id="sale-list" class="list"></div>
-  </div>
-</div>
-
 <footer>
-  <span style="float:right;">
-    Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</a>.
-  </span>
-  Copyright 2012 <a href="http://squareup.com">Square, Inc.</a>
+  <p><strong>Notes</strong>: To prevent extreme outliers from skewing the data, sales are capped at $1,000 per ounce. No data was collected from September 30 through October 2, 2012, during an apparent website outage.
+  </p>
+  <p>
+    Data from <a href="http://www.priceofweed.com">PriceOfWeed.com</a>. Visualization built with <a href="http://d3js.org/">D3</a> and <a href="http://square.github.io/crossfilter/">Crossfilter</a>.
+  </p>
 </footer>
-
-</div>
-
-
 <script src="http://square.github.io/crossfilter/crossfilter.v1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script>
 
 // (It's CSV, but GitHub Pages only gzip's JSON at the moment.)
-d3.csv("all_prices_map.csv", function(error, sales) {  
+d3.csv("m_prices.csv", function(error, sales) {  
 d3.csv("state_codes.csv", function(error, codes) { 
   // Various formatters.
   var formatNumber = d3.format(",d"),
@@ -324,8 +352,8 @@ d3.csv("state_codes.csv", function(error, codes) {
       state = sale.dimension(function(d) { return d.state_code; }),
       states = state.group(),
       statesCount = states.reduceCount(),
-      ppoSum = state.group().reduceSum(function(d) { return Math.min(d.ppo,600); }),
-      totalSum = sale.groupAll().reduceSum(function(d) { return Math.min(d.ppo,600  );});
+      ppoSum = state.group().reduceSum(function(d) { return Math.min(d.ppo,1000); }),
+      totalSum = sale.groupAll().reduceSum(function(d) { return Math.min(d.ppo,1000  );});
       
   var charts = [
 
@@ -350,20 +378,13 @@ d3.csv("state_codes.csv", function(error, codes) {
       .x(d3.scale.linear()
         .domain([0, 600])
         .rangeRound([0, 10 * 60])),
-        /*
-    barChart(9)
-        .dimension(price)
-        .group(prices)
-      .x(d3.scale.linear()
-        .domain([0, 400])
-        .rangeRound([0, 10 * 80])),
-*/
-    barChart(9)
+
+    barChart(7)
         .dimension(date)
         .group(dates)
       .x(d3.time.scale()
-        .domain([new Date(2012, 0, 1), new Date(2013, 9, 1 )])
-        .rangeRound([0, 10 * 104 ]))
+        .domain([new Date(2012, 0, 1), new Date(2013, 9, 5 )])
+        .rangeRound([0, 8 * 105]))
         .filter([new Date(2013, 0, 1), new Date(2013, 4, 1)]),
         
     stateMap()
@@ -384,8 +405,6 @@ d3.csv("state_codes.csv", function(error, codes) {
   d3.selectAll("#total")
       .text(formatNumber(sale.size()));
 
-  renderAll();
-
   // Renders the specified chart or list.
   function render(method) {
     d3.select(this).call(method);
@@ -395,10 +414,9 @@ d3.csv("state_codes.csv", function(error, codes) {
   function renderAll() {
     chart.each(render);
     list.each(render);
-    d3.select("#active").text(formatNumber(all.value()));
-    d3.select("#avg_price").text(formatNumber(Math.round(totalSum.value()/all.value())));
-  }
 
+  }
+  
   // Like d3.time.format, but faster.
   function parseDate(d) {
     return new Date(
@@ -418,22 +436,17 @@ d3.csv("state_codes.csv", function(error, codes) {
     charts[i].filter(null);
     renderAll();
   };
-
+  
   function saleList(div) {
     var salesByDate = nestByDate.entries(date.top(10));
-    console.log(date.top(10));
-    console.log(salesByDate);
-
+    
     div.each(function() {
-      var date = d3.select(this).selectAll(".date")
-          .data(salesByDate, function(d) { return d.key; });
-
-      date.enter().append("div")
-          .attr("class", "date")
-        .append("div")
-          .attr("class", "day")
-          .text(function(d) { return formatDate(d.values[0].date); });
-
+      var date = d3.select(this).selectAll("div")
+            .data(salesByDate, function(d) { return d.key; });
+            
+      var header = date.enter().append("div")
+              .attr("class", "date")
+          
       date.exit().remove();
 
       var sale = date.order().selectAll(".sale")
@@ -447,11 +460,11 @@ d3.csv("state_codes.csv", function(error, codes) {
           .text(function(d) { return formatDate(d.date); });
 
       saleEnter.append("div")
-          .attr("class", "origin")
+          .attr("class", "location")
           .text(function(d) { return d.location; });
 
       saleEnter.append("div")
-          .attr("class", "destination")
+          .attr("class", "quality")
           .text(function(d) { return d.quality; });
 
       saleEnter.append("div")
@@ -460,8 +473,7 @@ d3.csv("state_codes.csv", function(error, codes) {
 
       saleEnter.append("div")
           .attr("class", "ppo")
-          .classed("early", function(d) { return d.ppo < 0; })
-          .text(function(d) { return "$" + Math.round(d.ppo); });
+          .text(function(d) { return "$" + Math.round(d.ppo) + " per ounce"; });
 
       sale.exit().remove();
 
@@ -472,7 +484,7 @@ d3.csv("state_codes.csv", function(error, codes) {
   function barChart(barWidth,ticks) {
     if (!barChart.id) barChart.id = 0;
 
-    var margin = {top: 10, right: 10, bottom: 20, left: 10},
+    var margin = {top: 10, right: 20, bottom: 20, left: 20},
         x,
         y = d3.scale.linear().range([60, 0]),
         id = barChart.id++,
@@ -694,12 +706,37 @@ d3.csv("state_codes.csv", function(error, codes) {
               .enter().append("path")
                 .attr("id",us.objects.states)
                 .attr("class", "q5-9")
-                .attr("d", path); 
+                .attr("d", path);
+            
+            svg.append("text")
+                .attr("x","600")
+                .attr("y","10")
+                .attr("id","map-tip")
+                .attr("style","font-style:italic;")
+                .text("Hover over states to see details.")
+                
+            svg.append("text")
+              .attr("x","600")
+              .attr("y","40")
+              .attr("id","all")
+              .attr("style","font-style:italic;")
+              .text("Total transactions: -")
+          
+            svg.append("text")
+                .attr("x","600")
+                .attr("y","55")
+                .attr("id","avg")
+                .attr("style","font-style:italic;")
+                .text("Average price: -")
+          
           };
 
         }
           
         var svg = div.select("svg")
+        
+        var allSaleAvg = formatNumber(Math.round(totalSum.value()/all.value()));
+        var allSales = formatNumber(all.value());
         
         var arr = []
         max_val = 0;
@@ -755,30 +792,20 @@ d3.csv("state_codes.csv", function(error, codes) {
                   .attr("class", function(d) { return quantize(rateById.get(+d.id)); })
                   .on('mouseover', tip.show)
                   .on('mouseout', tip.hide);
-          
-       //  function ready(error, us) {
-       //  svg.append("g")
-       //      .attr("class", "states")
-       //      .selectAll("path")
-       //      .data(topojson.feature(us, us.objects.states).features)
-       //    .enter().append("path")
-       //      .attr("id", function(d) { return +d.id; })
-       //      .attr("class", function(d) { return quantize(rateById.get(+d.id)); })
-       //      //.attr("class","q4-9")
-       //      .attr("d", path); 
-       //    */  
-       //      svg.append("path")
-       //        .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-       //        .attr("class", "states")
-       //        .attr("d", path);
-       //  };
-      
+       
+        var t = d3.select("#all")
+                    .text("Total transactions: " + allSales)
+        
+        var p = svg.select("#avg")
+                    .text("Average price: $" + allSaleAvg)
+       
       });
     };
     
     return d3.rebind(aMap, d3.svg.brush(), "on");
   
   };
+  renderAll();
 });  
 });
 </script>
