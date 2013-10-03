@@ -15,7 +15,6 @@ body {
 
 footer {
   margin-top: 20px;
-  width: 700px;
   line-height: 1.5em;
 }
 
@@ -30,15 +29,9 @@ a {
 h1 {
   font-size: 18px;
   margin-top: .3em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-hr {
-  width: 480px;
-  border-color: #345D63;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
 #body > p {
   line-height: 1.5em;
@@ -51,7 +44,6 @@ hr {
 
 .filter-wrapper {
   margin: 0 auto;
-  width: 800px;
   text-align: center;
 }
 
@@ -99,9 +91,8 @@ hr {
 
 .title {
   text-align: left;
-  font-weight: bold;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .reset {
@@ -231,7 +222,6 @@ hr {
   text-align: center;
 }
 
-/* Creates a small triangle extender for the tooltip */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -244,7 +234,6 @@ hr {
   text-align: center;
 }
 
-/* Style northward tooltips differently */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
@@ -255,9 +244,25 @@ hr {
 
 <div id="body">
   <h1>Mapping Marijuana Sales</h1>
-  <p>
-    Drag over selections in the bar charts to filter the dataset. The map below updates to show how states' average prices for that selection.
+  <p style="margin-bottom: 20px;">
+    Click the boxes or drag over bar charts to filter the dataset. The map below updates to show average prices by state for that selection. Darker shades represent higher prices. 
   </p>
+  <div class="filter-wrapper">
+    <ul class="filter-button" id= "toggle">
+      <li id="f1" class="bn">
+        <a href="javascript:filter([null, null, null, [new Date(2012,6,0), new Date(2012,9,10)]])">July-Oct. 2012</a> vs.
+        <a href="javascript:filter([null, null, null, [new Date(2013,6,0), new Date(2013,9,0)]])">July-Oct. 2013</a>
+      </li>
+      <li id="f2" class="bn">
+        <a href="javascript:filter([null, [.8,1], null, null])">Large purchases</a> vs.
+        <a href="javascript:filter([null, [0,.2], null, null])">Small purchases</a>
+      <li id="f3" class="bn">
+        <a href="javascript:filter([[0.5,1.5], null, null, null])">Low quality</a> vs.
+        <a href="javascript:filter([[2.5,3.5], null, null, null])">High quality</a>
+      </li>
+      <li id="ra" class="bn"><a style="font-weight: bold;" href="javascript:filter([null, null, null, null])">Reset All</a></li>
+    </ul>
+  </div>
   <div id="charts">  
     <div id="quality-chart" class="chart">
       <div class="title">Quality</div>
@@ -269,27 +274,8 @@ hr {
       <div class="title">Price per Ounce</div>
     </div>
     <div id="date-chart" class="chart">
-      <div class="title" >Date of Purchase</div>
+      <div class="title" >Date of Sale</div>
     </div>
-    
-    <p>Filters to try:</p>
-    <div class="filter-wrapper">
-      <ul class="filter-button" id= "toggle">
-        <li id="f1" class="bn">
-          <a href="javascript:filter([null, null, null, [new Date(2012,6,0), new Date(2012,9,10)]])">July-Oct. 2012</a> vs.
-          <a href="javascript:filter([null, null, null, [new Date(2013,6,0), new Date(2013,9,0)]])">July-Oct. 2013</a>
-        </li>
-        <li id="f2" class="bn">
-          <a href="javascript:filter([null, [.8,1], null, null])">Large purchases</a> vs.
-          <a href="javascript:filter([null, [0,.2], null, null])">Small purchases</a>
-        <li id="f3" class="bn">
-          <a href="javascript:filter([[0.5,1.5], null, null, null])">Low quality</a> vs.
-          <a href="javascript:filter([[2.5,3.5], null, null, null])">High quality</a>
-        </li>
-        <li id="ra" class="bn"><a style="font-weight: bold;" href="javascript:filter([null, null, null, null])">reset all</a></li>
-      </ul>
-    </div>
-    <div class="title" style="text-align: center;">Average Price per Ounce by State</div>
     <div id="map-chart" class="chart"></div>
   </div>
 
@@ -299,22 +285,20 @@ hr {
   </div>
 </div>
 <footer>
-  <p><strong>Notes</strong>: To prevent extreme outliers from skewing the data, sales are capped at $1,000 per ounce. No data was collected from September 30 through October 2, 2012, during an apparent website outage.
+  <p><strong>Notes</strong>: To prevent outliers from skewing results, sales are capped at $1,000 per ounce. No data was collected from Sept. 30 - Oct 2, 2012, during an apparent site outage.
   </p>
   <p>
     Data from <a href="http://www.priceofweed.com">PriceOfWeed.com</a>. Visualization built with <a href="http://d3js.org/">D3</a> and <a href="http://square.github.io/crossfilter/">Crossfilter</a>.
   </p>
 </footer>
-<script src="http://square.github.io/crossfilter/crossfilter.v1.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+<script src="crossfilter.v1.min.js"></script>
+<script src="d3.v3.min.js"></script>
+<script src="d3.tip.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script>
 
-// (It's CSV, but GitHub Pages only gzip's JSON at the moment.)
 d3.csv("m_prices.csv", function(error, sales) {  
 d3.csv("state_codes.csv", function(error, codes) { 
   // Various formatters.
@@ -323,11 +307,9 @@ d3.csv("state_codes.csv", function(error, codes) {
       formatDate = d3.time.format("%B %d, %Y"),
       formatTime = d3.time.format("%I:%M %p");
 
-  // A nest operator, for grouping the sale list.
   var nestByDate = d3.nest()
       .key(function(d) { return d3.time.day(d.date); });
       
-  // A little coercion, since the CSV is untyped.
   sales.forEach(function(d, i) {
     d.index = i;
     d.date = parseDate(d.date);
@@ -336,7 +318,6 @@ d3.csv("state_codes.csv", function(error, codes) {
     d.quality_score = d.quality_score -.3
   });
 
-  // Create the crossfilter for the relevant dimensions and groups.
   var sale = crossfilter(sales),
       all = sale.groupAll(),
       date = sale.dimension(function(d) { return d.date; }),
@@ -390,34 +371,27 @@ d3.csv("state_codes.csv", function(error, codes) {
     stateMap()
   
   ];
-  // Given our array of charts, which we assume are in the same order as the
-  // .chart elements in the DOM, bind the charts to the DOM and render them.
-  // We also listen to the chart's brush events to update the display.
+
   var chart = d3.selectAll(".chart")
       .data(charts)
       .each(function(chart) { chart.on("brush", renderAll).on("brushend", renderAll); });
 
-  // Render the initial lists.
   var list = d3.selectAll(".list")
       .data([saleList]);
 
-  // Render the total.
   d3.selectAll("#total")
       .text(formatNumber(sale.size()));
 
-  // Renders the specified chart or list.
   function render(method) {
     d3.select(this).call(method);
   }
 
-  // Whenever the brush moves, re-rendering everything.
   function renderAll() {
     chart.each(render);
     list.each(render);
 
   }
   
-  // Like d3.time.format, but faster.
   function parseDate(d) {
     return new Date(
         d.substring(0,4),
@@ -505,7 +479,6 @@ d3.csv("state_codes.csv", function(error, codes) {
         var div = d3.select(this),
             g = div.select("g");
 
-        // Create the skeletal chart.
         if (g.empty()) {
           div.select(".title").append("a")
               .attr("href", "javascript:reset(" + id + ")")
@@ -540,13 +513,11 @@ d3.csv("state_codes.csv", function(error, codes) {
               .attr("transform", "translate(0," + height + ")")
               .call(axis);
 
-          // Initialize the brush component with pretty resize handles.
           var gBrush = g.append("g").attr("class", "brush").call(brush);
           gBrush.selectAll("rect").attr("height", height);
           gBrush.selectAll(".resize").append("path").attr("d", resizePath);
         }
 
-        // Only redraw the brush if set externally.
         if (brushDirty) {
           brushDirty = false;
           g.selectAll(".brush").call(brush);
@@ -708,13 +679,6 @@ d3.csv("state_codes.csv", function(error, codes) {
                 .attr("class", "q5-9")
                 .attr("d", path);
             
-            svg.append("text")
-                .attr("x","600")
-                .attr("y","10")
-                .attr("id","map-tip")
-                .attr("style","font-style:italic;")
-                .text("Hover over states to see details.")
-                
             svg.append("text")
               .attr("x","600")
               .attr("y","40")
