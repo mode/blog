@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+  font-family: Antenna;
+  width: 960px;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.filter-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  width: 380px;
+}
+
+.filter-button {
+  height:38px;
+  list-style-type:none;
+  text-align: center;
+}
+
+.filter-button li {
+  line-height:25px;
+  float:left;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.filter-button li:last-child {
+  margin-right:0
+}
+
+.filter-button li.active {
+  border:1px solid #ccc;
+  -moz-box-shadow:0 0 11px #ddd inset;
+  -webkit-box-shadow:0 0 11px #ddd inset;
+  box-shadow:0 0 11px #ddd inset;
+}
+
+.filter-button a {
+  display:block;color:#848484;
+  padding:7px 12px;
+  text-decoration:none}
+
+.filter-button a:hover {
+  color:#222
+}
+
+.filter-button .active a {
+  color:#000
+}
+
+svg {
+  width: 960px;
+  height: 500px;
+  shape-rendering: crispEdges;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.fade {
+  opacity: 0.1;
+  stroke: #C0C6CC;
+}
+
+.show {
+  opacity: 1;
+}
+
+</style>
+
+<head>
+  <title>Playoff Records</title>
+</head>
+<p>
+  <span style="font-size: 22px;">PLAYOFF PERFORMACE BY TEAM</span></br>
+  Number of playoff series won and lost since 2000
+</p>
+<body>
+  <div class="filter-wrapper">
+    <ul class="filter-button" id= "toggle">
+      <li id="all_b" class="bn active"><a href="#">ALL</a></li>
+      <li id="mlb_b" class="bn"><a href="#">MLB</a></li>
+      <li id="nfl_b" class="bn"><a href="#">NFL</a></li>
+      <li id="nba_b" class="bn"><a href="#">NBA</a></li>
+      <li id="nhl_b" class="bn"><a href="#">NHL</a></li>
+    </ul>
+  </div>
+</body>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$("#toggle li").click(function(){
+  $(".hide").hide();
+  $(".bn").removeClass('active');
+  $(this).addClass('active');
+  c = $(this).attr('id').substring(0,3);
+  if (c == "all") {
+    highlightAll();
+  } else {
+    highlight(c);
+  }
+});
+
+var w = 960,
+    h = 500,
+    p = [20, 50, 30, 20],
+    x = d3.scale.ordinal().rangeRoundBands([0, w - p[1] - p[3]]),
+    y = d3.scale.linear().range([0, h - p[0] - p[2]]),
+    z = d3.scale.ordinal().range(["#19DD89", "#D31996", "#384648","#19DD89","#D31996"]),
+    parse = d3.time.format("%m/%Y").parse,
+    format = d3.time.format("%b");
+
+var svg = d3.select("body").append("svg:svg")
+    .attr("width", w)
+    .attr("height", h)
+  .append("svg:g")
+    .attr("transform", "translate(" + p[3] + "," + (h - p[2]) + ")");
+    
+var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function(d) { return d.x + "</br>Playoff Series Record: " + d.r; })
+      .direction('ne');
+
+  svg.call(tip);
+
+d3.csv("playoff_results.csv", function(playoffs) {      
+  
+  teams = d3.layout.stack()(["wins_b", "loss_b", "mid","wins_a","loss_a"].map(function(team) {
+    return playoffs.map(function(d) {
+      return {x: d.team, y: +d[team], r:d.record, l:d.league};
+    });
+  }));
+  
+  x.domain(teams[0].map(function(d) { return d.x; }));
+  y.domain([0, d3.max(teams[teams.length - 1], function(d) { return d.y0 + d.y; })]);
+
+
+  var team = svg.selectAll("g.team")
+      .data(teams)
+    .enter().append("svg:g")
+      .style("fill", function(d, i) { return z(i); })
+      .style("stroke", function(d, i) { return d3.rgb(z(i)).darker(); });
+
+  var rect = team.selectAll("rect")
+      .data(Object)
+    .enter().append("svg:rect")
+      .attr("x", function(d) { return x(d.x); })
+      .attr("y", function(d) { return -y(d.y0) - y(d.y); })
+      .attr("id", function(d) {return d.l; })
+      .attr("height", function(d) { return y(d.y); })
+      .attr("width", x.rangeBand())
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+      
+  var rule = svg.selectAll("g.rule")
+      .data(y.ticks(10))
+    .enter().append("svg:g")
+      .attr("class", "rule")
+      .attr("transform", function(d) { return "translate(0," + -y(d) + ")"; });
+
+  rule.append("svg:line")
+      .attr("x2", w - p[1] - p[3])
+      .style("stroke", function(d) { return d ? "#fff" : "#000"; })
+      .style("stroke-opacity", function(d) { return d ? .3 : 0; })
+
+  rule.append("svg:text")
+      .attr("x", w - p[1] - p[3] + 6)
+      .attr("dy", ".35em")
+      .text(d3.format(",d"));
+      
+  svg.append("text")
+      .attr("x","450")
+      .attr("y","-420")
+      .style("stroke","#19DD89")
+      .style("fill","#19DD89")
+      .text("Playoff series wins")
+  
+  svg.append("text")
+      .attr("x","450")
+      .attr("y","-395")
+      .style("stroke","#D31996")
+      .style("fill","#D31996")
+      .text("Playoff series losses")
+
+  svg.append("text")
+      .attr("x","450")
+      .attr("y","-370")
+      .style("stroke","#384648")
+      .style("fill","#384648")
+      .text(".500 Line");
+
+  svg.append("text")
+      .attr("x","790")
+      .attr("y","-440")
+      .style("font-size","12px")
+      .text("Playoff series");
+ 
+ svg.append("text")
+     .attr("x","790")
+     .attr("y","-425")
+     .style("font-size","12px")
+     .text("appearances");
+
+ svg.append("text")
+     .attr("x","370")
+     .attr("y","20")
+     .style("font-size","12px")
+     .text("Teams");
+
+});
+
+function highlight(league) {
+  
+  svg.selectAll("rect")
+      .attr("class", "fade");
+        
+  svg.selectAll("#"+league)
+      .attr("class", "show");
+};
+
+function highlightAll() {
+  svg.selectAll("rect")
+      .attr("class", "show");
+};
+
+    </script>
+  </body>
+</html>
