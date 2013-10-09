@@ -81,11 +81,11 @@ svg {
 <head>
   <title>Playoff Records</title>
 </head>
+<body>
 <p>
   <span style="font-size: 22px;">PLAYOFF PERFORMACE BY TEAM</span></br>
   Number of playoff series won and lost since 2000
 </p>
-<body>
   <div class="filter-wrapper">
     <ul class="filter-button" id= "toggle">
       <li id="all_b" class="bn active"><a href="#">ALL</a></li>
@@ -174,8 +174,10 @@ d3.csv("playoff_results.csv", function(playoffs) {
 
   rule.append("svg:line")
       .attr("x2", w - p[1] - p[3])
-      .style("stroke", function(d) { return d ? "#fff" : "#000"; })
-      .style("stroke-opacity", function(d) { return d ? .3 : 0; })
+      .style("stroke", function(d) { return d ? "gray" : "gray"; })
+  //    .style("stroke", "black" )
+  //    .style("stroke-opacity", ".3" )
+      .style("stroke-opacity", function(d) { return d ? .3 : .3; })
 
   rule.append("svg:text")
       .attr("x", w - p[1] - p[3] + 6)
@@ -184,34 +186,34 @@ d3.csv("playoff_results.csv", function(playoffs) {
       
   svg.append("text")
       .attr("x","450")
-      .attr("y","-420")
+      .attr("y","-417")
       .style("stroke","#19DD89")
       .style("fill","#19DD89")
       .text("Playoff series wins")
   
   svg.append("text")
       .attr("x","450")
-      .attr("y","-395")
+      .attr("y","-392")
       .style("stroke","#D31996")
       .style("fill","#D31996")
       .text("Playoff series losses")
 
   svg.append("text")
       .attr("x","450")
-      .attr("y","-370")
+      .attr("y","-367")
       .style("stroke","#384648")
       .style("fill","#384648")
       .text(".500 Line");
 
   svg.append("text")
-      .attr("x","790")
-      .attr("y","-440")
+      .attr("x","800")
+      .attr("y","-435")
       .style("font-size","12px")
       .text("Playoff series");
  
  svg.append("text")
-     .attr("x","790")
-     .attr("y","-425")
+     .attr("x","800")
+     .attr("y","-420")
      .style("font-size","12px")
      .text("appearances");
 
