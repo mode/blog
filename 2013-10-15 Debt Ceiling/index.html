@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  font-family: Antenna;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+svg {
+  position: fixed;
+  top: 0;
+  left: 200;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+a {
+  color: black;
+}
+
+</style>
+
+<head>
+  <title>Debt Ceiling</title>
+  <script type="text/javascript" src="d3.v3.min.js"></script>
+
+</head>
+<body>
+ 
+<script type="text/javascript">
+
+// SVG size
+w = 700;
+h = 700;
+
+// Starting dimensions - squares, area, position, color, text
+squares = 9;
+a = [1866612440,1007839273,249379229,76778903,41352146,4647580,142302,37701,300];
+offset = .2
+p1 = 100
+
+c = ["#DD5426","#345D63","#E6EBA9","#DBBAE5","#006CBC","#DD5426","#C2DDBC","#79120D","#35794B"];
+t = ["There are $38.7 trillion of U.S. bonds outstanding in the market today. This represents over half of the worldwide economy, roughly a third of the global bond market, and approximately $5,500 per person on earth.</br></br><strong>It is, in other words, a dangerous market to disrupt.</strong>",
+     "The U.S. currently owes $11.9 trillion to the public (the remaining $4.7 trillion is owed back to the government itself, to programs like Social Security). In the last several months, U.S. borrowing costs - measured by interest rates on 10-year bonds - rose by about 1 percentage point.",
+     "This represents Lehman Brothers' $690 billion bankruptcy, which surpassed Enron's as the largest in American history. Amidst a much larger financial crisis, the stock market fell nearly 30% in the month following Lehman's collapse.",
+     "Enron's bankruptcy is represented by the purple square. After a scandal led to the energy company's collapsed in 2001, its $65 billion bankruptcy was the largest in U.S. history.",
+     "This blue square is proportional to Mark Zuckerberg's personal wealth of $19 billion.",
+     "This represents $220 million, which is the average size of the 51 U.S. banks that failed in 2012. Losses from these failures averaged about $50 million per failure.",
+     "This square represents an average home loan. At around $200,000, this is roughly 4 times the median household income in the United States.",
+     "The average used car costs $15,793, which is represented by this red square.",
+     "This green square represents $1.</br></br></br></br><strong>To see how large the U.S. bond market is, click NEXT.</strong>"];
+
+ig = ["","tbill.png","lehman.png","enron.png","facebook.png","banks.png","home_loan.png","used_car.jpg",""];
+
+tc =["black","black","white","black","black","white","white","black","white"];
+
+n = 8;
+
+// Find other Ps
+p = [];
+p.push(p1);
+center = a[squares - 1]/2 + p1;
+
+for (var i=1; i < squares; i++) {
+  var find_p = center - a[squares - i - 1]*offset;
+  p.push(find_p);
+}
+
+p.reverse()
+
+// Draw SVG and squares
+var svg = d3.select("body").append("svg")
+      
+var back = svg.append("rect")
+          .attr("x",0)
+          .attr("y",0)
+          .attr("width",w)
+          .attr("height",h)
+          .attr("fill","white");
+
+s = [];
+l = [];
+img = [];
+
+for (var i=0; i < squares; i++) {
+  var sq = svg.append("rect")
+            .attr("x",p[i])
+            .attr("y",p[i])
+            .attr("width",a[i])
+            .attr("height",a[i])
+            .attr("fill",c[i]);
+  
+  s.push(sq);
+};
+
+for (var i=0; i < squares; i++) {
+  var legend = svg.append("foreignObject")
+            .attr("width",450)
+            .attr("height",200) 
+            .attr("x",430)
+            .attr("y",110)
+          	.append("xhtml:div")
+            .style("opacity",function() { 
+                if (i == squares - 1) {
+                  return 1;
+                } else {
+                  return 0;
+                }
+              })
+            .style("color",tc[i])
+            .html(t[i]);            
+               
+  l.push(legend);
+};
+
+for (var i=0; i < squares; i++) {
+  var image = svg.append("image")
+                .attr("xlink:href",ig[i])
+                .attr("width",500)
+                .attr("height",300)
+                .attr("x",430)
+                .attr("y",260)
+                .style("opacity",0);
+                
+            
+  img.push(image);
+};
+
+
+nextButton = svg.append("foreignObject")
+          .attr("width",100)
+          .attr("height",50) 
+          .attr("x",880)
+          .attr("y",60)
+        	.append("xhtml:div")
+          .attr("id","out")
+          .html("<a href=#>NEXT</a>");    
+  
+lastButton = svg.append("foreignObject")
+          .attr("width",100)
+          .attr("height",50) 
+          .attr("x",800)
+          .attr("y",60)
+        	.append("xhtml:div")
+          .attr("id","in")
+          .style("opacity",0)
+          .html("<a href=#>Last</a>");
+
+// For vector math, since javascript sucks
+mL = function(v,s) {
+  var result = []
+  for (var i=0; i < v.length; i++) {
+    var r = v[i] * s;
+    result.push(r);
+  }
+  return result;
+};
+
+aL = function(v,c) {
+  var result = []
+  for (var i=0; i < v.length; i++) {
+    var r = v[i] + c;
+    result.push(r);
+  }
+  return result;
+};
+
+
+// Zoom action
+doZoom = function (x) {
+  
+  for (var i = 0; i < squares; i++) {
+    s[i].transition()
+      .attr("x",p[i])
+      .attr("y",p[i])
+      .attr("width",a[i])
+      .attr("height",a[i])
+      .duration(2000);
+
+    l[i].transition()
+      .delay(1000)
+      .style("opacity",function () {
+        if (i == n - 1 && x == -1) {
+          return 1;
+        } else if (i == n + 1 && x == 1) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
+      .duration(1000);
+    
+    img[i].transition()
+      .delay(1000)
+      .style("opacity",function () {
+        if (i == n - 1 && x == -1) {
+          return 1;
+        } else if (i == n + 1 && x == 1) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
+      .duration(1000);
+    
+  };
+};
+
+buttons = function() {
+  nextButton.transition()
+    .style("opacity",function () {
+      if (n == 0) {
+        return 0;
+      } else {
+        return 1;
+      }
+    })
+    .duration(2000);
+    
+    lastButton.transition()
+      .style("opacity",function () {
+        if (n == squares - 1) {
+          return 0;
+        } else {
+          return 1;
+        }
+      })
+      .duration(2000);
+}
+
+// Scaling function and zoom
+zoomIn = function(n) {
+  if (n != squares - 1) {
+    scale = a[n]/a[n+1];
+    pScale = mL(p, scale);
+    
+    //  p[i] = p[n] - ((p[n+1]-p[i]) * aScale)
+    a = mL(a,scale);
+    p = aL(pScale, (p[n] - scale * p[n+1]) );
+    doZoom(1);
+  };
+};
+
+zoomOut = function(n) {
+  if (n != 0) {
+    scale = a[n]/a[n-1];
+    pScale = mL(p, scale);
+    
+    //  p[i] = p[n] - ((p[n+1]-p[i]) * aScale)
+    a = mL(a,scale);
+    p = aL(pScale, (p[n] - scale * p[n-1]) );
+    doZoom(-1);
+  };
+};
+
+inButton = document.getElementById("in");
+outButton = document.getElementById("out");
+
+inButton.onclick = function() {
+  zoomIn(n);
+  n = Math.max(Math.min(n + 1,squares-1),0);
+  buttons();
+};
+
+outButton.onclick = function() {
+  zoomOut(n);
+  n = Math.max(Math.min(n - 1,squares-1),0);
+  buttons();
+};
+
+
+</script>
+  </body>
+</html>
