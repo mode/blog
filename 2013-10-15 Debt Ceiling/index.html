@@ -151,13 +151,17 @@ lastButton = svg.append("foreignObject")
           .attr("id","in")
           .style("opacity",0)
           .html("<a href=#>Last</a>");
-          
-title = svg.append("text")
+
+
+title = svg.append("foreignObject")
+          .attr("width",600)
+          .attr("height",100) 
           .attr("x",150)
-          .attr("y",40)
+          .attr("y",30)
+        	.append("xhtml:div")
+          .attr("title","in")
           .style("font-size","24px")
-          .text("HOW BIG IS MARKET FOR U.S. DEBT?");
-          
+          .html("HOW BIG IS THE MARKET FOR U.S. DEBT?</br><a href='https://medium.com/mode-analytics/8be273297568' style='font-size: 18px'><em>Read more</em></a>");          
 arrow = svg.append("image")
           .attr("xlink:href","arrow.png")
           .attr("width",50)
