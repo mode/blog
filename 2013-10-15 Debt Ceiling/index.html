@@ -52,7 +52,7 @@ t = ["There are $38.7 trillion of U.S. bonds outstanding in the market today. Th
      "This represents Lehman Brothers' $690 billion bankruptcy, which surpassed Enron's as the largest in American history. Amidst a much larger financial crisis, the stock market fell nearly 30% in the month following Lehman's collapse.",
      "Enron's bankruptcy is represented by the purple square. After a scandal led to the energy company's collapsed in 2001, its $65 billion bankruptcy was the largest in U.S. history.",
      "This blue square is proportional to Mark Zuckerberg's personal wealth of $19 billion.",
-     "This represents $220 million, which is the average size of the 51 U.S. banks that failed in 2012. Losses from these failures averaged about $50 million per failure.",
+     "This represents $220 million, which is the average size of the 51 U.S. banks that failed in 2012. Losses from these failures averaged about $50 million per bank.",
      "This square represents an average home loan. At around $200,000, this is roughly 4 times the median household income in the United States.",
      "The average used car costs $15,793, which is represented by this pink square.",
      "This green square represents $1.</br></br></br></br><strong>To see how large the U.S. bond market is, click NEXT.</strong>"];
@@ -104,7 +104,7 @@ for (var i=0; i < squares; i++) {
   var legend = svg.append("foreignObject")
             .attr("width",450)
             .attr("height",200) 
-            .attr("x",430)
+            .attr("x",480)
             .attr("y",110)
           	.append("xhtml:div")
             .style("opacity",function() { 
@@ -133,7 +133,6 @@ for (var i=0; i < squares; i++) {
   img.push(image);
 };
 
-
 nextButton = svg.append("foreignObject")
           .attr("width",100)
           .attr("height",50) 
@@ -158,6 +157,13 @@ title = svg.append("text")
           .attr("y",40)
           .style("font-size","24px")
           .text("HOW BIG IS MARKET FOR U.S. DEBT?");
+          
+arrow = svg.append("image")
+          .attr("xlink:href","arrow.png")
+          .attr("width",50)
+          .attr("height",50)
+          .attr("x",410)
+          .attr("y",100);
 
 // For vector math, since javascript sucks
 mL = function(v,s) {
@@ -251,6 +257,15 @@ title.transition()
     }
   })
   .duration(1000);
+
+arrow.transition()
+  .style("opacity",0)
+  .duration(500);
+  
+arrow.transition()
+  .delay(1500)
+  .style("opacity",1)
+  .duration(500);
 
 }
 
