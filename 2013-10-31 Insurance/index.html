@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  width: 960px;
+  font: 14px sans-serif;
+}
+
+table {
+   border: 2;
+   width: 960px;
+   border-collapse: separate;
+   border-spacing: 2px;
+}
+
+.social-media{ 
+  float: right;
+}
+
+.share-right{ margin-top: 20px; position: absolute; right: 0px;}
+
+td {
+  background-color: #C2DDBC;
+  color: black;
+  padding: 4px;
+  border: 1px solid white;
+}
+
+td:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+td.active {
+  background-color: #345D63;
+  color: white;
+  cursor: default;
+  border: 1px solid white;
+}
+
+td.empty {
+  background-color: white;
+  cursor: default;
+  border: 1px solid white;
+  vertical-align:top;
+}
+
+td.break {
+  background-color: white;
+  cursor: default;
+  padding: 1px;
+  width: 0px;
+  border: 1px solid white;
+}
+
+h2 { text-align: center;}
+p { width: 700px; font-family: Antenna; line-height: 1.5em;}
+
+.chart rect {
+  stroke: #345D63;
+  fill: #345D63;
+}
+
+.chart rect:hover {
+  fill: #AACB37 ;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+#draw-line {
+ stroke: #DD5426;
+ stroke-width:4px; 
+}
+
+</style>
+<body>
+  <div id="fb-root"></div>
+  <div class="social-media"><a href="https://twitter.com/bennstancil" class="twitter-follow-button" data-show-count="false">Follow @bennstancil</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+  
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <h2>
+    Who Doesn't Have Health Insurance?
+  </h2>  
+  <div class="fb-like social-media" data-href="https://developers.facebook.com/docs/plugins/" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+    <div class="social-media"><a href="https://twitter.com/share" class="twitter-share-button" data-via="bennstancil">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  <p>Obamacare could help provide health insurance for millions of Americans. Here's who they are.</p>
+  <p><em><strong><a href="">Read the blog post</a></strong></em></p>
+  </br>
+  <table>
+  	<tr>
+  		<td class="active race" id="a">All Races</td><td class="break"></td>
+  		<td class="active sex" id="a">All Sexes</td><td class="break"></td>
+  		<td class="active employ" id="e">Employed</td><td class="break"></td>
+  		<td class="active age" id="a">All Ages</td><td class="break"></td>
+  		<td class="active income" id="a">All Household Incomes</td><td class="break"></td>
+  		<td class="active region" id="a">All Regions</td><td class="break"></td>
+  		<td class="active education" id="a">All Education Levels</td>
+  	</tr>
+  	<tr>
+  		<td class="race" id="w">White</td><td class="break"></td>
+  		<td class="sex" id="m">Male</td><td class="break"></td>
+  		<td class="employ" id="u">Unemployed</td><td class="break"></td>
+  		<td class="age" id="u18">Under 18</td><td class="break"></td>
+  		<td class="income" id="u25">Under $25,000</td><td class="break"></td>
+  		<td class="region" id="ne">Northeast</td><td class="break"></td>
+  		<td class="education" id="no-hs">No high school degree</td>
+  	</tr>
+  	<tr>
+  		<td class="race" id="b">Black</td><td class="break"></td>
+  		<td class="sex" id="f">Female</td><td class="break"></td>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="age"id="u34">18 to 34</td><td class="break"></td>
+  		<td class="income" id="u49">$25,000 to $49,999</td><td class="break"></td>
+  		<td class="region" id="mw">Midwest</td><td class="break"></td>
+  		<td class="education" id="hs">High school diploma</td>
+  	</tr>
+  	<tr>
+  		<td class="race" id="h">Hispanic</td><td class="break"></td>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="age" id="u64">35 to 64</td><td class="break"></td>
+  		<td class="income" id="u74">$50,000 to $74,999</td><td class="break"></td>
+  		<td class="region" id="s">South</td><td class="break"></td>
+  		<td class="education" id="cg">College degree</td>
+  	</tr>
+  	<tr>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="empty"></td><td class="break"></td>
+  		<td class="age" id="65u">65 and up</td><td class="break"></td>
+  		<td class="income" id="75u">$75,000 and up</td><td class="break"></td>
+  		<td class="region" id="w">West</td><td class="break"></td>
+  		<td class="empty"></td>
+  	</tr>
+  </table>
+</body>
+<script src="d3.v3.min.js"></script>
+<script src="d3.tip.min.js"></script>
+<script src="crossfilter.v1.min.js"></script>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+
+format = d3.format("0,000");
+
+var labels = ["White","Black","Hispanic","",
+              "Male","Female","",
+              "Employed","Unemployed","",
+              "Under 18","18 to 34","35 to 64","65 and up","",
+              "Under $25,000","$25,000 to $49,999","$50,000 to $74,999"," $75,000 and up","",
+              "Northeast","Midwest","South","West","",
+              "No high school degree","High school diploma","College degree"]
+              
+var staticData = [.1105,.1897,.2912,0,
+                  .1673,.1415,0,
+                  .1541,.1246,0,
+                  .0888,.2651,.178,.0148,0,
+                  .2487,.2138,.1502,.079,0,
+                  .1077,.1195,.1859,.1700,0,
+                  .2493,.1889,.0852]
+                  
+var entries = staticData.length
+var segments = [0,4,7,10,15,20,25,29]
+var scaleMin = .3
+var gaps = 1
+
+var margin = {top: 10, right: 10, bottom: 180, left: 60},
+    width = 960 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom
+    barPadding = 10;
+
+var y = d3.scale.linear()
+      .domain([1,0])
+      .range([0,height]);
+
+var legend = d3.select("body").append("svg")
+      .attr("class", "legend")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", 80);
+
+var chart = d3.select("body").append("svg")
+      .attr("class", "chart")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+gridlines = chart.selectAll("line")
+      .data(y.ticks(25))
+    .enter().append("line")
+      .attr("y1", y)
+      .attr("y2", y)
+      .attr("x1", 0 - barPadding)
+      .attr("x2", width)
+      .style("stroke", "#ccc");
+
+tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d,i) { return "<strong>" + labels[i] + 
+      "</strong></br>Percent without insurance: " + Math.round(d*1000)/10 + "%"; })
+  .direction('ne')
+
+chart.call(tip);
+
+bars = chart.selectAll("rect")
+      .data(staticData)
+    .enter().append("rect")
+      .attr("x",function(d, i) { return i * (width/entries); })
+      .attr("width", width/entries - barPadding)
+      .attr("y",height)
+      .attr("height",0)
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+chart.selectAll("text")
+      .data(labels)
+    .enter().append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", function(d, i) { return i * (width/entries) + 
+          (width/entries - barPadding)/2; })
+      .attr("x", function(d) { return -10 - height; })
+      .attr("dy", ".5em") // vertical-align: middle
+      .style("text-anchor", "end")
+      .text(String);
+
+yLabel = chart.selectAll(".rule")
+      .data(y.ticks(10))
+    .enter().append("text")
+      .attr("class", "rule")
+      .attr("y", y)
+      .attr("x", (barPadding * -1) - 20 )
+      .attr("dy", ".3em")
+      .attr("text-anchor", "middle")
+      .text(function(d) {return d * 100 + "%";});
+
+chart.append("line")
+      .attr("y1",height)
+      .attr("y2",height)
+      .attr("x1", 0 - barPadding)
+      .attr("x2", width)
+      .style("stroke", "white");
+
+for (var i = 0; i < segments.length - 1; i++) {
+  chart.append("line")
+        .attr("y1",height)
+        .attr("y2",height)
+        .attr("x1", segments[i]*(width/entries) - barPadding)
+        .attr("x2", (segments[i+1] - gaps)*(width/entries))
+        .style("stroke", "black");
+};
+
+
+d3.csv("insurance_data.csv", function(error, coverage) {
+
+  // jQuery filter buttons
+
+  $(".race").click(function(){
+    $(".race").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    raceFilter(c);
+  });
+  
+  $(".sex").click(function(){
+    $(".sex").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    sexFilter(c);
+  });
+  
+  $(".employ").click(function(){
+    $(".employ").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    employFilter(c);
+  });
+  
+  $(".age").click(function(){
+    $(".age").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    ageFilter(c);
+  });
+  
+  $(".income").click(function(){
+    $(".income").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    incomeFilter(c);
+  });
+  
+  $(".region").click(function(){
+    $(".region").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    regionFilter(c);
+  });
+  
+  $(".education").click(function(){
+    $(".education").removeClass('active');
+    $(this).addClass('active');
+    c = $(this).attr('id');
+    console.log(c);
+    educationFilter(c);
+  });
+  
+  // Set crossfilters
+  
+  var cov = crossfilter(coverage),
+      income = cov.dimension( function (d) { return d.income; }),
+      race = cov.dimension( function (d) { return d.race; }),
+      region = cov.dimension( function (d) { return d.region; }),
+      education = cov.dimension( function (d) { return d.education; }),
+      employ = cov.dimension( function (d) { return d.employ; }),
+      age = cov.dimension( function (d) { return d.age; }),
+      sex = cov.dimension( function (d) { return d.sex; });
+
+  // Filtering functions
+
+  function raceFilter(c) {
+    newFilter = race.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function sexFilter(c) {
+    newFilter = sex.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function incomeFilter(c) {
+    newFilter = income.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function employFilter(c) {
+    newFilter = employ.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function ageFilter(c) {
+    newFilter = age.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function regionFilter(c) {
+    newFilter = region.filter(c).top(1)[0];
+    render(newFilter);
+  };
+  
+  function educationFilter(c) {
+    newFilter = education.filter(c).top(1)[0];
+    render(newFilter);
+  };
+
+  // This renders the graph with the new values
+  
+  function render(m) {
+    
+    try { +m.people; }
+    
+    catch(e) {
+      
+      tooFew(0);
+    };
+    
+    if (+m.people <= 10) {
+      
+      tooFew(+m.people);
+    
+    } else {
+    
+      mPercent = +m.percent;
+      mPeople = +m.people;
+        
+      var mRound = Math.ceil(((mPercent+.01)*100)/5)/20
+      var mMax = Math.max(mRound,scaleMin);
+      var scaleMax = Math.min(mMax,1);
+      
+      var y = d3.scale.linear()
+            .domain([scaleMax,0])
+            .range([0,height]);
+      
+      drawnLine.transition()
+            .style("opacity",1)
+            .attr("y1",y(mPercent))
+            .attr("y2",y(mPercent))
+            .duration(1000);
+      
+      bars.transition()
+            .attr("y", function(d) { return y(d); })
+            .attr("height", function(d) { return height - y(d); })
+            .duration(1000);
+            
+      gridlines.transition()
+            .attr("y1", y)
+            .attr("y2", y)
+            .attr("x1", 0 - barPadding)
+            .attr("x2", width)
+            .style("stroke", "#ccc")
+            .duration(1000);
+      
+      yLabel.transition()
+            .attr("y", y)
+            .duration(1000);    
+      
+      d3.selectAll(".desc").transition()
+            .style("opacity",1)
+            .delay(500)
+            .duration(500)
+      
+      d3.selectAll(".error").transition()
+            .style("opacity",0)
+            .duration(500)
+              
+      d3.select("#unisured-value")
+            .text(Math.round(mPercent*1000)/10 + "%");
+     
+      d3.select("#count")
+           .text(format(mPeople*1000));
+    };
+  };
+  
+  function tooFew(n) {
+  
+    d3.selectAll(".desc").transition()
+          .style("opacity",0)
+          .duration(500);
+          
+    
+    
+    d3.select(".error").transition()
+          .text(format(n*1000) + " people fit these criteria. That's too few to display.")
+          .delay(500)
+          .style("opacity",1)
+          .transition(500);
+  
+    drawnLine.transition()
+          .style("opacity",0)
+          .duration(1000);
+  };
+  
+  // Set initial graph
+  
+  function initialGraph() {
+    
+    drawnLine = chart.append("line")
+          .attr("id","draw-line")
+          .attr("y1",height)
+          .attr("y2",height)
+          .attr("x1", 0 - barPadding)
+          .attr("x2", width);
+    
+    legend.append("text")
+          .attr("x",width - 70)
+          .attr("y",75)
+          .attr("text-anchor", "right")
+          .style("font-size","10px")
+          .text("Bars show unfiltered values");
+          
+    legend.append("text")
+          .attr("class","desc")
+          .attr("x",width/3*2)
+          .attr("y",30)
+          .attr("text-anchor", "middle")
+          .style("font-size","12px")
+          .text("Percent of people without health insurance: ");
+    
+    legend.append("text")
+         .attr("class","desc")
+         .attr("x",width/3)
+         .attr("y",30)
+         .attr("text-anchor", "middle")
+         .style("font-size","12px")
+         .text("People in your selected group: ");
+    
+    legend.append("text")
+          .attr("class","desc")
+          .attr("id","unisured-value")  
+          .attr("x",width/3*2)
+          .attr("y",60)
+          .attr("text-anchor", "middle")
+          .style("font-size","24px");
+    
+    legend.append("text")
+          .attr("class","desc")
+          .attr("id","count")  
+          .attr("x",width/3)
+          .attr("y",60)
+          .attr("text-anchor", "middle")
+          .style("font-size","24px");
+    
+    legend.append("text")
+          .attr("class","error")
+          .attr("id","count")  
+          .attr("x",width/2)
+          .attr("y",45)
+          .attr("text-anchor", "middle")
+          .style("font-size","24px");
+  };
+  
+  initialGraph();
+  
+  // Set initial filters for graph
+  
+  newFilter = income.filter('a');
+  newFilter = race.filter('a');
+  newFilter = sex.filter('a');
+  newFilter = region.filter('a');
+  newFilter = education.filter('a');
+  newFilter = age.filter('a');
+  newFilter = employ.filter('e');
+  
+  render(newFilter.top(1)[0]);
+  
+});
+
+</script>
+<footer style="font-size: 10px;">
+    Source: <a href="http://www.census.gov/hhes/www/cpstables/032013/health/toc.htm">2012 Current Population Survey</a>. Data extracted from the CPS <a href="http://www.census.gov/cps/data/cpstablecreator.html">table creator</a>. Visualization built with <a href="http://d3js.org/">D3</a> and <a href="http://square.github.io/crossfilter/">Crossfilter</a>.
+</footer>
