@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<head>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <style>
 
 body {
@@ -14,15 +17,37 @@ table {
    border-spacing: 2px;
 }
 
-.mode-logo {
-  float: left;
-  margin-top: -10px;
-}
-.social-media{ 
-  float: right;
+h2 { text-align: center;}
+p { margin-top: 0px; text-align: center;}
+
+.logo { float: left; margin-top: -10px; }
+.social-media{ float: right; text-align: right; }
+.share-right{ margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; }
+
+.social-icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #1B3A3E;
+  border-bottom: none;
 }
 
-.share-right{ margin-top: 20px; position: absolute; right: 0px;}
+.social-icon:hover {
+  color: #DD5426;  /*MODE Orange */
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+#mode-logo {
+  height: 60px;
+  width: auto;
+}
 
 td {
   background-color: #C2DDBC;
@@ -58,9 +83,6 @@ td.break {
   border: 1px solid white;
 }
 
-h2 { text-align: center;}
-p { width: 800px; margin-top: 0px;}
-
 .chart rect {
   stroke: #345D63;
   fill: #345D63;
@@ -87,28 +109,23 @@ p { width: 800px; margin-top: 0px;}
 </style>
 <body>
   <div id="fb-root"></div>
-  <div class="mode-logo"><a href="http://blog.modeanalytics.com"><img class="mode"src="modelogo_bw.jpg" /></a></div>
-  <div class="fb-like social-media" data-href="http://mode.github.io/blog/2013-10-31%20Insurance/" data-colorscheme="light" data-layout="button_count" data-action="recommend" data-show-faces="true" data-send="false"></div>
-    <div class="social-media"><a href="https://twitter.com/share" class="twitter-share-button" data-via="bennstancil">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-  
-  <h2>
-    Who Doesn't Have Health Insurance?
-  </h2> 
-  <div class="social-media"><a href="https://twitter.com/bennstancil" class="twitter-follow-button" data-show-count="false">Follow @bennstancil</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <div class="logo">
+    <a href="http://blog.modeanalytics.com">
+      <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+    </a>
   </div>
-  
-  <p>Obamacare could help provide health insurance for millions of Americans. Here's who they are.</p>
-
+  <div class="social-media">
+    <a href="#" onclick="window.open('https://twitter.com/intent/tweet?source=webclient&text=The+Demographics+of+Obamacare+-+And+Those+Who+Oppose+It%3A+http%3A%2F%2Fmode.github.io%2Fblog%2F2013-10-31%2520Insurance+via+%40bennstancil','targetWindow','left=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=260')" class="social-icon" id="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;" class="social-icon" id="facebook"><i class="icon-facebook"></i></a>
+    </br>
+    <div class="social-media"><a href="https://twitter.com/bennstancil" class="twitter-follow-button" data-show-count="false">Follow @bennstancil</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+  <div class="title">
+    <h2>The Demographics of Obamacare - And Those Who Oppose It</h2> 
+  </div>
+  <p>Millions of Americans don't have health insurance. Here's who they are.</p>
   </br>
   <table>
   	<tr>
