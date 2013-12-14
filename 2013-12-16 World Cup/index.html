@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>The World Cup</title>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<style>
+
+body {
+  width: 600px;
+  font: 12px sans-serif;
+}
+
+footer {
+  font-size: 12px;
+  font-family: Geneva;
+  color: #75756F;
+}
+
+footer a {
+  text-decoration: none;
+  font-style: italic;
+  color: #75756F;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.logo { float: left; margin-top: -10px; }
+.social-media { float: right; text-align: right; }
+.share-right { margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; text-align: center; font-family: Geneva; }
+
+.title p {
+  margin: 15px; 
+}
+
+.title a {
+  color: #75756F;
+}
+
+.social-icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #1B3A3E;
+  border-bottom: none;
+}
+
+.social-icon:hover {
+  color: #AACB37;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+#mode-logo {
+  height: 50px;
+  width: auto;
+}
+
+.content {
+  width: 100%;
+  height: 170px;
+}
+
+.story {
+  width: 50%;
+  float: left;
+  display: table;
+  height: 100%;
+}
+
+.story p {
+  padding-left: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 12px;
+  font-size:14px;
+  font-family: Geneva;
+}
+
+.filters {
+  width: 50%;
+  float: left;
+  color: #75756F
+}
+
+.story-button {
+  list-style-type:none;
+  display: table;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.filter-button {
+  list-style-type:none;
+}
+
+#group-filter, #round-filter {
+  float: left;
+  width: 50%;
+}
+
+.story-button li {
+  line-height:12px;
+  float:left;
+  background: #C7CDCF;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.filter-button li {
+  line-height:20px;
+  margin-right:-1px;
+}
+
+.story-button li.active {
+  border:1px solid #ccc;
+  background: #E62E8A;
+  color: white;
+}
+
+.story-button a {
+  display:block;
+  color:#000;
+  padding:7px 12px;
+  text-decoration:none
+}
+
+.filter-button a {
+  color: #75756F;
+  padding:7px;
+  text-decoration:underline
+}
+
+.story-button a:hover,
+.story-button .active a{
+  background: #E62E8A;
+  color: white;
+}
+
+.filter-button .active  a {
+  color: #E62E8A;
+  text-decoration:none;
+  font-weight: bold;
+}
+
+.legend {
+  fill: #75756F;
+}
+
+#us1 {
+  fill: #0066FF;
+}
+
+.x path,
+.x line {
+  fill: none;
+  stroke: #DFE2E3;
+  shape-rendering: crispEdges;
+}
+
+.y path,
+.y line {
+  fill: none;
+  stroke: #DFE2E3;
+  shape-rendering: crispEdges;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+circle:hover,
+rect:hover,
+#us1:hover {
+  fill: #AACB37;
+}
+
+</style>
+<body>
+  <div id="fb-root"></div>
+  <div class="logo">
+    <a href="http://blog.modeanalytics.com">
+      <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+    </a>
+  </div>
+  <div class="social-media">
+    <a href="#" onclick="window.open('https://twitter.com/intent/tweet?source=webclient&text=The+Demographics+of+Obamacare+-+And+Those+Who+Oppose+It%3A+http%3A%2F%2Fmode.github.io%2Fblog%2F2013-10-31%2520Insurance+via+%40bennstancil','targetWindow','left=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=260')" class="social-icon" id="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;" class="social-icon" id="facebook"><i class="icon-facebook"></i></a>
+    </br>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+<div class="title">
+  <p style="font-size:24px">The World Cup<p>
+  <p style="font-size:18px">America's chances in 2014</br>
+  <em style="font-size:12px"><a href="">Read the full post</a></em></p>
+</div>
+<div class="story-wrapper">
+  <ul class="story-button">
+    <li id="s0" class="bn1 active"><a href="#">1</a></li>
+    <li id="s1" class="bn1"><a href="#">2</a></li>
+    <li id="s2" class="bn1"><a href="#">3</a></li>
+    <li id="s3" class="bn1"><a href="#">4</a></li>
+    <li id="s4" class="bn1"><a href="#">5</a></li>
+    <li id="s5" class="bn1"><a href="#">6</a></li>
+    <li id="s6" class="bn1"><a href="#">7</a></li>
+    <li id="s7" class="bn1"><a href="#">8</a></li>
+    <li id="s8" class="bn1"><a href="#">9</a></li>
+    <li id="next" class="bn1"><a href="#">NEXT</a></li>
+  </ul>
+</div>
+<div class="content">
+  <div class="story">
+    <p class="story0 hide">The United States, currently ranked the world's 14th best team, joins a very tough field in this year's World Cup. For the first time since expanding to 32 teams in 1998, the World Cup features all of the top 15 teams in the world.</p>
+    <p class="story1 hide" style="display:none;">Nevertheless, history likes America's chances. Of the 45 teams ranked 14th or higher that played in the last 4 World Cups, 33 advanced beyond the first round. For teams ranked between 10th and 20th, 17 out of 29 teams advanced. </p>
+    <p class="story2 hide" style="display:none;">Team USA even has a shot at the championship. In 2006, 13th-ranked Italy won the title. Eight years prior, France, then the 18th best team in the world, won the World Cup&mdash;albeit as the host country.</p>
+    <p class="story3 hide" style="display:none;">If the U.S. is going to make a run, they'll have to overcome stiff competition early. Their group features #2 Germany and #5 Portugal. Because only two teams from each group move on, the U.S. must upset a European powerhouse to advance.</p>
+    <p class="story4 hide" style="display:none;">Unfortunately, history suggests such an upset will be difficult. In 1998, two groups (A and F) featured two teams ranked in the top 10. All four top teams advanced to the round of 16.</p>
+    <p class="story5 hide" style="display:none;">There was only one such group in 2002&mdash;and again, both teams moved on.</p>
+    <p class="story6 hide" style="display:none;">The story repeated in 2010: In the one group with two top-ten teams, both teams advanced.</p>
+    <p class="story7 hide" style="display:none;">Only 2006 offers hope. Three groups had two top-ten teams in that year's tournament. They both advanced in two groups, but in one group&mdash;which, like Team USA's group this year, featured the #2 and #5 teams in the world&mdash;<em>both</em> teams lost.</p>
+    <p class="story8 hide" style="display:none;">But even 2006 isn't good news for the Americans. The #5 team that was upset in 2006? Team USA.</br></br><em>To explore the results for other countries and years, click the links on the right to filter the graphic.</em></p>
+  </div>
+  <div class="filters">
+    <div class="filter-wrapper" id= "group-filter">
+      <ul class="filter-button">
+        <li style="font-weight:bold">YEAR SHOWN<li>
+        <li id="y1998" class="bn3"><a href="#">1998</a></li>
+        <li id="y2002" class="bn3"><a href="#">2002</a></li>
+        <li id="y2006" class="bn3"><a href="#">2006</a></li>
+        <li id="y2010" class="bn3"><a href="#">2010</a></li>
+        <li id="y2014" class="bn3"><a href="#">2014</a></li>
+        <li id="all" class="bn3 active"><a href="#">All</a></li>
+      </ul>
+    </div>
+    <div class="filter_wrapper" id= "year-filter">
+      <ul class="filter-button">
+        <li style="font-weight:bold">HIGHLIGHTED TEAMS<li>
+        <li id="r5" class="bn2 active"><a href="#">All</a></li>
+        <li id="r4" class="bn2"><a href="#">Round of 16</a></li>
+        <li id="r3" class="bn2"><a href="#">Quarterfinals</a></li>
+        <li id="r2" class="bn2"><a href="#">Semifinals</a></li>
+        <li id="r1" class="bn2"><a href="#">Final</a></li>
+        <li id="r0" class="bn2"><a href="#">Champion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+<script src="d3.v3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="d3.tip.min.js"></script>
+<script>
+
+$(".story-button li").click(function(){
+  $(".hide").hide();
+  $(".bn1").removeClass('active');
+  var bn = $(this).attr('id')
+  
+  if (bn != "next") {
+    
+    activePane = +bn.substring(1,2);
+    $(this).addClass('active');
+    
+    story = "story" + activePane;
+    $(".content ." + story).show();
+    showPane(activePane);
+    
+  } else {
+    activePane = (activePane + 1) % 9;
+    activeButton = "#s" + activePane;
+    button = $(activeButton);
+    button.addClass('active');
+    
+    story = "story" + activePane;
+    $(".content ." + story).show();    
+    showPane(activePane);
+  }
+});
+
+$("#year-filter li").click(function(){
+  $(".bn2").removeClass('active');
+  $(this).addClass('active');
+  currentRound = $(this).attr('id').substring(1,2);
+  
+  renderAll(currentYear,currentRound);
+  showBlue(0);
+});
+
+$("#group-filter li").click(function(){
+  $(".bn3").removeClass('active');
+  $(this).addClass('active');
+  
+  currentYear = $(this).attr('id');
+  
+  renderAll(currentYear,currentRound);
+  showBlue(0);
+});
+
+currentYear = "all";
+currentRound = 5;
+activePane = 0;
+
+var barHeight = 5;
+var barPadding = .3;
+var shortWidth = .1;
+var yearDomain = [1998,2002,2006,2010,2014];
+var groupDomain = ["A","B","C","D","E","F","G","H","None"];
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 600 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+    
+var legendPadding = 140;
+
+var xYear = d3.scale.ordinal()
+    .domain(yearDomain)
+    .rangeRoundBands([0,width],barPadding,.5)
+
+var xGroup = d3.scale.ordinal()
+    .domain(groupDomain)
+    .rangeRoundBands([0,width],barPadding,.5)
+
+var y = d3.scale.linear()
+    .range([0,height]);
+
+var yearAxis = d3.svg.axis()
+    .scale(xYear)
+    .orient("top");
+
+var groupAxis = d3.svg.axis()
+    .scale(xGroup)
+    .orient("top");
+    
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var legend = d3.select("body").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height",35)
+.append("g")
+
+var chart = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) { if (d.wc != 6) {
+      return d.country + "</br>World Rank: " + d.rank + "</br>Group: " + d.group + 
+        "</br>" + d.result; 
+      } else {
+        return d.country + "</br>World Rank: " + d.rank;
+      }
+    })  
+    .direction('n');
+
+chart.call(tip);
+
+d3.csv("results.csv", function(error, data) {
+  data.forEach(function(d) {
+    d.year = +d.year;
+    d.rank = +d.rank;
+  });
+
+  y.domain(d3.extent(data, function(d) { return d.rank; })).nice();
+  
+  firstX = legendPadding;
+  thirdX = width + margin.left + margin.right- legendPadding;
+  secondX = firstX + (thirdX - firstX)/2;
+
+  console.log(firstX);
+  console.log(secondX);
+  console.log(thirdX)
+  
+  circleText = legend.append("text")
+      .attr("x",firstX)
+      .attr("y","10")
+      .attr("text-anchor","middle")
+      .attr("class","legend")
+      .text("Didn't make World Cup")
+        
+  bigBarText = legend.append("text")
+      .attr("x",secondX)
+      .attr("y","10")
+      .attr("text-anchor","middle")
+      .attr("class","legend")
+      .text("Made World Cup")
+  
+  bigBarText = legend.append("text")
+      .attr("x",thirdX)
+      .attr("y","10")
+      .attr("text-anchor","middle")
+      .attr("class","legend")
+      .text("Made selected round")
+
+  cirlce = legend.append("circle")
+      .attr("cx",firstX)
+      .attr("cy","20")
+      .attr("r",barHeight/2)
+      .attr("fill","#AFB7BA") 
+       
+  bigBar = legend.append("rect")
+      .attr("x",secondX - xYear.rangeBand()/2)
+      .attr("y",20 - barHeight/2) 
+      .attr("width",xYear.rangeBand())
+      .attr("height",barHeight)
+      .attr("fill","#AFB7BA");
+  
+  colorBar = legend.append("rect")
+      .attr("x",thirdX - xYear.rangeBand()/2)
+      .attr("y",20 - barHeight/2) 
+      .attr("width",xYear.rangeBand())
+      .attr("height",barHeight)
+      .attr("fill","#E62E8A");
+        
+  xAxis = chart.append("g")
+      .attr("class", "x")
+      .attr("id","x-axis")
+      .call(yearAxis);
+
+  yLabel = chart.selectAll(".rule")
+      .data(y.ticks(10))
+    .enter().append("text")
+      .attr("class", "rule")
+      .attr("y", y)
+      .attr("x", -10)
+      .attr("dy", ".3em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d; });
+
+  xGridlines = chart.selectAll(".line")
+      .data(y.ticks(11))
+    .enter().append("line")
+      .attr("id","xGridlines")
+      .attr("x1", 0)
+      .attr("x2", width)
+      .style("stroke", "#ccc")
+      .attr("y1", function(d) { return y(d); })
+      .attr("y2", function(d) { return y(d); });
+
+  yGridlines = chart.selectAll(".line")
+      .data(groupDomain.slice(1))
+    .enter().append("line")
+      .attr("id","yGridlines")
+      .attr("x1", function(d) { return xGroup(d) - 
+          (barPadding * xGroup.rangeBand()) / (2 * (1 - barPadding)); })
+      .attr("x2", function(d) { return xGroup(d) - 
+          (barPadding * xGroup.rangeBand()) / (2 * (1 - barPadding)); })
+      .style("stroke", "#ccc")
+      .attr("opacity",0)
+      .attr("y1", 0)
+      .attr("y2", height);
+
+  yLenged = chart.append("foreignObject")
+            .call(yAxis)
+            .attr("width",70)
+            .attr("height",100)
+            .attr("transform", "translate(-40,10)")
+            .append("xhtml:body")
+            .append("xhtml:div")
+            .style({width: 50 + 'px',height: 100 + 'px',"font-weight": "bold","color":"#75756F"})
+            .html("FIFA World Ranking");
+
+  inWC = [];
+  outWC = [];
+  
+  for (var t=0; t<data.length; t++) {
+    if (data[t].wc != 6) {
+      inWC.push(data[t]);
+    } else {
+      outWC.push(data[t]);
+    }
+  }
+  
+  // Draw bars, highlight US on initial load
+  bars = chart.selectAll(".bar")
+      .data(inWC)
+    .enter().append("rect")
+      .attr("fill","#AFB7BA")
+      .attr("id",function(d) {
+        if (d.country == "USA" && d.year == 2014) { return "us1"; }
+        else if (d.country == "USA" && d.year == 2006) { return "us2"; }
+        else { return "other"; }
+      })
+      .attr("width", xYear.rangeBand)
+      .attr("height", barHeight)
+      .attr("z-index",10)
+      .attr("x", function(d) { return xYear(d.year); })
+      .attr("y", function(d) { return y(d.order)-barHeight/2; })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+  
+  cicles = chart.selectAll(".circle")
+      .data(outWC)
+    .enter().append("circle")
+      .attr("fill","#AFB7BA") 
+      .attr("r", barHeight/2)
+      .attr("cx", function(d) { return circlePosition(d,currentYear,currentRound) })
+      .attr("cy", function(d) { return y(d.order); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+  });
+
+
+function renderAll(yr,rd) {
+  axisPosition(yr);
+  
+  chart.selectAll("circle")
+    .transition()
+    .attr("cx", function(d) { return circlePosition(d,yr); })
+    .attr("r", function(d) { return cirlceSize(d,yr,rd); })
+    .duration(1000);
+    
+    chart.selectAll("rect")
+    .transition()
+    .attr("x", function(d) { return rectanglePosition(d,yr); })
+    .attr("width", function(d) { return rectangleSize(d,yr); })
+    .attr("fill", function(d) { return rectangleColor(d,rd)})
+    .duration(1000);
+    
+    currentYear = yr;
+    currentRound = rd;
+}
+
+function axisPosition(year) {
+  if (year == "all") {
+    // Change axis
+    chart.selectAll("#x-axis")
+        .call(yearAxis);
+  
+    chart.selectAll("#yGridlines")
+      .transition()
+      .attr("opacity",0)
+      .duration(1000)
+      
+  } else {
+    // Change axis
+    chart.selectAll("#x-axis")
+      .call(groupAxis);
+ 
+    chart.selectAll("#yGridlines")
+      .transition()
+      .attr("opacity",1)
+      .duration(1000) 
+  }
+}
+
+function circlePosition(d,year) {
+  if (year == "all") {
+    return xYear(d.year) + xYear.rangeBand()/2;
+  } else {
+    return xGroup(d.group) + xGroup.rangeBand()/2;
+  }
+}
+
+function cirlceSize(d,year,round) {
+  if (round == 5) {
+    if (year == "all" || year == "y" + d.year) {
+      return barHeight/2;
+    } else {
+      return 0;
+    } 
+  } else {
+    return 0;
+  }
+}
+
+function rectanglePosition(d,year) {
+  if (year == "all") {
+    return xYear(d.year);
+  } else if (year == "y" + d.year) {
+    return xGroup(d.group);
+  } else {
+    return xGroup(d.group) + (xGroup.rangeBand(d)/2);    
+  }
+}
+
+function rectangleSize(d,year) {
+  if (year == "all") {
+    return xYear.rangeBand();
+  } else if (year == "y" + d.year) {
+    return xGroup.rangeBand();
+  } else {
+    return 0;
+  }
+}
+
+function rectangleColor(d,round) {
+  if (round != 5) {
+    if (round >= d.wc) {
+      return "#E62E8A";
+    } else {
+      return "#AFB7BA";
+    }
+  } else{
+    return "#AFB7BA";
+  }
+}
+
+function showPane(pane) {
+  if (pane == 0) { renderAll("all",5); highlight("all",5); showBlue(0);
+  } else if (pane == 1) { renderAll("all",4); highlight("all",4); showBlue(0);
+  } else if (pane == 2) { renderAll("all",0); highlight("all",0); showBlue(0);
+  } else if (pane == 3) { renderAll("y2014",5); highlight("y2014",5); showBlue(0);
+  } else if (pane == 4) { renderAll("y1998",4); highlight("y1998",4); showBlue(0);
+  } else if (pane == 5) { renderAll("y2002",4); highlight("y2002",4); showBlue(0);
+  } else if (pane == 6) { renderAll("y2010",4); highlight("y2010",4); showBlue(0);
+  } else if (pane == 7) { renderAll("y2006",4); highlight("y2006",4); showBlue(0);
+  } else if (pane == 8) {renderAll("y2006",4); highlight("y2006",4); showBlue(1);
+  } else { renderAll("y1998",0); showBlue(0); };
+}
+
+function highlight(year,round) {
+  $(".bn2").removeClass('active');
+  $(".bn3").removeClass('active');
+  $("#" + year).addClass('active');
+  $("#r" + round).addClass('active');
+}
+
+function showBlue(n) {
+  if (n == 1)
+    chart.selectAll("#us2")
+     .style("fill","#0066FF");
+  else {
+    chart.selectAll("#us2")
+     .style("fill","#AFB7BA");
+  }
+}
+  
+
+</script>
+<footer><p>Sources: <a href="http://www.fifa.com/worldranking/rankingtable/">FIFA/Coca-Cola World Rankings</a>, <a href="http://www.worldcup-history.com/">WorldCup-History.com</a><p></footer> 
