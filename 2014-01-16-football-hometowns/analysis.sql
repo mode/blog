@@ -1,16 +1,3 @@
-# Height and weight by school
-# Maybe about weight divergence
-
-SELECT p.school,
-       AVG(p.height) AS height,
-       AVG(p.weight) AS weight,
-       COUNT(*) AS players
-  FROM players_all p
- WHERE p.height > 0
-   AND p.weight > 0
- GROUP BY 1
-HAVING COUNT(*) > 20
-
 # School diversity
 
 SELECT z.school,
