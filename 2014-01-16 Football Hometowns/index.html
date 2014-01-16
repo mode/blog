@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Where Football Players Come From</title>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="chosen.css">
+</head>
+<style>
+
+body {
+  width: 1200px;
+  font: 12px sans-serif;
+  font-family: Geneva;
+}
+
+footer {
+  font-size: 12px;
+  font-family: Geneva;
+  color: #75756F;
+}
+
+footer a {
+  text-decoration: none;
+  font-style: italic;
+  color: #75756F;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.logo { float: left; margin-top: -10px; }
+.social-media { float: right; text-align: right; }
+.share-right { margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; text-align: center; font-family: Geneva; }
+
+.title p {
+  margin: 15px; 
+}
+
+.title a {
+  color: #75756F;
+}
+
+.social-icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #1B3A3E;
+  border-bottom: none;
+}
+
+.social-icon:hover {
+  color: #AACB37;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+#mode-logo {
+  height: 50px;
+  width: auto;
+}
+
+.story {
+  width: 50%;
+  float: left;
+  display: table;
+  height: 100px;
+}
+
+.story p {
+  padding-left: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 12px;
+  font-size:14px;
+  font-family: Geneva;
+}
+
+.filter {
+  float:left;
+  margin: 8px;
+}
+
+.toggles {
+  list-style-type:none;
+  display: table;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.toggles a {
+  display:block;
+  color:#000;
+  padding:7px 12px;
+  text-decoration:none
+}
+
+.toggles a:hover,
+.toggles .active a{
+  background: #e31a1c;
+  color: white;
+  cursor: pointer;
+}
+
+.toggles li {
+  line-height:12px;
+  float:left;
+  background: #b7b7b7;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.toggles li.active {
+  border:1px solid #ccc;
+  background: #fed976;
+  color: white;
+}
+
+.counties {
+  fill: none;
+}
+
+.cty:hover {
+  fill: pink;
+}
+
+.states {
+  fill: none;
+  stroke:  #7b7b7b; 
+  stroke-linejoin: round;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.legend {
+  font-family: Geneva;
+  font-size: 18px;
+}
+
+.legend#omitted {
+  font-style: italic;
+  font-size: 10px;
+}
+
+</style>
+<body>
+  <div id="fb-root"></div>
+  <div class="logo">
+    <a href="http://blog.modeanalytics.com">
+      <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+    </a>
+  </div>
+  <div class="social-media">
+    <a href="#" onclick="window.open('http://twitter.com/home?status=Graphing%20%22Groups%20of%20Death%22%20in%20the%20World%20Cup:%20http://mode.github.io/blog/2013-12-16%2520World%2520Cup/index.html','targetWindow','left=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=260')" class="social-icon" id="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;" class="social-icon" id="facebook"><i class="icon-facebook"></i></a>
+    </br>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+<div class="title">
+  <p style="font-size:24px">Where College Football Players Come From<p>
+  <em style="font-size:12px"><a href="#">Read the full post</a></em></p>
+</div>
+<div class="story">
+  <p>The map below shows where today's college football players - and many of the future pros - come from. Counties that are shaded in darker colors are home to more players than ligher shades. Grey counties have no players.</p>
+  <p>Use the filters to the right to look at players by conference, by college, or by position. You can also change the shading so that it shows the number of players as a percent of each county's college-aged male population.</p>
+</div>
+  
+<div class="filter">
+  <select id="conferenceList" data-placeholder="Filter by conference..." class="chosen-select" style="width:280px;" tabindex="2">
+    <option value=""></option>
+    <optgroup label="DIVISION I">
+      <option id="acc">ACC</option>
+      <option id="american-athletic">American Athletic</option>
+      <option id="big-ten">Big Ten</option>
+      <option id="big-12">Big 12</option>
+      <option id="conference-usa">Conference USA</option>
+      <option id="mid-american">Mid-American</option>
+      <option id="mountain-west">Mountain West</option>
+      <option id="pac-12">Pac 12</option>
+      <option id="sec">SEC</option>
+      <option id="sun-belt">Sun Belt</option>
+      <option id="fbs-independents">FBS Independents</option>
+    </optgroup>
+    <optgroup label="DIVISION II">
+      <option id="big-sky">Big Sky</option>
+      <option id="big-south">Big South</option>
+      <option id="caa">Colonial Athletic Association</option>
+      <option id="ivy">Ivy</option>
+      <option id="meac">Mid-Eastern Athletic Conference</option>
+      <option id="missouri-valley">Missouri Valley</option>
+      <option id="northeast">Northeast</option>
+      <option id="ohio-valley">Ohio Valley</option>
+      <option id="patriot-league">Patriot League</option>
+      <option id="pioneer">Pioneer</option>
+      <option id="southern">Southern</option>
+      <option id="southland">Southland</option>
+      <option id="swac">Southwestern Athletic Conference</option>
+      <option id="fcs-independents">FCS Independents</option>
+    </optgroup>
+  </select>
+</div>
+<div class="filter">
+  <select id="schoolList" data-placeholder="Filter by school..." class="chosen-select" style="width:280px;" tabindex="2">
+    <option value="all"></option>
+  </select>
+</div>
+<div class="filter">
+  <ul id="position" class="toggles">
+    <li class="pos-button active" id="all"><a>All</a></li>
+    <li class="pos-button" id="qb"><a>QB</a></li>
+    <li class="pos-button" id="rb"><a>RB</a></li>
+    <li class="pos-button" id="wr"><a>WR</a></li>
+    <li class="pos-button" id="te"><a>TE</a></li>
+    <li class="pos-button" id="ol"><a>OL</a></li>
+    <li class="pos-button" id="dl"><a>DL</a></li>
+    <li class="pos-button" id="lb"><a>LB</a></li>
+    <li class="pos-button" id="db"><a>DB</a></li>
+    <li class="pos-button" id="k-p"><a>K & P</a></li>
+  </ul>
+</div>
+<div class="filter">
+  <ul class="toggles">
+    <li class="switch active" id="total"><a>Count</a></li>
+    <li class="switch" id="percent"><a>Per capita</a></li>
+  </ul>
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="chosen.jquery.min.js" type="text/javascript"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>  
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="crossfilter.v1.min.js"></script>
+<script>
+
+// Set SVG and map
+var width = 1200,
+    height = 730,
+    centered;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1500)
+    .translate([width / 2, height / 2])
+    .precision(.1);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Set color scale
+var colorScale = d3.scale.quantile()
+    .range(colorbrewer.YlOrRd[9]);
+
+d3.json("counties.json", function(error, us) {
+d3.csv("players_clean.csv", function(players) {
+d3.csv("county_detail.csv", function(countyData) { 
+  
+  // Assign mapping for hover lookup
+  var nameById = d3.map(),
+      popById = d3.map(),
+      countById = d3.map();
+  
+  countyData.forEach(function(county) { 
+    nameById.set(+county.id,county.name);
+    popById.set(+county.id,county.male_18_to_24);
+  })
+  
+  // Toggle between count and population percent
+  $("li.switch").click( function() {
+    $(".switch").removeClass('active');
+    $(this).addClass('active');
+    
+    display = $(this).attr('id');
+    
+    showCounties(display);
+  });
+  
+  // Selectors for conference
+  $("select#conferenceList").change(function () {
+    var selection = $("select#conferenceList option:selected").attr('id');
+    currentFilter.conference = selection;
+    
+    applyFilters(currentFilter);
+    showCounties(display);
+  });
+  
+  // Selector for school
+  $("select#schoolList").change(function () {
+    var selection = $("select#schoolList option:selected").text();
+    currentFilter.school = selection;
+    
+    applyFilters(currentFilter);
+    showCounties(display);
+  });
+  
+  // Picking a position. Can only have one active at once.
+  $("li.pos-button").click( function() {
+    var id = $(this).attr('id'),
+        cl = $(this).attr('class');
+    
+    // Make button active
+    $("li.pos-button").removeClass('active');
+    $(this).addClass('active')
+    
+    // Update filter and map
+    currentFilter.position = id;
+    
+    applyFilters(currentFilter);
+    showCounties(display);
+  });
+  
+  // Define crossfilters for counties, positions, conferences, and schools
+  var cross = crossfilter(players),
+      countyCross = cross.dimension( function (d) { return d.county_code; }),
+      countyGroup = countyCross.group( function(d) {return d; }),
+      positionCross = cross.dimension( function (d) { return d.position; }),
+      conferenceCross = cross.dimension( function (d) { return d.conference; }),
+      schoolCross = cross.dimension( function (d) { return d.school; });
+      
+  var f = d3.format(",d");
+  
+  tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .direction('n')
+    .html(function(d) {
+      var players = countById.get(d.id);
+      if (players === undefined) { players = 0; };
+      
+      return nameById.get(d.id) + "<br/>Players: " + f(players) +
+      "<br/>College-aged male population: " + f(popById.get(d.id)) 
+   });
+      
+  svg.call(tip);
+  
+  // Draw map
+  svg.append("g")
+    .attr("class", "counties")
+    .selectAll("path")      
+      .data(topojson.feature(us, us.objects.counties).features)
+    .enter().append("path")
+      .attr("class","cty")
+      .attr("id",function(d) { return "c" + d.id; })
+      .attr("fill","#b7b7b7")
+      .attr("d", path)
+      .on('mouseover',tip.show)
+      .on('mouseout', tip.hide);
+
+  svg.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("class", "states")
+      .attr("d", path);
+  
+  // Set legend    
+  svg.append("text")
+      .attr("x","750")
+      .attr("y","20")
+      .attr("id","total-count")
+      .attr("class","legend")
+      .text("Players shown: ");
+     
+  svg.append("text")
+      .attr("x","720")
+      .attr("y","40")
+      .attr("id","omitted")
+      .attr("class","legend")
+      .text("Players from unknown or unmapped locations: ");
+  
+  // Set current filter and draw initial map
+  currentFilter = { position: 'all', school: '', conference: '' };
+  display = 'total';
+  
+  applyFilters(currentFilter);
+  populateList(); 
+  showCounties(display);
+
+  function showCounties (display) {
+    
+    // Get county object
+    var countiesCount = countyGroup.top(2000);
+    
+    // Set county map for tooltip
+    countiesCount.forEach(function(d) { 
+      countById.set(+d.key,d.value);
+    })
+    
+    // Render map
+    if (display == 'total') {
+      renderTotal(countiesCount);
+    } else {
+      renderPercent(countiesCount);
+    }
+    
+    // Draw legend
+    d3.select("#total-count")
+      .text("Players shown: " + f(onMap));
+  
+    d3.select("#omitted")
+      .text("Players from unknown or unmapped locations: " + f(offMap));
+  };
+  
+  function renderTotal(counties) {
+    // Find max and set scale
+    var maxCount = countyGroup.top(1)[0].value;
+    colorScale.domain([0,Math.log(maxCount)]);
+    
+    // Find those omitted
+    onMap = 0;
+    offMap = 0;
+    
+    // Draw colors
+    counties.forEach(function(d) {
+      on = 0;
+      d3.select("#c" + d.key)
+        .attr("fill",function() {
+          on = 1;
+          onMap += d.value;
+          if (d.value == 0) { return "#b7b7b7"; } 
+          else { return colorScale(Math.log(d.value)); }
+        });
+        if (on == 0) { offMap += d.value; }
+    })
+    
+  }
+  
+  function renderPercent(counties) {
+    // Find max and set scale
+    var countiesPercent = [],
+        max = 0;
+        
+    counties.forEach( function(d) {
+      percent = d.value/popById.get(d.key);
+      if (percent > max) { max = percent; }
+    })
+    
+    var max = Math.min(max,.01)
+    colorScale.domain([0,max]);
+    
+    // Find those omitted
+    onMap = 0;
+    offMap = 0;
+    
+    // Draw colors
+    counties.forEach(function(d) {
+      on = 0;
+      d3.select("#c" + d.key)
+        .attr("fill",function() {
+          on = 1;
+          onMap += d.value;
+          if (d.value == 0) { return "#b7b7b7"; } 
+          else { return colorScale(d.value/popById.get(d.key)); }
+          })
+      if (on == 0) { offMap += d.value; }
+    })
+  }
+  
+  // Applys filter array
+  function applyFilters(filter) {
+    var positionFilter = filter.position,
+        schoolFilter = filter.school,
+        conferenceFilter = filter.conference;
+    
+    applyPosition(positionFilter);
+    applySchool(schoolFilter);
+    applyConference(conferenceFilter);
+  }
+  
+  // Filter for position
+  function applyPosition(value) {
+    if (value == 'all') { positionCross.filter(null); }
+    else { positionCross.filterExact(value); }
+  }
+  
+  // Fitler for conference
+  function applyConference(value) {
+    if (value == '') { conferenceCross.filter(null); }
+    else { conferenceCross.filterExact(value); }
+  }
+  
+  // Filter for school
+  function applySchool(value) {
+    if (value == '') { schoolCross.filter(null); }
+    else { schoolCross.filterExact(value); }
+  }
+  
+  // Populate initial list of schools
+  function populateList() {
+    var schoolGroup = schoolCross.group( function(d) {return d; });
+    var schools = schoolGroup.top(1000);
+    
+    var select = document.getElementById("schoolList");
+    var options = [];
+    
+    schools.forEach(function (d) { options.push(d.key); })
+    
+    options.sort();
+      for (var i = 0; i < options.length; i++) {
+          var opt = options[i];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          select.appendChild(el);
+      }
+    
+    var config = {'.chosen-select': {allow_single_deselect:true}}
+    
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  }
+  
+});
+});
+});
+
+</script>
+<hr>
+</body>
+<footer>
+  <p>Note: Shades for player counts are determined on a log scale.</p>
+  
+  <p>Sources: Player information from <a href="http://espn.go.com/college-football/teams">ESPN</a>, population data from <a href="http://factfinder2.census.gov/bkmk/table/1.0/en/PEP/2012/PEPAGESEX/0400000US01.05000">United States Census</a>, location information from <a href="https://developers.google.com/maps/documentation/geocoding/">Google Maps API.</a><p></footer> 
