@@ -21,7 +21,7 @@ SELECT a.school,
        (a.county_players*1.0/a.all_players) AS power
   FROM (
 SELECT p.school,
-       p.county_code,
+       p.state,
        c.players AS all_players,
        COUNT(*) AS county_players
   FROM players_all p
