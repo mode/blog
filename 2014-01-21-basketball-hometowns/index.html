@@ -222,8 +222,8 @@ td.name{ padding-left: 10px; text-align:left; }
 </div>
 <div class="filter">
   <ul class="toggles">
-    <li class="switch active" id="total"><a>Count</a></li>
-    <li class="switch" id="percent"><a>Per capita</a></li>
+    <li class="switch active" id="percent"><a>Per capita</a></li>
+    <li class="switch" id="total"><a>Count</a></li>
   </ul>
 </div>
 </div>
@@ -259,7 +259,7 @@ var colorScale = d3.scale.quantile()
     .range(colorbrewer.YlOrRd[9]);
 
 d3.json("counties.json", function(error, us) {
-d3.csv("states.csv", function(players) {
+d3.csv("players.csv", function(players) {
 d3.csv("state_detail.csv", function(stateData) { 
   
   // Assign mapping for hover lookup
@@ -404,7 +404,7 @@ d3.csv("state_detail.csv", function(stateData) {
   
   // Set current filter and draw initial map
   currentFilter = { position: 'all', school: '', conference: '' };
-  display = 'total';
+  display = 'percent';
   
   applyFilters(currentFilter);
   populateList(); 
