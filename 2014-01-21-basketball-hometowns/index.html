@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Where Basketball Players Call Home</title>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="chosen.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43615902-3', 'modeanalytics.com');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<style>
+
+body {
+  width: 1200px;
+  font: 12px sans-serif;
+  font-family: Geneva;
+}
+
+footer {
+  font-size: 12px;
+  font-family: Geneva;
+  color: #75756F;
+}
+
+footer a {
+  text-decoration: none;
+  font-style: italic;
+  color: #75756F;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+table { padding-top: 10px; }
+
+th {
+  text-align: center;
+  width: 200px;
+  border-bottom: 1px solid white;
+}
+
+td.val{ padding-right: 10px; text-align: right;}
+td.name{ padding-left: 10px; text-align:left; }
+
+.logo { float: left; margin-top: -10px; }
+.social-media { float: right; text-align: right; }
+.share-right { margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; text-align: center; font-family: Geneva; }
+
+.title p {
+  margin: 15px; 
+}
+
+.title a {
+  color: #75756F;
+}
+
+.social-icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #1B3A3E;
+  border-bottom: none;
+}
+
+.social-icon:hover {
+  color: #AACB37;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+#mode-logo {
+  height: 50px;
+  width: auto;
+}
+
+.story {
+  width: 50%;
+  float: left;
+  display: table;
+  height: 100px;
+}
+
+.story p {
+  padding-left: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 12px;
+  font-size:14px;
+  font-family: Geneva;
+}
+
+.filter {
+  float:left;
+  margin: 12px;
+}
+
+.toggles {
+  list-style-type:none;
+  display: table;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.toggles a {
+  display:block;
+  color:#000;
+  padding:7px 12px;
+  text-decoration:none
+}
+
+.toggles a:hover,
+.toggles .active a{
+  background: #e31a1c;
+  color: white;
+  cursor: pointer;
+}
+
+.toggles li {
+  line-height:12px;
+  float:left;
+  background: #b7b7b7;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.toggles li.active {
+  border:1px solid #ccc;
+  background: #fed976;
+  color: white;
+}
+
+.states {
+  stroke: #7b7b7b; 
+}
+
+.sts:hover {
+  fill: green;
+}
+
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.legend {
+  font-family: Geneva;
+  font-size: 18px;
+}
+
+.omitted {
+  font-family: Geneva;
+  font-style: italic;
+  font-size: 10px;
+}
+
+</style>
+<body>
+  <div id="fb-root"></div>
+  <div class="logo">
+    <a href="http://blog.modeanalytics.com">
+      <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+    </a>
+  </div>
+  <div class="social-media">
+    <a href="#" onclick="window.open('http://twitter.com/home?status=Where%20do%20college%20football%20players%20call%20home?%20An%20interactive%20map:%20http://mode.github.io/blog/2014-01-16-football-hometowns/index.html','targetWindow','left=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=260')" class="social-icon" id="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;" class="social-icon" id="facebook"><i class="icon-facebook"></i></a>
+    </br>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+<div class="title">
+  
+  <p style="font-size:24px">Where Basketball Players Call Home<p>
+  <em style="font-size:14px"><a href="#">Read the full post</a></em>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<em style="font-size:14px"><a href="http://blog.modeanalytics.com/where-football-players-call-home/">Where football players come from</a></em>
+  </p>
+    <p><a href="https://twitter.com/modeanalytics" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+</div>
+<div class="story">
+  <p>The map below shows where today's college baksetball players come from. States that are shaded in darker colors are home to more players than counties in ligher shades. No players reported a grey county as their home.</p>
+  <p>The buttons on the right filter players by conference, college, or position. To adjust for population size, you can toggle the map so that color shades are based on the number of players as a percent of each county's college-aged male population.</p>
+</div>
+<div class="control">
+<div class="filter">
+  <select id="conferenceList" data-placeholder="Filter by conference..." class="chosen-select" style="width:260px;" tabindex="2">
+    <option value="all"></option>
+  </select>
+</div>
+<div class="filter">
+  <select id="schoolList" data-placeholder="Filter by school..." class="chosen-select" style="width:260px;" tabindex="2">
+    <option value="all"></option>
+  </select>
+</div>
+<div class="filter">
+  <ul id="position" class="toggles">
+    <li class="pos-button active" id="all"><a>All</a></li>
+    <li class="pos-button" id="C"><a>C</a></li>
+    <li class="pos-button" id="F"><a>F</a></li>
+    <li class="pos-button" id="G"><a>G</a></li>
+    <li class="pos-button" id="F-C"><a>F-C</a></li>
+    <li class="pos-button" id="G-F"><a>G-F</a></li>
+    <li class="pos-button" id="NA"><a>Unknown</a></li>
+  </ul>
+</div>
+<div class="filter">
+  <ul class="toggles">
+    <li class="switch active" id="total"><a>Count</a></li>
+    <li class="switch" id="percent"><a>Per capita</a></li>
+  </ul>
+</div>
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="chosen.jquery.min.js" type="text/javascript"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>  
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="crossfilter.v1.min.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script>
+
+// Set SVG and map
+var width = 1200,
+    height = 550,
+    centered;
+
+var projection = d3.geo.albersUsa()
+    .scale(1070)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Set color scale
+var colorScale = d3.scale.quantile()
+    .range(colorbrewer.YlOrRd[9]);
+
+d3.json("counties.json", function(error, us) {
+d3.csv("states.csv", function(players) {
+d3.csv("state_detail.csv", function(stateData) { 
+  
+  // Assign mapping for hover lookup
+  var nameById = d3.map(),
+      popById = d3.map(),
+      countById = d3.map();
+  
+  stateData.forEach(function(state) { 
+    nameById.set(+state.id,state.name);
+    popById.set(+state.id,+state.male_18_to_24);
+  })
+  
+  console.log(popById.get(1))
+  
+  // Toggle between count and population percent
+  $("li.switch").click( function() {
+    $(".switch").removeClass('active');
+    $(this).addClass('active');
+    
+    display = $(this).attr('id');
+    
+    showStates(display);
+  });
+  
+  // Selectors for conference
+  $("select#conferenceList").change(function () {
+    var selection = $("select#conferenceList option:selected").text();
+    currentFilter.conference = selection;
+    
+    console.log(currentFilter)
+    
+    applyFilters(currentFilter);
+    showStates(display);
+  });
+  
+  // Selector for school
+  $("select#schoolList").change(function () {
+    var selection = $("select#schoolList option:selected").text();
+    currentFilter.school = selection;
+    
+    applyFilters(currentFilter);
+    showStates(display);
+  });
+  
+  // Picking a position. Can only have one active at once.
+  $("li.pos-button").click( function() {
+    var id = $(this).attr('id'),
+        cl = $(this).attr('class');
+    
+    // Make button active
+    $("li.pos-button").removeClass('active');
+    $(this).addClass('active')
+    
+    // Update filter and map
+    currentFilter.position = id;
+    
+    applyFilters(currentFilter);
+    showStates(display);
+  });
+  
+  // Define crossfilters for counties, positions, conferences, and schools
+  var cross = crossfilter(players),
+      stateCross = cross.dimension( function (d) { return d.state_code; }),
+      stateGroup = stateCross.group( function(d) {return d; }),
+      positionCross = cross.dimension( function (d) { return d.position; }),
+      conferenceCross = cross.dimension( function (d) { return d.conference; }),
+      schoolCross = cross.dimension( function (d) { return d.school; });
+      
+  var f = d3.format(",d");
+  
+  tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .direction('n')
+    .html(function(d) {
+      var players = countById.get(+d.id);
+
+      var stateFilter = stateCross.filterExact(String(d.id)),
+          schoolGroup = schoolCross.group( function(d) { return d; }),
+          conferenceGroup = conferenceCross.group( function(d) { return d; });
+      
+      var ts = schoolGroup.top(5),
+          tc = conferenceGroup.top(5);
+      
+      if (players === undefined) { players = 0; };
+      return nameById.get(+d.id).toUpperCase() + "<br/>Players: " + f(players) +
+      "<br/>College-aged male population: " + f(Math.round(popById.get(+d.id))) + 
+      "<table>" +
+        "<th colspan=2>TOP SCHOOLS</th><th class=val1 colspan=2>TOP CONFERENCES</th>" +
+        "<tr><td class=name>" + nz(ts[0],0) + "</td><td class=val>" + nz(ts[0],1) + "</td>" + 
+        "<td class=name>" + nz(tc[0],0) + "</td><td class=val>" + nz(tc[0],1) + "</td></tr>" +
+        "<tr><td class=name>" + nz(ts[1],0) + "</td><td class=val>" + nz(ts[1],1) + "</td>" +
+        "<td class=name>" + nz(tc[1],0) + "</td><td class=val>" + nz(tc[1],1) + "</td></tr>" +
+        "<tr><td class=name>" + nz(ts[2],0) + "</td><td class=val>" + nz(ts[2],1) + "</td>" +
+        "<td class=name>" + nz(tc[2],0) + "</td><td class=val>" + nz(tc[2],1) + "</td></tr>" +
+        "<tr><td class=name>" + nz(ts[3],0) + "</td><td class=val>" + nz(ts[3],1) + "</td>" +
+        "<td class=name>" + nz(tc[3],0) + "</td><td class=val>" + nz(tc[3],1) + "</td></tr>" +
+        "<tr><td class=name>" + nz(ts[4],0) + "</td><td class=val>" + nz(ts[4],1) + "</td>" +
+        "<td class=name>" + nz(tc[4],0) + "</td><td class=val>" + nz(tc[4],1) + "</td></tr>" +
+      "</table>"
+   });
+      
+  svg.call(tip);
+  
+  var g = svg.append("g");
+  
+  g.append("g")
+      .attr("class","states")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+      .attr("class","sts")
+      .attr("d", path)
+      .attr("id",function(d) { return "c" + +d.id; })
+      .on('mouseover',tip.show)
+      .on('mouseout',tip.hide)
+  
+  // Set legend    
+  svg.append("text")
+      .attr("x","750")
+      .attr("y","20")
+      .attr("class","legend")
+      .text("Players shown: ");
+     
+  svg.append("text")
+      .attr("x","750")
+      .attr("y","40")
+      .attr("class","omitted")
+      .text("International players not shown: ");
+      
+  svg.append("text")
+      .attr("x","40")
+      .attr("y","60")
+      .attr("class","omitted")
+      .text("Hover over a state to see its");
+
+  svg.append("text")
+      .attr("x","40")
+      .attr("y","72")
+      .attr("class","omitted")
+      .text("top schools and conferences");
+  
+  // Set current filter and draw initial map
+  currentFilter = { position: 'all', school: '', conference: '' };
+  display = 'total';
+  
+  applyFilters(currentFilter);
+  populateList(); 
+  showStates(display);
+
+  function showStates (display) {
+    
+    // Get county object
+    var statesCount = stateGroup.top(100);
+    
+    // Set county map for tooltip
+    statesCount.forEach(function(d) { 
+      countById.set(+d.key,d.value);
+    })
+    
+    // Render map
+    if (display == 'total') {
+      renderTotal(statesCount);
+    } else {
+      renderPercent(statesCount);
+    }
+    
+    // Draw legend
+    d3.select(".legend")
+      .text("Players shown: " + f(onMap));
+  
+    d3.select(".omitted")
+      .text("International players not shown: " + f(offMap));
+  };
+  
+  function renderTotal(states) {
+    // Find max and set scale
+    var topTwo = stateGroup.top(2)
+    
+    if (topTwo[0].key == "0") { maxCount = topTwo[1].value; }
+    else { maxCount = topTwo[0].value; }
+
+    colorScale.domain([0,(maxCount)]);
+    
+    console.log(stateGroup.top(2));
+    
+    // Find those omitted
+    onMap = 0;
+    offMap = 0;
+    
+    // Draw colors
+    states.forEach(function(d) {
+      on = 0;
+      d3.select("#c" + d.key)
+        .attr("fill",function() {
+          on = 1;
+          onMap += d.value;
+          if (d.value == 0) { return "#b7b7b7"; } 
+          else { return colorScale((d.value)); }
+        });
+        if (on == 0) { offMap += d.value; }
+    })
+    
+  }
+  
+  function renderPercent(states) {
+    // Find max and set scale
+    var statesPercent = [],
+        max = 0;
+        
+    states.forEach( function(d) {
+      percent = d.value/popById.get(d.key);
+      if (percent > max) { max = percent; }
+    })
+    
+    var max = Math.min(max,.01)
+    colorScale.domain([0,max]);
+    
+    // Find those omitted
+    onMap = 0;
+    offMap = 0;
+    
+    // Draw colors
+    states.forEach(function(d) {
+      on = 0;
+      d3.select("#c" + d.key)
+        .attr("fill",function() {
+          on = 1;
+          onMap += d.value;
+          if (d.value == 0) { return "#b7b7b7"; } 
+          else { return colorScale(d.value/popById.get(d.key)); }
+          })
+      if (on == 0) { offMap += d.value; }
+    })
+  }
+  
+  // Applys filter array
+  function applyFilters(filter) {
+    var positionFilter = filter.position,
+        schoolFilter = filter.school,
+        conferenceFilter = filter.conference;
+    
+    applyPosition(positionFilter);
+    applySchool(schoolFilter);
+    applyConference(conferenceFilter);
+  }
+  
+  // Filter for position
+  function applyPosition(value) {
+    if (value == 'all') { positionCross.filter(null); }
+    else { positionCross.filterExact(value); }
+  }
+  
+  // Fitler for conference
+  function applyConference(value) {
+    if (value == '') { conferenceCross.filter(null); }
+    else { conferenceCross.filterExact(value); }
+  }
+  
+  // Filter for school
+  function applySchool(value) {
+    if (value == '') { schoolCross.filter(null); }
+    else { schoolCross.filterExact(value); }
+  }
+  
+  // Populate initial list of schools
+  function populateList() {
+    // Populate school list
+    var schoolGroup = schoolCross.group( function(d) {return d; });
+    var schools = schoolGroup.top(1000);
+    
+    var schoolsSelect = document.getElementById("schoolList");
+    var schoolOptions = [];
+    
+    schools.forEach(function (d) { schoolOptions.push(d.key); })
+
+    schoolOptions.sort();
+      for (var i = 0; i < schoolOptions.length; i++) {
+          var opt = schoolOptions[i];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          schoolsSelect.appendChild(el);
+      }
+    
+    // Populate conference list
+    var conferenceGroup = conferenceCross.group( function(d) {return d; });
+    var conferences = conferenceGroup.top(1000);    
+    
+    var confSelect = document.getElementById("conferenceList");
+    var confOptions = [];
+    
+    conferences.forEach(function (d) { confOptions.push(d.key); })
+    
+    confOptions.sort();
+      for (var i = 0; i < confOptions.length; i++) {
+          var opt = confOptions[i];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          confSelect.appendChild(el);
+      }
+    
+    var config = {'.chosen-select': {allow_single_deselect:true}}
+    
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  }
+  
+  function nz(obj,toReturn) {
+    if (obj.value == 0) {
+      return ""
+    } else {
+      if (toReturn == 0) { return obj.key }
+      else { return obj.value; }
+    }
+  }
+  
+});
+});
+});
+
+</script>
+<hr>
+</body>
+<footer>
+  <p>Sources: Player information from <a href="http://espn.go.com/mens-college-basketball/teams">ESPN</a>, population data from <a href="http://factfinder2.census.gov/bkmk/table/1.0/en/PEP/2012/PEPAGESEX/0400000US01.05000">United States Census</a>, location information from <a href="https://developers.google.com/maps/documentation/geocoding/">Google Maps API.</a><p></footer> 
