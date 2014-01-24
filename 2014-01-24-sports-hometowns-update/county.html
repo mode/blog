@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Where College Athletes Come From</title>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-43615902-3', 'modeanalytics.com');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<style>
+
+body {
+  width: 900px;
+  font: 12px sans-serif;
+  font-family: Geneva;
+}
+
+footer {
+  font-size: 12px;
+  font-family: Geneva;
+  color: #75756F;
+}
+
+footer a {
+  text-decoration: none;
+  font-style: italic;
+  color: #75756F;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.logo { float: left; margin-top: -10px; }
+.social-media { float: right; text-align: right; }
+.share-right { margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; text-align: center; font-family: Geneva; }
+
+.title p {
+  margin: 15px; 
+}
+
+p a {
+  font-style: italic;
+  color: #75756F;  
+}
+
+.title a {
+  font-style: italic;
+  color: #75756F;
+}
+
+.social-icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #1B3A3E;
+  border-bottom: none;
+}
+
+.social-icon:hover {
+  color: #AACB37;
+  border-bottom: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: right;
+}
+
+#mode-logo {
+  height: 50px;
+  width: auto;
+}
+
+.story p {
+  padding-left: 20px;
+  vertical-align: middle;
+  margin: 12px;
+  font-size:14px;
+  font-family: Geneva;
+}
+
+.filter {
+  vertical-align: center;
+  margin: 12px;
+}
+
+.toggles {
+  list-style-type:none;
+  display: table;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.toggles a {
+  display:block;
+  color:#000;
+  padding:7px 12px;
+  text-decoration:none
+}
+
+.toggles a:hover,
+.toggles .active a{
+  background: #e31a1c;
+  color: white;
+  cursor: pointer;
+}
+
+.toggles li {
+  line-height:12px;
+  float:left;
+  background: #b7b7b7;
+  margin-right:-1px;
+  border:1px solid #ddd;
+}
+
+.toggles li.active {
+  border:1px solid #ccc;
+  background: #fed976;
+  color: white;
+}
+
+.counties {
+  fill: none;
+}
+
+.cty:hover {
+  fill: pink;
+}
+
+.states {
+  fill: none;
+  stroke:  #7b7b7b; 
+  stroke-linejoin: round;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+}
+
+</style>
+<body>
+  <div id="fb-root"></div>
+  <div class="logo">
+    <a href="http://blog.modeanalytics.com">
+      <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+    </a>
+  </div>
+  <div class="social-media">
+    <a href="#" onclick="window.open('#','targetWindow','left=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=260')" class="social-icon" id="twitter"><i class="icon-twitter"></i></a>
+    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;" class="social-icon" id="facebook"><i class="icon-facebook"></i></a>
+    </br>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+<div class="title">
+  <p style="font-size:24px">Where College Athletes Come From<p>
+  <em style="font-size:12px"><a href="#">Read the full post</a></em></p>
+</div>
+<div class="story">
+  <p>The map below shows shows how many male athletes each county produces relative to what's expected, given the population of that county. Counties shaded dark red have the largest positive residuals (far more players than expected) and counties shaded in dark blue have the largest negative residuals (far fewer players than expected). | <a href="state.html">View the same map by state</a></p>
+  <p></p>
+</div>
+<div class="filter">
+  <ul class="toggles">
+    <li class="switch active" id="cfb"><a>Football</a></li>
+    <li class="switch" id="cbb"><a>Basketball</a></li>
+  </ul>
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>  
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+<script>
+
+// Max and min of residuals
+var bbMax = 60,
+    bbMin = -45,
+    fbMax = 235,
+    fbMin = -185;
+
+// Set SVG and map
+var width = 1000,
+    height = 550,
+    centered;
+
+var path = d3.geo.path();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Set color scale
+var posScale = d3.scale.quantile()
+    .range(colorbrewer.Reds[9]);
+    
+var negScale = d3.scale.quantile()
+    .range(colorbrewer.Blues[9]);    
+
+d3.json("counties.json", function(error, us) {
+d3.csv("by_county.csv", function(county) {
+  
+  $("li.switch").click( function() {
+    $(".switch").removeClass('active');
+    $(this).addClass('active');
+    
+    sport = $(this).attr('id');
+    
+    drawMap(sport);
+  });
+
+  var nameById = d3.map(),
+      playersById = d3.map(),
+      predById = d3.map(),
+      resById = d3.map();
+  
+  county.forEach(function(cty) {
+    nameById.set(cty.id,cty.name);
+  })
+  
+  var f = d3.format(",d");
+  
+  tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .direction('n')
+    .html(function(d) { return nameById.get(d.id) + 
+      "<br/>Predicted Players: " + Math.round(predById.get(d.id)*100)/100 +
+      "<br/>Actual Players: " + f(+playersById.get(d.id)) +
+      "<br/>Residual: " + Math.round(resById.get(d.id)*100)/100
+   });
+      
+  svg.call(tip);
+  
+  // Draw map
+  svg.append("g")
+    .attr("class", "counties")
+    .selectAll("path")      
+      .data(topojson.feature(us, us.objects.counties).features)
+    .enter().append("path")
+      .attr("class","cty")
+      .attr("id",function(d) { return "c" + d.id; })
+      .attr("d", path)
+      .on('mouseover',tip.show)
+      .on('mouseout', tip.hide);
+
+  svg.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("class", "states")
+      .attr("d", path);
+      
+  svg.append("text")
+      .attr("x","580")
+      .attr("y","40")
+      .style("font-style","italic")
+      .text("Hover over map to county details");
+
+  drawMap('cfb');
+
+  function drawMap(sport) {
+    
+    if (sport == 'cfb') {
+      posScale.domain([0,Math.log(fbMax)])
+      negScale.domain([0,Math.log(fbMin*-1)])
+      
+      county.forEach(function(cty) {
+        playersById.set(cty.id,cty.cfb_players);
+        predById.set(cty.id,cty.pred_cfb);
+        resById.set(cty.id,cty.resid_cfb);
+      })
+      
+    } else {
+      posScale.domain([0,Math.log(bbMax)])
+      negScale.domain([0,Math.log(bbMin*-1)])
+      
+      county.forEach(function(cty) {
+        playersById.set(cty.id,cty.cbb_players);
+        predById.set(cty.id,cty.pred_cbb);
+        resById.set(cty.id,cty.resid_cbb);
+      })
+    }
+    
+    county.forEach( function(c) {
+      svg.select("#c" + c.id)
+        .attr("fill",function(d) { 
+          res = resById.get(d.id);
+          if (res >= 0) {
+            return posScale(Math.log(resById.get(d.id)));
+          } else {
+            return negScale(Math.log(-1*(resById.get(d.id))));  
+          }
+        })
+    })
+    
+  }
+
+});
+});
+
+</script>
+<hr>
+</body>
+<footer>
+  <p>Note: Shades for player counts are determined on a log scale.</p>
+  
+  <p>Sources: Player information from <a href="http://espn.go.com/college-football/teams">ESPN</a>, population data from <a href="http://factfinder2.census.gov/bkmk/table/1.0/en/PEP/2012/PEPAGESEX/0400000US01.05000">United States Census</a>, location information from <a href="https://developers.google.com/maps/documentation/geocoding/">Google Maps API.</a> A list of all players is available on <a href="https://github.com/mode/blog/blob/master/2014-01-21-basketball-hometowns/players.csv">GitHub</a>.<p></footer> 
