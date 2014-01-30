@@ -151,66 +151,6 @@ SELECT p.person_name,
  ORDER BY 1,2
 LIMIT 100
 
-## Success of Successful Founders
-
-SELECT preivous_acquired,
-       COUNT(z.person_permalink) AS instances,
-       AVG(z.funding_rounds) AS rounds,
-       COUNT(CASE WHEN z.exit IN ('acquired','ipo') THEN z.person_permalink ELSE NULL END)/
-          COUNT(z.person_permalink)::FLOAT AS exit_percent
-  FROM (
-SELECT c.person_permalink,
-       c.company_permalink,
-       c.funding_rounds,
-       c.founded_date,
-       c.exit,
-       c.founded_order,
-       c.companies_founded,
-       COUNT(p.company_permalink) AS previous_companies,
-       MAX(CASE WHEN p.exit IN ('acquired','ipo') THEN 1 
-                WHEN p.exit IS NOT NULL THEN 0
-                ELSE -1 END) AS preivous_acquired
-  FROM (
-        SELECT p.person_permalink,
-               c.company_permalink,
-               c.funding_rounds,
-               c.founded_date,
-               c.exit,
-               RANK() OVER (PARTITION BY p.person_permalink ORDER BY c.founded_date) AS founded_order,
-               COUNT(*) OVER (PARTITION BY p.person_permalink) AS companies_founded
-          FROM crunchbase_dimension_people p
-          JOIN crunchbase_dimension_relationships r
-            ON r.person_permalink = p.person_permalink
-           AND r.entity_type = 'company'
-           AND r.title ILIKE '%founder%'
-          JOIN crunchbase_dimension_companies c
-            ON c.company_permalink = r.entity_permalink
-           AND c.founded_date >= '1900-01-01'
-       ) c
-  LEFT JOIN (SELECT p.person_permalink,
-                    c.company_permalink,
-                    c.funding_rounds,
-                    c.exit,
-                    RANK() OVER (PARTITION BY p.person_permalink ORDER BY c.founded_date) AS founded_order,
-                    COUNT(*) OVER (PARTITION BY p.person_permalink) AS companies_founded
-               FROM crunchbase_dimension_people p
-               JOIN crunchbase_dimension_relationships r
-                 ON r.person_permalink = p.person_permalink
-                AND r.entity_type = 'company'
-                AND r.title ILIKE '%founder%'
-               JOIN crunchbase_dimension_companies c
-                 ON c.company_permalink = r.entity_permalink
-                AND c.founded_date >= '1900-01-01'
-       ) p
-    ON p.person_permalink = c.person_permalink
-   AND p.founded_order < c.founded_order
- GROUP BY 1,2,3,4,5,6,7
-       ) z
- WHERE z.founded_date >= '2005-01-01'
-   AND z.founded_date <= '2013-07-01'
- GROUP BY 1
- ORDER BY 1
-LIMIT 100
 
 ## Age
 
