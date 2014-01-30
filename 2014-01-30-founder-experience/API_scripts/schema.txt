@@ -1,0 +1,139 @@
+Crunchbase Schema
+
+mode.crunchbase_dimension_companies
+    company_name                str
+    company_permalink           str
+    category_code               str
+    created_at                  timestamp
+    number_of_employees         int
+    founded_year                int
+    founded_month               int
+    founded_day                 int
+    founded_date                timestamp
+    exit                        str
+    country_code                str
+    state_code                  str
+    city                        str
+    latitude                    float
+    longitude                   float
+    funding_rounds              int
+    total_money_raised          int
+    total_money_raised_s        str
+    exit                        str
+    extracted_at                timestamp
+
+mode.crunchbase_dimension_financial_orgs
+    financial_org_name          str
+    financial_org_permalink     str
+    created_at                  timestamp
+    number_of_employees         int
+    founded_year                int
+    founded_month               int
+    founded_day                 int
+    founded_date                timestamp
+    country_code                str
+    state_code                  str
+    city                        str
+    latitude                    float
+    longitude                   float
+    investments                 int
+    total_funds                 int
+    extracted_at                timestamp
+                                
+mode.crunchbase_dimension_relationships     
+    entity_permalink            str
+    entity_name                 str
+    entity_type                 str
+    person_first_name           str
+    person_last_name            str
+    person_name                 str
+    person_permalink            str
+    title                       str
+    is_past                     bool
+    extracted_at                timestamp
+                                
+mode.crunchbase_dimension_competitors           
+    company_permalink           str
+    company_name                str
+    competitor_name             str
+    competitor_permalink        str
+    extracted_at                timestamp
+                                
+mode.crunchbase_dimension_funding_rounds        
+    company_permalink           str
+    company_name                str
+    round_id                    int
+    round_code                  str
+    raised_amount               int
+    raised_currency_code        str
+    funded_year                 int
+    funded_month                int
+    funded_day                  int
+    funded_date                 timestamp
+    investor_count              int
+    extracted_at                timestamp
+                                
+mode.crunchbase_dimension_investments           
+    company_permalink           str
+    company_name                str
+    round_id                    int
+    round_code                  str
+    round_amount                int
+    round_currency_code         str
+    round_date                  timestamp
+    investor_entity             str
+    investor_name               str
+    investor_permalink          str
+    extracted_at                timestamp
+                                
+mode.crunchbase_dimension_acquisitions          
+    company_permalink           str
+    company_name                str
+    acquiring_company           str
+    acquiring_permalink         str
+    acquired_year               int
+    acquired_month              int
+    acquired_day                int
+    acquired_date               timestamp
+    price                       int
+    price_currency_code         str
+    term_code                   str
+    extracted_at                timestamp
+
+mode.crunchbase_dimension_funds
+    fund_name                   str
+    financial_org_permalink     str
+    financial_org_name          str
+    funded_year                 int
+    funded_month                int
+    funded_day                  int
+    funded_date                 timestamp
+    raised_amount               int
+    raised_currency_code        str
+    extracted_at                timestamp
+
+mode.crunchbase_dimension_people
+    person_first_name           str
+    person_last_name            str
+    person_name                 str
+    person_permalink            str
+    born_year                   int
+    born_month                  int
+    born_day                    int
+    born_date                   timestamp
+    created_at                  timestamp
+    extracted_at                timestamp
+
+mode.crunchbase_dimension_degrees
+    person_permalink            str
+    person_name                 str
+    degree_type                 str
+    subject                     str
+    institution                 str
+    graduated_year              int
+    graduated_month             int
+    graduated_day               int
+    graduated_date              timestamp
+    extracted_at                timestamp
+
+
