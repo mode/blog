@@ -1,0 +1,2868 @@
+name,sport,gender,country,height,weight,age
+Silvan Zurbriggen,alp,Male,Switzerland,1.85,97,32
+Elena Yakovishina,alp,Female,Russian Fed.,1.70,65,21
+Steve Missillier,alp,Male,France,1.86,80,29
+Matthias Mayer,alp,Male,Austria,1.79,87,23
+Bernadette Schild,alp,Female,Austria,1.65,55,24
+Helga Maria Vilhjalmsdottir,alp,Female,Iceland,1.71,,18
+Brittany Phelan,alp,Female,Canada,1.71,62,22
+Morgan Pridy,alp,Male,Canada,1.73,78,23
+Young-Seo Kang,alp,Female,Korea,1.68,60,16
+Camille Dias,alp,Female,Portugal,1.65,55,17
+Michal Jasiczek,alp,Male,Poland,1.83,74,19
+Yuxin Zhang,alp,Male,China,1.82,71,24
+Tim Jitloff,alp,Male,United States,1.80,91,29
+Stefan Prisadov,alp,Male,Bulgaria,1.80,80,23
+Marcel Hirscher,alp,Male,Austria,1.73,70,24
+Nadja Jnglin-Kamer,alp,Female,Switzerland,1.80,79,27
+Tina Maze,alp,Female,Slovenia,1.71,68,30
+Thomas Mermillod Blondin,alp,Male,France,1.76,80,30
+Francesca Marsaglia,alp,Female,Italy,1.67,61,24
+Kristina Saalova,alp,Female,Slovakia,1.71,70,22
+Wendy Holdener,alp,Female,Switzerland,1.67,60,20
+Natko Zrncic-Dim,alp,Male,Croatia,1.77,88,27
+Nina Loeseth,alp,Female,Norway,,,24
+Marion Bertrand,alp,Female,France,1.63,58,29
+Justin Murisier,alp,Male,Switzerland,1.75,82,22
+Lotte Smiseth Sejersted,alp,Female,Norway,,,22
+Alessia Afi Dipol,alp,Female,Togo,1.68,58,18
+Sarka Strachova,alp,Female,Czech Republic,1.74,66,29
+Sandro Viletta,alp,Male,Switzerland,1.77,78,28
+Gaia Bassani Antivari,alp,Female,Azerbaijan,1.66,60,35
+Agnese Aboltina,alp,Female,Latvia,1.66,60,18
+Aleksander Aamodt Kilde,alp,Male,Norway,,,21
+Jana Gantnerova,alp,Female,Slovakia,1.65,65,24
+Matej Vidovic,alp,Male,Croatia,1.93,92,20
+Igor Laikert,alp,Male,Bosnia and Herzegovina,1.86,87,22
+Elli Terwiel,alp,Female,Canada,1.72,73,24
+Maya Harrisson,alp,Female,Brazil,1.60,54,21
+Sebastiano Gastaldi,alp,Male,Argentina,,,22
+Ioan Valeriu Achiriloaie,alp,Male,Romania,1.83,87,23
+Nadia Fanchini,alp,Female,Italy,1.65,65,27
+Mikaela Shiffrin,alp,Female,United States,1.70,64,18
+Julia Mancuso,alp,Female,United States,1.68,64,29
+Ragnhild Mowinckel,alp,Female,Norway,,,21
+Mitja Valencic,alp,Male,Slovenia,1.78,83,36
+Adam Zampa,alp,Male,Slovakia,1.78,80,23
+Lelde Gasuna,alp,Female,Latvia,1.70,64,23
+Andrej Sporn,alp,Male,Slovenia,1.87,92,32
+Pavel Trikhichev,alp,Male,Russian Fed.,1.83,85,21
+Tanja Poutiainen,alp,Female,Finland,1.70,67,33
+Federica Brignone,alp,Female,Italy,1.68,57,23
+Christof Innerhofer,alp,Male,Italy,1.86,90,29
+Noelle Barahona,alp,Female,Chile,1.72,70,23
+Martin Bendik,alp,Male,Slovakia,1.87,95,20
+Fraenzi Aufdenblatten,alp,Female,Switzerland,1.72,72,33
+Kristaps Zvejnieks,alp,Male,Latvia,1.84,80,22
+Henrik Von Appen,alp,Male,Chile,1.85,72,19
+Arman Serebrakian,alp,Male,Armenia,1.76,76,26
+Erjon Tola,alp,Male,Albania,1.80,78,27
+Jasmine Campbell,alp,Female,"Virgin Isl, US",1.70,64,22
+Marina Nigg,alp,Female,Liechtenstein,1.67,61,29
+Marlies Schild,alp,Female,Austria,1.72,65,32
+Dominik Paris,alp,Male,Italy,1.83,97,24
+Jorge F. Birkner Ketelhohn,alp,Male,Argentina,,,23
+Frida Hansdotter,alp,Female,Sweden,1.73,67,28
+Emily Bamford,alp,Female,Australia,1.69,64,21
+Ksenia Alopina,alp,Female,Russian Fed.,1.65,62,21
+Mario Matt,alp,Male,Austria,1.90,90,34
+Antonio Ristevski,alp,Male,The Former Yugoslav Republic of Macedonia,1.81,81,24
+Ross Peraudo,alp,Male,Australia,1.85,76,21
+Katarina Lavtar,alp,Female,Slovenia,1.63,63,25
+Barbora Lukacova,alp,Female,Slovakia,1.78,75,23
+Mohammad Kiyadarbandsari,alp,Male,IR Iran,1.79,78,24
+Axel Baeck,alp,Male,Sweden,1.80,80,26
+Alexander Khoroshilov,alp,Male,Russian Fed.,1.80,82,30
+Davide Simoncelli,alp,Male,Italy,1.75,75,35
+Mireia Gutierrez,alp,Female,Andorra,1.65,60,25
+Marcus Sandell,alp,Male,Finland,1.77,83,26
+Jan Hudec,alp,Male,Canada,1.83,90,32
+Luke Steyn,alp,Male,Zimbabwe,1.82,81,20
+David Ryding,alp,Male,Great Britain,1.80,82,27
+Katerina Paulathova,alp,Female,Czech Republic,1.71,65,20
+Marco Sullivan,alp,Male,United States,1.80,93,33
+Mauro Caviezel,alp,Male,Switzerland,1.81,87,25
+Georg Streitberger,alp,Male,Austria,1.84,93,32
+Nicole Schmidhofer,alp,Female,Austria,1.57,59,24
+Kostas Sykaras,alp,Male,Greece,1.72,77,29
+Andrea Komsic,alp,Female,Croatia,1.72,65,17
+Felix Neureuther,alp,Male,Germany,1.84,87,29
+Jacqueline Wiles,alp,Female,United States,1.70,70,21
+Alexandra Coletti,alp,Female,Monaco,1.64,60,30
+Hubertus Von Hohenlohe,alp,Male,Mexico,1.84,92,55
+Macarena Simari Birkner,alp,Female,Argentina,,,29
+Santeri Paloniemi,alp,Male,Finland,1.81,78,20
+Dominic Demschar,alp,Male,Australia,1.76,75,20
+Igor Zakurdaev,alp,Male,Kazakhstan,1.88,95,27
+Anemone Marmottan,alp,Female,France,1.70,65,25
+Marie-Pier Prefontaine,alp,Female,Canada,1.62,66,25
+Ramon Zenhaeusern,alp,Male,Switzerland,2.00,95,21
+Triin Tobi,alp,Female,Estonia,1.60,64,18
+Sara Hector,alp,Female,Sweden,1.67,66,21
+Kajsa Kling,alp,Female,Sweden,1.72,73,25
+Dow Travers,alp,Male,Cayman Islands,1.82,91,26
+Philipp Schoerghofer,alp,Male,Austria,1.77,77,31
+Vincenzo Romano Michelotti,alp,Male,San Marino,1.71,58,17
+Alexander Glebov,alp,Male,Russian Fed.,1.80,84,30
+Muhammad Karim,alp,Male,Pakistan,1.63,64,18
+Vladislav Novikov,alp,Male,Russian Fed.,1.70,78,20
+Christoffer Faarup,alp,Male,Denmark,1.90,83,21
+Paul De La Cuesta,alp,Male,Spain,1.73,77,25
+Cornelia Huetter,alp,Female,Austria,1.71,64,21
+Martin Vrablik,alp,Male,Czech Republic,1.75,80,31
+Carolina Ruiz Castillo,alp,Female,Spain,1.65,65,32
+Regina Sterz,alp,Female,Austria,1.68,61,28
+Benjamin Thomsen,alp,Male,Canada,1.70,80,26
+Michelle Gisin,alp,Female,Switzerland,1.74,70,20
+Luca Aerni,alp,Male,Switzerland,1.77,80,20
+Klara Krizova,alp,Female,Czech Republic,1.78,70,24
+Yuri Danilochkin,alp,Male,Belarus,,,22
+Emre Simsek,alp,Male,Turkey,1.78,78,26
+Trevor Philp,alp,Male,Canada,1.81,80,21
+Leanne Smith,alp,Female,United States,1.63,73,26
+Mona Loeseth,alp,Female,Norway,,,22
+Ilka Stuhec,alp,Female,Slovenia,1.72,72,23
+Suela Mehilli,alp,Female,Albania,1.63,56,20
+Georgi Georgiev,alp,Male,Bulgaria,1.80,80,26
+Joan Verdu Sanchez,alp,Male,Andorra,1.78,70,18
+Virgile Vandeput,alp,Male,Israel,1.85,79,19
+Daniela Merighetti,alp,Female,Italy,1.68,66,32
+Ted Ligety,alp,Male,United States,1.80,86,29
+Rokas Zaveckas,alp,Male,Lithuania,1.79,78,17
+Jessica Lindell-Vikarby,alp,Female,Sweden,1.69,69,30
+Markus Larsson,alp,Male,Sweden,1.83,82,35
+Otmar Striedinger,alp,Male,Austria,1.84,91,22
+Stefan Luitz,alp,Male,Germany,1.85,84,21
+Michaela Kirchgasser,alp,Female,Austria,1.69,64,28
+Roberts Rode,alp,Male,Latvia,1.82,83,26
+Viktoria Rebensburg,alp,Female,Germany,1.69,65,24
+Maria Shkanova,alp,Female,Belarus,1.76,66,24
+Evgeniy Timofeev,alp,Male,Kyrgyzstan,,,19
+Sofija Novoselic,alp,Female,Croatia,1.66,70,24
+Erik Fisher,alp,Male,United States,1.83,107,28
+Tarik Hadzic,alp,Male,Montenegro,1.80,75,19
+Yohan Goncalves Goutt,alp,Male,Timor-Leste,1.81,78,19
+Philip Brown,alp,Male,Canada,1.82,87,22
+Manuel Osborne-Paradis,alp,Male,Canada,1.83,94,30
+Alex Puente Tasias,alp,Male,Spain,1.82,79,19
+Jared Goldberg,alp,Male,United States,1.83,86,22
+Maciej Bydlinski,alp,Male,Poland,1.80,85,25
+Brice Roger,alp,Male,France,1.80,87,23
+Lara Gut,alp,Female,Switzerland,1.60,58,22
+Kathrin Zettel,alp,Female,Austria,1.67,63,27
+Fabienne Suter,alp,Female,Switzerland,1.67,67,29
+Ferran Terra,alp,Male,Spain,1.77,83,26
+Julia Ford,alp,Female,United States,1.78,74,23
+Marko Vukicevic,alp,Male,Serbia,1.85,91,21
+David Chodounsky,alp,Male,United States,1.80,82,29
+Brad Spence,alp,Male,Canada,1.84,91,29
+Luca De Aliprandini,alp,Male,Italy,1.70,73,23
+Romed Baumann,alp,Male,Austria,1.84,94,28
+Nastasia Noens,alp,Female,France,1.78,67,25
+Patrick Brachner,alp,Male,Azerbaijan,1.84,82,22
+Ondrej Bank,alp,Male,Czech Republic,1.75,85,33
+Mathieu Faivre,alp,Male,France,1.75,78,22
+Tugba Kocaaga,alp,Female,Turkey,,,28
+Adam Barwood,alp,Male,New Zealand,1.86,82,21
+Thomas Fanara,alp,Male,France,1.70,68,32
+Jacky Chamoun,alp,Female,Lebanon,1.75,64,22
+Manfred Oettl Reyes,alp,Male,Peru,1.65,60,20
+Forough Abbasi,alp,Female,IR Iran,1.64,58,20
+Ivica Kostelic,alp,Male,Croatia,1.82,93,34
+Carlo Janka,alp,Male,Switzerland,1.85,88,27
+David Poisson,alp,Male,France,1.72,88,31
+Zan Kranjec,alp,Male,Slovenia,1.76,77,21
+Maryna Gasienica-Daniel,alp,Female,Poland,1.60,54,19
+Nevena Ignjatovic,alp,Female,Serbia,1.75,70,23
+Dominique Gisin,alp,Female,Switzerland,1.72,70,28
+Klemen Kosi,alp,Male,Slovenia,1.88,84,22
+Erik Guay,alp,Male,Canada,1.78,84,32
+Mateusz Garniewicz,alp,Male,Poland,1.75,77,24
+Cyprien Richard,alp,Male,France,1.77,77,35
+Giuliano Razzoli,alp,Male,Italy,1.82,83,29
+Ania Monica Caill,alp,Female,Romania,1.70,60,18
+Edit Miklos,alp,Female,Hungary,1.65,67,25
+Gino Caviezel,alp,Male,Switzerland,1.73,78,21
+Nolan Kasper,alp,Male,United States,1.73,77,24
+Martina Dubovska,alp,Female,Czech Republic,1.74,72,21
+Alisher Qudratov,alp,Male,Tajikistan,1.60,65,28
+Bode Miller,alp,Male,United States,1.88,91,36
+Aksel Lund Svindal,alp,Male,Norway,1.89,97,31
+Stacey Cook,alp,Female,United States,1.63,73,29
+Dong-Hyun Jung,alp,Male,Korea,1.80,80,25
+Marco Pfiffner,alp,Male,Liechtenstein,1.91,93,19
+Sebastian-Foss Solevaag,alp,Male,Norway,,,22
+Bogdana Matsotska,alp,Female,Ukraine,1.70,66,24
+Aleksandra Klus,alp,Female,Poland,1.65,65,27
+Sergei Maytakov,alp,Male,Russian Fed.,1.84,84,24
+Tina Weirather,alp,Female,Liechtenstein,1.64,65,24
+Maria Bedareva,alp,Female,Russian Fed.,1.70,70,21
+Akira Sasaki,alp,Male,Japan,1.82,88,32
+Max Franz,alp,Male,Austria,1.82,90,24
+Himanshu Thakur,alp,Male,India,1.67,54,20
+Georg Lindner,alp,Male,Rep. of Moldova,1.75,87,31
+Lina Xia,alp,Female,China,1.65,63,26
+Karolina Chrapek,alp,Female,Poland,1.73,69,24
+Didier Defago,alp,Male,Switzerland,1.83,88,36
+Alexandre Mohbat,alp,Male,Lebanon,1.84,76,18
+So-Hui Gim,alp,Female,Korea,1.65,65,17
+Dalibor Samsal,alp,Male,Croatia,1.84,89,28
+Mattias Hargin,alp,Male,Sweden,1.80,79,28
+Kenza Tazi,alp,Female,Morocco,1.66,60,18
+Norbert Farkas,alp,Male,Hungary,1.78,70,21
+Greta Small,alp,Female,Australia,1.71,70,18
+Alexis Pinturault,alp,Male,France,1.80,80,22
+Benjamin Raich,alp,Male,Austria,1.81,83,35
+Samu Torsti,alp,Male,Finland,1.85,84,22
+Stefano Gross,alp,Male,Italy,1.80,80,27
+Salome Bancora,alp,Female,Argentina,,,20
+Guillermo Fayed,alp,Male,France,1.83,93,28
+Fritz Dopfer,alp,Male,Germany,1.88,85,26
+Naoki Yuasa,alp,Male,Japan,1.77,70,30
+Sophia Ralli,alp,Female,Greece,1.60,60,25
+Andre Myhrer,alp,Male,Sweden,1.89,95,31
+Barbara Wirth,alp,Female,Germany,1.70,67,24
+Sung Hyun Kyung,alp,Male,Korea,1.76,83,23
+Ivana Bulatovic,alp,Female,Montenegro,1.78,68,19
+Andreas Zampa,alp,Male,Slovakia,1.68,70,20
+Resi Stiegler,alp,Female,United States,1.73,61,28
+Leif Kristian Haugen,alp,Male,Norway,1.85,90,26
+Olivier Jenot,alp,Male,Monaco,1.75,75,25
+Christina Geiger,alp,Female,Germany,1.70,67,24
+Anna Fenninger,alp,Female,Austria,1.66,60,24
+Adrien Theaux,alp,Male,France,1.82,84,29
+Marc Oliveras,alp,Male,Andorra,1.73,75,22
+Kanes Sucharitakul,alp,Male,Thailand,1.70,67,22
+Elisabeth Goergl,alp,Female,Austria,1.66,67,32
+Johan Clarey,alp,Male,France,1.91,98,33
+Klaus Kroell,alp,Male,Austria,1.86,95,33
+Lavinia Chrystal,alp,Female,Australia,1.68,64,24
+Adam Lamhamedi,alp,Male,Morocco,1.70,76,18
+Daniel Yule,alp,Male,Switzerland,1.81,88,20
+Martins Onskulis,alp,Male,Latvia,1.70,70,19
+Marko Rudic,alp,Male,Bosnia and Herzegovina,1.87,81,24
+Federica Selva,alp,Female,San Marino,1.66,53,17
+Jean-Baptiste Grange,alp,Male,France,1.80,74,29
+Travis Ganong,alp,Male,United States,1.80,88,25
+Stepan Zuev,alp,Male,Russian Fed.,1.89,88,25
+Chiara Costazza,alp,Female,Italy,1.71,64,29
+Nikola Chongarov,alp,Male,Bulgaria,1.73,64,24
+Dmitriy Koshkin,alp,Male,Kazakhstan,1.80,80,27
+Iason Abramashvili,alp,Male,Georgia,1.82,76,25
+Marianne Kaufmann-Abderhalden,alp,Female,Switzerland,1.77,77,27
+Barbara Kantorova,alp,Female,Slovakia,1.69,63,21
+Nino Tsiklauri,alp,Female,Georgia,1.67,56,20
+Maria Kirkova,alp,Female,Bulgaria,1.65,60,28
+Alexandra Taylor,alp,Female,Cyprus,1.74,64,19
+Larisa Yurkiw,alp,Female,Canada,1.71,70,25
+Julien Lizeroux,alp,Male,France,1.73,80,34
+Erin Mielzynski,alp,Female,Canada,1.69,65,23
+Vanessa Vanakorn,alp,Female,Thailand,1.60,48,35
+Maria Hoefl-Riesch,alp,Female,Germany,1.82,78,29
+Massimiliano Valcareggi,alp,Male,Greece,1.83,83,19
+Filip Trejbal,alp,Male,Czech Republic,1.94,97,29
+Anna Berecz,alp,Female,Hungary,1.73,71,25
+Artem Voronov,alp,Male,Uzbekistan,1.85,75,20
+Kevin Esteve,alp,Male,Andorra,1.77,80,24
+Reinfried Herbst,alp,Male,Austria,1.81,80,35
+Rok Perko,alp,Male,Slovenia,1.86,94,28
+Megan Mcjames,alp,Female,United States,1.68,61,26
+Denise Feierabend,alp,Female,Switzerland,1.70,69,24
+Elena Fanchini,alp,Female,Italy,1.64,69,28
+Jhonatan Longhi,alp,Male,Brazil,1.76,78,26
+Roberto Nani,alp,Male,Italy,1.72,75,25
+Warren Cummings Smith,alp,Male,Estonia,1.88,91,21
+Michael Janyk,alp,Male,Canada,1.81,85,31
+Denise Karbon,alp,Female,Italy,1.60,60,33
+Anne-Sophie Barthet,alp,Female,France,1.70,70,25
+Alexandru Barbu,alp,Male,Romania,1.77,70,26
+Brynjar Jokull Gudmundsson,alp,Male,Iceland,1.98,107,24
+Joachim Puchner,alp,Male,Austria,1.90,95,26
+Marusa Ferk,alp,Female,Slovenia,1.67,65,25
+Krystof Kryzl,alp,Male,Czech Republic,1.83,84,27
+Arnaud Alessandria,alp,Male,Monaco,1.85,92,20
+Manfred Moelgg,alp,Male,Italy,1.79,75,31
+Patrick Thaler,alp,Male,Italy,1.77,80,35
+Matts Olsson,alp,Male,Sweden,1.79,85,25
+Einar Kristinn Kristgeirsson,alp,Male,Iceland,1.85,94,20
+Ornella Oettl Reyes,alp,Female,Peru,1.68,60,22
+Elise Pellegrin,alp,Female,Malta,1.62,58,22
+Conor Lyne,alp,Male,Ireland,1.77,77,20
+Sebastian Brigovic,alp,Male,Croatia,1.81,81,21
+Maria Pietilae-Holmner,alp,Female,Sweden,1.70,63,27
+Cristian Javier Simari Birkner,alp,Male,Argentina,,,33
+Laurenne Ross,alp,Female,United States,1.73,68,25
+Anna Swenn-Larsson,alp,Female,Sweden,,,22
+Julietta Quiroga,alp,Female,Argentina,,,25
+Filip Zubcic,alp,Male,Croatia,1.80,85,21
+Verena Stuffer,alp,Female,Italy,1.68,65,29
+Alex Beniaidze,alp,Male,Georgia,1.84,80,23
+Marie-Michele Gagnon,alp,Female,Canada,1.77,68,24
+Chemmy Alcott,alp,Female,Great Britain,1.70,74,31
+Adeline Baud,alp,Female,France,1.62,56,21
+Werner Heel,alp,Male,Italy,1.89,85,31
+Antonio Jose Pardo Andretta,alp,Male,Venezuela,1.77,90,43
+Arthur Hanse,alp,Male,Portugal,1.80,75,21
+Eugenio Claro,alp,Male,Chile,1.75,71,20
+Beat Feuz,alp,Male,Switzerland,1.72,85,27
+Matej Falat,alp,Male,Slovakia,1.85,83,21
+Andrew Weibrecht,alp,Male,United States,1.70,86,28
+Kjetil Jansrud,alp,Male,Norway,1.81,84,28
+Dmytro Mytsak,alp,Male,Ukraine,1.83,75,18
+Zana Novakovic,alp,Female,Bosnia and Herzegovina,1.64,58,28
+Peter Fill,alp,Male,Italy,1.75,85,31
+Petra Vlhova,alp,Female,Slovakia,1.80,73,18
+Kseniya Grigoreva,alp,Female,Uzbekistan,1.70,65,26
+Ieva Januskeviciute,alp,Female,Lithuania,1.67,58,19
+Emelie Wikstroem,alp,Female,Sweden,1.74,66,21
+Nicole Hosp,alp,Female,Austria,1.74,70,30
+Je-Yun Park,alp,Male,Korea,1.75,70,19
+Patrick Kueng,alp,Male,Switzerland,1.81,84,30
+Pol Carreras,alp,Male,Spain,1.66,70,24
+Florence Bell,alp,Female,Ireland,1.56,59,17
+Marie Marchand-Arvier,alp,Female,France,1.64,61,28
+Martin Khuber,alp,Male,Kazakhstan,1.80,85,22
+Erla Asgeirsdottir,alp,Female,Iceland,1.74,,20
+Steven Nyman,alp,Male,United States,1.93,100,32
+Hossein Saveh Shemshaki,alp,Male,IR Iran,1.83,86,28
+Constantinos Papamichael,alp,Male,Cyprus,1.65,61,20
+Henrik Kristoffersen,alp,Male,Norway,,,19
+Kaisa Makarainen,bai,Female,Finland,1.71,57,31
+Emoke Szocs,bai,Female,Hungary,1.60,52,28
+Lucy Glanville,bai,Female,Australia,1.57,58,19
+Magdalena Gwizdon,bai,Female,Poland,1.78,65,34
+Krystyna Palka,bai,Female,Poland,1.66,55,30
+Tomas Hasilla,bai,Male,Slovakia,1.80,74,23
+Johannes Thingnes Boe,bai,Male,Norway,,,20
+Brendan Green,bai,Male,Canada,1.83,72,27
+Ekaterina Shumilova,bai,Female,Russian Fed.,1.73,60,27
+Vita Semerenko,bai,Female,Ukraine,1.62,57,28
+Megan Imrie,bai,Female,Canada,1.67,56,28
+Veronika Vitkova,bai,Female,Czech Republic,1.66,56,25
+Markus Windisch,bai,Male,Italy,1.85,80,29
+In-Bok Lee,bai,Male,Korea,1.73,60,29
+Friedrich Pinter,bai,Male,Austria,1.86,80,35
+Lukasz Slonina,bai,Male,Poland,1.83,68,24
+Lisa Theresa Hauser,bai,Female,Austria,1.74,65,20
+Mariya Panfilova,bai,Female,Ukraine,1.70,56,26
+Marie Laure Brunet,bai,Female,France,1.65,56,25
+Irene Cadurisch,bai,Female,Switzerland,1.64,60,22
+Ahti Toivanen,bai,Male,Finland,1.82,74,24
+Nathan Smith,bai,Male,Canada,1.76,74,28
+Elisabeth Hoegberg,bai,Female,Sweden,1.65,56,27
+Jean Guillaume Beatrix,bai,Male,France,1.74,65,25
+Franziska Preuss,bai,Female,Germany,1.73,60,19
+Michal Krcmar,bai,Male,Czech Republic,1.76,69,23
+Liudmila Kalinchik,bai,Female,Belarus,1.64,59,31
+Benjamin Weger,bai,Male,Switzerland,1.80,75,24
+Victor Lobo Escolar,bai,Male,Spain,1.70,65,34
+Synnoeve Solemdal,bai,Female,Norway,,,24
+Quentin Fillon Maillet,bai,Male,France,1.77,70,21
+Andreas Birnbacher,bai,Male,Germany,1.79,73,32
+Artem Pryma,bai,Male,Ukraine,1.79,70,26
+Dominik Landertinger,bai,Male,Austria,1.88,80,25
+Lanny Barnes,bai,Female,United States,1.63,52,31
+Ivan Joller,bai,Male,Switzerland,1.80,72,30
+Elisa Gasparin,bai,Female,Switzerland,1.59,50,22
+Dias Keneshev,bai,Male,Kazakhstan,1.70,63,28
+Tim Burke,bai,Male,United States,1.80,73,32
+Evgeny Ustyugov,bai,Male,Russian Fed.,1.68,60,28
+Scott Perras,bai,Male,Canada,1.79,75,30
+Indrek Tobreluts,bai,Male,Estonia,1.84,74,37
+Elena Khrustaleva,bai,Female,Kazakhstan,1.74,54,33
+Vladimir Chepelin,bai,Male,Belarus,1.71,74,25
+Matej Kazar,bai,Male,Slovakia,1.87,77,30
+Zanna Juskane,bai,Female,Latvia,1.57,53,24
+Eva Tofalvi,bai,Female,Romania,1.72,61,35
+Michela Ponza,bai,Female,Italy,1.64,53,35
+Natalya Burdyga,bai,Female,Ukraine,1.67,58,30
+Peter Dokl,bai,Male,Slovenia,1.78,70,29
+Serhiy Semenov,bai,Male,Ukraine,1.79,69,25
+Fuyuko Suzuki,bai,Female,Japan,1.62,55,25
+Bjoern Ferry,bai,Male,Sweden,1.94,82,35
+Dorothea Wierer,bai,Female,Italy,1.58,60,23
+Zina Kocher,bai,Female,Canada,1.70,60,31
+Serguei Sednev,bai,Male,Ukraine,1.79,74,30
+Hidenori Isa,bai,Male,Japan,1.70,68,37
+Alexia Runggaldier,bai,Female,Italy,1.73,59,22
+Andrea Henkel,bai,Female,Germany,1.58,49,36
+Alexey Volkov,bai,Male,Russian Fed.,1.77,69,25
+Sergey Novikov,bai,Male,Belarus,1.84,78,34
+Franziska Hildebrand,bai,Female,Germany,1.62,53,26
+Daniel Boehm,bai,Male,Germany,1.78,72,27
+Andriy Deryzemlya,bai,Male,Ukraine,1.88,80,36
+Ondrej Moravec,bai,Male,Czech Republic,1.81,72,29
+Andrejs Rastorgujevs,bai,Male,Latvia,1.81,71,25
+Carl Johan Bergman,bai,Male,Sweden,1.76,73,35
+Jarkko Kauppinen,bai,Male,Finland,1.79,74,31
+Miroslav Matiasko,bai,Male,Slovakia,1.82,71,31
+Alexandr Trifonov,bai,Male,Kazakhstan,1.88,73,27
+Diana Rasimoviciute,bai,Female,Lithuania,1.63,54,29
+Simon Eder,bai,Male,Austria,1.86,79,30
+Eva Puskarcikova,bai,Female,Czech Republic,1.68,57,23
+Nadezhda Skardino,bai,Female,Belarus,1.60,50,28
+Jana Gerekova,bai,Female,Slovakia,1.74,64,29
+Anton Shipulin,bai,Male,Russian Fed.,1.85,81,26
+Dominik Windisch,bai,Male,Italy,1.82,72,24
+Fredrik Lindstroem,bai,Male,Sweden,1.80,74,24
+Mari Laukkanen,bai,Female,Finland,1.71,58,26
+Klemen Bauer,bai,Male,Slovenia,1.83,77,28
+Selina Gasparin,bai,Female,Switzerland,1.63,52,29
+Vetle Sjastad Christiansen,bai,Male,Norway,,,21
+Ekaterina Glazyrina,bai,Female,Russian Fed.,1.65,57,26
+Pavol Hurajt,bai,Male,Slovakia,1.72,68,36
+Laure Soulie,bai,Female,Andorra,1.60,50,26
+Simon Schempp,bai,Male,Germany,1.79,72,25
+Simon Kocevar,bai,Male,Slovenia,1.80,73,23
+Marine Bolliet,bai,Female,France,1.65,54,26
+Darya Usanova,bai,Female,Kazakhstan,1.70,65,24
+Megan Heinicke,bai,Female,Canada,1.70,57,25
+Dmytro Pidruchnyi,bai,Male,Ukraine,1.79,68,22
+Nastassia Dubarezava,bai,Female,Belarus,1.70,63,28
+Olga Vilukhina,bai,Female,Russian Fed.,1.72,65,25
+Vanessa Hinz,bai,Female,Germany,1.76,61,21
+Olena Pidhrushna,bai,Female,Ukraine,1.76,67,27
+Evgeniy Garanichev,bai,Male,Russian Fed.,1.69,69,26
+Dmitry Malyshko,bai,Male,Russian Fed.,1.85,79,26
+Martin Otcenas,bai,Male,Slovakia,1.80,71,26
+Jitka Landova,bai,Female,Czech Republic,1.70,57,23
+Nadzeya Pisareva,bai,Female,Belarus,1.68,57,25
+Emil Hegle Svendsen,bai,Male,Norway,,,28
+Simon Hallenbarter,bai,Male,Switzerland,1.93,90,34
+Alexis Boeuf,bai,Male,France,1.72,65,27
+Alina Raikova,bai,Female,Kazakhstan,1.68,56,22
+Leif Nordgren,bai,Male,United States,1.88,79,24
+Evgeny Abramenko,bai,Male,Belarus,1.82,80,26
+Anton Pantov,bai,Male,Kazakhstan,1.87,77,22
+Michail Kletcherov,bai,Male,Bulgaria,1.63,58,31
+Daniel Mesotitsch,bai,Male,Austria,1.81,78,37
+Alexandra Camenscic,bai,Female,Rep. of Moldova,1.58,55,25
+Tomas Kaukenas,bai,Male,Lithuania,1.77,66,23
+Miki Kobayashi,bai,Female,Japan,1.52,51,26
+Karoly Gombos,bai,Male,Hungary,1.76,69,32
+Janez Maric,bai,Male,Slovenia,1.82,80,38
+Olga Zaitseva,bai,Female,Russian Fed.,1.69,64,35
+Kalev Ermits,bai,Male,Estonia,1.81,74,21
+Anais Bescond,bai,Female,France,1.71,68,26
+Lea Johanidesova,bai,Female,Czech Republic,1.67,56,24
+Valj Semerenko,bai,Female,Ukraine,1.61,54,28
+Vladimir Iliev,bai,Male,Bulgaria,1.82,72,26
+Sean Doherty,bai,Male,United States,1.80,75,18
+Miroslav Kenanov,bai,Male,Bulgaria,1.82,71,25
+Daria Yurlova,bai,Female,Estonia,1.68,62,21
+Amanda Lightfoot,bai,Female,Great Britain,1.73,61,27
+Krasimir Anev,bai,Male,Bulgaria,1.74,67,26
+Lee-Steve Jackson,bai,Male,Great Britain,1.72,69,33
+Russell Currier,bai,Male,United States,1.68,67,26
+Alexander Loginov,bai,Male,Russian Fed.,1.77,71,22
+Galina Vishnevskaya,bai,Female,Kazakhstan,1.60,55,20
+Aliaksandr Darozhka,bai,Male,Belarus,1.72,67,22
+Nicole Gontier,bai,Female,Italy,1.64,57,22
+Ole Einar Bjoerndalen,bai,Male,Norway,,,40
+Yuryi Liadov,bai,Male,Belarus,1.74,73,26
+Annelies Cook,bai,Female,United States,1.70,56,29
+Chaoqing Song,bai,Female,China,1.70,60,22
+Na Song,bai,Female,China,1.66,57,18
+Tobias Arwidson,bai,Male,Sweden,1.70,74,25
+Serafin Wiestner,bai,Male,Switzerland,1.85,80,23
+Desislava Stoyanova,bai,Female,Bulgaria,1.69,59,21
+Grete Gaim,bai,Female,Estonia,1.71,58,20
+Jean-Philippe Le Guellec,bai,Male,Canada,1.71,64,28
+Jaroslav Soukup,bai,Male,Czech Republic,1.83,66,31
+Aita Gasparin,bai,Female,Switzerland,1.63,53,20
+Paulina Fialkova,bai,Female,Slovakia,1.64,55,21
+Claudio Boeckli,bai,Male,Switzerland,1.79,76,29
+Elin Mattsson,bai,Female,Sweden,1.65,61,27
+Susan Dunklee,bai,Female,United States,1.70,63,28
+Jialin Tang,bai,Female,China,1.68,55,22
+Anastasiya Kuzmina,bai,Female,Slovakia,1.80,67,29
+Ann Kristin Aafedt Flatland,bai,Female,Norway,,,31
+Marina Lebedeva,bai,Female,Kazakhstan,1.62,52,28
+Darya Domracheva,bai,Female,Belarus,1.68,56,27
+Paulina Bobak,bai,Female,Poland,1.66,57,29
+Monika Hojnisz,bai,Female,Poland,1.70,51,22
+Michal Slesingr,bai,Male,Czech Republic,1.80,76,31
+Sergey Naumik,bai,Male,Kazakhstan,1.81,74,28
+Tora Berger,bai,Female,Norway,,,32
+Hannah Dreissigacker,bai,Female,United States,1.70,59,27
+Sara Studebaker,bai,Female,United States,1.68,59,29
+Christoph Sumann,bai,Male,Austria,1.81,79,38
+Krzysztof Plywaczyk,bai,Male,Poland,1.81,70,31
+Laura Dahlmeier,bai,Female,Germany,1.62,52,20
+Rosanna Crawford,bai,Female,Canada,1.80,67,25
+Tiril Eckhoff,bai,Female,Norway,,,23
+Erik Lesser,bai,Male,Germany,1.70,70,25
+Terezia Poliakova,bai,Female,Slovakia,1.70,53,24
+Christian De Lorenzi,bai,Male,Italy,1.73,65,32
+Johanna Talihaerm,bai,Female,Estonia,1.61,60,20
+Yuki Nakajima,bai,Female,Japan,1.54,47,23
+Grzegorz Guzik,bai,Male,Poland,1.83,68,22
+Yana Romanova,bai,Female,Russian Fed.,1.66,57,30
+Ji-Hee Mun,bai,Female,Korea,1.67,53,25
+Alexei Almoukov,bai,Male,Australia,1.73,73,23
+Lowell Bailey,bai,Male,United States,1.85,76,32
+Rina Suzuki,bai,Female,Japan,1.60,55,23
+Cornel Puchianu,bai,Male,Romania,1.74,69,24
+Teja Gregorin,bai,Female,Slovenia,1.71,57,33
+Elise Ringen,bai,Female,Norway,,,24
+Sophie Boilley,bai,Female,France,1.65,57,24
+Christoph Stephan,bai,Male,Germany,1.88,86,28
+Kadri Lehtla,bai,Female,Estonia,1.58,55,28
+Arnd Peiffer,bai,Male,Germany,1.85,83,26
+Anna-Karin Stroemstedt,bai,Female,Sweden,1.73,66,33
+Tarjei Boe,bai,Male,Norway,,,25
+Olga Podchufarova,bai,Female,Russian Fed.,1.63,63,21
+Juliya Dzhyma,bai,Female,Ukraine,1.66,66,23
+Martin Fourcade,bai,Male,France,1.85,75,25
+Danil Steptsenko,bai,Male,Estonia,1.82,74,27
+Iris Schwabl,bai,Female,Austria,1.63,55,26
+Olli Hiidensalo,bai,Male,Finland,1.84,82,23
+Yan Zhang,bai,Female,China,1.63,48,21
+Katharina Innerhofer,bai,Female,Austria,1.66,55,23
+Lars Berger,bai,Male,Norway,,,34
+Roland Lessing,bai,Male,Estonia,1.82,79,35
+Daniel Taschler,bai,Male,Italy,1.83,72,26
+Simon Fourcade,bai,Male,France,1.74,67,29
+Evi Sachenbacher-Stehle,bai,Female,Germany,1.62,52,33
+Anais Chevalier,bai,Female,France,1.63,55,21
+Karin Oberhofer,bai,Female,Italy,1.64,55,28
+Julian Eberhard,bai,Male,Austria,1.96,84,27
+Weronika Nowakowska-Ziemniak,bai,Female,Poland,1.59,53,27
+Ivan Zlatev,bai,Male,Bulgaria,1.77,77,23
+Victoria Padial Hernandez,bai,Female,Spain,1.65,53,25
+Tanja Karisik,bai,Female,Bosnia and Herzegovina,1.69,53,22
+Jakov Fak,bai,Male,Slovenia,1.84,74,26
+Tomas Krupcik,bai,Male,Czech Republic,1.86,71,26
+Long Ren,bai,Male,China,1.68,64,25
+Yan Savitskiy,bai,Male,Kazakhstan,1.78,70,26
+Martina Chrapanova,bai,Female,Slovakia,1.65,55,24
+Fanny Welle-Strand Horn,bai,Female,Norway,,,25
+Kauri Koiv,bai,Male,Estonia,1.88,82,30
+Christofer Eriksson,bai,Male,Sweden,1.93,84,25
+Lukasz Szczurek,bai,Male,Poland,1.79,68,25
+Milanko Petrovic,bai,Male,Serbia,1.87,83,25
+Simon Desthieux,bai,Male,France,1.76,69,22
+Jaqueline Mourao,bai,Female,Brazil,1.70,54,38
+Rafal Lepel,bai,Male,Poland,1.73,65,24
+Lukas Hofer,bai,Male,Italy,1.75,69,24
+Gabriela Soukalova,bai,Female,Czech Republic,1.70,62,24
+Marie Dorin Habert,bai,Female,France,1.68,56,27
+Nadezhda Paleeva,bbs,Female,Russian Fed.,1.74,70,28
+Loic Costerg,bbs,Male,France,1.85,90,26
+Jazmine Fenlator,bbs,Female,United States,1.75,78,28
+Duncan Harvey,bbs,Male,Australia,1.83,102,32
+Lolo Jones,bbs,Female,United States,1.75,73,31
+Chris Spring,bbs,Male,Canada,1.81,101,29
+Gregor Bermbach,bbs,Male,Germany,1.83,95,33
+Markus Sammer,bbs,Male,Austria,1.88,98,25
+Paul Muntean,bbs,Male,Romania,1.80,105,29
+Sik Kim,bbs,Male,Korea,1.84,100,28
+Hanna Emilie Marien,bbs,Female,Belgium,1.70,74,31
+Jana Pittman,bbs,Female,Australia,1.80,82,31
+Edwin Van Calker,bbs,Male,Netherlands,1.88,99,34
+Justin Kripps,bbs,Male,Canada,1.83,100,27
+Nadezhda Sergeeva,bbs,Female,Russian Fed.,1.74,70,26
+Ben Coakwell,bbs,Male,Canada,1.78,102,26
+Dawid Kupczyk,bbs,Male,Poland,1.82,98,36
+Lukas Kozienka,bbs,Male,Slovakia,1.87,95,24
+Alex Baumann,bbs,Male,Switzerland,1.81,100,28
+Dmitry Trunenkov,bbs,Male,Russian Fed.,1.88,106,29
+Bogdan Otava,bbs,Male,Romania,1.81,92,27
+Helvijs Lusis,bbs,Male,Latvia,1.86,97,27
+Thomas Lamparter,bbs,Male,Switzerland,1.83,100,35
+Andreea Grecu,bbs,Female,Romania,1.76,74,20
+Jeremie Boutherin,bbs,Male,France,1.75,77,25
+Dominik Dvorak,bbs,Male,Czech Republic,1.92,95,21
+Lascelles Brown,bbs,Male,Canada,1.82,100,39
+Franziska Bertels,bbs,Female,Germany,1.78,72,27
+Nikolay Khrenkov,bbs,Male,Russian Fed.,1.85,95,29
+Jeremy Baillard,bbs,Male,France,1.87,106,24
+Martin Tesovic,bbs,Male,Slovakia,1.83,105,39
+Rico Peter,bbs,Male,Switzerland,1.85,100,30
+Cody Sorensen,bbs,Male,Canada,1.83,96,27
+David Coleman,bbs,Male,Great Britain,1.79,100,28
+Lamin Deen,bbs,Male,Great Britain,1.81,100,32
+Youngjin Suk,bbs,Male,Korea,1.76,98,23
+Nick Cunningham,bbs,Male,United States,1.80,95,28
+Jeahan Oh,bbs,Male,Korea,1.80,95,22
+Oskars Melbardis,bbs,Male,Latvia,1.89,95,26
+Andrew Matthews,bbs,Male,Great Britain,1.72,83,29
+Edson Ricardo Martins,bbs,Male,Brazil,1.87,91,24
+Justin Olsen,bbs,Male,United States,1.88,107,26
+Maxim Belugin,bbs,Male,Russian Fed.,1.95,115,28
+Franziska Fritz,bbs,Female,Germany,1.82,81,23
+Astrid Radjenovic,bbs,Female,Australia,1.68,70,31
+Maxim Mokrousov,bbs,Male,Russian Fed.,1.84,94,30
+Johnny Quinn,bbs,Male,United States,1.83,100,30
+Junglin Jun,bbs,Male,Korea,1.84,100,25
+Alexey Negodaylo,bbs,Male,Russian Fed.,1.89,98,24
+Juerg Egger,bbs,Male,Switzerland,1.78,98,32
+Marko Huebenbecker,bbs,Male,Germany,2.00,114,27
+John Baines,bbs,Male,Great Britain,1.89,100,28
+Elly Lefort,bbs,Male,France,1.87,100,26
+James Mcnaughton,bbs,Male,Canada,1.83,103,26
+Thorsten Margis,bbs,Male,Germany,1.92,99,24
+Winston Watts,bbs,Male,Jamaica,1.82,107,46
+Arno Klaassen,bbs,Male,Netherlands,1.89,96,34
+Christian Poser,bbs,Male,Germany,1.86,90,27
+Kevin Kuske,bbs,Male,Germany,1.96,116,35
+Sybren Jansma,bbs,Male,Netherlands,1.99,107,32
+Jennifer Ciochetti,bbs,Female,Canada,1.70,76,29
+Marvin Dixon,bbs,Male,Jamaica,1.75,93,30
+David Bissett,bbs,Male,Canada,1.79,102,34
+Toshiki Kuroiwa,bbs,Male,Japan,1.72,83,20
+Gareth Nichols,bbs,Male,Australia,1.85,102,30
+Joel Fearon,bbs,Male,Great Britain,1.89,93,25
+Arvis Vilkaste,bbs,Male,Latvia,1.83,97,24
+Florin Craciun,bbs,Male,Romania,1.86,103,24
+Aja Evans,bbs,Female,United States,1.78,77,25
+Petr Moiseev,bbs,Male,Russian Fed.,1.90,89,27
+Anja Schneiderheinze,bbs,Female,Germany,1.69,79,35
+Sally Mayara Da Silva,bbs,Female,Brazil,1.69,76,26
+Fabiana Santos,bbs,Female,Brazil,1.68,72,30
+Elfje Willemsen,bbs,Female,Belgium,1.74,78,29
+Youngwoo Seo,bbs,Male,Korea,1.80,97,22
+Neville Wright,bbs,Male,Canada,1.83,100,33
+Yulia Timofeeva,bbs,Female,Russian Fed.,1.74,71,41
+Juraj Mokras,bbs,Male,Slovakia,1.89,87,23
+Tanja Mayer,bbs,Female,Switzerland,1.80,73,20
+William Frullani,bbs,Male,Italy,1.91,101,34
+Marcin Niewiara,bbs,Male,Poland,1.90,99,32
+Daniel Zalewski,bbs,Male,Poland,1.81,100,22
+Bruce Tasker,bbs,Male,Great Britain,1.93,105,26
+Lauryn Williams,bbs,Female,United States,1.60,67,30
+Hiroshi Suzuki,bbs,Male,Japan,1.73,89,40
+Craig Pickering,bbs,Male,Great Britain,1.82,93,27
+Christin Senkel,bbs,Female,Germany,1.80,78,26
+Alexander Roediger,bbs,Male,Germany,1.83,95,28
+Viola Kleiser,bbs,Female,Austria,1.78,72,23
+Janis Strenga,bbs,Male,Latvia,1.83,92,28
+Donghyun Kim,bbs,Male,Korea,1.84,100,26
+Ilvir Huzin,bbs,Male,Russian Fed.,1.90,94,23
+Christina Hengster,bbs,Female,Austria,1.77,76,28
+Nikita Zakharov,bbs,Male,Russian Fed.,1.86,94,26
+Yunjong Won,bbs,Male,Korea,1.82,107,28
+Romain Heinrich,bbs,Male,France,1.88,105,24
+Cathleen Martini,bbs,Female,Germany,1.70,73,31
+Florent Ribet,bbs,Male,France,1.83,96,24
+Ben Simons,bbs,Male,Great Britain,1.86,90,27
+Lucas Mata,bbs,Male,Australia,1.78,90,25
+Rebekah Wilson,bbs,Female,Great Britain,1.60,67,22
+Kirill Antukh,bbs,Male,Russian Fed.,1.90,97,27
+Judith Vis,bbs,Female,Netherlands,1.80,80,33
+Dallas Robinson,bbs,Male,United States,1.93,107,31
+Hisashi Miyazaki,bbs,Male,Japan,1.83,90,32
+Andreas Neagu,bbs,Male,Romania,1.81,92,28
+Vuk Radenovic,bbs,Male,Serbia,1.87,106,30
+Angel Somov,bbs,Male,Austria,1.92,98,23
+Daumants Dreiskens,bbs,Male,Latvia,1.93,108,29
+Ariane Walser,bbs,Female,Switzerland,1.68,66,32
+Dominik Suchy,bbs,Male,Czech Republic,1.85,98,26
+Patrice Servelle,bbs,Male,Monaco,1.83,90,39
+Liudmila Udobkina,bbs,Female,Russian Fed.,1.78,82,29
+Mihwa Shin,bbs,Female,Korea,1.66,64,19
+Danut Moldovan,bbs,Male,Romania,1.83,85,22
+Martin Putze,bbs,Male,Germany,1.81,100,29
+Sandra Kiriasis,bbs,Female,Germany,1.82,80,39
+Curtis Tomasevicz,bbs,Male,United States,1.85,104,33
+Elana Meyers,bbs,Female,United States,1.70,82,29
+Alexander Kasjanov,bbs,Male,Russian Fed.,1.84,102,30
+Kaillie Humphries,bbs,Female,Canada,1.70,77,28
+Vairis Leiboms,bbs,Male,Latvia,1.85,94,22
+John James Jackson,bbs,Male,Great Britain,1.83,102,36
+Edson Bindilatti,bbs,Male,Brazil,1.90,100,34
+Michal Vacek,bbs,Male,Czech Republic,1.90,96,26
+Maximilian Arndt,bbs,Male,Germany,1.80,93,26
+Stefan Withalm,bbs,Male,Austria,1.81,100,30
+Simone Fontana,bbs,Male,Italy,1.83,97,22
+Stephanie Schneider,bbs,Female,Germany,1.72,75,23
+Thibault Alexis Godefroy,bbs,Male,France,1.85,98,28
+Alexey Voevoda,bbs,Male,Russian Fed.,1.95,114,33
+Vincent Daniel Jean-Paul Ricard,bbs,Male,France,1.89,95,28
+Kyunghyun Kim,bbs,Male,Korea,1.79,98,19
+Bryan Barnett,bbs,Male,Canada,1.83,102,27
+Bror Van Der Zijde,bbs,Male,Netherlands,1.89,110,25
+Raivis Broks,bbs,Male,Latvia,1.92,102,29
+Nicolae Istrate,bbs,Male,Romania,1.83,88,31
+Steven Langton,bbs,Male,United States,1.91,106,30
+Simone Bertazzo,bbs,Male,Italy,1.84,103,31
+Maria Constantin,bbs,Female,Romania,1.73,78,22
+Odirlei Pessoni,bbs,Male,Brazil,1.82,93,31
+Beat Hefti,bbs,Male,Switzerland,1.83,110,36
+Steven Holcomb,bbs,Male,United States,1.78,102,33
+Stuart Benson,bbs,Male,Great Britain,1.95,103,33
+Benjamin Maier,bbs,Male,Austria,1.82,98,19
+Francesco Costa,bbs,Male,Italy,1.85,90,28
+Jan Vrba,bbs,Male,Czech Republic,1.86,90,32
+Christopher Fogt,bbs,Male,United States,1.83,96,30
+Olga Stulneva,bbs,Female,Russian Fed.,1.72,76,30
+Sunok Kim,bbs,Female,Korea,1.66,62,33
+Oskars Kibermanis,bbs,Male,Latvia,1.86,95,20
+Shintaro Sato,bbs,Male,Japan,1.83,89,33
+Heath Spence,bbs,Male,Australia,1.80,102,33
+Milan Jagnesak,bbs,Male,Slovakia,1.79,93,44
+Petr Narovec,bbs,Male,Slovakia,,,36
+Aleksei Pushkarev,bbs,Male,Russian Fed.,1.82,90,27
+Sebastien Gattuso,bbs,Male,Monaco,1.80,97,42
+Pawel Mroz,bbs,Male,Poland,1.86,95,29
+Caroline Spahni,bbs,Female,Switzerland,1.70,78,31
+Timothy Randall,bbs,Male,Canada,1.79,105,27
+Heather Moyse,bbs,Female,Canada,1.78,72,35
+Jannis Baecker,bbs,Male,Germany,1.98,101,29
+Jamie Greubel,bbs,Female,United States,1.75,76,30
+Wayne Blackwood,bbs,Male,Jamaica,1.75,95,44
+Joshua Bluhm,bbs,Male,Germany,1.87,95,19
+Paula Walker,bbs,Female,Great Britain,1.82,87,27
+Thomas Florschuetz,bbs,Male,Germany,1.84,95,35
+Francesco Friedrich,bbs,Male,Germany,1.80,89,23
+Esme Kamphuis,bbs,Female,Netherlands,1.78,76,30
+Alexander Zubkov,bbs,Male,Russian Fed.,1.89,102,39
+Jesse Lumsden,bbs,Male,Canada,1.86,105,31
+Cory Butner,bbs,Male,United States,1.88,102,32
+Chelsea Valois,bbs,Female,Canada,1.77,75,26
+Aleksandar Bundalo,bbs,Male,Serbia,2.05,109,24
+Lyndon Rush,bbs,Male,Canada,1.83,102,33
+Fabienne Meyer,bbs,Female,Switzerland,1.67,73,32
+Kaisa Makarainen,ccy,Female,Finland,1.71,57,31
+Imanol Rojo,ccy,Male,Spain,1.78,70,23
+Byambadorj Bold,ccy,Male,Mongolia,1.70,66,22
+Aivar Rehemaa,ccy,Male,Estonia,1.94,78,31
+Sylwia Jaskowiec,ccy,Female,Poland,1.61,55,27
+Therese Johaug,ccy,Female,Norway,,,25
+Sergey Ustiugov,ccy,Male,Russian Fed.,1.84,80,21
+Stanislav Volzhentsev,ccy,Male,Russian Fed.,1.85,77,28
+Vytautas Strolia,ccy,Male,Lithuania,1.94,83,21
+Alexey Poltoranin,ccy,Male,Kazakhstan,1.86,75,26
+Ida Sargent,ccy,Female,United States,1.63,55,26
+Seyed Sattar Seyd,ccy,Male,IR Iran,1.76,68,26
+Daria Gaiazova,ccy,Female,Canada,1.78,69,30
+Ivan Babikov,ccy,Male,Canada,1.72,69,33
+Heidi Weng,ccy,Female,Norway,,,22
+Daniel Richardsson,ccy,Male,Sweden,1.92,85,31
+Teodora Malcheva,ccy,Female,Bulgaria,1.61,55,31
+Tucker Murphy,ccy,Male,Bermuda,1.93,83,32
+Simon Persson,ccy,Male,Sweden,1.84,80,22
+Maryna Antsybor,ccy,Female,Ukraine,1.61,54,26
+Jan Antolec,ccy,Male,Poland,1.79,73,23
+Raido Rankel,ccy,Male,Estonia,1.86,76,24
+Axel Teichmann,ccy,Male,Germany,1.86,85,34
+Sabahattin Oglago,ccy,Male,Turkey,1.74,64,29
+Marina Lisogor,ccy,Female,Ukraine,1.75,64,30
+Kateryna Serdyuk,ccy,Female,Ukraine,1.73,62,24
+Sergei Dolidovich,ccy,Male,Belarus,1.78,74,40
+Siim Sellis,ccy,Male,Estonia,1.88,86,26
+Virginia De Martin Topranin,ccy,Female,Italy,1.64,54,26
+Martin Bajcicak,ccy,Male,Slovakia,1.69,69,37
+Yelena Kolomina,ccy,Female,Kazakhstan,1.69,58,33
+Stefanie Boehler,ccy,Female,Germany,1.70,54,32
+Rosamund Musgrave,ccy,Female,Great Britain,1.64,64,27
+Martti Jylhae,ccy,Male,Finland,1.84,76,26
+Denise Herrmann,ccy,Female,Germany,1.75,61,25
+Otgontsetseg Chinbat,ccy,Female,Mongolia,1.63,56,22
+Katya Galstyan,ccy,Female,Armenia,1.63,57,21
+Dmitriy Japarov,ccy,Male,Russian Fed.,1.78,68,28
+Fabio Pasini,ccy,Male,Italy,1.80,78,33
+Akira Lenting,ccy,Male,Japan,1.82,77,23
+Calle Halfvarsson,ccy,Male,Sweden,1.84,79,24
+Chae-Won Lee,ccy,Female,Korea,1.53,45,32
+Florin Daniel Pripici,ccy,Male,Romania,1.77,67,18
+Mattia Pellegrin,ccy,Male,Italy,1.80,71,24
+Klara Moravcova,ccy,Female,Czech Republic,1.69,57,30
+Maciej Kreczmer,ccy,Male,Poland,1.78,73,32
+Konstantin Glavatskikh,ccy,Male,Russian Fed.,1.74,72,28
+Andrew Musgrave,ccy,Male,Great Britain,1.80,78,23
+Jovian Hediger,ccy,Male,Switzerland,1.77,79,23
+Aino-Kaisa Saarinen,ccy,Female,Finland,1.66,58,35
+Cyril Gaillard,ccy,Male,France,1.78,72,28
+Yuichi Onda,ccy,Male,Japan,1.80,78,33
+Ola Vigen Hattestad,ccy,Male,Norway,,,31
+Mona-Lisa Malvalehto,ccy,Female,Finland,1.74,60,30
+Pawel Klisz,ccy,Male,Poland,1.76,72,21
+Arvis Liepins,ccy,Male,Latvia,1.87,76,23
+Devon Kershaw,ccy,Male,Canada,1.78,72,31
+Marija Kolaroska,ccy,Female,The Former Yugoslav Republic of Macedonia,1.64,50,16
+Masako Ishida,ccy,Female,Japan,1.62,54,33
+Eldar Roenning,ccy,Male,Norway,,,31
+Natalia Zhukova,ccy,Female,Russian Fed.,1.68,55,21
+Finn Haagen Krogh,ccy,Male,Norway,,,23
+Mark Starostin,ccy,Male,Kazakhstan,1.75,75,23
+Ruslan Perekhoda,ccy,Male,Ukraine,1.82,75,26
+Gianluca Cologna,ccy,Male,Switzerland,1.78,74,23
+Anastasia Dotsenko,ccy,Female,Russian Fed.,1.70,60,27
+Riikka Sarasoja-Lilja,ccy,Female,Finland,1.64,55,31
+Sami Jauhojaervi,ccy,Male,Finland,1.74,69,32
+Aurelie Dabudyk,ccy,Female,France,1.64,53,25
+Keishin Yoshida,ccy,Male,Japan,1.75,74,27
+Ingrida Ardisauskaite,ccy,Female,Lithuania,1.78,65,21
+Maciej Starega,ccy,Male,Poland,1.80,76,24
+Gaia Vuerich,ccy,Female,Italy,1.65,54,22
+Mari Laukkanen,ccy,Female,Finland,1.71,58,26
+Teresa Stadlober,ccy,Female,Austria,1.68,52,21
+Petter Jr. Northug,ccy,Male,Norway,,,28
+Antoniya Grigorova-Burgova,ccy,Female,Bulgaria,1.67,58,27
+Kateryna Grygorenko,ccy,Female,Ukraine,1.66,67,28
+Amanda Ammar,ccy,Female,Canada,1.57,54,28
+Kristin Stoermer Steira,ccy,Female,Norway,,,32
+Sebastian Gazurek,ccy,Male,Poland,1.76,72,23
+Adrien Backscheider,ccy,Male,France,1.78,73,21
+Leandro Ribela,ccy,Male,Brazil,1.84,80,33
+Laurien Van Der Graaff,ccy,Female,Switzerland,1.67,57,26
+Thomas Bing,ccy,Male,Germany,1.77,70,23
+Bettina Gruber,ccy,Female,Switzerland,1.70,59,29
+Peeter Kummel,ccy,Male,Estonia,1.92,86,31
+Jesse Cockney,ccy,Male,Canada,1.80,76,24
+Anders Gloeersen,ccy,Male,Norway,,,27
+Ivan Perrillat Boiteux,ccy,Male,France,1.72,64,28
+Irina Khazova,ccy,Female,Russian Fed.,1.70,61,29
+Gary Di Silvestri,ccy,Male,Dominica,1.83,82,47
+Aurore Jean,ccy,Female,France,1.75,61,28
+Victor Pinzaru,ccy,Male,Rep. of Moldova,1.86,84,22
+Emil Joensson,ccy,Male,Sweden,1.78,79,28
+Petr Novak,ccy,Male,Czech Republic,1.79,72,31
+Wenlong Xu,ccy,Male,China,1.72,67,26
+Kari Peters,ccy,Male,Luxembourg,1.83,78,28
+Agnieszka Szymanczak,ccy,Female,Poland,1.73,59,29
+Dario Cologna,ccy,Male,Switzerland,1.78,75,27
+Hanna Falk,ccy,Female,Sweden,1.67,65,24
+Andrew Young,ccy,Male,Great Britain,1.94,90,21
+Sofia Bleckur,ccy,Female,Sweden,1.64,60,29
+Dietmar Noeckler,ccy,Male,Italy,1.81,75,25
+Milan Szabo,ccy,Male,Hungary,1.83,78,23
+Teodor Peterson,ccy,Male,Sweden,1.87,83,25
+Sjur Roethe,ccy,Male,Norway,,,25
+Philipp Haelg,ccy,Male,Liechtenstein,1.86,78,22
+Jun-Ho Hwang,ccy,Male,Korea,1.81,71,20
+Johannes Duerr,ccy,Male,Austria,1.77,63,26
+Riitta-Liisa Roponen,ccy,Female,Finland,1.61,54,35
+Anne Kylloenen,ccy,Female,Finland,1.73,61,26
+Maiken Caspersen Falla,ccy,Female,Norway,,,23
+Krista Lahteenmaki,ccy,Female,Finland,1.60,56,23
+Torin Koos,ccy,Male,United States,1.88,85,33
+Ingvild Flugstad Oestberg,ccy,Female,Norway,,,23
+Eva Vrabcova - Nyvltova,ccy,Female,Czech Republic,1.62,54,28
+Veronika Mayerhofer,ccy,Female,Austria,1.76,60,21
+Evi Sachenbacher-Stehle,ccy,Female,Germany,1.62,52,33
+Natalia Matveeva,ccy,Female,Russian Fed.,1.68,56,27
+Kelime Cetinkaya,ccy,Female,Turkey,1.60,54,31
+Paul Constantin Pepene,ccy,Male,Romania,1.73,70,25
+Tetyana Antypenko,ccy,Female,Ukraine,1.58,55,32
+Jens Filbrich,ccy,Male,Germany,1.77,72,34
+Hongxue Li,ccy,Female,China,1.60,52,29
+Veselin Tsinzov,ccy,Male,Bulgaria,1.70,67,27
+Algo Karp,ccy,Male,Estonia,1.92,80,28
+Lari Lehtonen,ccy,Male,Finland,1.76,71,26
+Kerttu Niskanen,ccy,Female,Finland,1.72,58,25
+Nikita Kriukov,ccy,Male,Russian Fed.,1.84,74,28
+Maxim Vylegzhanin,ccy,Male,Russian Fed.,1.73,68,31
+Kikkan Randall,ccy,Female,United States,1.65,60,31
+Peter Mlynar,ccy,Male,Slovakia,1.85,80,25
+Lucia Anger,ccy,Female,Germany,1.68,60,23
+Ville Nousiainen,ccy,Male,Finland,1.85,71,30
+Andrew Newell,ccy,Male,United States,1.78,71,30
+Nathalie Schwarz,ccy,Female,Austria,1.61,54,20
+Dusan Kozisek,ccy,Male,Czech Republic,1.85,76,30
+Anton Gafarov,ccy,Male,Russian Fed.,1.75,70,27
+Ales Razym,ccy,Male,Czech Republic,1.82,76,27
+Callum Smith,ccy,Male,Great Britain,1.80,74,21
+Roberto Carcelen,ccy,Male,Peru,1.74,64,43
+Yulia Tchekaleva,ccy,Female,Russian Fed.,1.65,60,30
+Roman Ragozin,ccy,Male,Kazakhstan,1.75,69,21
+Alexander Legkov,ccy,Male,Russian Fed.,1.78,73,30
+Anna Haag,ccy,Female,Sweden,1.63,58,27
+Oleksii Krasovskyi,ccy,Male,Ukraine,1.77,68,19
+Brian Gregg,ccy,Male,United States,1.73,69,29
+Harald Wurm,ccy,Male,Austria,1.78,72,29
+Anssi Pentsinen,ccy,Male,Finland,1.84,83,27
+Enrico Nizzi,ccy,Male,Italy,1.87,77,23
+Roman Schaad,ccy,Male,Switzerland,1.87,78,20
+Claudia Nystad,ccy,Female,Germany,1.68,60,36
+Federico Pablo Cichero,ccy,Male,Argentina,,,30
+Martin Jaeger,ccy,Male,Switzerland,1.80,79,26
+Emma Wiken,ccy,Female,Sweden,1.67,60,24
+Giorgio Di Centa,ccy,Male,Italy,1.75,68,41
+Michail Semenov,ccy,Male,Belarus,1.68,66,28
+Janis Paipals,ccy,Male,Latvia,1.80,79,30
+Evgenia Shapovalova,ccy,Female,Russian Fed.,1.70,64,27
+Saevar Birgisson,ccy,Male,Iceland,1.75,,26
+Callum Watson,ccy,Male,Australia,1.80,66,24
+Josef Wenzl,ccy,Male,Germany,1.87,85,29
+David Hofer,ccy,Male,Italy,1.80,72,30
+Sophie Caldwell,ccy,Female,United States,1.70,59,23
+Artur Yeghoyan,ccy,Male,Armenia,1.80,83,23
+Anouk Faivre Picon,ccy,Female,France,1.67,58,27
+Tim Tscharnke,ccy,Male,Germany,1.83,76,24
+Nicole Fessel,ccy,Female,Germany,1.70,57,30
+Baptiste Gros,ccy,Male,France,1.78,80,23
+Denis Volotka,ccy,Male,Kazakhstan,1.85,83,28
+Katja Visnar,ccy,Female,Slovenia,1.74,65,29
+Alexandra Camenscic,ccy,Female,Rep. of Moldova,1.58,55,25
+Sergey Mikayelyan,ccy,Male,Armenia,1.84,73,21
+Graeme Killick,ccy,Male,Canada,1.78,70,24
+Triin Ojaste,ccy,Female,Estonia,1.65,59,23
+Yevgeniy Velichko,ccy,Male,Kazakhstan,1.78,72,26
+Maurice Manificat,ccy,Male,France,1.85,73,27
+Olga Kuziukova,ccy,Female,Russian Fed.,1.70,62,28
+Sergey Cherepanov,ccy,Male,Kazakhstan,1.84,73,28
+Elisa Brocard,ccy,Female,Italy,1.62,53,29
+Qinghai Sun,ccy,Male,China,1.88,80,26
+Martin Moeller,ccy,Male,Denmark,1.86,80,33
+Alex Harvey,ccy,Male,Canada,1.84,75,25
+Alexander Bessmertnykh,ccy,Male,Russian Fed.,1.82,78,27
+Ivana Kovacevic,ccy,Female,Serbia,1.69,61,19
+Greta Laurent,ccy,Female,Italy,1.68,61,21
+Anastasia Slonova,ccy,Female,Kazakhstan,1.62,55,22
+Kris Freeman,ccy,Male,United States,1.80,79,33
+Kornelia Kubinska,ccy,Female,Poland,1.65,49,28
+Dandan Man,ccy,Female,China,1.64,53,24
+Renaud Jay,ccy,Male,France,1.74,72,22
+Paulina Maciuszek,ccy,Female,Poland,1.70,56,28
+Nobu Naruse,ccy,Male,Japan,1.67,62,29
+Ilaria Debertolis,ccy,Female,Italy,1.70,57,24
+Simeon Hamilton,ccy,Male,United States,1.80,78,26
+Javier Gutierrez,ccy,Male,Spain,1.77,65,28
+Evgeniy Belov,ccy,Male,Russian Fed.,1.85,78,23
+Tord Asle Gjerdalen,ccy,Male,Norway,,,30
+Coraline Hugue,ccy,Female,France,1.55,53,29
+Eirik Brandsdal,ccy,Male,Norway,,,27
+Justyna Kowalczyk,ccy,Female,Poland,1.74,64,31
+Jessica Diggins,ccy,Female,United States,1.63,58,22
+Chandra Crawford,ccy,Female,Canada,1.75,68,30
+Panagiota Tsakiri,ccy,Female,Greece,1.70,58,23
+Karolina Grohova,ccy,Female,Czech Republic,1.70,66,23
+Celia Aymonier,ccy,Female,France,1.61,56,22
+Timea Sara,ccy,Female,Romania,1.77,67,21
+Emily Nishikawa,ccy,Female,Canada,1.63,61,24
+Stina Nilsson,ccy,Female,Sweden,1.74,68,20
+Esther Bottomley,ccy,Female,Australia,1.67,58,31
+Martin Jaks,ccy,Male,Czech Republic,1.85,74,27
+Matti Heikkinen,ccy,Male,Finland,1.74,61,30
+Farzaneh Rezasoltani,ccy,Female,IR Iran,1.57,53,28
+Jean Marc Gaillard,ccy,Male,France,1.80,74,33
+Alena Prochazkova,ccy,Female,Slovakia,1.78,58,29
+Cyril Miranda,ccy,Male,France,1.85,80,28
+Erik Bjornsen,ccy,Male,United States,1.85,84,22
+Jiri Magal,ccy,Male,Czech Republic,1.74,65,36
+Petra Novakova,ccy,Female,Czech Republic,1.64,56,20
+Mathilde Amivi Petitjean,ccy,Female,Togo,1.63,60,19
+Ilia Chernousov,ccy,Male,Russian Fed.,1.75,72,27
+Celine Brun-Lie,ccy,Female,Norway,,,25
+Phillip Bellingham,ccy,Male,Australia,1.85,84,22
+Jonas Baumann,ccy,Male,Switzerland,1.75,71,23
+Jan Rossiter,ccy,Male,Ireland,1.83,76,26
+Joeri Kindschi,ccy,Male,Switzerland,1.76,75,27
+Curdin Perl,ccy,Male,Switzerland,1.81,77,29
+Alenka Cebasek,ccy,Female,Slovenia,1.66,61,24
+Noah Hoffman,ccy,Male,United States,1.75,71,24
+Daniela Kotschova,ccy,Female,Slovakia,1.74,60,28
+Erik Lesser,ccy,Male,Germany,1.70,70,25
+Agnes Simon,ccy,Female,Hungary,1.71,66,39
+Anders Soedergren,ccy,Male,Sweden,1.82,76,36
+Yonathan Jesus Fernandez,ccy,Male,Chile,1.90,86,27
+Remo Fischer,ccy,Male,Switzerland,1.73,68,32
+Andrey Gridin,ccy,Male,Bulgaria,1.80,74,25
+Dachhiri Sherpa,ccy,Male,Nepal,1.78,79,44
+Nika Razinger,ccy,Female,Slovenia,1.63,58,20
+Tatyana Ossipova,ccy,Female,Kazakhstan,1.68,57,26
+Apostolos Angelis,ccy,Male,Greece,1.81,76,20
+Bernhard Tritscher,ccy,Male,Austria,1.75,72,25
+Chris Andre Jespersen,ccy,Male,Norway,,,30
+Inga Daushkane,ccy,Female,Latvia,1.71,60,33
+Lukas Bauer,ccy,Male,Czech Republic,1.81,73,36
+Vedrana Malec,ccy,Female,Croatia,1.71,61,23
+Valiantsina Kaminskaya,ccy,Female,Belarus,1.65,52,26
+Mladen Plakalovic,ccy,Male,Bosnia and Herzegovina,1.85,85,22
+Alena Sannikova,ccy,Female,Belarus,1.71,57,33
+Karel Tammjarv,ccy,Male,Estonia,1.93,88,24
+Charlotte Kalla,ccy,Female,Sweden,1.62,59,26
+Aimee Watson,ccy,Female,Australia,1.69,60,26
+Aliaksei Ivanou,ccy,Male,Belarus,1.68,62,33
+Rejhan Smrkovic,ccy,Male,Serbia,1.82,74,22
+Brittany Webster,ccy,Female,Canada,1.68,57,26
+Ida Ingemarsdotter,ccy,Female,Sweden,1.74,66,28
+Federico Pellegrino,ccy,Male,Italy,1.73,70,23
+Didrik Toenseth,ccy,Male,Norway,,,22
+Arnd Peiffer,ccy,Male,Germany,1.85,83,26
+Eligius Tambornino,ccy,Male,Switzerland,1.83,73,27
+Nadeem Iqbal,ccy,Male,India,1.73,65,30
+Marit Bjoergen,ccy,Female,Norway,,,33
+Marion Buillet,ccy,Female,France,1.70,56,23
+Hanna Erikson,ccy,Female,Sweden,1.65,65,23
+Alexander Lasutkin,ccy,Male,Belarus,1.76,74,30
+Toni Livers,ccy,Male,Switzerland,1.82,74,30
+Hiroyuki Miyazawa,ccy,Male,Japan,1.72,74,22
+Hanna Kolb,ccy,Female,Germany,1.74,63,22
+Sara Lindborg,ccy,Female,Sweden,1.72,64,30
+Laura Orgue,ccy,Female,Spain,1.74,54,27
+Heidi Widmer,ccy,Female,Canada,1.75,63,22
+Johan Olsson,ccy,Male,Sweden,1.81,68,33
+Hannes Dotzler,ccy,Male,Germany,1.76,70,23
+Angelica Morrone Di Silvestri,ccy,Female,Dominica,1.65,57,48
+Edi Dadic,ccy,Male,Croatia,1.83,79,20
+Britta Johansson Norgren,ccy,Female,Sweden,1.70,66,30
+Robin Duvillard,ccy,Male,France,1.78,71,30
+Katerina Smutna,ccy,Female,Austria,1.71,60,30
+Katrin Zeller,ccy,Female,Germany,1.71,60,34
+Roland Clara,ccy,Male,Italy,1.74,65,31
+Iivo Niskanen,ccy,Male,Finland,1.87,80,22
+Marcus Hellner,ccy,Male,Sweden,1.83,75,28
+Valentina Shevchenko,ccy,Female,Ukraine,1.65,51,38
+Marina Piller,ccy,Female,Italy,1.63,53,29
+Seraina Boner,ccy,Female,Switzerland,1.68,54,31
+Darko Damjanovski,ccy,Male,The Former Yugoslav Republic of Macedonia,1.81,73,32
+Barbara Jezersek,ccy,Female,Slovenia,1.60,55,27
+Tanja Karisik,ccy,Female,Bosnia and Herzegovina,1.69,53,22
+Len Valjas,ccy,Male,Canada,1.98,91,25
+Sadie Bjornsen,ccy,Female,United States,1.75,66,24
+Sebastian Eisenlauer,ccy,Male,Germany,1.81,72,23
+Julia Ivanova,ccy,Female,Russian Fed.,1.58,56,28
+Elizabeth Stephen,ccy,Female,United States,1.57,48,27
+Vesna Fabjan,ccy,Female,Slovenia,1.70,62,28
+Martin Johnsrud Sundby,ccy,Male,Norway,,,29
+Astrid Uhrenholdt Jacobsen,ccy,Female,Norway,,,27
+Francesco De Fabiani,ccy,Male,Italy,1.80,70,20
+Paal Golberg,ccy,Male,Norway,,,23
+Max Hauke,ccy,Male,Austria,1.81,74,21
+Milanko Petrovic,ccy,Male,Serbia,1.87,83,25
+Nikolay Chebotko,ccy,Male,Kazakhstan,1.78,73,31
+Jaqueline Mourao,ccy,Female,Brazil,1.70,54,38
+Lars Nelson,ccy,Male,Sweden,1.80,77,28
+Holly Brooks,ccy,Female,United States,1.68,61,31
+Alexey Petukhov,ccy,Male,Russian Fed.,1.78,75,30
+Tobias Angerer,ccy,Male,Germany,1.78,72,36
+Juho Mikkonen,ccy,Male,Finland,1.79,72,23
+Yerdos Akhmadiyev,ccy,Male,Kazakhstan,1.80,72,28
+Debora Agreiter,ccy,Female,Italy,1.66,51,22
+Perianne Jones,ccy,Female,Canada,1.67,55,28
+Ann Swisshelm,crl,Female,United States,1.75,,45
+Greg Drummond,crl,Male,Great Britain,1.71,73,25
+Caleb Flaxey,crl,Male,Canada,1.75,,30
+Michiko Tomabechi,crl,Female,Japan,1.48,,34
+Jill Officer,crl,Female,Canada,1.77,,38
+Troels Harry,crl,Male,Denmark,1.83,,23
+Dejia Zou,crl,Male,China,1.74,,30
+Anna Sloan,crl,Female,Great Britain,,,23
+Vicki Adams,crl,Female,Great Britain,1.64,69,24
+Yan Zhou,crl,Female,China,1.62,,31
+Nkeiruka Ezekh,crl,Female,Russian Fed.,1.78,,30
+Lauren Gray,crl,Female,Great Britain,1.75,,22
+Dawn Mcewen,crl,Female,Canada,1.62,,33
+Margarita Fomina,crl,Female,Russian Fed.,1.75,,25
+Sven Michel,crl,Male,Switzerland,1.76,,25
+Chinami Yoshida,crl,Female,Japan,1.57,,22
+Ryan Fry,crl,Male,Canada,1.75,,35
+Kaho Onodera,crl,Female,Japan,1.64,,22
+Brad Jacobs,crl,Male,Canada,,,28
+Jeanne Ellegaard,crl,Female,Denmark,1.72,,26
+John Jahr,crl,Male,Germany,1.84,,48
+Evgeny Arkhipov,crl,Male,Russian Fed.,1.80,,22
+Scott Andrews,crl,Male,Great Britain,1.75,85,24
+Niklas Edin,crl,Male,Sweden,1.71,,28
+Carmen Kueng,crl,Female,Switzerland,1.69,,36
+Eve Muirhead,crl,Female,Great Britain,1.73,66,23
+Kirsten Wall,crl,Female,Canada,1.53,,38
+Andrey Drozdov,crl,Male,Russian Fed.,1.81,,25
+Seulbee Lee,crl,Female,Korea,1.60,,25
+Margaretha Sigfridsson,crl,Female,Sweden,1.69,60,38
+Alina Paetz,crl,Female,Switzerland,1.69,,23
+Lene Nielsen,crl,Female,Denmark,1.77,,27
+Felix Schulze,crl,Male,Germany,1.80,,33
+Alexandra Saitova,crl,Female,Russian Fed.,1.67,,21
+Mikkel Poulsen,crl,Male,Denmark,1.82,,29
+Jared Zezel,crl,Male,United States,1.80,,22
+Benoit Schwarz,crl,Male,Switzerland,1.72,,22
+Maria Wennerstroem,crl,Female,Sweden,1.67,,28
+Debbie Mccormick,crl,Female,United States,1.70,,40
+John Landsteiner,crl,Male,United States,1.80,,23
+Yin Liu,crl,Female,China,1.65,,32
+Sebastian Kraupp,crl,Male,Sweden,1.83,,28
+Sven Goldemann,crl,Male,Germany,1.80,,44
+Alexander Kozyrev,crl,Male,Russian Fed.,1.73,,27
+Mi Sung Shin,crl,Female,Korea,1.58,,35
+Lars Vilandt,crl,Male,Denmark,1.83,,39
+Mette De Neergaard,crl,Female,Denmark,1.64,,22
+Jeff Isaacson,crl,Male,United States,1.73,,30
+Yumie Funayama,crl,Female,Japan,1.53,,35
+Ekaterina Galkina,crl,Female,Russian Fed.,1.70,,25
+Petr Dron,crl,Male,Russian Fed.,1.97,,28
+Min Ji Um,crl,Female,Korea,1.58,,23
+Qingshuang Yue,crl,Female,China,1.67,,28
+Janine Greiner,crl,Female,Switzerland,1.68,,33
+Helle Simonsen,crl,Female,Denmark,1.80,,29
+Maria Poulsen,crl,Female,Denmark,1.65,,29
+Jisun Kim,crl,Female,Korea,1.55,,26
+Oskar Eriksson,crl,Male,Sweden,1.77,,22
+Un Chi Gim,crl,Female,Korea,1.66,,24
+Ayumi Ogasawara,crl,Female,Japan,1.56,,35
+E.J. Harnden,crl,Male,Canada,1.85,,30
+Jialiang Zang,crl,Male,China,1.75,,26
+Simon Gempeler,crl,Male,Switzerland,1.78,,27
+Rasmus Stjerne Hansen,crl,Male,Denmark,1.87,,25
+Dexin Ba,crl,Male,China,1.85,,23
+Johnny Frederiksen,crl,Male,Denmark,1.80,,38
+Erika Brown,crl,Female,United States,,,41
+Xiaoming Xu,crl,Male,China,1.78,,29
+Maria Prytz,crl,Female,Sweden,1.70,,37
+Rui Liu,crl,Male,China,1.82,,31
+John Shuster,crl,Male,United States,1.83,,31
+Sandro Trolliet,crl,Male,Switzerland,1.92,,25
+Tom Brewster,crl,Male,Great Britain,1.79,,39
+Bingyu Wang,crl,Female,China,1.64,,29
+Jennifer Jones,crl,Female,Canada,1.73,,39
+Thomas Ulsrud,crl,Male,Norway,1.83,80,42
+Viktor Kjaell,crl,Male,Sweden,1.82,,28
+Allison Pottinger,crl,Female,United States,1.55,,40
+Christina Bertrup,crl,Female,Sweden,1.75,,37
+David Murdoch,crl,Male,Great Britain,1.78,84,35
+Anna Sidorova,crl,Female,Russian Fed.,1.79,,23
+Kaitlyn Lawes,crl,Female,Canada,1.60,,25
+Haavard Vad Petersson,crl,Male,Norway,1.93,80,30
+Mirjam Ott,crl,Female,Switzerland,1.62,,42
+Yilun Jiang,crl,Female,China,1.63,,20
+Torger Nergaard,crl,Male,Norway,1.80,85,39
+Alexey Stukalskiy,crl,Male,Russian Fed.,1.80,,25
+Ryan Harnden,crl,Male,Canada,1.83,,27
+Markus Hoeiberg,crl,Male,Norway,,,22
+Claire Hamilton,crl,Female,Great Britain,1.73,66,25
+Craig Brown,crl,Male,United States,1.70,,38
+Christoffer Svae,crl,Male,Norway,1.89,,31
+Agnes Knochenhauer,crl,Female,Sweden,1.72,,24
+Peter Rickmers,crl,Male,Germany,1.85,,34
+Fredrik Lindberg,crl,Male,Sweden,1.79,,28
+Carmen Schaefer,crl,Female,Switzerland,1.61,,33
+Claudio Paetz,crl,Male,Switzerland,1.87,,26
+Michael Goodfellow,crl,Male,Great Britain,1.84,88,25
+Christopher Bartsch,crl,Male,Germany,1.80,,34
+Jessica Schultz,crl,Female,United States,1.70,58,29
+Brian Joubert,fgs,Male,France,1.79,,29
+Viktor Pfeifer,fgs,Male,Austria,1.82,,26
+Zoltan Kelemen,fgs,Male,Romania,1.71,,27
+Yuzuru Hanyu,fgs,Male,Japan,1.71,,19
+Narumi Takahashi,fgs,Female,Japan,1.46,,22
+Tatiana Volosozhar,fgs,Female,Russian Fed.,1.59,,27
+Nicole Rajicova,fgs,Female,Slovakia,1.62,,18
+Adelina Sotnikova,fgs,Female,Russian Fed.,1.63,,17
+Matteo Guarise,fgs,Male,Italy,1.82,,25
+Evan Bates,fgs,Male,United States,1.88,,24
+Fedor Klimov,fgs,Male,Russian Fed.,1.81,,23
+Nicole Della Monica,fgs,Female,Italy,1.56,,24
+Florent Amodio,fgs,Male,France,1.64,,23
+Kaetlyn Osmond,fgs,Female,Canada,1.63,,18
+Tatsuki Machida,fgs,Male,Japan,1.62,,23
+Jian Tong,fgs,Male,China,1.79,,34
+Michal Brezina,fgs,Male,Czech Republic,1.73,,23
+Yuri Rudyk,fgs,Male,Ukraine,1.86,,22
+Alex Shibutani,fgs,Male,United States,1.80,,22
+Mae Berenice Meite,fgs,Female,France,1.68,,19
+Gregory Merriman,fgs,Male,Australia,1.80,,25
+Charlene Guignard,fgs,Female,Italy,1.58,,24
+Madison Chock,fgs,Female,United States,1.57,,21
+Brendan Kerry,fgs,Male,Australia,1.70,,19
+Vanessa James,fgs,Female,France,1.62,,26
+Nicholas Buckland,fgs,Male,Great Britain,1.82,,24
+Maylin Wende,fgs,Female,Germany,1.54,,25
+Tessa Virtue,fgs,Female,Canada,1.65,,24
+Polina Edmunds,fgs,Female,United States,1.65,,15
+Gracie Gold,fgs,Female,United States,1.65,,18
+Alisa Agafonova,fgs,Female,Turkey,1.73,,23
+Xintong Huang,fgs,Female,China,1.65,,27
+Jorik Hendrickx,fgs,Male,Belgium,1.75,,21
+Severin Kiefer,fgs,Male,Austria,1.82,,23
+Yuri Larionov,fgs,Male,Russian Fed.,1.81,,27
+Ryuichi Kihara,fgs,Male,Japan,1.75,,21
+Liam Firus,fgs,Male,Canada,1.46,,21
+Meryl Davis,fgs,Female,United States,1.60,,27
+Yuna Kim,fgs,Female,Korea,1.65,,23
+Julia Lavrentieva,fgs,Female,Ukraine,1.55,,16
+Sara Hurtado,fgs,Female,Spain,1.60,,21
+Hao Zhang,fgs,Male,China,1.81,,29
+Elena Ilinykh,fgs,Female,Russian Fed.,1.64,,19
+Xun Zheng,fgs,Male,China,1.88,,26
+Matthew Parr,fgs,Male,Great Britain,1.79,,23
+Paul Bonifacio Parkinson,fgs,Male,Italy,1.63,,23
+Carolina Kostner,fgs,Female,Italy,1.69,,27
+Paige Lawrence,fgs,Female,Canada,1.53,,23
+Jenna Mccorkell,fgs,Female,Great Britain,1.64,,27
+Robin Szolkowy,fgs,Male,Germany,1.74,,34
+Akiko Suzuki,fgs,Female,Japan,1.60,,28
+Cheng Peng,fgs,Female,China,1.57,,16
+Andrew Poje,fgs,Male,Canada,1.91,,26
+Eric Radford,fgs,Male,Canada,1.88,,29
+Danielle Obrien,fgs,Female,Australia,1.50,,24
+Nikita Katsalapov,fgs,Male,Russian Fed.,1.80,,22
+Mitchell Islam,fgs,Male,Canada,1.81,,24
+Felicia Zhang,fgs,Female,United States,1.55,,20
+Zijun Li,fgs,Female,China,1.61,,17
+Ksenia Stolbova,fgs,Female,Russian Fed.,1.58,,22
+Vera Bazarova,fgs,Female,Russian Fed.,1.58,,21
+Meagan Duhamel,fgs,Female,Canada,1.48,,28
+Ashley Wagner,fgs,Female,United States,1.60,,22
+David King,fgs,Male,Great Britain,1.85,,29
+Qing Pang,fgs,Female,China,1.60,,34
+Elene Gedevanishvili,fgs,Female,Georgia,1.60,,24
+Scott Moir,fgs,Male,Canada,1.68,,26
+Kexin Zhang,fgs,Female,China,1.53,,18
+Viktor Romanenkov,fgs,Male,Estonia,1.81,,20
+Abzal Rakimgaliev,fgs,Male,Kazakhstan,1.68,,21
+Kevin Reynolds,fgs,Male,Canada,1.77,,23
+Stefania Berton,fgs,Female,Italy,1.61,,23
+Miriam Ziegler,fgs,Female,Austria,1.54,,19
+Javier Fernandez,fgs,Male,Spain,1.73,,22
+Adria Diaz,fgs,Male,Spain,1.72,,23
+Tanja Kolbe,fgs,Female,Germany,1.69,,23
+Alexei Bychenko,fgs,Male,Israel,1.74,,26
+Ruslan Zhiganshin,fgs,Male,Russian Fed.,1.77,,21
+Han Yan,fgs,Male,China,1.69,,17
+Fabian Bourzat,fgs,Male,France,1.80,,33
+Nelli Zhiganshina,fgs,Female,Germany,1.65,,26
+Kanako Murakami,fgs,Female,Japan,1.62,,19
+Maxim Trankov,fgs,Male,Russian Fed.,1.87,,30
+Daisuke Takahashi,fgs,Male,Japan,1.65,,27
+Luca Lanotte,fgs,Male,Italy,1.78,,28
+Penny Coomes,fgs,Female,Great Britain,1.52,,24
+Peter Liebers,fgs,Male,Germany,1.70,,25
+Gabrielle Daleman,fgs,Female,Canada,1.52,,16
+Mao Asada,fgs,Female,Japan,1.63,,23
+Stefano Caruso,fgs,Male,Germany,1.80,,26
+Dmitri Dun,fgs,Male,Ukraine,1.83,,24
+Evgeny Plyushchenko,fgs,Male,Russian Fed.,1.78,,31
+Kirsten Moore-Towers,fgs,Female,Canada,1.49,,21
+Isabella Tobias,fgs,Female,Lithuania,1.61,,22
+Anne Line Gjersem,fgs,Female,Norway,,,20
+Alexander Majorov,fgs,Male,Sweden,1.67,,22
+Kerstin Frank,fgs,Female,Austria,1.63,,25
+Daniel Wende,fgs,Male,Germany,1.82,,29
+Morgan Cipres,fgs,Male,France,1.82,,22
+Pernelle Carron,fgs,Female,France,1.60,,27
+Alexandra Paul,fgs,Female,Canada,1.61,,22
+Michael Christian Martinez,fgs,Male,Philippines,1.72,,17
+Patrick Chan,fgs,Male,Canada,1.68,,23
+So Youn Park,fgs,Female,Korea,1.57,,16
+Isadora Williams,fgs,Female,Brazil,1.56,,18
+Marco Fabbri,fgs,Male,Italy,1.64,,26
+Haejin Kim,fgs,Female,Korea,1.62,,16
+Marissa Castelli,fgs,Female,United States,1.52,,23
+Jeremy Abbott,fgs,Male,United States,1.75,,28
+Aliona Savchenko,fgs,Female,Germany,1.53,,30
+Elizaveta Ukolova,fgs,Female,Czech Republic,1.71,,15
+Victoria Sinitsina,fgs,Female,Russian Fed.,1.66,,18
+Viktoria Helgesson,fgs,Female,Sweden,1.65,,25
+Natalia Popova,fgs,Female,Ukraine,1.68,,20
+Nathalie Weinzierl,fgs,Female,Germany,1.59,,19
+Alexander Gazsi,fgs,Male,Germany,1.82,,29
+Valentina Marchei,fgs,Female,Italy,1.61,,27
+Evgeni Krasnopolski,fgs,Male,Israel,1.80,,25
+Dmitri Soloviev,fgs,Male,Russian Fed.,1.83,,24
+Deividas Stagniunas,fgs,Male,Lithuania,1.82,,28
+Chris Reed,fgs,Male,Japan,1.85,,24
+Nathan Bartholomay,fgs,Male,United States,1.78,,24
+Andrea Davidovich,fgs,Female,Israel,1.52,,16
+Siobhan Heekin-Canedy,fgs,Female,Ukraine,1.70,,22
+Maia Shibutani,fgs,Female,United States,1.60,,19
+Ekaterina Bobrova,fgs,Female,Russian Fed.,1.60,,23
+Julia Zlobina,fgs,Female,Azerbaijan,1.58,,24
+Lloyd Jones,fgs,Male,France,1.85,,25
+Tomas Verner,fgs,Male,Czech Republic,1.80,,27
+Dylan Moscovitch,fgs,Male,Canada,1.77,,29
+Rudi Swiegers,fgs,Male,Canada,1.88,,26
+Denis Ten,fgs,Male,Kazakhstan,1.68,,20
+Yulia Lipnitskaya,fgs,Female,Russian Fed.,1.58,,15
+Cathy Reed,fgs,Female,Japan,1.67,,26
+Anna Cappellini,fgs,Female,Italy,1.61,,26
+Alper Ucar,fgs,Male,Turkey,1.83,,29
+Brooklee Han,fgs,Female,Australia,1.50,,18
+Ondrej Hotarek,fgs,Male,Italy,1.81,,30
+Yakov Godorozha,fgs,Male,Ukraine,1.81,,20
+Kaitlyn Weaver,fgs,Female,Canada,1.67,,24
+Nathalie Pechalat,fgs,Female,France,1.63,,30
+Alexei Sitnikov,fgs,Male,Azerbaijan,1.71,,27
+Charlie White,fgs,Male,United States,1.75,,26
+Javier Raya,fgs,Male,Spain,1.75,,22
+Misha Ge,fgs,Male,Uzbekistan,1.73,,22
+Stacey Kemp,fgs,Female,Great Britain,1.55,,25
+Elena Glebova,fgs,Female,Estonia,1.66,,24
+Jason Brown,fgs,Male,United States,1.70,,19
+Simon Shnapir,fgs,Male,United States,1.93,,26
+Regina Rakhimova,fss,Female,Russian Fed.,1.60,55,24
+Janina Kuzma,fss,Female,New Zealand,,,28
+Kelsey Serwa,fss,Female,Canada,1.68,62,24
+Kai Mahler,fss,Male,Switzerland,1.73,65,18
+John Teller,fss,Male,United States,1.88,98,30
+Joss Christensen,fss,Male,United States,1.85,79,22
+Mischa Gasser,fss,Male,Switzerland,1.69,61,22
+Zhongqing Liu,fss,Male,China,1.75,72,28
+Filip Flisar,fss,Male,Slovenia,1.82,97,26
+Alla Tsuper,fss,Female,Belarus,1.53,53,34
+Didrik Bastian Juell,fss,Male,Norway,1.80,83,23
+Christopher Delbosco,fss,Male,Canada,1.85,96,31
+Anna Holmlund,fss,Female,Sweden,1.83,76,26
+Manami Mitsuboshi,fss,Female,Japan,1.67,57,30
+Benjamin Cavet,fss,Male,France,1.80,70,20
+Jon Anders Lindstad,fss,Male,Norway,,,19
+Aaron Blunck,fss,Male,United States,1.72,68,17
+Pavel Korpachev,fss,Male,Russian Fed.,1.70,65,28
+Beau-James Wells,fss,Male,New Zealand,,,18
+Zhanbota Aldabergenova,fss,Female,Kazakhstan,1.68,57,18
+Russell Henshaw,fss,Male,Australia,1.88,85,23
+Dale Begg-Smith,fss,Male,Australia,1.86,84,29
+Yannic Lerjen,fss,Male,Switzerland,,,23
+Kim Lamarre,fss,Female,Canada,1.65,54,25
+Katya Crema,fss,Female,Australia,1.74,64,25
+Nobuyuki Nishi,fss,Male,Japan,1.64,68,28
+Lyndon Sheehan,fss,Male,New Zealand,,,25
+Andreas Haatveit,fss,Male,Norway,1.83,94,27
+Miki Ito,fss,Female,Japan,1.62,51,26
+Jae-Woo Choi,fss,Male,Korea,1.77,72,19
+Egor Korotkov,fss,Male,Russian Fed.,1.80,77,27
+Mac Bohonnon,fss,Male,United States,1.73,61,18
+Marek Skala,fss,Male,Czech Republic,,,24
+David Morris,fss,Male,Australia,1.71,67,29
+Lauri Kivari,fss,Male,Finland,1.81,60,17
+Jouni Pellinen,fss,Male,Finland,1.81,92,30
+Mirjam Jaeger,fss,Female,Switzerland,1.73,64,31
+Rosalind Groenewoud,fss,Female,Canada,1.78,61,24
+Chloe Dufour-Lapointe,fss,Female,Canada,1.56,59,22
+Thomas Borge Lie,fss,Male,Norway,1.82,91,28
+Karolina Riemen-Zerebecka,fss,Female,Poland,1.76,71,25
+Davina Williams,fss,Female,Australia,1.70,56,28
+Brita Sigourney,fss,Female,United States,1.70,54,24
+Virginie Faivre,fss,Female,Switzerland,1.55,45,31
+Andreas Schauer,fss,Male,Germany,1.89,91,28
+Marielle Thompson,fss,Female,Canada,1.78,70,21
+Mykola Puzderko,fss,Male,Ukraine,1.76,76,23
+Alexandr Smyshlyaev,fss,Male,Russian Fed.,1.70,68,26
+Hannah Kearney,fss,Female,United States,1.65,66,27
+Silvia Bertagna,fss,Female,Italy,1.70,50,27
+Kaya Turski,fss,Female,Canada,1.65,57,25
+Kentaro Tsuda,fss,Male,Japan,,,30
+Benoit Valentin,fss,Male,France,1.73,65,21
+Olga Polyuk,fss,Female,Ukraine,1.61,55,26
+Yulia Galysheva,fss,Female,Kazakhstan,1.67,60,21
+David Duncan,fss,Male,Canada,1.83,93,31
+Nikol Kucerova,fss,Female,Czech Republic,1.64,63,24
+Maddie Bowman,fss,Female,United States,1.55,57,20
+James Machon,fss,Male,Great Britain,1.76,75,23
+Anais Caradeux,fss,Female,France,1.50,53,23
+Armin Niederer,fss,Male,Switzerland,1.71,75,26
+Pavel Kolmakov,fss,Male,Kazakhstan,1.78,78,17
+Timofei Slivets,fss,Male,Russian Fed.,1.84,79,29
+Benedikt Mayr,fss,Male,Germany,1.80,80,24
+Luca Tribondeau,fss,Male,Austria,1.81,74,17
+Alexandra Orlova,fss,Female,Russian Fed.,1.62,55,16
+Lisa Zimmermann,fss,Female,Germany,,,17
+Torin Yater-Wallace,fss,Male,United States,1.57,58,18
+David Wise,fss,Male,United States,1.82,86,23
+Zongyang Jia,fss,Male,China,1.75,70,22
+Kevin Rolland,fss,Male,France,1.78,64,24
+Rowan Cheshire,fss,Female,Great Britain,,,18
+Peter Crook,fss,Male,"Virgin Isl, B",1.86,75,21
+Sabrina Cakmakli,fss,Female,Germany,1.65,60,19
+Jenny Owens,fss,Female,Australia,1.68,65,35
+Julia Marino,fss,Female,Paraguay,1.60,66,21
+Marco Ladner,fss,Male,Austria,1.75,65,15
+Assoli Slivets,fss,Female,Russian Fed.,1.68,64,31
+Justine Dufour-Lapointe,fss,Female,Canada,1.63,55,19
+Marc-Antoine Gagnon,fss,Male,Canada,1.75,77,22
+Josiah Wells,fss,Male,New Zealand,1.68,68,23
+Bobby Brown,fss,Male,United States,1.88,84,22
+Jesper Tjader,fss,Male,Sweden,1.67,53,19
+Luca Schuler,fss,Male,Switzerland,1.57,47,16
+Sergey Mozhaev,fss,Male,Russian Fed.,1.80,86,25
+Stephanie Joffroy,fss,Female,Chile,1.73,73,22
+Jean Frederic Chapuis,fss,Male,France,1.72,83,24
+Elizavetta Chesnokova,fss,Female,Russian Fed.,1.63,53,17
+Anthony Benna,fss,Male,France,1.72,72,26
+Maxime Dufour-Lapointe,fss,Female,Canada,1.67,63,25
+Camillia Berra,fss,Female,Switzerland,1.61,61,19
+Angeli Vanlaanen,fss,Female,United States,,,28
+Zhibek Arapbayeva,fss,Female,Kazakhstan,1.60,58,22
+Andrey Volkov,fss,Male,Russian Fed.,1.72,70,27
+Anna Mirtova,fss,Female,Russian Fed.,1.57,47,21
+Britteny Cox,fss,Female,Australia,1.63,59,19
+Tanja Schaerer,fss,Female,Switzerland,1.67,59,24
+Alexei Grishin,fss,Male,Belarus,1.70,70,34
+Deborah Scanzio,fss,Female,Italy,1.70,65,27
+Anna Segal,fss,Female,Australia,1.64,59,27
+Junko Hoshino,fss,Female,Japan,,,24
+Nikola Sudova,fss,Female,Czech Republic,1.62,55,31
+Sergei Berestovskiy,fss,Male,Kazakhstan,1.78,76,28
+Patrick Deneen,fss,Male,United States,1.70,80,26
+Brady Leman,fss,Male,Canada,1.90,92,27
+Florian Eigler,fss,Male,Germany,1.78,80,23
+Emily Cook,fss,Female,United States,1.60,52,34
+Giacomo Matiz,fss,Male,Italy,1.80,80,28
+Sandra Naeslund,fss,Female,Sweden,1.67,63,17
+Pavel Krotov,fss,Male,Russian Fed.,1.68,70,21
+Veronika Korsunova,fss,Female,Russian Fed.,1.69,63,21
+Nina Li,fss,Female,China,1.60,52,31
+Justin Dorey,fss,Male,Canada,1.80,80,25
+Per Spett,fss,Male,Sweden,1.68,65,28
+Yuki Tsubota,fss,Female,Canada,1.60,65,20
+Alex Bilodeau,fss,Male,Canada,1.73,76,26
+Joselane Santos,fss,Female,Brazil,1.54,50,29
+Andrea Zemanova,fss,Female,Czech Republic,1.72,67,21
+Fanny Smith,fss,Female,Switzerland,1.66,59,21
+Julia Krass,fss,Female,United States,1.80,59,16
+Natalia Slepecka,fss,Female,Slovakia,,,30
+Anna Willcox-Silfverberg,fss,Female,New Zealand,1.70,60,21
+Ville Miettunen,fss,Male,Finland,1.77,64,21
+Ekaterina Stolyarova,fss,Female,Russian Fed.,1.76,55,25
+Qin Ning,fss,Female,China,1.62,60,22
+Matt Graham,fss,Male,Australia,1.71,71,19
+Heidi Zacher,fss,Female,Germany,1.67,59,25
+Marika Pertakhiya,fss,Female,Russian Fed.,1.70,56,21
+Nicole Parks,fss,Female,Australia,1.68,58,21
+Bradley Wilson,fss,Male,United States,1.77,72,21
+Daniel Bohnacker,fss,Male,Germany,1.90,83,23
+Anna Woerner,fss,Female,Germany,1.76,76,24
+Aleksander Aurdal,fss,Male,Norway,1.78,84,25
+Travis Gerrits,fss,Male,Canada,1.69,64,22
+Dominique Ohaco,fss,Female,Chile,,,18
+Anastasiia Chirtcova,fss,Female,Russian Fed.,1.60,60,24
+Noah Bowman,fss,Male,Canada,1.77,68,21
+Dara Howell,fss,Female,Canada,1.70,57,19
+Hanna Huskova,fss,Female,Belarus,1.67,57,21
+Emma Lonsdale,fss,Female,Great Britain,,,29
+Jussi Penttala,fss,Male,Finland,1.81,74,20
+Katrin Mueller,fss,Female,Switzerland,1.69,69,24
+Devin Logan,fss,Female,United States,1.75,79,21
+Yulia Livinskaya,fss,Female,Russian Fed.,1.63,53,23
+Pavel Nabokikh,fss,Male,Russian Fed.,1.78,70,24
+Keltie Hansen,fss,Female,Canada,1.60,54,21
+Arttu Kiramo,fss,Male,Finland,1.73,72,23
+Nils Lauper,fss,Male,Switzerland,1.60,65,31
+Amy Sheehan,fss,Female,Australia,1.64,59,27
+Katia Griffiths,fss,Female,Spain,1.73,55,33
+Annalisa Drew,fss,Female,United States,1.62,51,20
+Andreas Matt,fss,Male,Austria,1.92,100,31
+Nicholas Goepper,fss,Male,United States,1.83,75,19
+Sam Hall,fss,Male,Australia,1.80,72,25
+Hedvig Wessel,fss,Female,Norway,,,18
+Marie Martinod,fss,Female,France,1.58,48,29
+Ophelie David,fss,Female,France,1.72,62,37
+Thomas Fischer,fss,Male,Germany,1.82,82,28
+Katie Summerhayes,fss,Female,Great Britain,1.71,60,18
+Antti Ollila,fss,Male,Finland,1.72,71,19
+Sergey Volkov,fss,Male,Russian Fed.,1.78,83,26
+Nina Ragettli,fss,Female,Switzerland,1.62,,20
+Dmitriy Barmashov,fss,Male,Kazakhstan,1.78,78,28
+Antti-Jussi Kemppainen,fss,Male,Finland,,,24
+Shuang Cheng,fss,Female,China,1.62,46,27
+James Woods,fss,Male,Great Britain,1.65,74,22
+Lydia Lassila,fss,Female,Australia,1.57,54,32
+Georgia Simmerling,fss,Female,Canada,1.72,67,24
+Aleksi Patja,fss,Male,Finland,1.76,70,18
+Sanna Luedi,fss,Female,Switzerland,1.73,65,28
+Heidi Kloser,fss,Female,United States,1.70,59,21
+Antoine Adelisse,fss,Male,France,,,17
+Lyman Currier,fss,Male,United States,1.80,66,19
+Michael Schmid,fss,Male,Switzerland,1.95,100,29
+Eveline Bhend,fss,Female,Switzerland,1.67,60,32
+Renato Ulrich,fss,Male,Switzerland,1.78,72,30
+Thomas Lambert,fss,Male,Switzerland,1.82,75,29
+Marielle Berger Sabbatel,fss,Female,France,1.61,63,24
+Nadiya Mokhnatska,fss,Female,Ukraine,1.60,51,18
+John Eklund,fss,Male,Sweden,1.80,76,20
+Jeremy Pancras,fss,Male,France,1.74,66,22
+Chao Wu,fss,Male,China,1.75,69,26
+Per Kristian Hunder,fss,Male,Norway,1.79,85,24
+Alizee Baron,fss,Female,France,1.75,64,21
+Jorinde Mueller,fss,Female,Switzerland,1.68,62,20
+Jonas Devouassoux,fss,Male,France,1.80,87,24
+Marion Josserand,fss,Female,France,1.62,56,27
+Christina Staudinger,fss,Female,Austria,1.58,60,26
+Jonathan Midol,fss,Male,France,1.84,86,26
+Michael Forslund,fss,Male,Sweden,1.83,88,27
+Jimi Salonen,fss,Male,Finland,1.80,66,19
+Maria Komissarova,fss,Female,Russian Fed.,1.77,71,23
+Byron Wells,fss,Male,New Zealand,1.70,68,21
+Alex Beaulieu-Marchand,fss,Male,Canada,1.82,70,19
+Chiho Takao,fss,Female,Japan,1.68,54,29
+Zuzana Stromkova,fss,Female,Slovakia,,,23
+Laura Grasemann,fss,Female,Germany,1.62,52,21
+Elias Ambuehl,fss,Male,Switzerland,1.82,82,21
+Henrik Harlaut,fss,Male,Sweden,1.68,74,22
+Matt Margetts,fss,Male,Canada,1.75,74,26
+Heather Mcphie,fss,Female,United States,1.60,56,29
+Ashley Caldwell,fss,Female,United States,1.70,66,20
+Oleksandr Abramenko,fss,Male,Ukraine,1.80,82,25
+Mike Riddle,fss,Male,Canada,1.83,84,27
+Audrey Robichaud,fss,Female,Canada,1.55,59,25
+Philippe Marquis,fss,Male,Canada,1.68,70,24
+Marte Hoeie Gjefsen,fss,Female,Norway,1.69,72,24
+Christian Mithassel,fss,Male,Norway,1.81,84,26
+Philomena Bair,fss,Female,Austria,1.70,62,17
+Andrea Limbacher,fss,Female,Austria,1.63,59,24
+Ayana Onozuka,fss,Female,Japan,,,25
+Tomas Kraus,fss,Male,Czech Republic,1.83,86,39
+Perrine Laffont,fss,Female,France,1.62,50,15
+Jules Bonnaire,fss,Male,France,1.70,70,22
+Xin Zhang,fss,Female,China,1.65,56,28
+Darya Rybalova,fss,Female,Kazakhstan,1.57,52,25
+Fabian Boesch,fss,Male,Switzerland,1.70,57,16
+Eliza Outtrim,fss,Female,United States,1.62,56,28
+Tereza Vaculikova,fss,Female,Czech Republic,1.63,58,21
+Jee-Won Seo,fss,Female,Korea,1.65,50,19
+Jung-Hwa Seo,fss,Female,Korea,1.63,60,23
+Keri Herman,fss,Female,United States,1.70,59,31
+Christoph Wahrstoetter,fss,Male,Austria,1.77,81,24
+Brodie Summers,fss,Male,Australia,1.83,83,20
+Natalya Makagonova,fss,Female,Russian Fed.,1.75,58,22
+Alex Fiva,fss,Male,Switzerland,1.88,95,28
+Victor Oehling Norberg,fss,Male,Sweden,1.83,88,23
+Sho Endo,fss,Male,Japan,1.78,72,23
+Katrin Ofner,fss,Female,Austria,1.70,63,23
+Ludvig Fjallstrom,fss,Male,Sweden,,,20
+Taylah Oneill,fss,Female,Australia,1.59,57,19
+Andreas Gohl,fss,Male,Austria,1.89,88,20
+Mikael Kingsbury,fss,Male,Canada,1.75,68,21
+Anton Kushnir,fss,Male,Belarus,1.76,71,29
+Oystein Braaten,fss,Male,Norway,1.79,70,18
+Baglan Inkarbek,fss,Male,Kazakhstan,1.70,68,19
+Murray Buchan,fss,Male,Great Britain,1.63,64,22
+Thomas Krief,fss,Male,France,1.83,70,20
+Dmitri Dashinski,fss,Male,Belarus,1.70,68,36
+Katrien Aerts,fss,Female,Belgium,1.60,50,37
+Otso Raisanen,fss,Male,Finland,1.75,67,19
+Anton Grimus,fss,Male,Australia,1.94,105,23
+Patrick Koller,fss,Male,Austria,1.92,98,30
+Danielle Scott,fss,Female,Australia,1.67,57,23
+Arisa Murata,fss,Female,Japan,1.51,48,23
+Nadiya Didenko,fss,Female,Ukraine,1.68,65,27
+Mengtao Xu,fss,Female,China,1.65,59,23
+Hee-Jin Park,fss,Female,Korea,1.59,50,34
+Denis Osipau,fss,Male,Belarus,1.76,68,30
+Joel Gisler,fss,Male,Switzerland,1.72,70,19
+Dmitriy Reiherd,fss,Male,Kazakhstan,1.76,82,24
+Guangpu Qi,fss,Male,China,1.70,65,23
+Gus Kenworthy,fss,Male,United States,1.78,75,22
+Aiko Uemura,fss,Female,Japan,1.56,51,34
+Anastasiya Novosad,fss,Female,Ukraine,1.60,55,20
+Xavier Bertoni,fss,Male,France,1.75,72,25
+Ilya Burov,fss,Male,Russian Fed.,1.74,76,22
+Markus Eder,fss,Male,Italy,1.85,83,23
+Oscar Wester,fss,Male,Sweden,,,18
+Thomas Zangerl,fss,Male,Austria,1.81,81,30
+Kwang-Jin Kim,fss,Male,Korea,1.80,72,18
+Sami Kennedy-Sim,fss,Female,Australia,1.69,70,25
+Emma Dahlstrom,fss,Female,Sweden,1.68,61,21
+Arnaud Bovolenta,fss,Male,France,1.70,92,25
+Laura Peel,fss,Female,Australia,1.74,64,24
+Samantha Wells,fss,Female,Australia,1.65,63,24
+Elena Muratova,fss,Female,Russian Fed.,1.62,60,27
+Aleksey Pavlenko,fss,Male,Russian Fed.,1.71,63,18
+Scott Kneller,fss,Male,Australia,1.81,90,24
+Ervins Mustukovs,hky,Male,Latvia,1.84,80,29
+Mira Jalosuo,hky,Female,Finland,1.84,84,25
+Jennifer Wakefield,hky,Female,Canada,1.75,77,24
+Lara Stalder,hky,Female,Switzerland,1.66,60,19
+Zdeno Chara,hky,Male,Slovakia,2.06,117,36
+Roman Cervenka,hky,Male,Czech Republic,1.81,86,28
+Antti Niemi,hky,Male,Finland,1.87,91,30
+Yoko Kondo,hky,Female,Japan,1.65,60,35
+Jonathan Quick,hky,Male,United States,1.85,96,28
+Miha Verlic,hky,Male,Slovenia,1.94,85,22
+Per-Age Skroder,hky,Male,Norway,1.80,92,35
+Arvids Rekis,hky,Male,Latvia,1.80,90,35
+Matthias Bieber,hky,Male,Switzerland,1.81,87,27
+Laura Benz,hky,Female,Switzerland,1.72,63,21
+Anton Belov,hky,Male,Russian Fed.,1.93,98,27
+Marcus Johansson,hky,Male,Sweden,1.83,91,23
+Alex Carpenter,hky,Female,United States,1.69,68,19
+Phil Kessel,hky,Male,United States,1.83,92,26
+Susann Gotz,hky,Female,Germany,1.64,65,31
+Alex Pietrangelo,hky,Male,Canada,1.93,93,24
+Jan Urbas,hky,Male,Slovenia,1.92,98,25
+Alina Muller,hky,Female,Switzerland,1.62,50,15
+Sandis Ozolins,hky,Male,Latvia,1.90,95,41
+Matthias Trattnig,hky,Male,Austria,1.85,96,34
+Meaghan Mikkelson,hky,Female,Canada,1.75,67,29
+Tatyana Burina,hky,Female,Russian Fed.,1.63,70,33
+Laura Fortino,hky,Female,Canada,1.64,62,23
+Radko Gudas,hky,Male,Czech Republic,1.83,92,23
+Natalie Spooner,hky,Female,Canada,1.78,80,23
+Vladimir Tarasenko,hky,Male,Russian Fed.,1.84,95,22
+Yekaterina Pashkevich,hky,Female,Russian Fed.,1.80,76,41
+Meeri Raisanen,hky,Female,Finland,1.70,60,24
+Jenni Asserholt,hky,Female,Sweden,1.71,72,25
+Dan Hamhuis,hky,Male,Canada,1.86,94,31
+Klemen Pretnar,hky,Male,Slovenia,1.80,82,27
+Gabriel Landeskog,hky,Male,Sweden,1.85,93,21
+Juuso Hietanen,hky,Male,Finland,1.80,85,28
+Emma Nordin,hky,Female,Sweden,1.68,70,22
+Andrej Meszaros,hky,Male,Slovakia,1.88,99,28
+Paul Martin,hky,Male,United States,1.85,91,32
+Max Pacioretty,hky,Male,United States,1.88,100,25
+Anna Prugova,hky,Female,Russian Fed.,1.74,60,20
+Ladislav Smid,hky,Male,Czech Republic,1.91,102,28
+Alexander Svitov,hky,Male,Russian Fed.,1.92,106,31
+Akane Konishi,hky,Female,Japan,1.64,62,18
+Kristers Gudlevskis,hky,Male,Latvia,1.93,86,21
+Thomas Pock,hky,Male,Austria,1.86,93,32
+Juris Stals,hky,Male,Latvia,1.91,94,31
+Tomas Jurco,hky,Male,Slovakia,1.88,85,21
+Ami Nakamura,hky,Female,Japan,1.62,62,26
+Alexander Yeryomenko,hky,Male,Russian Fed.,1.79,75,33
+Lukas Krajicek,hky,Male,Czech Republic,1.88,94,30
+Erik Karlsson,hky,Male,Sweden,1.81,79,23
+Sandra Thalmann,hky,Female,Switzerland,1.62,75,21
+Tuukka Rask,hky,Male,Finland,1.87,80,26
+Stefan Ulmer,hky,Male,Austria,1.75,80,23
+Yekaterina Smolina,hky,Female,Russian Fed.,1.64,54,25
+Sakari Salminen,hky,Male,Finland,1.77,75,25
+Ales Kranjc,hky,Male,Slovenia,1.83,89,32
+Henrik Odegaard,hky,Male,Norway,1.80,86,26
+Patrick Thoresen,hky,Male,Norway,1.80,84,30
+Molly Schaus,hky,Female,United States,1.74,71,25
+Ziga Pavlin,hky,Male,Slovenia,1.93,98,28
+Michelle Picard,hky,Female,United States,1.67,68,20
+Alexander Radulov,hky,Male,Russian Fed.,1.86,91,27
+Marcus Kruger,hky,Male,Sweden,1.82,81,23
+Dustin Brown,hky,Male,United States,1.83,95,29
+Valentina Wallner,hky,Female,Sweden,1.70,65,23
+Sara Grahn,hky,Female,Sweden,1.70,71,25
+Niklas Kronwall,hky,Male,Sweden,1.82,86,33
+Yulia Leskina,hky,Female,Russian Fed.,,,23
+Megan Bozek,hky,Female,United States,1.73,80,22
+Eveliina Suonpaa,hky,Female,Finland,1.73,63,18
+Marek Zidlicky,hky,Male,Czech Republic,1.80,85,37
+Gustav Nyquist,hky,Male,Sweden,1.80,84,24
+Lars Haugen,hky,Male,Norway,1.83,83,26
+Lasse Kukkonen,hky,Male,Finland,1.83,85,32
+Vilma Tanskanen,hky,Female,Finland,1.75,66,18
+Artyom Anisimov,hky,Male,Russian Fed.,1.92,91,25
+Andreas Nodl,hky,Male,Austria,1.87,90,26
+Pavel Datsyuk,hky,Male,Russian Fed.,1.80,90,35
+Mitja Robar,hky,Male,Slovenia,1.77,87,31
+Antti Pihlstrom,hky,Male,Finland,1.80,82,29
+Inna Dyubanok,hky,Female,Russian Fed.,1.66,63,23
+Ken Andre Olimb,hky,Male,Norway,1.78,82,25
+Rick Nash,hky,Male,Canada,1.93,100,29
+Tomaz Razingar,hky,Male,Slovenia,1.86,98,34
+Johnny Oduya,hky,Male,Sweden,1.82,91,32
+Jennifer Harss,hky,Female,Germany,1.75,65,26
+Karoliina Rantamaki,hky,Female,Finland,1.63,65,35
+Tanja Eisenschmid,hky,Female,Germany,1.70,67,20
+Michel Miklik,hky,Male,Slovakia,1.84,91,31
+Sergei Bobrovski,hky,Male,Russian Fed.,1.88,86,25
+Sara Benz,hky,Female,Switzerland,1.63,55,21
+Cam Fowler,hky,Male,United States,1.85,95,22
+Branko Radivojevic,hky,Male,Slovakia,1.83,94,33
+Hayley Wickenheiser,hky,Female,Canada,1.78,77,35
+Ole-Kristian Tollefsen,hky,Male,Norway,1.88,95,29
+Maria Lindh,hky,Female,Sweden,1.76,63,20
+Martin Erat,hky,Male,Czech Republic,1.83,89,32
+Monique Lamoureux,hky,Female,United States,1.68,71,24
+Blake Wheeler,hky,Male,United States,1.96,102,27
+Alexander Bonsaksen,hky,Male,Norway,1.80,83,27
+Nina Kamenik,hky,Female,Germany,1.60,54,28
+Denis Hollenstein,hky,Male,Switzerland,1.83,88,24
+Oliver Setzinger,hky,Male,Austria,1.84,95,30
+Angelina Goncharenko,hky,Female,Russian Fed.,1.67,53,19
+Jessica Lutz,hky,Female,Switzerland,1.72,65,24
+Reto Berra,hky,Male,Switzerland,1.94,89,27
+Robert Sabolic,hky,Male,Slovenia,1.83,90,25
+Matthias Iberer,hky,Male,Austria,1.88,100,28
+Milan Jurcina,hky,Male,Slovakia,1.93,114,30
+Lisa Christine Schuster,hky,Female,Germany,1.69,70,26
+Mats Trygg,hky,Male,Norway,1.79,85,37
+Nicole Bullo,hky,Female,Switzerland,1.60,53,26
+Tara Watchorn,hky,Female,Canada,1.78,76,23
+Chris Kunitz,hky,Male,Canada,1.83,88,34
+Daniel Sedin,hky,Male,Sweden,1.86,84,33
+Mads Hansen,hky,Male,Norway,1.85,88,35
+Marcus Johansson,hky,Male,Sweden,1.83,91,23
+Nikolai Kulyomin,hky,Male,Russian Fed.,1.85,100,27
+Alexander Popov,hky,Male,Russian Fed.,1.78,77,33
+Rui Ukita,hky,Female,Japan,1.68,71,17
+Brianne Jenner,hky,Female,Canada,1.75,70,22
+Romy Eggimann,hky,Female,Switzerland,1.57,54,18
+Blaz Gregorc,hky,Male,Slovenia,1.90,95,24
+Jakub Voracek,hky,Male,Czech Republic,1.89,96,24
+Carey Price,hky,Male,Canada,1.90,99,26
+Richard Panik,hky,Male,Slovakia,1.87,94,23
+Paul Stastny,hky,Male,United States,1.83,93,28
+Matic Podlipnik,hky,Male,Slovenia,1.81,85,21
+Kimmo Timonen,hky,Male,Finland,1.77,84,38
+Jan Laco,hky,Male,Slovakia,1.81,83,32
+Jakob Silfverberg,hky,Male,Sweden,1.86,91,23
+Chiho Osawa,hky,Female,Japan,1.62,63,22
+Alexei Tereshenko,hky,Male,Russian Fed.,1.80,82,33
+Yannick Weber,hky,Male,Switzerland,1.80,90,25
+Anna Borgqvist,hky,Female,Sweden,1.64,64,21
+P.K. Subban,hky,Male,Canada,1.83,98,24
+Bernhard Starkbaum,hky,Male,Austria,1.86,93,27
+Patrice Bergeron,hky,Male,Canada,1.88,86,28
+Minttu Tuominen,hky,Female,Finland,1.65,70,23
+David Krejci,hky,Male,Czech Republic,1.83,80,27
+Tomas Surovy,hky,Male,Slovakia,1.86,98,32
+Rene Swette,hky,Male,Austria,1.83,82,25
+Mathias Seger,hky,Male,Switzerland,1.81,86,36
+Alexandra Kapustina,hky,Female,Russian Fed.,1.66,74,29
+Sophie Kratzer,hky,Female,Germany,1.71,72,24
+Olli Maatta,hky,Male,Finland,1.87,89,19
+Oskars Bartulis,hky,Male,Latvia,1.90,90,27
+Phoebe Stanz,hky,Female,Switzerland,1.63,62,20
+Lee Stecklein,hky,Female,United States,1.83,77,19
+Kacey Bellamy,hky,Female,United States,1.73,65,26
+Yuka Hirano,hky,Female,Japan,1.57,52,27
+Zemgus Girgensons,hky,Male,Latvia,1.88,88,20
+Petri Kontiola,hky,Male,Finland,1.82,93,29
+Ryan Kesler,hky,Male,United States,1.88,93,29
+Patrik Berglund,hky,Male,Sweden,1.92,100,25
+Galina Skiba,hky,Female,Russian Fed.,1.64,65,29
+Roberto Luongo,hky,Male,Canada,1.90,93,34
+Anze Kuralt,hky,Male,Slovenia,1.73,85,22
+Kim Martin Hasson,hky,Female,Sweden,1.66,68,27
+Simon Moser,hky,Male,Switzerland,1.88,97,24
+Peter Olvecky,hky,Male,Slovakia,1.88,97,28
+Pernilla Winberg,hky,Female,Sweden,1.65,63,24
+Jeff Carter,hky,Male,Canada,1.93,95,29
+Jan Mursak,hky,Male,Slovenia,1.80,85,26
+Andrej Sekera,hky,Male,Slovakia,1.83,90,27
+Tuomo Ruutu,hky,Male,Finland,1.82,89,31
+Jonas Holos,hky,Male,Norway,1.80,95,26
+Ilya Kovalchuk,hky,Male,Russian Fed.,1.91,104,30
+Bettina Evers,hky,Female,Germany,1.68,71,32
+Tomoe Yamane,hky,Female,Japan,1.68,70,27
+Jonathan Toews,hky,Male,Canada,1.88,94,25
+Rosa Lindstedt,hky,Female,Finland,1.86,78,26
+Jessie Vetter,hky,Female,United States,1.74,71,28
+Annina Rajahuhta,hky,Female,Finland,1.64,68,24
+Saija Tarkki,hky,Female,Finland,1.72,60,31
+Tomoko Sakagami,hky,Female,Japan,1.63,58,30
+Alexander Syomin,hky,Male,Russian Fed.,1.89,95,29
+Peter Budaj,hky,Male,Slovakia,1.83,90,31
+Lina Backlin,hky,Female,Sweden,1.68,67,19
+Martin Hanzal,hky,Male,Czech Republic,1.96,99,26
+Tea Villila,hky,Female,Finland,1.68,63,22
+Koba Jass,hky,Male,Latvia,1.83,87,23
+Haruna Yoneyama,hky,Female,Japan,1.60,55,22
+Fyodor Tyutin,hky,Male,Russian Fed.,1.88,98,30
+Ralfs Freibergs,hky,Male,Latvia,1.80,86,22
+Raphael Diaz,hky,Male,Switzerland,1.81,90,28
+Georgijs Pujacs,hky,Male,Latvia,1.84,98,32
+Haley Irwin,hky,Female,Canada,1.70,78,25
+Patrick Sharp,hky,Male,Canada,1.85,90,32
+Ronalds Kenins,hky,Male,Latvia,1.82,91,22
+Patrick Marleau,hky,Male,Canada,1.89,100,34
+Yekaterina Smolentseva,hky,Female,Russian Fed.,1.76,65,32
+Daniel Oberkofler,hky,Male,Austria,1.83,74,25
+Evelina Raselli,hky,Female,Switzerland,1.69,62,21
+Jonas Gustavsson,hky,Male,Sweden,1.91,87,29
+Olli Jokinen,hky,Male,Finland,1.87,91,35
+Jamie Benn,hky,Male,Canada,1.89,94,24
+Katrin Nabholz,hky,Female,Switzerland,1.65,58,27
+Tomas Plekanec,hky,Male,Czech Republic,1.79,89,31
+Luka Gracnar,hky,Male,Slovenia,1.78,83,20
+Nino Niederreiter,hky,Male,Switzerland,1.88,95,21
+Petr Nedved,hky,Male,Czech Republic,1.92,93,42
+Ziga Pance,hky,Male,Slovenia,1.85,89,25
+Anne Schleper,hky,Female,United States,1.78,77,24
+Andre Lakos,hky,Male,Austria,2.00,107,34
+Nina Tikkinen,hky,Female,Finland,1.70,66,27
+Julien Vauclair,hky,Male,Switzerland,1.84,92,34
+Tomas Tatar,hky,Male,Slovakia,1.78,84,23
+Meghan Duggan,hky,Female,United States,1.73,74,26
+Andrea Lanzl,hky,Female,Germany,1.62,67,26
+Hilary Knight,hky,Female,United States,1.80,78,24
+Miks Indrasis,hky,Male,Latvia,1.90,85,23
+Milan Bartovic,hky,Male,Slovakia,1.82,88,32
+Tobias Stephan,hky,Male,Switzerland,1.92,85,30
+Teemu Selanne,hky,Male,Finland,1.82,91,43
+Fredrik Lystad Jacobsen,hky,Male,Norway,1.80,86,24
+Ryan Miller,hky,Male,United States,1.88,79,33
+Tomas Starosta,hky,Male,Slovakia,1.83,89,32
+Anze Kopitar,hky,Male,Slovenia,1.92,100,26
+Carl Hagelin,hky,Male,Sweden,1.80,80,25
+Venla Hovi,hky,Female,Finland,1.69,63,26
+James Van Riemsdyk,hky,Male,United States,1.91,96,24
+Nikita Nikitin,hky,Male,Russian Fed.,1.93,89,27
+Daniel Alfredsson,hky,Male,Sweden,1.82,92,41
+Henrik Solberg,hky,Male,Norway,1.89,93,26
+Janine Alder,hky,Female,Switzerland,1.61,53,18
+Shannon Szabados,hky,Female,Canada,1.75,65,27
+T.J. Oshie,hky,Male,United States,1.80,86,27
+Raphael Herburger,hky,Male,Austria,1.78,72,25
+Simon Bodenmann,hky,Male,Switzerland,1.78,83,25
+Brian Lebler,hky,Male,Austria,1.92,100,25
+Anna Vinogradova,hky,Female,Russian Fed.,1.67,69,22
+Charline Labonte,hky,Female,Canada,1.75,72,31
+Josephine Pucci,hky,Female,United States,1.74,68,23
+Juhamatti Aaltonen,hky,Male,Finland,1.84,89,28
+Anna Shibanova,hky,Female,Russian Fed.,1.62,62,19
+Kelli Stack,hky,Female,United States,1.65,62,26
+Lina Wester,hky,Female,Sweden,1.75,65,21
+Linda Valimaki,hky,Female,Finland,1.65,62,23
+Milan Michalek,hky,Male,Czech Republic,1.88,103,29
+Reto Suri,hky,Male,Switzerland,1.83,84,24
+Yurie Adachi,hky,Female,Japan,1.56,51,28
+Sami Vatanen,hky,Male,Finland,1.77,79,22
+Meghan Agosta,hky,Female,Canada,1.68,67,27
+Valeri Nichushkin,hky,Male,Russian Fed.,1.90,80,18
+Mario Altmann,hky,Male,Austria,1.94,98,27
+Sophie Anthamatten,hky,Female,Switzerland,1.69,72,22
+Jay Bouwmeester,hky,Male,Canada,1.93,96,30
+Zach Parise,hky,Male,United States,1.80,88,29
+Ayaka Toko,hky,Female,Japan,1.61,59,19
+Marcel Rodman,hky,Male,Slovenia,1.86,85,32
+Niklas Roest,hky,Male,Norway,1.74,80,27
+Sidney Crosby,hky,Male,Canada,1.80,91,26
+Jonas Hiller,hky,Male,Switzerland,1.87,87,32
+Robert Kristan,hky,Male,Slovenia,1.82,85,30
+Azusa Nakaoku,hky,Female,Japan,1.57,53,28
+Marian Hossa,hky,Male,Slovakia,1.87,95,35
+Daniel Welser,hky,Male,Austria,1.80,86,31
+John Carlson,hky,Male,United States,1.91,98,24
+Ivonne Schroder,hky,Female,Germany,1.77,68,25
+Lauris Darzins,hky,Male,Latvia,1.91,91,29
+Semyon Varlamov,hky,Male,Russian Fed.,1.88,95,25
+Jenni Hiirikoski,hky,Female,Finland,1.61,55,26
+Erica Uden Johansson,hky,Female,Sweden,1.71,72,24
+Ryan Getzlaf,hky,Male,Canada,1.93,100,28
+Maritta Becker,hky,Female,Germany,1.68,64,32
+Yevgeni Malkin,hky,Male,Russian Fed.,1.92,86,27
+Svetlana Tkachyova,hky,Female,Russian Fed.,1.69,60,29
+Julie Chu,hky,Female,United States,1.73,67,31
+Kristian Forsberg,hky,Male,Norway,1.85,92,27
+Sara Seiler,hky,Female,Germany,1.69,62,31
+Jussi Jokinen,hky,Male,Finland,1.81,86,30
+Ales Hemsky,hky,Male,Czech Republic,1.83,84,30
+Alexei Yemelin,hky,Male,Russian Fed.,1.85,97,27
+Brianna Decker,hky,Female,United States,1.63,68,22
+Andres Ambuhl,hky,Male,Switzerland,1.76,82,30
+Anja Stiefel,hky,Female,Switzerland,1.60,61,23
+Steffen Soberg,hky,Male,Norway,1.80,80,20
+Severin Blindenbacher,hky,Male,Switzerland,1.80,88,30
+Martins Cipulis,hky,Male,Latvia,1.81,85,33
+Daniel Sorvik,hky,Male,Norway,1.83,83,23
+David Rodman,hky,Male,Slovenia,1.85,83,30
+Kanae Aoki,hky,Female,Japan,1.65,60,28
+Sabahudin Kovacevic,hky,Male,Slovenia,1.90,95,27
+Lauriane Rougeau,hky,Female,Canada,1.73,75,23
+Derek Stepan,hky,Male,United States,1.83,76,23
+Kerstin Spielberger,hky,Female,Germany,1.69,62,18
+Lyndsey Fry,hky,Female,United States,1.74,77,21
+Moeko Fujimoto,hky,Female,Japan,1.55,53,21
+Tomas Kopecky,hky,Male,Slovakia,1.90,91,32
+Riikka Valila,hky,Female,Finland,1.60,63,40
+Vitalijs Pavlovs,hky,Male,Latvia,1.95,98,24
+Luca Cunti,hky,Male,Switzerland,1.84,85,24
+Mathias Lange,hky,Male,Austria,1.78,82,28
+Andrei Markov,hky,Male,Russian Fed.,1.83,92,35
+Michael Frolik,hky,Male,Czech Republic,1.86,89,26
+Robert Lukas,hky,Male,Austria,1.77,84,35
+Catherine Ward,hky,Female,Canada,1.68,67,26
+Duncan Keith,hky,Male,Canada,1.85,90,30
+Robin Dahlstrom,hky,Male,Norway,1.83,101,26
+Tomas Kaberle,hky,Male,Czech Republic,1.85,97,35
+Michelle Lowenhielm,hky,Female,Sweden,1.72,66,18
+Nina Waidacher,hky,Female,Switzerland,1.70,65,21
+Thomas Hundertpfund,hky,Male,Austria,1.90,95,24
+Rebecca Johnston,hky,Female,Canada,1.70,67,24
+Shea Weber,hky,Male,Canada,1.93,106,28
+Emilia Andersson,hky,Female,Sweden,1.74,72,25
+Shiori Koike,hky,Female,Japan,1.58,51,20
+Janis Sprukts,hky,Male,Latvia,1.89,109,32
+Mike Smith,hky,Male,Canada,1.91,98,31
+Aina Takeuchi,hky,Female,Japan,1.66,63,22
+Fanny Rask,hky,Female,Sweden,1.68,64,22
+Michael Raffl,hky,Male,Austria,1.85,87,25
+Kevin Romy,hky,Male,Switzerland,1.82,86,29
+Hanae Kubo,hky,Female,Japan,1.68,63,31
+Emma Terho,hky,Female,Finland,1.59,61,32
+Yekaterina Lebedeva,hky,Female,Russian Fed.,1.65,66,24
+Sarah Forster,hky,Female,Switzerland,1.68,69,20
+Amanda Kessel,hky,Female,United States,1.65,61,22
+Jakub Kovar,hky,Male,Czech Republic,1.84,91,25
+Ryan Suter,hky,Male,United States,1.85,88,29
+Thomas Koch,hky,Male,Austria,1.73,77,30
+Ryan Callahan,hky,Male,United States,1.78,85,28
+Lars Volden,hky,Male,Norway,1.90,86,21
+Patrick Kane,hky,Male,United States,1.79,82,25
+Patrick Von Gunten,hky,Male,Switzerland,1.80,83,29
+Manuel Latusa,hky,Male,Austria,1.82,88,30
+John Tavares,hky,Male,Canada,1.83,91,23
+Julia Zorn,hky,Female,Germany,1.70,73,24
+Anna Shokhina,hky,Female,Russian Fed.,1.63,60,16
+Marie-Philip Poulin,hky,Female,Canada,1.69,72,22
+Thomas Raffl,hky,Male,Austria,1.93,103,27
+Drew Doughty,hky,Male,Canada,1.85,94,24
+Henrik Lundqvist,hky,Male,Sweden,1.85,90,31
+Edgars Masalskis,hky,Male,Latvia,1.76,80,33
+Jiri Novotny,hky,Male,Czech Republic,1.89,97,30
+Brooks Orpik,hky,Male,United States,1.88,100,33
+Ondrej Pavelec,hky,Male,Czech Republic,1.89,100,26
+Niklas Hjalmarsson,hky,Male,Sweden,1.87,93,26
+Corey Perry,hky,Male,Canada,1.90,95,28
+Ossi Vaananen,hky,Male,Finland,1.91,99,33
+Roman Wick,hky,Male,Switzerland,1.88,94,28
+Anders Bastiansen,hky,Male,Norway,1.90,93,33
+Mika Hori,hky,Female,Japan,1.63,54,22
+Sondre Olden,hky,Male,Norway,1.94,84,21
+Rok Ticar,hky,Male,Slovenia,1.80,82,24
+Lauri Korpikoski,hky,Male,Finland,1.85,88,27
+Sena Suzuki,hky,Female,Japan,1.66,57,22
+Marcel Hossa,hky,Male,Slovakia,1.87,99,32
+Franziska Busch,hky,Female,Germany,1.63,59,28
+Michal Rozsival,hky,Male,Czech Republic,1.88,95,35
+Cecilia Ostberg,hky,Female,Sweden,1.66,67,23
+Kevin Shattenkirk,hky,Male,United States,1.80,87,25
+Viona Harrer,hky,Female,Germany,1.68,55,27
+Michelle Karvinen,hky,Female,Finland,1.66,69,23
+Florence Schelling,hky,Female,Switzerland,1.75,68,24
+Kaspars Daugavins,hky,Male,Latvia,1.83,95,25
+Mathis Olimb,hky,Male,Norway,1.79,83,28
+Patrik Elias,hky,Male,Czech Republic,1.85,88,37
+Livia Altmann,hky,Female,Switzerland,1.64,60,19
+Jimmie Ericsson,hky,Male,Sweden,1.87,94,33
+Jacqueline Janzen,hky,Female,Germany,1.78,83,20
+Erika Grahm,hky,Female,Sweden,1.74,70,23
+Julia Marty,hky,Female,Switzerland,1.69,69,25
+Gerhard Unterluggauer,hky,Male,Austria,1.77,88,37
+Noora Raty,hky,Female,Finland,1.65,70,24
+Henrik Zetterberg,hky,Male,Sweden,1.82,89,33
+Kendall Coyne,hky,Female,United States,1.57,59,21
+Jaromir Jagr,hky,Male,Czech Republic,1.89,109,42
+Alyona Khomich,hky,Female,Russian Fed.,1.68,53,32
+Mikael Granlund,hky,Male,Finland,1.79,83,21
+Sami Salo,hky,Male,Finland,1.90,93,39
+Caroline Ouellette,hky,Female,Canada,1.80,77,34
+Mats Rosseli Olsen,hky,Male,Norway,1.80,83,22
+Tomas Zaborsky,hky,Male,Slovakia,1.81,91,26
+Henrik Tallinder,hky,Male,Sweden,1.93,98,35
+Arturs Kulda,hky,Male,Latvia,1.88,98,25
+Gigi Marvin,hky,Female,United States,1.74,75,26
+Andrej Hocevar,hky,Male,Slovenia,1.83,85,29
+Mats Zuccarello,hky,Male,Norway,1.71,74,26
+Morris Trachsler,hky,Male,Switzerland,1.83,90,29
+Viktor Tikhonov,hky,Male,Russian Fed.,1.88,83,25
+Miho Shishiuchi,hky,Female,Japan,1.64,62,21
+Damien Brunner,hky,Male,Switzerland,1.80,85,27
+Yevgeni Medvedev,hky,Male,Russian Fed.,1.90,85,31
+Matt Duchene,hky,Male,Canada,1.80,91,23
+Joe Pavelski,hky,Male,United States,1.80,86,29
+Nicklas Backstrom,hky,Male,Sweden,1.84,97,26
+Susanna Tapani,hky,Female,Finland,1.76,63,20
+Emma Eliasson,hky,Female,Sweden,1.68,72,24
+Johanna Olofsson,hky,Female,Sweden,1.69,66,22
+Martin St-Louis,hky,Male,Canada,1.83,87,38
+Martin Roymark,hky,Male,Norway,1.84,86,27
+Michal Barinka,hky,Male,Czech Republic,1.92,102,29
+Emma Nuutinen,hky,Female,Finland,1.76,73,17
+Genevieve Lacasse,hky,Female,Canada,1.73,64,24
+Jarkko Immonen,hky,Male,Finland,1.82,90,31
+Leo Komarov,hky,Male,Finland,1.80,90,27
+Loui Eriksson,hky,Male,Sweden,1.87,87,28
+Susanne Fellner,hky,Female,Germany,1.59,55,28
+Alexander Edler,hky,Male,Sweden,1.93,100,27
+Jimmy Howard,hky,Male,United States,1.85,99,29
+Ryan Mcdonagh,hky,Male,United States,1.85,97,24
+Marc-Edouard Vlasic,hky,Male,Canada,1.85,93,26
+Gillian Apps,hky,Female,Canada,1.80,80,30
+Jessica Hammerl,hky,Female,Germany,1.61,61,25
+Melodie Daoust,hky,Female,Canada,1.63,71,22
+Anna Shukina,hky,Female,Russian Fed.,1.71,76,26
+Mikelis Redlihs,hky,Male,Latvia,1.80,83,29
+Jonathan Ericsson,hky,Male,Sweden,1.95,102,29
+Martins Karsums,hky,Male,Latvia,1.78,90,27
+Olga Sosina,hky,Female,Russian Fed.,1.60,66,21
+Morten Ask,hky,Male,Norway,1.85,91,33
+Kari Lehtonen,hky,Male,Finland,1.93,91,30
+Jhonas Enroth,hky,Male,Sweden,1.80,75,25
+Jori Lehtera,hky,Male,Finland,1.87,97,26
+Ondrej Palat,hky,Male,Czech Republic,1.81,79,22
+Linnea Backman,hky,Female,Sweden,1.66,65,22
+Anna Kilponen,hky,Female,Finland,1.69,74,18
+Justin Faulk,hky,Male,United States,1.80,98,21
+Alexandra Vafina,hky,Female,Russian Fed.,1.68,57,23
+Manuela Anwander,hky,Female,Germany,1.64,68,22
+Monika Bittner,hky,Female,Germany,,,26
+Jaroslav Halak,hky,Male,Slovakia,1.79,84,28
+Armands Berzins,hky,Male,Latvia,1.92,97,30
+David Backes,hky,Male,United States,1.91,99,29
+Jayna Hefford,hky,Female,Canada,1.63,63,36
+Aleksander Barkov,hky,Male,Finland,1.90,91,18
+Bostjan Golicic,hky,Male,Slovenia,1.83,89,24
+Roman Josi,hky,Male,Switzerland,1.88,90,23
+Jocelyne Lamoureux,hky,Female,United States,1.68,70,24
+Sami Lepisto,hky,Male,Finland,1.85,88,29
+Ziga Jeglic,hky,Male,Slovenia,1.85,80,25
+Ilya Nikulin,hky,Male,Russian Fed.,1.91,101,31
+Ryan Gardner,hky,Male,Switzerland,1.98,103,35
+Angela Frautschi,hky,Female,Switzerland,1.69,73,26
+Herberts Vasiljevs,hky,Male,Latvia,1.81,80,37
+Alexander Steen,hky,Male,Sweden,1.84,93,29
+Nana Fujimoto,hky,Female,Japan,1.63,54,24
+Florian Iberer,hky,Male,Austria,1.85,95,31
+Vyacheslav Voinov,hky,Male,Russian Fed.,1.80,83,24
+Ales Music,hky,Male,Slovenia,1.76,83,31
+Martin Marincin,hky,Male,Slovakia,1.92,82,21
+Alexander Ovechkin,hky,Male,Russian Fed.,1.88,106,28
+Krisjanis Redlihs,hky,Male,Latvia,1.89,93,33
+Michal Handzus,hky,Male,Slovakia,1.96,98,36
+Yelena Dergachyova,hky,Female,Russian Fed.,1.59,55,18
+Josefine Holmgren,hky,Female,Sweden,1.73,68,20
+Zbynek Michalek,hky,Male,Czech Republic,1.89,95,31
+Michael Grabner,hky,Male,Austria,1.86,85,26
+Alexander Salak,hky,Male,Czech Republic,1.86,86,27
+Iya Gavrilova,hky,Female,Russian Fed.,1.73,61,26
+Jocelyne Larocque,hky,Female,Canada,1.70,63,25
+Kristaps Sotnieks,hky,Male,Latvia,1.84,87,27
+Martin Pluss,hky,Male,Switzerland,1.75,85,36
+Anja Weisser,hky,Female,Germany,1.74,74,22
+Mark Streit,hky,Male,Switzerland,1.81,93,36
+Brianne Mclaughlin,hky,Female,United States,1.74,60,26
+Tomas Marcinko,hky,Male,Slovakia,1.93,94,25
+Ivan Baranka,hky,Male,Slovakia,1.89,91,28
+Andrej Tavzelj,hky,Male,Slovenia,1.87,97,29
+Rene Vydareny,hky,Male,Slovakia,1.85,97,32
+Oliver Ekman-Larsson,hky,Male,Sweden,1.88,86,22
+Sofia Engstrom,hky,Female,Sweden,1.63,63,25
+Stefanie Marty,hky,Female,Switzerland,1.67,70,25
+Thomas Vanek,hky,Male,Austria,1.88,94,30
+Andi Langenhan,lge,Male,Germany,1.81,83,29
+Valentin Cretu,lge,Male,Romania,1.80,88,24
+Reinhard Egger,lge,Male,Austria,1.91,96,24
+Te-An Lien,lge,Male,Chinese Taipei,1.77,70,19
+Miriam Kastlunger,lge,Female,Austria,1.69,67,20
+Vladislav Antonov,lge,Male,Russian Fed.,1.79,80,22
+Emanuel Rieder,lge,Male,Italy,1.79,82,20
+Eunryung Sung,lge,Female,Korea,1.64,58,21
+Bogdan Macovei,lge,Male,Rep. of Moldova,1.72,70,31
+David Moeller,lge,Male,Germany,1.88,85,32
+Natalie Geisenberger,lge,Female,Germany,1.83,76,26
+Natalja Khoreva,lge,Female,Russian Fed.,1.68,68,27
+Patrick Gruber,lge,Male,Italy,1.71,75,36
+Tristan Walker,lge,Male,Canada,1.85,88,22
+Summer Britcher,lge,Female,United States,1.80,71,19
+Alexandru Teodorescu,lge,Male,Romania,1.69,70,21
+Jozef Petrulak,lge,Male,Slovakia,1.73,70,19
+Aidan Kelly,lge,Male,United States,1.88,88,19
+Raluca Stramaturaru,lge,Female,Romania,1.74,74,28
+Wolfgang Kindl,lge,Male,Austria,1.66,78,25
+Mitchel Malyk,lge,Male,Canada,1.84,86,18
+Matthew Mortensen,lge,Male,United States,1.83,76,28
+Peter Penz,lge,Male,Austria,1.86,95,29
+Sascha Benecken,lge,Male,Germany,1.78,74,24
+Vladislav Yuzhakov,lge,Male,Russian Fed.,1.85,90,28
+Christian Oberstolz,lge,Male,Italy,1.78,85,36
+Shiva Keshavan,lge,Male,India,1.83,85,32
+Tatyana Ivanova,lge,Female,Russian Fed.,1.73,70,23
+Donghyeon Kim,lge,Male,Korea,1.81,90,22
+Yelizaveta Axenova,lge,Female,Kazakhstan,1.68,60,18
+Alexander Denisyev,lge,Male,Russian Fed.,1.89,100,22
+Andrea Voetter,lge,Female,Italy,1.68,73,18
+Ekaterina Baturina,lge,Female,Russian Fed.,,,21
+Justin Snith,lge,Male,Canada,1.76,74,22
+Semen Pavlichenko,lge,Male,Russian Fed.,1.80,76,22
+Radu Sovaiala,lge,Male,Romania,1.87,80,21
+Antonin Broz,lge,Male,Czech Republic,1.74,78,26
+Thor Haug Noerbech,lge,Male,Norway,1.75,75,25
+Andriy Mandziy,lge,Male,Ukraine,1.88,95,25
+Albert Demchenko,lge,Male,Russian Fed.,1.85,95,42
+Andriy Kis,lge,Male,Ukraine,1.86,92,31
+Patryk Poreba,lge,Male,Poland,1.82,80,21
+Karol Mikrut,lge,Male,Poland,1.76,76,21
+Inars Kivlenieks,lge,Male,Latvia,1.83,88,27
+Toni Eggert,lge,Male,Germany,1.91,85,25
+Alexander Ferlazzo,lge,Male,Australia,1.85,75,18
+Morgane Bonnefoy,lge,Female,France,1.64,68,23
+Christian Niccum,lge,Male,United States,1.91,86,36
+Jinyong Park,lge,Male,Korea,1.79,90,20
+Natalia Wojtusciszyn,lge,Female,Poland,1.65,63,21
+Jung Myung Cho,lge,Male,Korea,1.76,74,20
+Patrick Rastner,lge,Male,Italy,1.70,63,20
+Eliza Tiruma,lge,Female,Latvia,1.70,72,23
+Armin Zoeggeler,lge,Male,Italy,1.81,88,40
+Oleksandr Obolonchyk,lge,Male,Ukraine,1.92,83,22
+Nina Reithmayer,lge,Female,Austria,1.70,69,29
+Kimberley Mcrae,lge,Female,Canada,1.73,61,21
+Tucker West,lge,Male,United States,1.85,82,18
+Samuel Edney,lge,Male,Canada,1.88,95,29
+Tobias Wendl,lge,Male,Germany,1.84,88,26
+Arianne Jones,lge,Female,Canada,1.64,60,23
+Stanislav Benyov,lge,Male,Bulgaria,1.89,90,22
+Kristaps Maurins,lge,Male,Latvia,1.92,92,22
+Karol Stuchlak,lge,Male,Slovakia,1.80,65,23
+Dominik Fischnaller,lge,Male,Italy,1.73,61,20
+Ewa Kuls,lge,Female,Poland,1.77,63,22
+Lukas Broz,lge,Male,Czech Republic,1.86,92,28
+Martina Kocher,lge,Female,Switzerland,1.71,60,28
+Olena Stetskiv,lge,Female,Ukraine,1.73,75,19
+Aleksander Peretyagin,lge,Male,Russian Fed.,1.80,75,22
+Daniel Pfister,lge,Male,Austria,1.83,95,27
+Andreas Linger,lge,Male,Austria,1.84,85,32
+Georg Fischler,lge,Male,Austria,1.73,73,28
+Oskars Gudramovics,lge,Male,Latvia,1.74,71,25
+Alex Gough,lge,Female,Canada,1.71,70,26
+Juris Sics,lge,Male,Latvia,1.74,82,30
+Kate Hansen,lge,Female,United States,1.73,73,21
+Christopher Mazdzer,lge,Male,United States,1.85,93,25
+Viera Gburova,lge,Female,Slovakia,1.70,70,22
+Ludwig Rieder,lge,Male,Italy,1.90,72,22
+Sandra Robatscher,lge,Female,Italy,1.71,64,18
+Marek Solcansky,lge,Male,Slovakia,1.85,76,21
+Vladimir Makhnutin,lge,Male,Russian Fed.,1.75,78,26
+Ondrej Hyman,lge,Male,Czech Republic,1.89,85,27
+Bruno Banani,lge,Male,Tonga,1.84,89,26
+Maciej Kurowski,lge,Male,Poland,1.85,94,27
+Anke Wischnewski,lge,Female,Germany,1.78,77,36
+Hidenari Kanayama,lge,Male,Japan,1.69,78,23
+John Fennell,lge,Male,Canada,1.91,92,18
+Marian Zemanik,lge,Male,Slovakia,1.86,79,21
+Ulla Zirne,lge,Female,Latvia,1.72,67,18
+Birgit Platzer,lge,Female,Austria,1.71,62,21
+Tatjana Huefner,lge,Female,Germany,1.78,77,30
+Tobias Arlt,lge,Male,Germany,1.78,77,26
+Toennes Stang Rolfsen,lge,Male,Norway,,,26
+Erin Hamlin,lge,Female,United States,1.70,73,27
+Gregory Carigiet,lge,Male,Switzerland,1.83,85,26
+Olena Shkhumova,lge,Female,Ukraine,1.78,87,20
+Preston Griffall,lge,Male,United States,1.77,70,29
+Jozef Ninis,lge,Male,Slovakia,1.76,90,32
+Sandra Gasparini,lge,Female,Italy,1.73,68,23
+Martins Rubenis,lge,Male,Latvia,1.84,90,35
+Wolfgang Linger,lge,Male,Austria,1.77,75,31
+Peteris Kalnins,lge,Male,Latvia,1.72,72,25
+Vendula Kotenova,lge,Female,Czech Republic,1.68,65,19
+Jayson Terdiman,lge,Male,United States,1.70,69,25
+Andris Sics,lge,Male,Latvia,1.80,90,28
+Felix Loch,lge,Male,Germany,1.90,90,24
+Jo Alexander Koppang,lge,Male,Norway,,,25
+Roman Zakharkiv,lge,Male,Ukraine,1.74,70,23
+Todd Lodwick,ndc,Male,United States,1.79,68,37
+Marjan Jelenko,ndc,Male,Slovenia,1.77,69,22
+Giuseppe Michielli,ndc,Male,Italy,1.70,68,28
+Lukas Klapfer,ndc,Male,Austria,1.82,70,28
+Bernhard Gruber,ndc,Male,Austria,1.85,71,31
+Hugo Buffard,ndc,Male,France,1.77,64,19
+Bill Demong,ndc,Male,United States,1.79,66,33
+Eetu Vaehaesoeyrinki,ndc,Male,Finland,1.74,61,23
+Mario Stecher,ndc,Male,Austria,1.77,62,36
+Tomas Slavik,ndc,Male,Czech Republic,1.79,68,32
+Tino Edelmann,ndc,Male,Germany,1.85,72,28
+Kristjan Ilves,ndc,Male,Estonia,1.76,63,17
+Joergen Graabak,ndc,Male,Norway,1.85,,22
+Akito Watabe,ndc,Male,Japan,1.73,60,25
+Johannes Rydzek,ndc,Male,Germany,1.80,62,22
+Bjoern Kircheisen,ndc,Male,Germany,1.87,69,30
+Miroslav Dvorak,ndc,Male,Czech Republic,1.80,66,26
+Adam Cieslar,ndc,Male,Poland,1.75,57,21
+Magnus Hovdal Moan,ndc,Male,Norway,1.90,,30
+Mitja Oranic,ndc,Male,Slovenia,1.72,70,27
+Janne Ryynaenen,ndc,Male,Finland,1.75,58,26
+Tomas Portyk,ndc,Male,Czech Republic,1.78,67,17
+Taihei Kato,ndc,Male,Japan,1.69,59,29
+Bryan Fletcher,ndc,Male,United States,1.75,66,27
+Tim Hug,ndc,Male,Switzerland,1.86,72,26
+Sebastien Lacroix,ndc,Male,France,1.90,80,30
+Wilhelm Denifl,ndc,Male,Austria,1.78,69,33
+Samuel Costa,ndc,Male,Italy,1.84,74,21
+Yoshito Watabe,ndc,Male,Japan,1.71,58,22
+Armin Bauer,ndc,Male,Italy,1.74,69,23
+Fabian Riessle,ndc,Male,Germany,1.71,62,23
+Ernest Yahin,ndc,Male,Russian Fed.,1.78,65,23
+Haavard Klemetsen,ndc,Male,Norway,1.81,,35
+Magnus Krog,ndc,Male,Norway,1.87,,26
+Ivan Panin,ndc,Male,Russian Fed.,1.72,61,26
+Eric Frenzel,ndc,Male,Germany,1.76,60,25
+Hideaki Nagai,ndc,Male,Japan,1.70,62,30
+Han Hendrik Piho,ndc,Male,Estonia,1.76,66,20
+Mikko Kokslien,ndc,Male,Norway,1.86,,28
+Pavel Churavy,ndc,Male,Czech Republic,1.79,69,36
+Lukas Runggaldier,ndc,Male,Italy,1.70,63,26
+Ilkka Herola,ndc,Male,Finland,1.77,55,18
+Francois Braud,ndc,Male,France,1.77,65,27
+Gasper Berlot,ndc,Male,Slovenia,1.84,74,23
+Karl-August Tiirmaa,ndc,Male,Estonia,1.79,66,24
+Mikke Leinonen,ndc,Male,Finland,1.80,68,22
+Christoph Bieler,ndc,Male,Austria,1.82,70,36
+Niyaz Nabeev,ndc,Male,Russian Fed.,1.82,67,24
+Taylor Fletcher,ndc,Male,United States,1.82,70,23
+Yusuke Minato,ndc,Male,Japan,1.83,75,28
+Jason Lamy Chappuis,ndc,Male,France,1.79,66,27
+Evgeniy Klimov,ndc,Male,Russian Fed.,1.85,70,20
+Viktor Pasichnyk,ndc,Male,Ukraine,1.83,72,21
+Maxime Laheurte,ndc,Male,France,1.73,60,28
+Alessandro Pittin,ndc,Male,Italy,1.66,62,24
+Anthony Lobello,sht,Male,Italy,1.81,76,29
+Michael Gilday,sht,Male,Canada,1.75,73,27
+Freek Van Der Wart,sht,Male,Netherlands,1.83,80,26
+Veronique Pierron,sht,Female,France,1.72,60,24
+Ekaterina Baranok,sht,Female,Russian Fed.,1.68,56,21
+Sofia Prosvirnova,sht,Female,Russian Fed.,1.67,60,16
+Bence Beres,sht,Male,Hungary,1.80,77,21
+Lucia Peretti,sht,Female,Italy,1.63,50,23
+Bernadett Heidum,sht,Female,Hungary,1.69,60,25
+Dmitry Migunov,sht,Male,Russian Fed.,1.77,72,21
+Tatiana Borodulina,sht,Female,Russian Fed.,1.60,52,29
+Sanne Van Kerkhof,sht,Female,Netherlands,1.63,54,26
+Tommaso Dotti,sht,Male,Italy,1.87,79,20
+Vladislav Bykanov,sht,Male,Israel,1.86,84,24
+Ruslan Zakharov,sht,Male,Russian Fed.,1.73,72,26
+Qiuhong Liu,sht,Female,China,1.63,56,25
+Jessica Hewitt,sht,Female,Canada,1.65,53,27
+Olga Belyakova,sht,Female,Russian Fed.,1.75,60,25
+Kyle Carr,sht,Male,United States,1.78,79,27
+Olivier Jean,sht,Male,Canada,1.88,83,29
+Jessica Smith,sht,Female,United States,1.52,53,30
+Sandor Liu Shaolin,sht,Male,Hungary,1.81,76,18
+Emily Scott,sht,Female,United States,1.60,51,25
+Lara Van Ruijven,sht,Female,Netherlands,1.68,58,21
+Jon Eley,sht,Male,Great Britain,1.86,79,29
+Jingnan Shi,sht,Male,China,1.75,66,19
+Safiya Vlasova,sht,Female,Ukraine,1.70,57,22
+Agne Sereikaite,sht,Female,Lithuania,1.74,65,19
+Yang Zhou,sht,Female,China,1.65,62,22
+Maksim Siarheyu,sht,Male,Belarus,1.85,75,22
+Rianne De Vries,sht,Female,Netherlands,1.68,57,23
+Cecilia Maffei,sht,Female,Italy,1.65,60,29
+Jessica Gregg,sht,Female,Canada,1.74,62,25
+Patrycja Maliszewska,sht,Female,Poland,1.71,62,25
+Aydar Bekzhanov,sht,Male,Kazakhstan,1.74,68,20
+Sjinkie Knegt,sht,Male,Netherlands,1.75,70,24
+Christiaan Bokkerink,sht,Male,Netherlands,1.74,64,21
+Anna Seidel,sht,Female,Germany,1.63,43,15
+Deanna Lockett,sht,Female,Australia,1.63,48,18
+Veronika Windisch,sht,Female,Austria,1.62,56,31
+Richard Shoebridge,sht,Male,Great Britain,1.75,75,28
+Wenhao Liang,sht,Male,China,1.70,65,21
+Pan To Barton Lui,sht,Male,"Hong Kong, CHN",1.73,66,20
+Nicola Rodigari,sht,Male,Italy,1.71,71,32
+Aslan Daumov,sht,Male,Kazakhstan,1.73,66,25
+Charle Cournoyer,sht,Male,Canada,1.73,68,22
+Yuzo Takamido,sht,Male,Japan,1.70,63,26
+Elena Viviani,sht,Female,Italy,1.64,62,21
+Valerie Maltais,sht,Female,Canada,1.65,62,23
+Inna Simonova,sht,Female,Kazakhstan,1.54,48,23
+Jordan Malone,sht,Male,United States,1.68,62,29
+Sayuri Shimizu,sht,Female,Japan,1.67,53,25
+Volha Talayeva,sht,Female,Belarus,1.67,58,27
+Roberto Pukitis,sht,Male,Latvia,1.71,71,19
+Marie-Eve Drolet,sht,Female,Canada,1.67,60,32
+Jorien Ter Mors,sht,Female,Netherlands,1.81,68,24
+Han-Bin Lee,sht,Male,Korea,1.80,71,25
+Daan Breeuwsma,sht,Male,Netherlands,1.81,73,26
+Robert Seifert,sht,Male,Germany,1.80,83,26
+Yara Van Kerkhof,sht,Female,Netherlands,1.65,52,23
+Davide Viscardi,sht,Male,Italy,1.69,72,23
+Niels Kerstholt,sht,Male,Netherlands,1.80,76,30
+Katerina Novotna,sht,Female,Czech Republic,1.61,57,29
+Dequan Chen,sht,Male,China,1.76,66,18
+Denis Nikisha,sht,Male,Kazakhstan,1.78,72,18
+Se Yeong Park,sht,Male,Korea,1.72,58,20
+Mackenzie Blackburn,sht,Male,Chinese Taipei,1.77,82,21
+Maxime Chataignier,sht,Male,France,1.65,65,25
+Francois Hamelin,sht,Male,Canada,1.75,73,27
+Andrea Keszler,sht,Female,Hungary,1.73,63,24
+Marianne St-Gelais,sht,Female,Canada,1.63,62,24
+Viktor Knoch,sht,Male,Hungary,1.80,80,24
+Alyson Dudek,sht,Female,United States,1.68,58,23
+J.R. Celski,sht,Male,United States,1.73,63,23
+Vojtech Loudin,sht,Male,Czech Republic,1.85,79,23
+Satoshi Sakashita,sht,Male,Japan,1.78,74,24
+Vladimir Grigorev,sht,Male,Russian Fed.,1.78,83,31
+Jianrou Li,sht,Female,China,1.60,55,27
+Ha-Ri Cho,sht,Female,Korea,1.67,53,27
+Semen Elistratov,sht,Male,Russian Fed.,1.75,70,23
+Biba Sakurai,sht,Female,Japan,1.53,49,24
+Thibaut Fauconnet,sht,Male,France,1.73,70,28
+Da Woon Sin,sht,Male,Korea,1.74,61,20
+Seung-Hi Park,sht,Female,Korea,1.68,58,21
+Yuri Confortola,sht,Male,Italy,1.69,69,27
+Elise Christie,sht,Female,Great Britain,1.64,58,23
+Nurbergen Zhumagaziyev,sht,Male,Kazakhstan,1.72,64,23
+Valeriya Reznik,sht,Female,Russian Fed.,1.67,63,28
+Yui Sakai,sht,Female,Japan,1.61,56,26
+Ayuko Ito,sht,Female,Japan,1.60,54,27
+Chris Creveling,sht,Male,United States,1.78,70,27
+Pierre Boda,sht,Male,Australia,1.91,79,20
+Ho-Suk Lee,sht,Male,Korea,1.68,60,27
+Tianyu Han,sht,Male,China,1.73,65,17
+Moemi Kikuchi,sht,Female,Japan,1.58,54,21
+Sangjeong Kong,sht,Female,Korea,1.61,50,17
+Szandra Lajtos,sht,Female,Hungary,1.70,63,27
+Alang Kim,sht,Female,Korea,1.68,53,18
+Xue Kong,sht,Female,China,1.70,59,22
+Kexin Fan,sht,Female,China,1.70,55,20
+Eduardo Alvarez,sht,Male,United States,1.75,72,24
+Suk Hee Shim,sht,Female,Korea,1.73,56,17
+Martina Valcepina,sht,Female,Italy,1.68,60,21
+Sebastien Lepape,sht,Male,France,1.89,82,22
+Zsofia Konya,sht,Female,Hungary,1.58,56,19
+Abzal Azhgaliyev,sht,Male,Kazakhstan,1.74,70,21
+Jack Whelbourne,sht,Male,Great Britain,1.71,65,22
+Victor An,sht,Male,Russian Fed.,1.70,65,28
+Charles Hamelin,sht,Male,Canada,1.75,71,29
+Charlotte Gilmartin,sht,Female,Great Britain,1.63,63,23
+Dajing Wu,sht,Male,China,1.82,73,19
+Arianna Fontana,sht,Female,Italy,1.64,63,23
+Tatiana Bodova,sht,Female,Slovakia,1.67,61,22
+Ryosuke Sakazume,sht,Male,Japan,1.81,72,23
+Rozsa Darazs,sht,Female,Hungary,1.80,65,26
+Yun-Jae Kim,sht,Male,Korea,1.68,61,23
+Lucy Chaffer,skl,Female,Australia,1.67,58,30
+John Fairbairn,skl,Male,Canada,1.77,70,30
+Kyle Tress,skl,Male,United States,1.83,88,32
+Sarah Reid,skl,Female,Canada,1.57,57,26
+Nozomi Komuro,skl,Female,Japan,1.62,63,28
+Maria Orlova,skl,Female,Russian Fed.,1.70,72,25
+Katie Uhlaender,skl,Female,United States,1.60,64,29
+Noelle Pikus-Pace,skl,Female,United States,1.78,72,31
+Kristan Bromley,skl,Male,Great Britain,1.78,72,41
+Martins Dukurs,skl,Male,Latvia,1.78,66,29
+Maria Marinela Mazilu,skl,Female,Romania,1.60,58,22
+Maurizio Oioli,skl,Male,Italy,1.84,82,32
+Lelde Priedulena,skl,Female,Latvia,1.63,59,20
+Alexander Tretiakov,skl,Male,Russian Fed.,1.84,77,28
+Sergei Chudinov,skl,Male,Russian Fed.,1.84,80,30
+Hiroatsu Takahashi,skl,Male,Japan,1.75,86,29
+Eric Neilson,skl,Male,Canada,1.85,87,33
+Elizabeth Yarnold,skl,Female,Great Britain,1.72,70,25
+Marion Thees,skl,Female,Germany,1.68,62,29
+Dorin Velicu,skl,Male,Romania,1.78,80,27
+Yuki Sasahara,skl,Male,Japan,1.76,78,29
+Anja Huber,skl,Female,Germany,1.71,64,30
+Alexandros Kefalas,skl,Male,Greece,1.79,80,29
+Mellisa Hollingsworth,skl,Female,Canada,1.72,55,33
+Dominic Parsons,skl,Male,Great Britain,1.85,90,26
+Marina Gilardoni,skl,Female,Switzerland,1.65,65,26
+Hansin Lee,skl,Male,Korea,1.77,80,25
+Michelle Steele,skl,Female,Australia,1.64,55,27
+Matthew Antoine,skl,Male,United States,1.91,84,28
+Ander Mirambell,skl,Male,Spain,1.82,80,31
+Matthias Guggenberger,skl,Male,Austria,1.80,80,29
+Shelley Rudman,skl,Female,Great Britain,1.67,55,32
+Tomass Dukurs,skl,Male,Latvia,1.86,83,32
+Sungbin Yun,skl,Male,Korea,1.78,85,19
+John Daly,skl,Male,United States,1.75,79,28
+Sean Greenwood,skl,Male,Ireland,1.83,90,26
+Frank Rommel,skl,Male,Germany,1.81,74,29
+Nikita Tregybov,skl,Male,Russian Fed.,1.88,85,19
+Raphael Maier,skl,Male,Austria,1.73,70,21
+Elena Nikitina,skl,Female,Russian Fed.,1.69,57,21
+Katharine Eustace,skl,Female,New Zealand,,,38
+John Farrow,skl,Male,Australia,1.88,85,31
+Alexander Kroeckel,skl,Male,Germany,1.88,82,23
+Olga Potylitsina,skl,Female,Russian Fed.,1.68,62,24
+Janine Flock,skl,Female,Austria,1.74,64,24
+Sophia Griebel,skl,Female,Germany,1.71,62,23
+Ben Sandford,skl,Male,New Zealand,2.00,95,34
+Peter Prevc,skj,Male,Slovenia,1.79,64,21
+Jakub Janda,skj,Male,Czech Republic,1.79,63,35
+Mikhail Maksimochkin,skj,Male,Russian Fed.,1.80,68,20
+Noriaki Kasai,skj,Male,Japan,1.77,62,41
+Jessica Jerome,skj,Female,United States,1.65,54,27
+Dawid Kubacki,skj,Male,Poland,1.80,64,23
+Davide Bresadola,skj,Male,Italy,1.71,63,25
+Anders Johnson,skj,Male,United States,1.90,75,24
+Eva Logar,skj,Female,Slovenia,1.72,57,22
+Chiara Hoelzl,skj,Female,Austria,1.52,43,16
+Yuta Watase,skj,Male,Japan,1.78,63,31
+Janne Happonen,skj,Male,Finland,1.80,63,29
+Sara Takanashi,skj,Female,Japan,1.52,45,17
+Trevor Morrice,skj,Male,Canada,1.86,70,22
+Kamil Stoch,skj,Male,Poland,1.73,55,26
+Dusty Korek,skj,Male,Canada,1.77,61,18
+Daniel-Andre Tande,skj,Male,Norway,1.82,,20
+Atsuko Tanaka,skj,Female,Canada,1.61,50,22
+Elena Runggaldier,skj,Female,Italy,1.67,56,23
+Jaka Hvala,skj,Male,Slovenia,1.75,61,20
+Gregor Schlierenzauer,skj,Male,Austria,1.80,65,24
+Piotr Zyla,skj,Male,Poland,1.76,59,27
+Thomas Diethart,skj,Male,Austria,1.72,60,21
+Ulrike Graessler,skj,Female,Germany,1.75,60,26
+Roman Koudelka,skj,Male,Czech Republic,1.71,56,24
+Irina Avvakumova,skj,Female,Russian Fed.,1.71,57,22
+Daiki Ito,skj,Male,Japan,1.73,58,28
+Sarah Hendrickson,skj,Female,United States,1.61,44,19
+Taku Takeuchi,skj,Male,Japan,1.75,60,26
+Evelyn Insam,skj,Female,Italy,1.75,61,20
+Maciej Kot,skj,Male,Poland,1.78,62,22
+Jan Ziobro,skj,Male,Poland,1.73,60,22
+Marat Zhaparov,skj,Male,Kazakhstan,1.68,75,28
+Nicholas Fairall,skj,Male,United States,1.81,68,24
+Siim-Tanel Sammelselg,skj,Male,Estonia,1.81,64,20
+Maren Lundby,skj,Female,Norway,1.73,,19
+Ronan Lamy Chappuis,skj,Male,France,1.78,62,20
+Andreas Wellinger,skj,Male,Germany,1.82,65,18
+Anders Jacobsen,skj,Male,Norway,1.74,,29
+Olli Muotka,skj,Male,Finland,1.80,61,25
+Andreas Kofler,skj,Male,Austria,1.80,64,29
+Jarkko Maeaettae,skj,Male,Finland,1.69,57,19
+Heung-Chul Choi,skj,Male,Korea,1.74,63,32
+Gregor Deschwanden,skj,Male,Switzerland,1.85,65,22
+Michael Hayboeck,skj,Male,Austria,1.82,65,22
+Hyun-Ki Kim,skj,Male,Korea,1.75,63,31
+Helena Olsson Smeby,skj,Female,Norway,1.64,,30
+Jernej Damjan,skj,Male,Slovenia,1.71,58,30
+Sorin Iulian Pitea,skj,Male,Romania,1.74,61,16
+Nicholas Alexander,skj,Male,United States,1.81,64,25
+Severin Freund,skj,Male,Germany,1.85,67,25
+Lukas Hlava,skj,Male,Czech Republic,1.81,62,29
+Julia Clair,skj,Female,France,1.63,51,19
+Thomas Morgenstern,skj,Male,Austria,1.84,69,27
+Taylor Henrich,skj,Female,Canada,1.66,54,18
+Katharina Althaus,skj,Female,Germany,1.56,52,17
+Carina Vogt,skj,Female,Germany,1.72,62,22
+Nico Polychronidis,skj,Male,Greece,1.84,68,24
+Jurij Tepes,skj,Male,Slovenia,1.83,63,25
+Katja Pozun,skj,Female,Slovenia,1.71,52,20
+Line Jahr,skj,Female,Norway,1.64,56,30
+Dimitry Vassiliev,skj,Male,Russian Fed.,1.78,68,34
+Chil-Ku Kang,skj,Male,Korea,1.74,59,29
+Kaarel Nurmsalu,skj,Male,Estonia,1.83,69,22
+Matthew Rowley,skj,Male,Canada,1.83,67,20
+Antonin Hajek,skj,Male,Czech Republic,1.73,58,27
+Alexey Romashov,skj,Male,Russian Fed.,1.75,64,21
+Peter Frenette,skj,Male,United States,1.81,66,21
+Rune Velta,skj,Male,Norway,1.78,,24
+Robert Kranjec,skj,Male,Slovenia,1.75,60,32
+Maja Vtic,skj,Female,Slovenia,1.67,55,26
+Lindsey Van,skj,Female,United States,1.59,58,29
+Seou Choi,skj,Male,Korea,1.62,54,31
+Denis Kornilov,skj,Male,Russian Fed.,1.81,65,27
+Andreas Wank,skj,Male,Germany,1.90,73,25
+Julia Kykkaenen,skj,Female,Finland,1.68,55,19
+Anssi Koivuranta,skj,Male,Finland,1.77,63,25
+Marinus Kraus,skj,Male,Germany,1.74,59,23
+Bigna Windmueller,skj,Female,Switzerland,1.67,51,22
+Evgeniy Klimov,skj,Male,Russian Fed.,1.85,70,20
+Coline Mattel,skj,Female,France,1.65,57,18
+Anders Fannemel,skj,Male,Norway,1.69,,22
+Sebastian Colloredo,skj,Male,Italy,1.76,65,26
+Anders Bardal,skj,Male,Norway,1.86,,31
+Daniela Iraschko-Stolz,skj,Female,Austria,1.63,,30
+Roberto Dellasega,skj,Male,Italy,1.84,72,23
+Yuki Ito,skj,Female,Japan,1.61,48,19
+Spela Rogelj,skj,Female,Slovenia,1.64,55,19
+Richard Freitag,skj,Male,Germany,1.73,58,22
+Lea Lemare,skj,Female,France,1.66,52,17
+Gianina Ernst,skj,Female,Germany,1.55,44,15
+Gyda Enger,skj,Female,Norway,1.65,,21
+Reruhi Shimizu,skj,Male,Japan,1.72,59,20
+Jan Matura,skj,Male,Czech Republic,1.75,62,34
+Janne Ahonen,skj,Male,Finland,1.84,66,36
+Mackenzie Boyd-Clowes,skj,Male,Canada,1.84,69,22
+Alexey Pchelintsev,skj,Male,Kazakhstan,1.84,65,22
+Simon Ammann,skj,Male,Switzerland,1.73,60,32
+Ilmir Hazetdinov,skj,Male,Russian Fed.,1.81,67,22
+Vladimir Zografski,skj,Male,Bulgaria,1.65,57,20
+Yurina Yamada,skj,Female,Japan,1.57,50,17
+Johannes Hoepfl,swb,Male,Germany,1.85,80,18
+Deborah Anthonioz,swb,Female,France,1.65,52,35
+Kwang-Ki Lee,swb,Male,Korea,1.71,63,20
+Alexey Sobolev,swb,Male,Russian Fed.,1.75,69,22
+Ben Kilner,swb,Male,Great Britain,1.80,71,25
+Sergey Tarasov,swb,Male,Russian Fed.,1.69,58,25
+Andreas Prommegger,swb,Male,Austria,1.80,80,33
+Ester Ledecka,swb,Female,Czech Republic,1.73,68,18
+Michelle Dekker,swb,Female,Netherlands,1.65,66,17
+Clemence Grimal,swb,Female,France,1.76,70,19
+Luca Matteotti,swb,Male,Italy,1.75,59,24
+Jan Kralj,swb,Male,Slovenia,1.74,69,18
+Staale Sandbech,swb,Male,Norway,,,20
+Gloria Kotnik,swb,Female,Slovenia,1.60,53,24
+Nadya Ochner,swb,Female,Italy,1.72,60,20
+Dominic Harington,swb,Male,Great Britain,1.87,77,29
+Jussi Taka,swb,Male,Finland,1.86,85,20
+Rebecca Sinclair,swb,Female,New Zealand,1.65,62,22
+Pavel Kharitonov,swb,Male,Russian Fed.,1.78,77,24
+Stian Sivertzen,swb,Male,Norway,,,24
+Brad Martin,swb,Male,Canada,1.80,81,27
+Christoph Mick,swb,Male,Italy,1.87,85,25
+Mirabelle Thovex,swb,Female,France,1.67,60,22
+Christy Prior,swb,Female,New Zealand,1.61,62,25
+Danny Davis,swb,Male,United States,1.75,73,25
+Michal Ligocki,swb,Male,Poland,1.77,71,28
+Isabel Clark Ribeiro,swb,Female,Brazil,1.68,61,37
+Aimee Fuller,swb,Female,Great Britain,1.63,61,22
+Johann Baisamy,swb,Male,France,1.68,67,24
+Simona Meiler,swb,Female,Switzerland,1.65,56,24
+Tomoka Takeuchi,swb,Female,Japan,1.65,61,30
+Regino Hernandez,swb,Male,Spain,1.87,87,22
+Nicolien Sauerbreij,swb,Female,Netherlands,1.63,60,34
+Nadja Purtschert,swb,Female,Switzerland,1.64,52,24
+Enni Rukajarvi,swb,Female,Finland,1.65,54,23
+Mark Mcmorris,swb,Male,Canada,1.78,72,20
+Isabel Derungs,swb,Female,Switzerland,1.70,58,26
+Aaron March,swb,Male,Italy,1.85,85,27
+Jamie Nicholls,swb,Male,Great Britain,1.78,67,20
+Yiwei Zhang,swb,Male,China,1.72,68,21
+Jacqueline Hernandez,swb,Female,United States,1.83,79,21
+Morena Makar,swb,Female,Croatia,1.58,49,29
+David Habluetzel,swb,Male,Switzerland,1.75,65,17
+Tommaso Leoni,swb,Male,Italy,1.80,75,22
+Derek Livingston,swb,Male,Canada,1.72,68,23
+Karolina Sztokfisz,swb,Female,Poland,1.59,62,25
+Maciej Jodko,swb,Male,Poland,1.78,80,31
+Markus Malin,swb,Male,Finland,1.76,70,26
+Dominique Maltais,swb,Female,Canada,1.78,71,33
+Nikita Avtaneev,swb,Male,Russian Fed.,1.83,73,18
+Kevin Hill,swb,Male,Canada,1.80,78,27
+Maelle Ricker,swb,Female,Canada,1.69,63,35
+Alexander Bergmann,swb,Male,Germany,1.76,70,26
+Peetu Piiroinen,swb,Male,Finland,1.66,67,26
+Jarryd Hughes,swb,Male,Australia,1.79,80,18
+Sebastien Toutant,swb,Male,Canada,1.70,70,21
+Ella Suitiala,swb,Female,Finland,1.63,63,24
+Rana Okada,swb,Female,Japan,1.63,50,23
+Yosyf Penyak,swb,Male,Ukraine,1.78,83,29
+Zhifeng Sun,swb,Female,China,1.58,58,22
+Dimi De Jong,swb,Male,Netherlands,1.78,82,19
+Stephanie Magiros,swb,Female,Australia,1.50,50,22
+Emanuel Perathoner,swb,Male,Italy,1.79,77,27
+Jasey Jay Anderson,swb,Male,Canada,1.78,80,38
+Cameron Bolton,swb,Male,Australia,1.91,82,23
+Vic Wild,swb,Male,Russian Fed.,1.79,82,27
+Charlotte Bankes,swb,Female,France,1.63,60,18
+Ursina Haller,swb,Female,Switzerland,1.72,62,28
+Ville Paumola,swb,Male,Finland,1.72,68,22
+Billy Morgan,swb,Male,Great Britain,1.81,72,24
+Paul Berg,swb,Male,Germany,1.80,79,22
+Dolf Van Der Wal,swb,Male,Netherlands,1.87,83,26
+Philipp Schoch,swb,Male,Switzerland,1.83,95,34
+Anna Gasser,swb,Female,Austria,1.65,52,22
+Anke Karstens,swb,Female,Germany,1.75,65,28
+Nathan Johnstone,swb,Male,Australia,1.73,65,24
+Xuetong Cai,swb,Female,China,1.62,60,20
+Julie Zogg,swb,Female,Switzerland,1.60,57,21
+Markus Schairer,swb,Male,Austria,1.77,83,26
+Joanna Zajac,swb,Female,Poland,1.65,58,23
+Pierre Vaultier,swb,Male,France,1.86,77,26
+Jiayu Liu,swb,Female,China,1.72,65,21
+Meinhard Erlacher,swb,Male,Italy,1.80,83,31
+Selina Joerg,swb,Female,Germany,1.74,63,26
+Anton Lindfors,swb,Male,Finland,1.78,77,22
+Bong-Shik Shin,swb,Male,Korea,1.84,83,21
+Amelie Kober,swb,Female,Germany,1.68,56,26
+Verena Rohrer,swb,Female,Switzerland,1.69,57,17
+Rok Marguc,swb,Male,Slovenia,1.80,82,27
+Nina Micic,swb,Female,Serbia,1.70,54,23
+Patrick Bussler,swb,Male,Germany,1.85,84,29
+Zoe Gillings,swb,Female,Great Britain,1.68,65,28
+Alexandra Jekova,swb,Female,Bulgaria,1.67,63,26
+Julia Dujmovits,swb,Female,Austria,1.68,60,26
+Shelly Gotlieb,swb,Female,New Zealand,1.74,64,33
+Jan Scherrer,swb,Male,Switzerland,1.82,70,19
+Sven Thorgren,swb,Male,Sweden,1.72,70,19
+Crispin Lipscomb,swb,Male,Canada,1.75,65,34
+Omar Visintin,swb,Male,Italy,1.82,78,24
+Isabella Laboeck,swb,Female,Germany,1.67,59,27
+Holly Crawford,swb,Female,Australia,1.73,63,30
+Kjersti Buaas,swb,Female,Norway,,,32
+Zan Kosir,swb,Male,Slovenia,1.84,77,29
+Marion Kreiner,swb,Female,Austria,1.70,61,32
+Silje Norendal,swb,Female,Norway,,,20
+Nelly Moenne Loccoz,swb,Female,France,1.66,58,23
+Sylvain Dufour,swb,Male,France,1.78,82,31
+Mathias Weissenbacher,swb,Male,Austria,1.73,73,22
+Laro Herrero,swb,Male,Spain,1.82,64,24
+Alessandro Haemmerle,swb,Male,Austria,1.90,82,20
+Tim-Kevin Ravnjak,swb,Male,Slovenia,1.72,66,17
+Katie Tsuyuki,swb,Female,Canada,1.68,52,31
+Alena Zavarzina,swb,Female,Russian Fed.,1.75,60,24
+Konstantin Schad,swb,Male,Germany,1.77,80,26
+Sarka Pancochova,swb,Female,Czech Republic,1.59,55,23
+Annamari Chundak,swb,Female,Ukraine,1.65,60,23
+Sina Candrian,swb,Female,Switzerland,1.63,53,25
+Andrey Boldykov,swb,Male,Russian Fed.,1.75,85,30
+Jake Holden,swb,Male,Canada,1.87,85,26
+Stefanie Mueller,swb,Female,Switzerland,1.58,56,21
+Faye Gulini,swb,Female,United States,1.63,57,21
+Ilkka-Eemeli Laari,swb,Male,Finland,1.79,72,24
+Stanislav Detkov,swb,Male,Russian Fed.,1.65,72,33
+Natalia Soboleva,swb,Female,Russian Fed.,1.70,54,18
+Yuka Fujimori,swb,Female,Japan,1.60,55,27
+Roland Fischnaller,swb,Male,Italy,1.86,83,33
+Ekaterina Tudegesheva,swb,Female,Russian Fed.,1.62,65,26
+Rok Flander,swb,Male,Slovenia,1.80,78,34
+Shuang Li,swb,Female,China,1.69,63,21
+Kaitlyn Farrington,swb,Female,United States,1.63,57,24
+Ekaterina Ilyukhina,swb,Female,Russian Fed.,1.57,60,26
+Sandra Daniela Gerber,swb,Female,Switzerland,1.73,75,28
+Robert Fagan,swb,Male,Canada,1.85,88,37
+Seamus O'Connor,swb,Male,Ireland,1.78,71,16
+Emil Novak,swb,Male,Czech Republic,1.73,78,24
+Ladina Jenny,swb,Female,Switzerland,1.70,62,20
+Jenny Jones,swb,Female,Great Britain,1.61,61,33
+Simon Schoch,swb,Male,Switzerland,1.84,85,35
+Torah Bright,swb,Female,Australia,1.61,57,27
+Taku Hiraoka,swb,Male,Japan,1.71,63,18
+Torgeir Bergrem,swb,Male,Norway,,,22
+Hanno Douschan,swb,Male,Austria,1.71,75,24
+Elena Koenz,swb,Female,Switzerland,1.66,55,26
+Karly Shorr,swb,Female,United States,1.73,66,19
+Chloe Trespeuch,swb,Female,France,1.76,63,19
+Hannah Trigger,swb,Female,Australia,1.67,60,27
+Ina Meschik,swb,Female,Austria,1.60,57,23
+Janne Korpi,swb,Male,Finland,1.80,74,28
+Ayumu Nedefuji,swb,Male,Japan,1.80,68,19
+Yuki Kadono,swb,Male,Japan,1.73,64,17
+Kent Callister,swb,Male,Australia,1.75,72,18
+Ryan Stassel,swb,Male,United States,1.80,77,21
+Bell Berghuis,swb,Female,Netherlands,1.66,63,28
+Nikolay Olyunin,swb,Male,Russian Fed.,1.80,84,22
+Radoslav Yankov,swb,Male,Bulgaria,1.90,85,24
+Clemens Schattschneider,swb,Male,Austria,1.83,81,22
+Jessika Jenson,swb,Female,United States,1.65,54,22
+Arielle Gold,swb,Female,United States,1.65,64,17
+Izidor Sustersic,swb,Male,Slovenia,1.85,80,36
+Michael Lambert,swb,Male,Canada,1.78,76,27
+Eva Samkova,swb,Female,Czech Republic,1.71,68,20
+Ariane Lavigne,swb,Female,Canada,1.70,63,29
+Emil Andre Ulsletten,swb,Male,Norway,,,20
+Taylor Gold,swb,Male,United States,1.75,68,20
+Roope Tonteri,swb,Male,Finland,1.69,68,21
+Hannah Teter,swb,Female,United States,1.70,60,27
+Christian Haller,swb,Male,Switzerland,1.75,72,24
+Nick Baumgartner,swb,Male,United States,1.83,91,32
+Queralt Castellet,swb,Female,Spain,1.56,53,24
+Stefi Luxton,swb,Female,New Zealand,1.67,53,22
+Alexandra Duckworth,swb,Female,Canada,1.58,50,26
+Lindsey Jacobellis,swb,Female,United States,1.68,64,28
+Nevin Galmarini,swb,Male,Switzerland,1.72,74,27
+Niklas Mattsson,swb,Male,Sweden,1.88,77,21
+Patrizia Kummer,swb,Female,Switzerland,1.72,70,26
+Arthur Longo,swb,Male,France,1.73,66,25
+Mercedes Nicoll,swb,Female,Canada,1.63,58,30
+Aleksandra Krol,swb,Female,Poland,1.72,53,23
+Iouri Podladtchikov,swb,Male,Switzerland,1.84,76,25
+Trevor Jacob,swb,Male,United States,1.80,88,20
+Kaspar Fluetsch,swb,Male,Switzerland,1.72,80,27
+Corinna Boccacini,swb,Female,Italy,1.73,83,28
+Paul-Henri De Le Rue,swb,Male,France,1.76,82,29
+Marianne Leeson,swb,Female,Canada,1.73,62,26
+Raffaella Brutto,swb,Female,Italy,1.69,63,26
+Kelly Clark,swb,Female,United States,1.63,61,30
+Claudia Riegler,swb,Female,Austria,1.68,70,40
+Alex Pullin,swb,Male,Australia,1.85,87,26
+Ty Walker,swb,Female,United States,1.57,61,16
+Ryo Aono,swb,Male,Japan,1.66,60,23
+Gregory Bretz,swb,Male,United States,1.88,88,23
+Shaun White,swb,Male,United States,1.75,70,27
+Hilde-Katrine Engeli,swb,Female,Norway,,,25
+Seppe Smits,swb,Male,Belgium,1.80,72,22
+Andrey Sobolev,swb,Male,Russian Fed.,1.84,73,24
+Tony Ramoin,swb,Male,France,1.83,74,25
+Scotty James,swb,Male,Australia,1.85,78,19
+Ho-Jun Kim,swb,Male,Korea,1.76,62,23
+Jenna Blasman,swb,Female,Canada,1.57,58,20
+Ayumu Hirano,swb,Male,Japan,1.60,50,15
+Lucien Koch,swb,Male,Switzerland,1.77,66,18
+Wancheng Shi,swb,Male,China,1.79,78,23
+David Bakes,swb,Male,Czech Republic,1.91,85,31
+Adrian Krainer,swb,Male,Austria,1.86,75,21
+Charles Guldemond,swb,Male,United States,1.85,82,26
+Sophie Rodriguez,swb,Female,France,1.68,57,25
+Lluis Marin Tarroch,swb,Male,Andorra,1.85,85,25
+Rebecca Torr,swb,Female,New Zealand,1.73,65,23
+Gjermund Braaten,swb,Male,Norway,,,23
+Valery Kolegov,swb,Male,Russian Fed.,1.70,75,18
+Cheryl Maas,swb,Female,Netherlands,1.74,70,29
+Charles Reid,swb,Male,Canada,1.75,68,23
+Marvin James,swb,Male,Switzerland,1.71,69,24
+Maria Ramberger,swb,Female,Austria,1.66,55,27
+Mateusz Ligocki,swb,Male,Poland,1.71,78,31
+Lucas Eguibar,swb,Male,Spain,1.82,82,20
+Spencer O'Brien,swb,Female,Canada,1.72,68,26
+Jamie Anderson,swb,Female,United States,1.60,54,23
+Michela Moioli,swb,Female,Italy,1.73,65,18
+Sage Kotsenburg,swb,Male,United States,1.78,75,20
+Caroline Calve,swb,Female,Canada,1.77,73,35
+Benjamin Karl,swb,Male,Austria,1.86,90,28
+Stefan Baumeister,swb,Male,Germany,1.73,72,20
+Valeriya Tsoy,swb,Female,Kazakhstan,1.66,72,25
+Christopher Robanske,swb,Male,Canada,1.80,83,24
+Sang-Kyum Kim,swb,Male,Korea,1.82,88,25
+Helene Olafsen,swb,Female,Norway,,,23
+Lukas Mathies,swb,Male,Austria,1.71,70,22
+Nate Holland,swb,Male,United States,1.78,91,35
+Justin Reiter,swb,Male,United States,1.80,75,33
+Susanne Moll,swb,Female,Austria,1.69,58,26
+Belle Brockhoff,swb,Female,Australia,1.70,70,21
+Tim Watter,swb,Male,Switzerland,1.72,72,22
+Maxence Parrot,swb,Male,Canada,1.80,70,19
+Alex Deibold,swb,Male,United States,1.85,86,27
+Merika Enne,swb,Female,Finland,1.69,62,21
+Anton Unterkofler,swb,Male,Austria,1.86,85,30
+Anton Koprivitsa,swb,Male,Russian Fed.,1.72,68,22
+Matthew Morison,swb,Male,Canada,1.80,76,26
+Mika Poutala,ssk,Male,Finland,1.77,77,30
+Tommi Pulli,ssk,Male,Finland,1.83,70,21
+Hege Bokko,ssk,Female,Norway,,,22
+Yekaterina Shikhova,ssk,Female,Russian Fed.,1.72,63,28
+Jilleanne Rookard,ssk,Female,United States,1.60,59,31
+Francesca Lollobrigida,ssk,Female,Italy,1.69,62,23
+Ronald Mulder,ssk,Male,Netherlands,1.86,84,27
+Jan Szymanski,ssk,Male,Poland,1.80,77,24
+Carien Kleibeuker,ssk,Female,Netherlands,1.72,58,35
+Joey Mantia,ssk,Male,United States,1.73,76,28
+Yuliya Skokova,ssk,Female,Russian Fed.,1.75,71,31
+Camilla H Farestveit,ssk,Female,Norway,,,24
+Konrad Nagy,ssk,Male,Hungary,1.87,86,21
+Yvonne Daldossi,ssk,Female,Italy,1.64,64,22
+Shuai Qi,ssk,Female,China,1.71,61,26
+Nana Takagi,ssk,Female,Japan,1.55,47,21
+Luiza Zlotkowska,ssk,Female,Poland,1.60,52,27
+Olga Fatkulina,ssk,Female,Russian Fed.,1.72,62,24
+Yevgeny Seryayev,ssk,Male,Russian Fed.,1.82,80,25
+Jorrit Bergsma,ssk,Male,Netherlands,1.90,73,28
+Anna Rokita,ssk,Female,Austria,1.73,63,28
+Bart Swings,ssk,Male,Belgium,1.79,67,23
+Andrea Giovannini,ssk,Male,Italy,1.78,73,20
+Patrick Beckert,ssk,Male,Germany,1.83,74,23
+Denis Koval,ssk,Male,Russian Fed.,1.77,78,22
+Marrit Leenstra,ssk,Female,Netherlands,1.70,59,24
+Zbigniew Brodka,ssk,Male,Poland,1.83,85,29
+Sven Kramer,ssk,Male,Netherlands,1.87,83,27
+Laurine Van Riessen,ssk,Female,Netherlands,1.67,62,26
+Zhongsheng Mu,ssk,Male,China,1.93,83,22
+Mathieu Giroux,ssk,Male,Canada,1.77,80,28
+Denise Roth,ssk,Female,Germany,1.64,59,25
+Taro Kondo,ssk,Male,Japan,1.75,77,19
+Alexej Baumgaertner,ssk,Male,Germany,1.82,77,25
+Shani Davis,ssk,Male,United States,1.88,86,31
+Marsha Hudey,ssk,Female,Canada,1.57,59,23
+Havard Bokko,ssk,Male,Norway,,,27
+Koen Verweij,ssk,Male,Netherlands,1.82,83,23
+Anastasia Bucsis,ssk,Female,Canada,1.78,67,24
+Denny Morrison,ssk,Male,Canada,1.83,81,28
+Aleksandr Zhigin,ssk,Male,Kazakhstan,1.80,74,27
+Jonathan Garcia,ssk,Male,United States,1.70,64,27
+William Dutton,ssk,Male,Canada,1.83,85,24
+Ireen Wust,ssk,Female,Netherlands,1.68,63,27
+Yekaterina Aydova,ssk,Female,Kazakhstan,1.70,62,22
+Ivan Skobrev,ssk,Male,Russian Fed.,1.87,85,31
+Denis Kuzin,ssk,Male,Kazakhstan,1.88,85,25
+Qishi Li,ssk,Female,China,1.75,68,20
+Shane Williamson,ssk,Male,Japan,1.76,67,18
+Shane Dobbin,ssk,Male,New Zealand,1.83,72,34
+Nico Ihle,ssk,Male,Germany,1.87,85,28
+Benjamin Mace,ssk,Male,France,1.83,80,24
+Anna Ringsred,ssk,Female,United States,1.63,59,29
+Kaylin Irvine,ssk,Female,Canada,1.70,67,23
+Dan Li,ssk,Female,China,1.66,62,27
+Brittany Bowe,ssk,Female,United States,1.70,66,25
+Lada Zadonskaya,ssk,Female,Russian Fed.,1.70,62,27
+Ewen Fernandez,ssk,Male,France,1.75,73,25
+Margot Boer,ssk,Female,Netherlands,1.80,72,28
+Muncef Ouardi,ssk,Male,Canada,1.82,81,27
+Matteo Anesi,ssk,Male,Italy,1.85,81,29
+Ayaka Kikuchi,ssk,Female,Japan,1.69,60,26
+Hong Zhang,ssk,Female,China,1.74,65,25
+Robert Lehmann,ssk,Male,Germany,1.81,77,30
+Bob De Jong,ssk,Male,Netherlands,1.80,77,37
+Bo Ra Lee,ssk,Female,Korea,1.67,55,27
+Ching-Yang Sung,ssk,Male,Chinese Taipei,1.68,66,21
+Havard Lorentzen,ssk,Male,Norway,,,21
+Jorien Ter Mors,ssk,Female,Netherlands,1.81,68,24
+Tucker Fredricks,ssk,Male,United States,1.70,66,29
+Yvonne Nauta,ssk,Female,Netherlands,1.74,64,22
+Daniel Greig,ssk,Male,Australia,1.72,69,22
+Katarzyna Bachleda - Curus,ssk,Female,Poland,1.70,62,34
+Mirko Nenzi,ssk,Male,Italy,1.75,75,24
+Shuang Zhang,ssk,Female,China,1.72,70,27
+Samuel Schwarz,ssk,Male,Germany,1.84,83,30
+Angelina Golikova,ssk,Female,Russian Fed.,1.74,72,22
+Aleksey Yesin,ssk,Male,Russian Fed.,1.81,80,26
+Shin Young Yang,ssk,Female,Korea,1.68,58,23
+Michel Mulder,ssk,Male,Netherlands,1.84,82,27
+Maria Lamb,ssk,Female,United States,1.68,58,28
+Keiichiro Nagashima,ssk,Male,Japan,1.72,70,31
+Seon Yeong Noh,ssk,Female,Korea,1.72,66,24
+Masako Hozumi,ssk,Female,Japan,1.62,57,27
+Ida Njaatun,ssk,Female,Norway,,,23
+Dmitry Lobkov,ssk,Male,Russian Fed.,1.78,81,33
+Jan Blokhuijsen,ssk,Male,Netherlands,1.84,80,24
+Tae Bum Mo,ssk,Male,Korea,1.77,80,25
+Jelena Peeters,ssk,Female,Belgium,1.68,65,28
+Hyong Jun Joo,ssk,Male,Korea,1.75,73,22
+Gabriele Hirschbichler,ssk,Female,Germany,1.68,62,30
+Jan Smeekens,ssk,Male,Netherlands,1.77,72,27
+Christine Nesbitt,ssk,Female,Canada,1.71,68,28
+Cheol Min Kim,ssk,Male,Korea,1.72,62,21
+Moritz Geisreiter,ssk,Male,Germany,2.00,98,26
+Monique Angermueller,ssk,Female,Germany,1.75,65,30
+Miyako Sumiyoshi,ssk,Female,Japan,1.62,56,26
+Ivanie Blondin,ssk,Female,Canada,1.61,56,23
+Olga Graf,ssk,Female,Russian Fed.,1.60,56,30
+Kelly Gunther,ssk,Female,United States,1.65,65,26
+Bo Reum Kim,ssk,Female,Korea,1.63,58,21
+Yekaterina Lobysheva,ssk,Female,Russian Fed.,1.78,69,28
+Patrick Meek,ssk,Male,United States,1.75,71,28
+Lauren Cholewinski,ssk,Female,United States,1.73,67,25
+Kang Seok Lee,ssk,Male,Korea,1.76,77,28
+Taeyun Kim,ssk,Male,Korea,1.78,75,19
+Jamie Gregg,ssk,Male,Canada,1.80,80,28
+Stephanie Beckert,ssk,Female,Germany,1.72,68,25
+Natalia Czerwonka,ssk,Female,Poland,1.77,70,25
+Brian Hansen,ssk,Male,United States,1.83,82,23
+Artyom Kuznetcov,ssk,Male,Russian Fed.,1.77,78,26
+Maki Tsuji,ssk,Female,Japan,1.62,58,28
+Anna Chernova,ssk,Female,Russian Fed.,1.68,57,21
+Kali Christ,ssk,Female,Canada,1.70,65,22
+David Andersson,ssk,Male,Sweden,1.83,78,19
+Shoko Fujimura,ssk,Female,Japan,1.54,50,26
+Sebastian Druszkiewicz,ssk,Male,Poland,1.78,71,27
+Denis Yuskov,ssk,Male,Russian Fed.,1.90,83,24
+Beixing Wang,ssk,Female,China,1.74,66,28
+Joji Kato,ssk,Male,Japan,1.65,65,29
+Roman Krech,ssk,Male,Kazakhstan,1.83,75,24
+Brittany Schussler,ssk,Female,Canada,1.70,63,28
+Judith Hesse,ssk,Female,Germany,1.58,53,31
+Gilmore Junio,ssk,Male,Canada,1.73,68,23
+Hyun Yung Kim,ssk,Female,Korea,1.67,56,19
+Haralds Silovs,ssk,Male,Latvia,1.78,78,27
+Martina Sablikova,ssk,Female,Czech Republic,1.71,53,26
+Nao Kodaira,ssk,Female,Japan,1.65,61,27
+Fyodor Mezentsev,ssk,Male,Kazakhstan,1.82,80,24
+Dmitriy Babenko,ssk,Male,Kazakhstan,1.84,76,28
+Artur Nogal,ssk,Male,Poland,1.74,73,23
+Lotte Van Beek,ssk,Female,Netherlands,1.80,69,22
+Vincent De Haitre,ssk,Male,Canada,1.82,86,19
+Emery Lehman,ssk,Male,United States,1.83,78,17
+Bente Kraus,ssk,Female,Germany,1.72,66,24
+Seung Ju Park,ssk,Female,Korea,1.60,51,23
+Jenny Wolf,ssk,Female,Germany,1.72,73,35
+Annouk Van Der Weijden,ssk,Female,Netherlands,1.72,61,27
+Lucas Makowsky,ssk,Male,Canada,1.84,78,26
+Danielle Wotherspoon,ssk,Female,Canada,1.76,63,33
+Brianne Tutt,ssk,Female,Canada,1.75,66,21
+Konrad Niedzwiedzki,ssk,Male,Poland,1.80,80,29
+Vanessa Bittner,ssk,Female,Austria,1.75,70,18
+Shiho Ishizawa,ssk,Female,Japan,1.67,67,27
+Mark Tuitert,ssk,Male,Netherlands,1.80,84,33
+Stefan Groothuis,ssk,Male,Netherlands,1.82,81,32
+Igor Bogolyubsky,ssk,Male,Russian Fed.,1.82,81,28
+David Bosa,ssk,Male,Italy,1.78,76,21
+Aleksey Suvorov,ssk,Male,Russian Fed.,1.80,80,22
+Seung Hoon Lee,ssk,Male,Korea,1.78,70,25
+Katarzyna Wozniak,ssk,Female,Poland,1.73,61,24
+Pekka Koskela,ssk,Male,Finland,1.87,87,31
+Simen Spieler Nilsen,ssk,Male,Norway,,,20
+Yekaterina Malysheva,ssk,Female,Russian Fed.,1.69,57,27
+Qiuming Bai,ssk,Male,China,1.73,70,19
+Kyou Hyuk Lee,ssk,Male,Korea,1.75,75,35
+Viktoriya Filyushkina,ssk,Female,Russian Fed.,1.64,63,28
+Sverre Lunde Pedersen,ssk,Male,Norway,,,21
+Daichi Yamanaka,ssk,Male,Japan,1.77,75,23
+Heather Richardson,ssk,Female,United States,1.78,73,24
+Karolina Erbanova,ssk,Female,Czech Republic,1.76,70,21
+Espen Hvammen,ssk,Male,Norway,,,25
+Sang Hwa Lee,ssk,Female,Korea,1.65,62,24
+Antoinette De Jong,ssk,Female,Netherlands,1.73,68,18
+Misaki Oshigiri,ssk,Female,Japan,1.67,60,21
+Xin Zhao,ssk,Female,China,1.75,70,21
+Claudia Pechstein,ssk,Female,Germany,1.66,60,41
+Yuya Oikawa,ssk,Male,Japan,1.72,71,33
+Maki Tabata,ssk,Female,Japan,1.62,55,39
+Aleksandr Rumyantsev,ssk,Male,Russian Fed.,1.85,80,27
+Sugar Todd,ssk,Female,United States,1.63,64,23
+Mitchell Whitmore,ssk,Male,United States,1.75,76,24
+Artur Was,ssk,Male,Poland,1.92,90,27
+Yuji Kamijo,ssk,Male,Japan,1.66,72,27
+Junho Kim,ssk,Male,Korea,,,18
+Mari Hemmer,ssk,Female,Norway,,,30
+Jonathan Kuck,ssk,Male,United States,1.83,79,23
+Guojun Tian,ssk,Male,China,1.88,84,23
