@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <title>Buzzfeed</title>
+    
+    <link rel="stylesheet" href="buzzfeed.css" type="text/css">
+    <link rel="stylesheet" href="chosen.css">
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.1/crossfilter.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <a href="http://blog.modeanalytics.com">
+        <img id="mode-logo" src="http://mode.github.io/blog_assets/mode_logo_200px.png" />
+      </a>
+    </div>
+    <div class="title">
+      <p style="font-size:24px">Every Buzzfeed Quiz<p>
+      <em style="font-size:12px"><a href="#">Read the full post</a></em></p>
+    </div>
+    <div class="story">
+      <p>Unlock all the stupid quizzes.</p>
+    </div>
+    <select id="quiz-list" data-placeholder="Pick a Quiz!" class="chosen-select" style="width:500px;" tabindex="2"></select>
+    <p id="quiz-name"></p>
+    <div id="result-div"></div>
+    <div style="float:left" id="questions"></div>
+    <div id="question-div"></div>
+    <script type="text/javascript">
+    
+d3.csv('quiz_questions.csv', function(questions) {
+d3.csv('quiz_answers.csv', function(answers) {
+d3.csv('quiz_results.csv', function(results) {
+  
+  // Populate the select
+  populateList(results);
+  
+  // Redraw after seleciton
+  $("select#quiz-list").change(function () {
+    
+    // Identify selection, apply filter, render new images
+    var quiz = $("select#quiz-list option:selected").text();
+    dropSVG();
+    applyFilter(quiz);
+    render();
+    
+  });
+  
+  // SET SIZE AND INITIAL VARIABLES
+  var boxSize = 100,
+      boxTotal = 110,
+      boxPad = boxTotal - boxSize,
+      textSize = 80;
+  
+  // Set crossfilters
+  var crossQ = crossfilter(questions),
+      crossA = crossfilter(answers),
+      crossR = crossfilter(results),
+      dimQ = crossQ.dimension( function (d) { return d.quiz; }),
+      dimA = crossA.dimension( function (d) { return d.quiz; }),
+      dimR = crossR.dimension( function (d) { return d.quiz; }),
+      answerByQuestion = crossA.dimension( function (d) { return d.question; }),
+      answerByResult = crossA.dimension( function (d) { return d.result; });
+  
+  // Initialize
+  applyFilter('Which Whit Stillman Movie Character Are You?');
+  render();
+  
+  // Render images
+  function render() {
+    
+    // Get filtered values
+    var questions = dimQ.top(1000),
+        answers = dimA.top(1000),
+        results = dimR.top(1000);
+    
+    var titles = _(results).pluck('name');
+    
+    textSize = 40;
+    titles.forEach( function(t) {
+      if (t.length > textSize) { 
+        textSize = t.length + 45;
+       }
+    })
+    
+    if (results == '') { link = ""; quizName = ""; }    
+    else { link = results[0].url; quizName = results[0].quiz; }
+    
+    $("#quiz-link").remove()
+    $("#quiz-name").append("<a target='_blank' id='quiz-link' href='" + link + "'>" + quizName + "</a>" )
+    
+    qs = questions.length
+    rs = results.length
+    
+    // Set all three component SVGs 
+    
+    resultSvg = d3.select("#result-div")
+        .append("svg")
+        .attr("id","result-svg")
+        .attr("width", (rs+1) * boxTotal + 2*boxPad) 
+        .attr("height", boxTotal+boxPad+textSize);
+//        .style("border","1px Solid Black");
+    
+    questionSvg = d3.select("#question-div")
+        .append("svg")
+        .attr("id","question-svg")
+        .attr("width", (rs+1) * boxTotal + 2*boxPad)
+        .attr("height", qs * boxTotal + boxPad);
+        // .style("border","1px Solid Black");
+  
+    var resultImgs = resultSvg.selectAll("img").data([0]);
+    var questionImgs = questionSvg.selectAll("img").data([0]);
+    var div = resultSvg.selectAll("p").data([0]);
+    
+    // Loop over questions and set left side images
+    questions.forEach( function(q) {
+      
+      var qImg = q.image,
+          qNum = +q.question;
+      
+      questionImgs.enter()
+          .append("svg:image")
+          .attr("xlink:href", qImg)
+          .attr("x", boxPad)          
+          .attr("y", boxTotal * qNum + boxPad)
+          .attr("width", boxSize)
+          .attr("height", boxSize);
+    })
+    
+    // Loop over each result
+    results.forEach( function(r) {
+      var rResult = +r.result,
+          rName = r.name,
+          rImg = r.image;
+      
+      resultSvg.append("foreignObject")
+          .attr("x",boxPad*2 + boxTotal * (rResult+1))
+          .attr("y", boxTotal + boxPad)
+          .attr("width",boxTotal + boxPad)
+          .attr("height",textSize)
+          .append("xhtml:p")
+          .style({width: boxTotal - boxPad + 'px',height: textSize + 'px',"font-weight": "bold","text-align":"center","text-anchor":"middle"})
+          .html(rName);
+      
+      resultImgs.enter()
+          .append("svg:image")
+          .attr("xlink:href", rImg)
+          .attr("x", 2*boxPad + boxTotal * (rResult+1))
+          .attr("y", boxPad)
+          .attr("width", boxSize)
+          .attr("height", boxSize);
+      
+      answers.forEach( function(a) {
+        
+        var qNum = +a.question,
+            aResult = +a.result,
+            aImg = a.image
+            aDesc = a.description;
+            
+        if (aImg != "") {
+          
+          questionImgs.enter()
+              .append("svg:image")
+              .attr("xlink:href", aImg)
+              .attr("x", boxTotal * (aResult + 1) + boxPad*2)
+              .attr("y", boxTotal * qNum + boxPad)
+              .attr("width", boxSize)
+              .attr("height", boxSize);
+              
+        } else {
+          
+          questionSvg.append("foreignObject")
+            .attr("x",boxPad*2 + boxTotal * (aResult+1))
+            .attr("y",boxTotal * qNum + boxPad)
+            .attr("width",boxTotal - boxPad)
+            .attr("height",boxSize)
+            .append("xhtml:p")
+            .style({width: boxSize + 'px',height: boxSize + 'px',"font-weight": "bold","text-align":"center","text-anchor":"middle"})
+            .html(aDesc);
+        }
+            
+        
+      })
+    })
+    
+    checkGrid(questions,results,answers);
+  }
+  
+  // Drops main SVG element
+  function dropSVG() {
+    var qsvg = document.getElementById('question-svg');
+    var rsvg = document.getElementById('result-svg');
+    
+    qsvg.parentNode.removeChild(qsvg);
+    rsvg.parentNode.removeChild(rsvg);
+  }
+  
+  // Applies selected filter to crossfilters
+  function applyFilter(value) {
+    
+    dimQ.filter(null);
+    dimA.filter(null);
+    dimR.filter(null);
+    
+    dimQ.filterExact(value);
+    dimA.filterExact(value);
+    dimR.filterExact(value);
+  }
+  
+  // Populate selector list
+  function populateList(arr) {
+    
+    // Get quiz selector
+    var select = document.getElementById("quiz-list");
+    
+    // Set unique list of quizzes as options
+    var quizzes = [];
+      arr.forEach( function(d) { quizzes.push(d.quiz); })
+    var options = _.uniq(quizzes);
+    
+    // Add quiz names to selector
+    options.sort();
+      for (var i = 0; i < options.length; i++) {
+          var opt = options[i];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          select.appendChild(el);
+      }
+    
+    var config = {'.chosen-select': {allow_single_deselect:true}}
+    
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  }
+  
+  function checkGrid(questions,results,answers) {
+    
+    var numOfQuestions = questions.length,
+        numOfResults = results.length;
+    
+    for (var i=0; i<numOfQuestions; i++) {
+      for (var j=0; j<numOfResults; j++) {
+        
+        a = _(answers).select(function(d) { 
+          return d.question == i & d.result == j; 
+        })
+        
+        if (a.length == 0) {
+          writeNone(i,j);
+        } else if (a.length > 1) {
+          console.log('more than 1!')
+        } 
+      }
+    }
+  }
+  
+  function writeNone(questionNumber,answerNumber) {
+    
+    questionSvg.append("foreignObject")
+      .attr("x",boxPad + boxTotal * (answerNumber+1))
+      .attr("y",boxTotal * questionNumber + (boxTotal+boxPad)/2 - 16)
+      .attr("width",boxTotal + boxPad)
+      .attr("height",40)
+      .append("xhtml:p")
+      .style({width: boxTotal + boxPad + 'px',height: boxTotal + boxPad + 'px',"color":"red","font-weight": "bold","text-align":"center","text-anchor":"middle"})
+      .html("No matching answers!");
+  }
+  
+  
+})
+})
+})
+    
+    </script>
+  </body>
+</html>

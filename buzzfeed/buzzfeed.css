@@ -1,0 +1,50 @@
+
+body {
+  font: 12px sans-serif;
+  font-family: Geneva;
+  width: 960px;
+  background: #F2F5F4;
+}
+
+.logo { float: left; margin-top: -10px; }
+.social-media { float: right; text-align: right; }
+.share-right { margin-top: 20px; position: absolute; right: 0px;}
+.title { float: center; text-align: center; font-family: Geneva; }
+
+.title p {
+  margin: 15px; 
+}
+
+.title a {
+  color: #75756F;
+}
+
+svg {
+  background: #F2F5F4;
+}
+
+#result-svg {
+  background: #E5E9E7;
+}
+
+#mode-logo {
+  height: 50px;
+  width: auto;
+}
+
+
+.story p {
+  font-size:14px;
+  font-family: Geneva;
+}
+
+.result-text {
+  text-align: center;
+}
+
+#quiz-name {
+  float: center; 
+  text-align: center; 
+  font-family: Geneva; 
+  font-size: 20px;
+}
