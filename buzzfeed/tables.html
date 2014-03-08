@@ -1,0 +1,315 @@
+<html>
+  <head>
+    <title>Buzzfeed</title>
+    
+    <link rel="stylesheet" href="buzzfeed.css" type="text/css">
+    <link rel="stylesheet" href="chosen.css">
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.1/crossfilter.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <p style="font-size:24px">The Results of Every Buzzfeed Quiz<p>
+    </div>
+    <div class="story">
+      <p>Buzzfeed quizzes 'bout dumb.</p>
+    </div>
+    
+    
+    <div class="title">
+      <select id="quiz-list" data-placeholder="Pick a Quiz!" class="chosen-select" style="width:500px;" tabindex="2"></select>
+      <p id="quiz-link"></p>
+    </div>
+    <div id="table"></div>
+    <script type="text/javascript">
+    
+d3.csv('quiz_questions.csv', function(questions) {
+d3.csv('quiz_answers.csv', function(answers) {
+d3.csv('quiz_results.csv', function(results) {
+  
+  // Populate the select
+  populateList(results);
+  
+  // Redraw after seleciton
+  $("select#quiz-list").change(function () {
+    
+    // Identify selection, apply filter, render new images
+    quiz = $("select#quiz-list option:selected").text();
+    dropSVG();
+    applyFilter(quiz);
+    render();
+    
+  });
+  
+  // SET SIZE AND INITIAL VARIABLES
+  var boxSize = 100,
+      showQuestionsTwice = 6,
+      showResultsTwice = 6;
+      
+  // Set crossfilters
+  var crossQ = crossfilter(questions),
+      crossA = crossfilter(answers),
+      crossR = crossfilter(results),
+      dimQ = crossQ.dimension( function (d) { return d.quiz; }),
+      dimA = crossA.dimension( function (d) { return d.quiz; }),
+      dimR = crossR.dimension( function (d) { return d.quiz; }),
+      answerByQuestion = crossA.dimension( function (d) { return d.question; }),
+      answerByResult = crossA.dimension( function (d) { return d.result; });
+  
+  // Initialize
+  applyFilter('Are You A Hipster?');
+  render();
+  
+  // Render images
+  function render() {
+    
+    // Get filtered values
+    var questions = dimQ.top(1000),
+        answers = dimA.top(1000),
+        results = dimR.top(1000);
+    
+    if (results == '') { link = ""; quizName = ""; }    
+    else { link = results[0].url; quizName = results[0].quiz; }
+    
+    $("#quiz-title").remove();
+    $("#quiz-link-text").remove();
+
+    $("#quiz-name").append("<span id='quiz-title'>" + quizName + "</span>");
+    $("#quiz-link").append("<em><a class='' target='_blank' id='quiz-link-text' href='" + link + "'>See the quiz</a></em>" )
+    
+    quesCount = questions.length;
+    resCount = results.length;
+    
+    if (quesCount > showQuestionsTwice) { 
+      rows = questions.length + 2;
+      fillLastRow = true;
+    } else {
+      rows = questions.length + 1;
+      fillLastRow = false;
+    }
+    
+    if (resCount > showResultsTwice) { 
+      cols = results.length + 2; 
+      fillLastCol = true
+    } else {
+      cols = results.length + 1;
+      fillLastCol = false;
+    }
+
+    var rowArr = [];
+    var colArr = [];
+    
+    for (var i=0;i<rows;i++) { rowArr.push(i); }
+    for (var i=0;i<cols;i++) { colArr.push(i); }
+    
+    table = d3.select("#table")
+        .append("table")
+        .attr("cellspacing", 0)
+        .attr("id","result-table")
+        
+        .selectAll("tr")
+        .data(rowArr)
+        .enter().append("tr")
+        .attr("class",function(d){ return "row-class"+d; })
+        
+        .selectAll("td")
+        .data(colArr)
+        .enter().append("td")
+        .attr("class",function(d) { 
+          var rowClass = $(this).parent().attr('class'),
+              row = +rowClass.slice(9,12),
+          
+          cellClass = assignCellClasses(row,d,rows,cols,fillLastRow,fillLastCol);
+          return cellClass;
+        })
+        .attr("id",function(d) {
+          var rowClass = $(this).parent().attr('class'),
+              row = rowClass.slice(9,12);
+          return "cell" + row + "-" + d; });
+          
+    questions.forEach( function(q) {
+      
+      var qImg = q.image,
+          qNum = +q.question,
+          qTxt = $.trim(q.title);
+          
+      if (qTxt.length <= 5) { qTxt = ""; }
+      
+      var cell = "#cell"+(qNum+1)+"-"+0;
+      fillCell(cell,qImg,qTxt,boxSize);
+      
+      if (fillLastCol == true) {
+        
+        var cell = "#cell"+(qNum+1)+"-"+(cols-1);
+        fillCell(cell,qImg,qTxt,boxSize);
+      }
+    
+    })
+
+    results.forEach( function(r) {
+      
+      var rResult = +r.result,
+          rName = r.name,
+          rImg = r.image;
+      
+      var cell = "#cell"+0+"-"+(rResult+1);
+      fillCell(cell,rImg,rName,boxSize);
+      
+      if (fillLastRow == true) {
+        
+        var cell = "#cell"+(rows-1)+"-"+(rResult+1);
+        fillCell(cell,rImg,rName,boxSize);
+      }
+      
+    })
+    
+    answers.forEach( function(a) {
+      
+      var aResult = +a.result,
+          aDesc = a.description,
+          aImg = a.image,
+          aQues = +a.question;
+      
+      var cell = "#cell"+(aQues+1)+"-"+(aResult+1);      
+      fillCell(cell,aImg,aDesc,boxSize)
+
+    })
+    
+    drawLegend();
+    checkForNulls(questions,results,answers); 
+  }
+  
+  // Drops main SVG element
+  function dropSVG() {
+    var table = document.getElementById('result-table');
+    table.parentNode.removeChild(table);
+    
+  }
+  
+  function fillCell(cell,img,text,imgHeight) {
+    
+    if (img != "") {
+      d3.selectAll(cell)
+        .append("img")
+        .attr("width", "auto")
+        .attr("height", imgHeight)
+        .attr("src",img);
+    }
+    
+    if (text != "") {
+      d3.selectAll(cell)
+        .append("p") 
+        .style("margin","5px")
+        .text(text);
+    }
+  }
+  
+  // Applies selected filter to crossfilters
+  function applyFilter(value) {
+    
+    dimQ.filter(null);
+    dimA.filter(null);
+    dimR.filter(null);
+    
+    dimQ.filterExact(value);
+    dimA.filterExact(value);
+    dimR.filterExact(value);
+  }
+  
+  // Populate selector list
+  function populateList(arr) {
+    
+    // Get quiz selector
+    var select = document.getElementById("quiz-list");
+    
+    // Set unique list of quizzes as options
+    var quizzes = [];
+      arr.forEach( function(d) { quizzes.push(d.quiz); })
+    var options = _.uniq(quizzes);
+    
+    // Add quiz names to selector
+    options.sort();
+      for (var i = 0; i < options.length; i++) {
+          var opt = options[i];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          select.appendChild(el);
+      }
+    
+    var config = {'.chosen-select': {allow_single_deselect:true}}
+    
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  }
+  
+  function checkForNulls(questions,results,answers) {
+    
+    var numOfQuestions = questions.length,
+        numOfResults = results.length;
+    
+    for (var i=0; i<numOfQuestions; i++) {
+      for (var j=0; j<numOfResults; j++) {
+        
+        a = _(answers).select(function(d) { 
+          return d.question == i & d.result == j; 
+        })
+        
+        if (a.length == 0) {
+          drawNulls(i,j)
+        } 
+      }
+    }
+  }
+  
+  function drawNulls(questionNumber,resultNumber) {
+    
+    var cell = "#cell"+(questionNumber+1)+"-"+(resultNumber+1);
+    
+    d3.selectAll(cell)
+        .append("p") 
+        .style("margin","5px")
+        .style("color","#CC1414")
+        .text("No matching answers!"); 
+  }
+  
+  function assignCellClasses(row,col,rows,cols,fillLastRow,fillLastCol) {
+    
+    if (row == 0 && col == 0) 
+      { cc = "top-left"; }
+    else if ((row == 0 || (row == rows - 1 && fillLastRow == true)) && (col == 0 || (col == cols - 1 && fillLastCol == true))) 
+      { cc = "corners"}
+    else if (row == 0 || (row == rows - 1 && fillLastRow == true))
+      { cc = "top-border" }
+    else if ((col == 0 || (col == cols - 1 && fillLastCol == true)) && row % 2 == 0)
+      { cc = "side-border-even"}
+    else if ((col == 0 || (col == cols - 1 && fillLastCol == true)) && row % 2 == 1)
+      { cc = "side-border-odd"}
+    else if ( row % 2 == 0)
+      { cc = "even"}
+    else 
+      { cc = "odd"}
+    
+    return cc + " row" + row + " col" + col;
+  }           
+  
+  function drawLegend() {
+    d3.select(".top-left")
+      .append("p")
+      .html("Results <span style='font-size:20px'>&#8594;</span></br></br><span style='font-size:20px'>&#8595;</span> Questions");
+  }
+  
+})
+})
+})
+    
+    </script>
+  </body>
+</html>

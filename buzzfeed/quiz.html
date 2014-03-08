@@ -29,8 +29,8 @@
     <select id="quiz-list" data-placeholder="Pick a Quiz!" class="chosen-select" style="width:500px;" tabindex="2"></select>
     <p id="quiz-name"></p>
     <div id="result-div"></div>
-    <div style="float:left" id="questions"></div>
     <div id="question-div"></div>
+    <div id="result-div2"></div>
     <script type="text/javascript">
     
 d3.csv('quiz_questions.csv', function(questions) {
@@ -52,11 +52,13 @@ d3.csv('quiz_results.csv', function(results) {
   });
   
   // SET SIZE AND INITIAL VARIABLES
-  var boxSize = 100,
-      boxTotal = 110,
+  var boxSize = 120,
+      boxTotal = 140,
       boxPad = boxTotal - boxSize,
-      textSize = 80;
-  
+      textSize = 80,
+      reprintQuestionSize = 6,
+      reprintResultSize = 6;
+      
   // Set crossfilters
   var crossQ = crossfilter(questions),
       crossA = crossfilter(answers),
@@ -68,7 +70,7 @@ d3.csv('quiz_results.csv', function(results) {
       answerByResult = crossA.dimension( function (d) { return d.result; });
   
   // Initialize
-  applyFilter('Which Whit Stillman Movie Character Are You?');
+  applyFilter('Which Boy-Band Member Is Your Soulmate?');
   render();
   
   // Render images
@@ -97,23 +99,49 @@ d3.csv('quiz_results.csv', function(results) {
     qs = questions.length
     rs = results.length
     
+    if (rs > reprintResultSize) {
+      width = (rs+2) * boxTotal + 3*boxPad
+    } else {
+      width = (rs+1) * boxTotal + 2*boxPad 
+    }
+    
     // Set all three component SVGs 
     
     resultSvg = d3.select("#result-div")
         .append("svg")
         .attr("id","result-svg")
-        .attr("width", (rs+1) * boxTotal + 2*boxPad) 
-        .attr("height", boxTotal+boxPad+textSize);
-//        .style("border","1px Solid Black");
+        .attr("width", width) 
+        .attr("height", boxTotal+boxPad+textSize)
+       .style("border","1px Solid Black");
     
     questionSvg = d3.select("#question-div")
         .append("svg")
         .attr("id","question-svg")
-        .attr("width", (rs+1) * boxTotal + 2*boxPad)
+        .attr("width", width)
         .attr("height", qs * boxTotal + boxPad);
         // .style("border","1px Solid Black");
+    
+    if (qs > reprintQuestionSize) {
+      
+      resultSvg2 = d3.select("#result-div2")
+          .append("svg")
+          .attr("id","result-svg2")
+          .attr("width", width) 
+          .attr("height", boxTotal+boxPad+textSize);
+  //        .style("border","1px Solid Black");
+    }
+    
+    d3.select("#result-div")
+          .append("table")
+          .attr("x", 0)
+          .attr("y", 0)
+          .attr("width", boxSize)
+          .attr("height", boxSize)
+          .text("hey");
   
     var resultImgs = resultSvg.selectAll("img").data([0]);
+    
+    if (typeof resultSvg2 !== "undefined") { var resultImgs2 = resultSvg2.selectAll("img").data([0]); }
     var questionImgs = questionSvg.selectAll("img").data([0]);
     var div = resultSvg.selectAll("p").data([0]);
     
@@ -130,32 +158,61 @@ d3.csv('quiz_results.csv', function(results) {
           .attr("y", boxTotal * qNum + boxPad)
           .attr("width", boxSize)
           .attr("height", boxSize);
+      
+      if (rs > reprintResultSize) {
+        
+        questionImgs.enter()
+            .append("svg:image")
+            .attr("xlink:href", qImg)
+            .attr("x",  boxTotal * (rs+1) + boxPad*3)
+            .attr("y", boxTotal * qNum + boxPad)
+            .attr("width", boxSize)
+            .attr("height", boxSize);
+      }
     })
-    
+
     // Loop over each result
     results.forEach( function(r) {
       var rResult = +r.result,
           rName = r.name,
           rImg = r.image;
+          
+      if (qs > reprintQuestionSize) { 
+        svgArr = [resultSvg,resultSvg2];
+        imgArr = [resultImgs,resultImgs2]
+      } else { 
+        svgArr = [resultSvg];
+        imgArr = [resultImgs];
+      }
       
-      resultSvg.append("foreignObject")
-          .attr("x",boxPad*2 + boxTotal * (rResult+1))
-          .attr("y", boxTotal + boxPad)
-          .attr("width",boxTotal + boxPad)
-          .attr("height",textSize)
-          .append("xhtml:p")
-          .style({width: boxTotal - boxPad + 'px',height: textSize + 'px',"font-weight": "bold","text-align":"center","text-anchor":"middle"})
-          .html(rName);
+      svgArr.forEach( function(el) {
+        
+        el.append("foreignObject")
+            .attr("x",boxPad*2 + boxTotal * (rResult+1))
+            .attr("y", boxTotal + boxPad)
+            .attr("width",boxTotal + boxPad)
+            .attr("height",textSize)
+            .append("xhtml:p")
+            .style({width: boxSize + 'px',height: textSize + 'px',"text-align":"center","text-anchor":"middle"})
+            .html(rName);
+      })
       
-      resultImgs.enter()
-          .append("svg:image")
-          .attr("xlink:href", rImg)
-          .attr("x", 2*boxPad + boxTotal * (rResult+1))
-          .attr("y", boxPad)
-          .attr("width", boxSize)
-          .attr("height", boxSize);
+      imgArr.forEach( function(el) {
+        
+        el.enter()
+            .append("svg:image")
+            .attr("xlink:href", rImg)
+            .attr("x", 2*boxPad + boxTotal * (rResult+1))
+            .attr("y", boxPad)
+            .attr("width", boxSize)
+            .attr("height", boxSize);        
+      })
+
+      matchingAnswers = _(answers).select(function(d) { 
+          return d.result == rResult; 
+        })
       
-      answers.forEach( function(a) {
+      matchingAnswers.forEach( function(a) {
         
         var qNum = +a.question,
             aResult = +a.result,
@@ -174,13 +231,19 @@ d3.csv('quiz_results.csv', function(results) {
               
         } else {
           
+          var descLength = aDesc.length,
+              computedSize = (6/descLength)*140,
+              fontSize = Math.min(12,computedSize);
+          
+          console.log(fontSize);
+          
           questionSvg.append("foreignObject")
             .attr("x",boxPad*2 + boxTotal * (aResult+1))
             .attr("y",boxTotal * qNum + boxPad)
             .attr("width",boxTotal - boxPad)
             .attr("height",boxSize)
             .append("xhtml:p")
-            .style({width: boxSize + 'px',height: boxSize + 'px',"font-weight": "bold","text-align":"center","text-anchor":"middle"})
+            .style({width: boxSize + 'px',height: boxSize + 'px',"font-size":fontSize,"text-align":"center","text-anchor":"middle"})
             .html(aDesc);
         }
             
@@ -195,9 +258,13 @@ d3.csv('quiz_results.csv', function(results) {
   function dropSVG() {
     var qsvg = document.getElementById('question-svg');
     var rsvg = document.getElementById('result-svg');
+    var r2svg = document.getElementById('result-svg2');
     
     qsvg.parentNode.removeChild(qsvg);
     rsvg.parentNode.removeChild(rsvg);
+    
+    if (r2svg != null) { r2svg.parentNode.removeChild(r2svg); }
+    
   }
   
   // Applies selected filter to crossfilters
@@ -264,12 +331,12 @@ d3.csv('quiz_results.csv', function(results) {
   function writeNone(questionNumber,answerNumber) {
     
     questionSvg.append("foreignObject")
-      .attr("x",boxPad + boxTotal * (answerNumber+1))
+      .attr("x",boxPad*2 + boxTotal * (answerNumber+1))
       .attr("y",boxTotal * questionNumber + (boxTotal+boxPad)/2 - 16)
       .attr("width",boxTotal + boxPad)
       .attr("height",40)
       .append("xhtml:p")
-      .style({width: boxTotal + boxPad + 'px',height: boxTotal + boxPad + 'px',"color":"red","font-weight": "bold","text-align":"center","text-anchor":"middle"})
+      .style({width: boxSize + 'px',height: boxTotal + boxPad + 'px',"color":"red","text-align":"center","text-anchor":"middle"})
       .html("No matching answers!");
   }
   

@@ -66,12 +66,13 @@ link_table = read_table("links.csv",True)
 
 urls = []
 
-
 for l in link_table:
     urls.append(l[1])
 
 ## SOMTHING CHECKING DUPLICATES
 ####
+
+# urls = ["http://www.buzzfeed.com/katienotopoulos/are-you-a-hipster"]
 
 url_errors = []
 
@@ -83,6 +84,7 @@ for url in urls:
         soup = BeautifulSoup(r.text)
         
         quiz = soup.find('h1',{"id":"post-title"}).string
+        quiz_clean = quiz.replace(u'\xa0',u' ')
         
         ## Get question set
         questions = soup.findAll('li',{"class":"quiz_question"})
@@ -95,8 +97,13 @@ for url in urls:
             ## Get question info and write to question table
             header = q.find('div',{"class":"quiz_question_header"})
             title_div = header.find('div',{"class":"headline-1"})
+            title_contents = title_div.contents
             
-            title = title_div.content
+            if title_contents != []:
+                title = title_contents[0]
+            else:
+                title = ""
+            
             title_img_obj = header.find('img',{"class":"quiz_img"})
             
             if title_img_obj != None:
@@ -104,7 +111,7 @@ for url in urls:
             else:
                 title_img = ""
             
-            question_entry = (quiz,url,counter,title,title_img)
+            question_entry = (quiz_clean,url,counter,title,title_img)
             question_table.append(question_entry)
             
             ## Loop through answers and write to answer table
@@ -132,7 +139,7 @@ for url in urls:
                     elif desc_span2 != None:
                         desc = desc_span2.contents[0]
                     
-                    answer_entry = (quiz,url,counter,desc,p_index,answer_img)
+                    answer_entry = (quiz_clean,url,counter,desc,p_index,answer_img)
                     answer_table.append(answer_entry)
         
         ## Loop through results and write to result table
@@ -158,7 +165,7 @@ for url in urls:
             else:
                 result_img = ""
             
-            result_entry = (quiz,url,r,result_name,result_desc,result_headline,result_img)
+            result_entry = (quiz_clean,url,r,result_name,result_desc,result_headline,result_img)
             result_table.append(result_entry)
         
         print('succeed!')

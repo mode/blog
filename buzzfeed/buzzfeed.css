@@ -1,4 +1,3 @@
-
 body {
   font: 12px sans-serif;
   font-family: Geneva;
@@ -6,45 +5,43 @@ body {
   background: #F2F5F4;
 }
 
-.logo { float: left; margin-top: -10px; }
-.social-media { float: right; text-align: right; }
-.share-right { margin-top: 20px; position: absolute; right: 0px;}
 .title { float: center; text-align: center; font-family: Geneva; }
-
-.title p {
-  margin: 15px; 
-}
-
-.title a {
-  color: #75756F;
-}
-
-svg {
-  background: #F2F5F4;
-}
-
-#result-svg {
-  background: #E5E9E7;
-}
-
-#mode-logo {
-  height: 50px;
-  width: auto;
-}
-
+.title, .quiz-div p { margin: 15px; }
+.title a { color: #75756F; }
 
 .story p {
   font-size:14px;
   font-family: Geneva;
 }
 
-.result-text {
-  text-align: center;
-}
+.title-link { color: Black; }
 
 #quiz-name {
   float: center; 
   text-align: center; 
   font-family: Geneva; 
   font-size: 20px;
+}
+
+img {  margin: 5px; }
+
+td { 
+  text-align: center;
+  padding: 5px;
+}
+
+.top-border, .corners, .top-left {
+  border-top: 2px Solid Black;
+  border-bottom: 2px Solid Black;
+}
+
+.odd, .side-border-odd {
+  background-color: #E5E9E7;
+  border-left: 1px Solid #DEDDDD;
+  border-right: 1px Solid #DEDDDD;
+}
+
+.even, .side-border-even {
+  border-left: 1px Solid #DEDDDD;
+  border-right: 1px Solid #DEDDDD;
 }
