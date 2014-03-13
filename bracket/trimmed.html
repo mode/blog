@@ -6,13 +6,12 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
-    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
     <style>
     
     body {
       font: 12px sans-serif;
       font-family: Geneva;
-      width: 1000px;
+      width: 1050px;
       margin: 0 auto;
     }
     
@@ -23,29 +22,25 @@
     }
     
     td { 
-      width: 150px;
+      width: 100px;
     }
     
     h1 { 
       margin: 25px 0px 5px 0px; 
       text-align: center;
+      font-size: 20px;
     }
       
     h3 { 
       margin: 10px 0px 0px 0px; 
       text-align: center;
+      font-size:12px;
     }
     
     .team-text, .legend-text {
       margin:0px;
-      padding-left:5px;
-      padding-right: 5px;
-    }
-    
-    hr {
-      background: #ccc;
-      height: 2px;
-      border: 0px;
+      padding-left:2px;
+      padding-right: 2px;
     }
     
     a { color: grey;}
@@ -110,7 +105,6 @@
     
     .occupied { cursor: pointer; }
     .missing { color: grey; font-style: italic; }
-    .l {text-align: center;}
     .bottom { border-bottom: 1.5px Solid #ccc;}
     .none { border: none; }
     .narrow { height: 4px; }
@@ -148,60 +142,61 @@
 <body>
   <div>
     <p class="title">The Exact Odds of Your Bracket<p>
-      <p>This year, Warren Buffett has promised a billion dollar prize to anyone who picks a perfect bracket. Despite the enormous prize, the odds aren't in your favor&mdash;the chance of picking a perfect bracket if you pick every game at random is one in <a href="http://www.cbssports.com/collegebasketball/eye-on-college-basketball/24441831/bracket-voodoo-why-you-wont-win-the-billion-dollar-bracket" target="_blank">9 quintillion</a> (or 9,000,000,000,000,000,000).</p>
-      <p>But that's just a hypothetical bracket. What are the odds of <em>your</em> bracket? The interactive below lets you figure that out. Using the Vegas odds for each game and the betting lines on each team's chances of the making the Final Four and winning the NCAA Championship, the graphic calculates the odds of every possible NCAA matchup&mdash;and every possible NCAA bracket.</p>
-      <p>As you make your picks, you can see the odds for each region's picks and for the overall bracket. The bars that appear beside each team show how much each team contributes to lowering your bracket's chances. The bigger the team's bar, the bigger the chance that you're taking on that team. A final graphic that summarizes these odds for the entire bracket is shown at the end.</p>
-      <p>Don't want to look up your picks? Check out a few of these brackets, such as <a id="obama" href="#">President Obama's bracket</a>, brackets of <a id="favorites" href="#">all the favorites</a> and <a id="underdogs" href="#">all the underdogs</a>, and the <a id="result" href="#">actual tournament results</a>.
-      
+      <p>This year, Warren Buffett has promised a billion dollars to anyone who picks a perfect bracket. Unfortunately, the odds aren't in your favor&mdash;the chance of picking a perfect bracket if you pick every game at random is one in <a href="http://www.cbssports.com/collegebasketball/eye-on-college-basketball/24441831/bracket-voodoo-why-you-wont-win-the-billion-dollar-bracket" target="_blank">9 quintillion</a> (or 9,000,000,000,000,000,000).</p>
+      <p>But that's just a hypothetical bracket. What are the odds of <em>your</em> bracket? The interactive below lets you figure that out. Using the betting lines for each game and on each team's chances of the making the Final Four and winning the NCAA Championship, the graphic calculates the odds of every possible NCAA matchup&mdash;and every possible NCAA bracket.</p>
+      <p>As you make your picks, each pick is colored according to that team's odds in the previous matchup. If a team is colored in green, it means you picked the favorite. A team colored in red represents a pick for an underdog. If a pick is <em><span style="color:grey">colored grey</span></em>, it's not included in any odds calculations because it doesn't have an opponent yet.</p>
       <p style="text-align:center">
         <span style="color:#ba4024">Heavy underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#ff9000">Slight underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#7fcb5c">Slight favorite</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#588f27">Heavy favorite</span>
       </p>
-  <div>
-  <h1>Midwest</h1>
-  <h3 id="m-odds">Region odds: 1 in 1</h3>
-  <p class="clear"id="m-clear">Clear picks</p>
-  <div style="float:left" id="m-graph"></div>
-  <div id="m"></div>
-  <hr>
-  <h1>South</h1>
-  <h3 id="s-odds">Region odds: 1 in 1</h3>
-  <p class="clear" id="s-clear">Clear picks</p>
-  <div style="float:left" id="s"></div>
-  <div id="s-graph"></div>
-  <hr>
-  <h1>West</h1>
-  <h3 id="w-odds">Region odds: 1 in 1</h3>
-  <p class="clear" id="w-clear">Clear picks</p>
-  <div style="float:left" id="w-graph"></div>
-  <div id="w"></div>
-  <hr>
-  <h1>East</h1>
-  <h3 id="e-odds">Region odds: 1 in 1</h3>
-  <p class="clear" id="e-clear">Clear picks</p>
-  <div style="float:left" id="e"></div>
-  <div id="e-graph"></div>
-  <hr>
+      
+      <p>At the bottom of the bracket, you can see how each team contributed to your bracket's overall chances. The bigger a team's circle, the more your picks for that team lower your bracket's chances&mdash;at least in the eyes of the oddsmakers. Don't want to look up your picks? Check out a few of these brackets!</p>
+      <p style="text-align:center">
+        <span class="clear" id="obama">President Obama's bracket</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="clear" id="favorites">All the favorites</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="clear" id="underdogs">All the underdogs</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="clear" id="result">Actual tournament results</span>
+      </p>
+  </br> 
+  <div style="float:left"id="m">
+    <h1>Midwest</h1>
+    <h3 id="m-odds">Region odds: 1 in 1</h3>
+    <p class="clear"id="m-clear">Clear region</p>
+  </div>
+  <div style="float:left"id="s">
+    <h1>South</h1>
+    <h3 id="s-odds">Region odds: 1 in 1</h3>
+    <p class="clear" id="s-clear">Clear region</p>
+  </div>
+  </br>
+  <div style="float:left"id="w">
+    <h1>West</h1>
+    <h3 id="w-odds">Region odds: 1 in 1</h3>
+    <p class="clear" id="w-clear">Clear region</p>
+  </div>
+  <div style="float:left" id="e">
+    <h1>East</h1>
+    <h3 id="e-odds">Region odds: 1 in 1</h3>
+    <p class="clear" id="e-clear">Clear region</p>
+  </div>
   <h1>Final Four</h1>
   <h3 id="f-odds">Region odds: 1 in 1</h3>
-  <p class="clear" id="f-clear">Clear picks</p>
-  <div style="float:left; padding-left: 150px" id="f-graph"></div>
-  <div id="f"></div>
+  <p class="clear" id="f-clear">Clear Final Four</p>
+  <div style="padding-left: 360px"id="f"></div>
   <hr>
-  <h1 id="t-odds">Total odds: 1 in 1</h1>
-  <h3 id="coin-flip">Is your bracket more likely than 63 coin flips?</h3>
-  <div id="final-viz"></div>
+  <div id="final-viz">
+    <h1 id="t-odds">Total odds: 1 in 1</h1>
+    <p style="text-align:center;" id="coin-flip">Is your bracket more likely than 63 coin flips?</p>
+    <p style="text-align:center; color:#545454;"><em>The bigger the circle, the more unlikely your picks for that team are.</em></p>
+  </div>
   <p class="clear" id="clear-all">Clear all picks and start over!</p>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
 <script>
   
 t = d3.format(",d")
 
-reds = colorbrewer.RdYlGn[5].slice(0,2);
-greens = colorbrewer.RdYlGn[5].slice(3,5);
-yellow = ['#fecc5c']
 colors = ['#ba4024','#ff9000','#7fcb5c','#588f27']
 
 colorScale = d3.scale.quantile()
@@ -253,7 +248,6 @@ d3.csv("bracket-2013.csv", function(data) {
   })
   
   drawInitialTable('f',finalDummy,finalRounds);
-  drawSVG(regions);
   
   bracket = fillBracket(regions,data)
   renderTeams(bracket);
@@ -296,25 +290,25 @@ d3.csv("bracket-2013.csv", function(data) {
   })
   
   $("#favorites").click(function() {
-    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Kansas","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Arizona","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"Gon"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"Gon","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Col State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Cst"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Kansas","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Arizona","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"Gon"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"Gon","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal);
   })
   
   $("#underdogs").click(function() {
-    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"NC AT","1":"Colorado State","2":"Oregon","3":"NM State","4":"St Mary","5":"Val","6":"Cinn","7":"Albany"},"2":{"0":"NC AT","1":"NM State","2":"Val","3":"Albany"},"3":{"0":"NC AT","1":"Albany"},"4":{"0":"NC AT"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"WKU","1":"Nova","2":"Akron","3":"SDS","4":"UCLA","5":"NWS","6":"Oklahoma","7":"Fl Gulf Coast"},"2":{"0":"WKU","1":"SDS","2":"NWS","3":"Fl Gulf Coast"},"3":{"0":"WKU","1":"Fl Gulf Coast"},"4":{"0":"WKU"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Southern","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Belmont","5":"Harvard","6":"Iowa S","7":"Iona"},"2":{"0":"Southern","1":"La Salle","2":"Harvard","3":"Iona"},"3":{"0":"Southern","1":"Iona"},"4":{"0":"Southern"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"JMU","1":"Temple","2":"Cal","3":"Montana","4":"Bucknell","5":"Davidson","6":"Colorado","7":"Pacific"},"2":{"0":"JMU","1":"Montana","2":"Davidson","3":"Pacific"},"3":{"0":"JMU","1":"Pacific"},"4":{"0":"JMU"}},"f":{"0":{"0":"NC AT","1":"Southern","2":"WKU","3":"JMU"},"1":{"0":"NC AT","1":"JMU"},"2":{"0":"NC AT"}}}
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Col State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"NC AT","1":"Col State","2":"Oregon","3":"NM State","4":"St Mary","5":"Val","6":"Cinn","7":"Albany"},"2":{"0":"NC AT","1":"NM State","2":"Val","3":"Albany"},"3":{"0":"NC AT","1":"Albany"},"4":{"0":"NC AT"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Cst"},"1":{"0":"WKU","1":"Nova","2":"Akron","3":"SDS","4":"UCLA","5":"NWS","6":"Oklahoma","7":"Fl Gulf Cst"},"2":{"0":"WKU","1":"SDS","2":"NWS","3":"Fl Gulf Cst"},"3":{"0":"WKU","1":"Fl Gulf Cst"},"4":{"0":"WKU"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Southern","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Belmont","5":"Harvard","6":"Iowa S","7":"Iona"},"2":{"0":"Southern","1":"La Salle","2":"Harvard","3":"Iona"},"3":{"0":"Southern","1":"Iona"},"4":{"0":"Southern"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"JMU","1":"Temple","2":"Cal","3":"Montana","4":"Bucknell","5":"Davidson","6":"Colorado","7":"Pacific"},"2":{"0":"JMU","1":"Montana","2":"Davidson","3":"Pacific"},"3":{"0":"JMU","1":"Pacific"},"4":{"0":"JMU"}},"f":{"0":{"0":"NC AT","1":"Southern","2":"WKU","3":"JMU"},"1":{"0":"NC AT","1":"JMU"},"2":{"0":"NC AT"}}}
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal);
   })
   
   $("#obama").click(function() {
-    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Cinn","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"Oklahoma","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Belmont","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"OSU"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"OSU","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Col State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Cinn","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Cst"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"Oklahoma","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Belmont","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"OSU"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"OSU","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal);
   })
   
   $("#result").click(function() {
-    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Colorado State","2":"Oregon","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"Oregon","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Fl Gulf Coast"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Fl Gulf Coast"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Michigan"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Arizona","5":"Harvard","6":"Iowa S","7":"OSU"},"2":{"0":"Wichata","1":"La Salle","2":"Arizona","3":"OSU"},"3":{"0":"Wichata","1":"OSU"},"4":{"0":"Wichata"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"Cal","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Syracuse","1":"Marquette"},"4":{"0":"Syracuse"}},"f":{"0":{"0":"Louisville","1":"Wichata","2":"Michigan","3":"Syracuse"},"1":{"0":"Louisville","1":"Michigan"},"2":{"0":"Louisville"}}}
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Col State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Col State","2":"Oregon","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"Oregon","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Cst"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Fl Gulf Cst"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Fl Gulf Cst"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Michigan"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Arizona","5":"Harvard","6":"Iowa S","7":"OSU"},"2":{"0":"Wichata","1":"La Salle","2":"Arizona","3":"OSU"},"3":{"0":"Wichata","1":"OSU"},"4":{"0":"Wichata"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"Cal","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Syracuse","1":"Marquette"},"4":{"0":"Syracuse"}},"f":{"0":{"0":"Louisville","1":"Wichata","2":"Michigan","3":"Syracuse"},"1":{"0":"Louisville","1":"Michigan"},"2":{"0":"Louisville"}}}
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal);
   })
@@ -327,78 +321,6 @@ function renderFull(bracket,regions,regionsWithFinal) {
   showOdds(bracket,regionsWithFinal);
   checkOccupied(bracket);
   checkFinalOccupied(bracket,regions);
-}
-
-function drawSVG() {
-  
-  barMargin = {top: 30, right: 18, bottom: 20, left: 18},
-  barWidth = 200 - barMargin.left - barMargin.right,
-  barHeight = 370 - barMargin.top - barMargin.bottom;
-  
-  var all = ['m','s','w','e','f'],
-      teamData = regionTeams;
-  
-  percentFormat = d3.format("%")
-  
-  all.forEach( function(region,i) {
-    
-    if ( i % 2 == 0) { domain = [1,0]; } else { domain = [0,1]; }
-    
-    xBar = d3.scale.linear()
-        .domain(domain)
-        .range([0,barWidth]);
-  
-    xAxisBar = d3.svg.axis()
-        .scale(xBar)
-        .orient("top")
-        .ticks(2)
-        .tickFormat(percentFormat);
-    
-    if (region == 'f') { 
-      barHeight = 40 + barMargin.top; 
-      teamData = finalTeams;
-    }
-      
-    var location = '#' + region + "-graph";
-    
-    var svgBar = d3.select(location)
-      .append("svg")
-      .attr("height",barHeight + barMargin.top + barMargin.bottom)
-      .attr("width",barWidth + barMargin.left + barMargin.right)
-    .append("g")
-      .attr("transform", "translate(" + barMargin.left + "," + barMargin.top + ")");
-      
-    svgBar.selectAll("rect")
-    .data(teamData)
-      .enter()
-      .append("rect")
-      .attr("width",0)
-      .attr("height",15)
-      .attr("x",function() { 
-        if (i % 2 == 0) { return barWidth; } else { return 0; }
-      })
-      .attr("y",function(d) {return (d*21)})
-      .attr("fill","steelblue")
-      .attr("id",function(d) { return "bar-" + region + "-" + d; });
-      
-    d3.select("#" + region + "-r4-gl")
-      .append("p")
-      .attr("class","missing l legend-text")
-      .text("* Not included in odds");
-      
-    svgBar.append("g")
-      .attr("class", "x axis")
-      .attr("id",region + "-axis")
-      .attr("transform", "translate(0,-5)")
-      .call(xAxisBar)
-    .append("text")
-      .attr("class", "label")
-      .attr("x", function() {
-        if (i % 2 == 0) { return barMargin.left + 70; } else { return barWidth + barMargin.left - 30; }
-      })        
-      .attr("y", -6)
-      .style("text-anchor", "end");
-  })
 }
 
 // Fills bracket shell with teams from csv
@@ -564,10 +486,6 @@ function checkOccupied(bracket) {
   // For regional brackets
   for (region in bracket) {
     
-    $("#" + region + "-r4-gl").removeClass("show");
-    $("#" + region + "-r4-gl").addClass("hide");
-    anyMissing = false;
-    
     var shouldShowClear = false;
     
     for (round in bracket[region]) {
@@ -580,7 +498,6 @@ function checkOccupied(bracket) {
           if (round > 0) {
             if (checkPrevious(bracket,region,round,game) == false) {
               $(location).addClass("missing")
-              anyMissing = true;
             }
             
             shouldShowClear = true;
@@ -589,18 +506,14 @@ function checkOccupied(bracket) {
       }
     }
     showClear(region,shouldShowClear);
-    if (anyMissing == true) { 
-      console.log('here')
-      $("#" + region + "-r4-gl").removeClass("hide");
-      $("#" + region + "-r4-gl").addClass("show"); 
-    }
   }
 }
 
 function checkFinalOccupied(bracket,regions) {
-  regions.forEach( function(r,i) {
+  var regionDict = {'m':0,'s':2,'w':1,'e':3};
+  regions.forEach( function(r) {
     if (checkPrevious(bracket,r,4,0) == false) {
-      var location = "#f-r0-g" + i;
+      var location = "#f-r0-g" + regionDict[r];
       $(location).addClass("missing");
     }
   })
@@ -608,7 +521,8 @@ function checkFinalOccupied(bracket,regions) {
 
 function calculateRegionOdds(bracket,region) {
   var regionOdds = [],
-      odds = 1;
+      odds = 1,
+      regionDict = {'m':0,'s':2,'w':1,'e':3};
   
   if (region != 'f') { roundCount = 5;} else { roundCount = 3;}
   
@@ -628,10 +542,21 @@ function calculateRegionOdds(bracket,region) {
           d3.select("#" + region + "-r" + r + "-g" + z)
             .style("color", function() {return colorScale(gameOdds)})
           
+          if (r == 4) {
+            d3.select("#f-r0-g" + regionDict[region])
+              .style("color", function() {return colorScale(gameOdds)})
+          }
+          
           regionOdds.push(gameOdds);
         } else {
+          
           d3.select("#" + region + "-r" + r + "-g" + z)
             .style("color", "grey")
+          
+          if (r == 4) {
+            d3.select("#f-r0-g" + regionDict[region])
+              .style("color", "grey")
+          }
         }
       }
     }
@@ -649,7 +574,7 @@ function applyRegionOdds(bracket,regionsWithFinal) {
   regionsWithFinal.forEach(function(region) {
     regionOdds = calculateRegionOdds(bracket,region);
     
-    replaceRegionOdds(bracket,region,regionOdds);
+    byRegion = replaceRegionOdds(bracket,region,regionOdds);
     
     d3.select("#" + region + "-odds")
         .text("Region odds: 1 in "+ t(d3.round(1/regionOdds)));
@@ -674,12 +599,13 @@ function showOdds(bracket,regionsWithFinal) {
   
   if (d3.round(1/totalOdds) <  9223372036854775808) {
     d3.select("#coin-flip")
-      .text("Your bracket is more likely than 63 random picks!");
+      .html("Your bracket is <span style='text-decoration:underline; color:#588f27'>more likely</span> than 63 random picks!");
   } else {
     d3.select("#coin-flip")
-      .text("Your bracket is less likely than 63 random picks!");
+      .html("Your bracket is <span style='text-decoration:underline; color:#ba4024'>less likely</span> than 63 random picks!");
   }
   
+
   
   replaceBracketOdds(bracket,totalOdds);
 }
@@ -882,21 +808,6 @@ function assignCellIds(row,column,direction,type) {
   }
 }
 
-function makeBarsAndCircles(bracket,regions) {
-  regions.forEach(function(region,i) {
-    regionTeams.forEach(function(team) {
-      
-      var barVal = Math.random() * 200;
-      var circleVal = Math.random() * 50
-      
-      d3.select("#c-" + region + "-" + team)
-        .transition()
-        .attr("r",function() { return circleVal; })
-        .duration(1000);
-    })
-  })
-}
-
 function addTeamText(team,region,round) {
   if (round == 0 & region != 'f') {
     if (region == 's' || region == 'e') { 
@@ -948,8 +859,8 @@ function renderFinalViz(data,regions,regionTeams) {
   var seeds = []
   regionTeams.forEach( function(n) { seeds.push(n+1); })
   
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
-      width = 960 - margin.left - margin.right,
+  var margin = {top: 40, right: 40, bottom: 30, left: 40},
+      width = 1000 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
   
   x = d3.scale.ordinal()
@@ -962,7 +873,7 @@ function renderFinalViz(data,regions,regionTeams) {
       
   rSize = d3.scale.linear()
       .domain([0,1])
-      .range([0,50]);
+      .range([0,7800]);
   
   var tip = d3.tip()
       .attr('class', 'd3-tip')
@@ -1033,46 +944,14 @@ function replaceRegionOdds(bracket,region,odds) {
     replaceArr.push(ratioOdds)   
   
   })
+  
   var totalReplaceOdds = 0;
   
   replaceArr.forEach(function(d) { if (d != 1) {totalReplaceOdds = totalReplaceOdds + d; }});
   
   var maxRegionReplace = _.max(replaceArr)/totalReplaceOdds;
   
-  if (bi % 2 == 0) { 
-    xBar.domain([maxRegionReplace,0]);
-  } else {
-    xBar.domain([0,maxRegionReplace]);
-  }
-  
-  xAxisBar.scale(xBar)
-  
-  d3.select("#" + region + "-axis")
-    .transition()
-    .call(xAxisBar)
-    .duration(1000);
-    
-  replaceArr.forEach(function(d,i) {
-    
-    if (d != 1) {
-      val = d/totalReplaceOdds,
-      barVal = xBar(val)
-    } else {
-      if (bi % 2 == 0) { barVal = 162; } else { barVal = 2; }
-    }
-
-    d3.select("#bar-" + region + "-" + i)
-      .transition()
-      .attr("x",function() {
-        if (bi % 2 == 0) { return barVal; } else { return 0; }
-      })
-      .attr("width",function() {
-        if (bi % 2 == 0) { return barWidth - barVal; } else { return barVal; } 
-      })
-      .duration(1000);
-    
-  })
-      
+  return replaceArr;
 }
 
 function replaceTeamOdds(bracket,region,team) {
@@ -1139,12 +1018,15 @@ function replaceBracketOdds(bracket,odds) {
     var regionArr = replaceDict[r];
     
     regionArr.forEach(function(d,i) {
-      if (d != 1) {
+      if (Math.round(d*10000)/10000 != 1) {
         val = d/totalReplaceOdds,
-        radius = Math.max(rSize(val),2);
+        area = Math.max(rSize(val),2);
+        console.log(d)
       } else {
-        radius = 2
+        area = 20;
       }
+      
+      radius = Math.sqrt(area/Math.PI)
       
       d3.select("#c-" + r + "-" + i)
         .transition()
