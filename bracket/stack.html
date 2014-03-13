@@ -1,0 +1,1222 @@
+<!-- TODO 
+Bug with picks in final four not disappearing
+Clear all button
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculating...</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
+    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+    <style>
+    
+    body {
+      font: 12px sans-serif;
+      font-family: Geneva;
+      width: 1000px;
+      margin: 0 auto;
+    }
+    
+    table {
+      padding: 10px;
+      padding-top: 30px;
+      border: 0px;
+    }
+    
+    td { 
+      width: 150px;
+    }
+    
+    h1 { 
+      margin: 25px 0px 5px 0px; 
+      text-align: center;
+    }
+      
+    h3 { 
+      margin: 10px 0px 0px 0px; 
+      text-align: center;
+    }
+    
+    .team-text {
+      margin:0px;
+      padding-left:5px;
+      padding-right: 5px;
+    }
+    
+    hr {
+      background: #ccc;
+      height: 2px;
+      border: 0px;
+    }
+    
+    a { color: grey;}
+    
+    .clear {
+      text-align: center;
+      color: grey;
+      text-decoration: underline;
+      cursor: pointer;
+      margin: 0px;
+    }
+    
+    .hide { visibility: hidden;}
+    .show { visibility: visible;}
+    
+    .title {
+      margin: 15px;
+      font-size:24px;
+      text-align: center;
+    }
+    
+    .seed-left {
+      color: grey;
+      font-family: sans-serif;
+      float: left;
+      width: 20px;
+    }
+    
+    .seed-right {
+      color: grey;
+      font-family: sans-serif;
+      float: right;
+      width: 20px;
+    }
+    
+    .left-top {
+      border-top: 1.5px Solid #ccc;
+      border-right: 1.5px Solid #ccc;
+    }
+  
+    .left-side {
+      border-right: 1.5px Solid #ccc;
+      cursor: auto;
+    }
+    .left-bottom {
+      border-bottom: 1.5px Solid #ccc;
+      border-right: 1.5px Solid #ccc;
+    }
+  
+    .right-top {
+      border-top: 1.5px Solid #ccc;
+      border-left: 1.5px Solid #ccc;
+    }
+  
+    .right-side {
+      border-left: 1.5px Solid #ccc;
+    }
+    .right-bottom {
+      border-bottom: 1.5px Solid #ccc;
+      border-left: 1.5px Solid #ccc;
+    }
+    
+    .occupied { cursor: pointer; }
+    .missing { color: grey; font-style: italic; }
+    .l {text-align: center;}
+    .bottom { border-bottom: 1.5px Solid #ccc;}
+    .none { border: none; }
+    .narrow { height: 4px; }
+    .normal { height: 16px;}
+    
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    
+    .dot {
+      stroke: #2A4E6C;
+      stroke-width: 1px;
+      fill: #4682b4;
+      opacity: .5;
+    }
+    
+    .d3-tip {
+      line-height: 1;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+    }
+    
+    #clear-all {
+      font-size: 16px;
+      margin: 20px 0px 20px 0px;
+    }
+    
+    </style>
+  </head>
+<body>
+  <div>
+    <p class="title">The Exact Odds of Your Bracket<p>
+      <p>This year, Warren Buffett has promised a billion dollar prize to anyone who picks a perfect bracket. Despite the enormous prize, the odds aren't in your favor&mdash;the chance of picking a perfect bracket if you pick every game at random is one in <a href="http://www.cbssports.com/collegebasketball/eye-on-college-basketball/24441831/bracket-voodoo-why-you-wont-win-the-billion-dollar-bracket" target="_blank">9 quintillion</a> (or 9,000,000,000,000,000,000).</p>
+      <p>But that's just a hypothetical bracket. What are the odds of <em>your</em> bracket? The interactive below lets you figure that out. Using the Vegas odds for each game and the betting lines on each team's chances of the making the Final Four and winning the NCAA Championship, the graphic calculates the odds of every possible NCAA matchup&mdash;and every possible NCAA bracket.</p>
+      <p>As you make your picks, you can see the odds for each region's picks and for the overall bracket. The bars that appear beside each team show how much each team contributes to lowering your bracket's chances. The bigger the team's bar, the bigger the chance that you're taking on that team. A final graphic that summarizes these odds for the entire bracket is shown at the end.</p>
+      <p>Don't want to look up your picks? Check out a few of these brackets, such as <a id="obama" href="#">President Obama's bracket</a>, brackets of <a id="favorites" href="#">all the favorites</a> and <a id="underdogs" href="#">all the underdogs</a>, and the <a id="result" href="#">actual tournament results</a>.
+      
+      <p style="text-align:center">
+        <span style="color:#ba4024">Heavy underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color:#ff9000">Slight underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color:#7fcb5c">Slight favorite</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color:#588f27">Heavy favorite</span>
+      </p>
+  <div>
+  <h1>Midwest</h1>
+  <h3 id="m-odds">Region odds: 1 in 1</h3>
+  <p class="clear"id="m-clear">Clear picks</p>
+  <div style="float:left" id="m-graph"></div>
+  <div id="m"></div>
+  <hr>
+  <h1>South</h1>
+  <h3 id="s-odds">Region odds: 1 in 1</h3>
+  <p class="clear" id="s-clear">Clear picks</p>
+  <div style="float:left" id="s"></div>
+  <div id="s-graph"></div>
+  <hr>
+  <h1>West</h1>
+  <h3 id="w-odds">Region odds: 1 in 1</h3>
+  <p class="clear" id="w-clear">Clear picks</p>
+  <div style="float:left" id="w-graph"></div>
+  <div id="w"></div>
+  <hr>
+  <h1>East</h1>
+  <h3 id="e-odds">Region odds: 1 in 1</h3>
+  <p class="clear" id="e-clear">Clear picks</p>
+  <div style="float:left" id="e"></div>
+  <div id="e-graph"></div>
+  <hr>
+  <h1>Final Four</h1>
+  <h3 id="f-odds">Region odds: 1 in 1</h3>
+  <p class="clear" id="f-clear">Clear picks</p>
+  <div style="float:left; padding-left: 150px" id="f-graph"></div>
+  <div id="f"></div>
+  <hr>
+  <h1 id="t-odds">Total odds: 1 in 1</h1>
+  <h3 id="coin-flip">Is your bracket more likely than 63 coin flips?</h3>
+  <div id="final-viz"></div>
+  <p class="clear" id="clear-all">Clear all picks and start over!</p>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
+<script>
+  
+t = d3.format(",d")
+
+reds = colorbrewer.RdYlGn[5].slice(0,2);
+greens = colorbrewer.RdYlGn[5].slice(3,5);
+yellow = ['#fecc5c']
+colors = ['#ba4024','#ff9000','#7fcb5c','#588f27']
+
+colorScale = d3.scale.quantile()
+  .domain([0,1])
+  .range(colors);
+
+totalOdds = 1;
+totalOddsFF = 0;
+totalOddsShip = 0;
+
+countLabel = d3.select("#count-div")
+    .append("p")
+    .attr("class","count-text")  
+    .text("Your bracket: 1 in "+ t(totalOdds))
+
+d3.csv("bracket-2013.csv", function(data) {
+  
+  seedByTeam = d3.map(),
+  initialByTeam = d3.map(),
+  ffByTeam = d3.map(),
+  shipByTeam = d3.map();
+  
+  data.forEach(function(team) { 
+    seedByTeam.set(team.team,+team.seed);
+    initialByTeam.set(team.team,+team.initial_odds);
+    ffByTeam.set(team.team,+team.ff_odds);
+    shipByTeam.set(team.team,+team.ship_odds);
+    totalOddsFF += +team.ff_odds;
+    totalOddsShip += +team.ship_odds;
+  })
+
+  var regions = ['m','s','w','e'],
+      regionsWithFinal = ['m','s','w','e','f'],
+      regionDictionary = {'m':0,'s':1,'w':2,'e':3},
+      orientation = ["left","right","left","right"]
+      regionTeams = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      regionRounds = [0,1,2,3,4],
+      finalDummy = [0,1,2,3,4,5,6,7],
+      finalTeams = [0,1,2,3],
+      finalRounds = [0,1,2];
+  
+  var rows = 31,
+      dummy = [];
+  
+  for (var i=0;i<rows;i++) { dummy.push(i); }
+  
+  regions.forEach( function(r,i) {
+    drawInitialTable(r,dummy,regionRounds,orientation[i]);
+  })
+  
+  drawInitialTable('f',finalDummy,finalRounds);
+  drawSVG(regions);
+  
+  bracket = fillBracket(regions,data)
+  renderTeams(bracket);
+  checkOccupied(bracket);
+  checkFinalOccupied(bracket,regions);
+  
+  renderFinalViz(data,regions,regionTeams);
+  
+  $("td").click(function () {
+    var elId = $(this).attr('id'),
+        region = elId.slice(0,1),
+        round = +elId.slice(3,4),
+        position = +elId.slice(6,9);
+    
+    var check = checkToAdvance(bracket,region,round,position)
+    
+    if (check == true) {
+      
+      bracket = clearFuture(bracket,region,round,position);
+      bracket = advanceTeam(bracket,region,round,position);
+      renderFull(bracket,regions,regionsWithFinal);
+      
+      zzz = bracket;
+    }
+  });
+  
+  $(".clear").click(function () {
+    var elId = $(this).attr('id'),
+        region = elId.slice(0,1);
+    
+    bracket = clearBracket(bracket,region);
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+  
+  $("#clear-all").click(function () {
+    bracket = clearAll(bracket,region);
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+  
+  $("#favorites").click(function() {
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Kansas","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Arizona","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"Gon"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"Gon","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+  
+  $("#underdogs").click(function() {
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"NC AT","1":"Colorado State","2":"Oregon","3":"NM State","4":"St Mary","5":"Val","6":"Cinn","7":"Albany"},"2":{"0":"NC AT","1":"NM State","2":"Val","3":"Albany"},"3":{"0":"NC AT","1":"Albany"},"4":{"0":"NC AT"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"WKU","1":"Nova","2":"Akron","3":"SDS","4":"UCLA","5":"NWS","6":"Oklahoma","7":"Fl Gulf Coast"},"2":{"0":"WKU","1":"SDS","2":"NWS","3":"Fl Gulf Coast"},"3":{"0":"WKU","1":"Fl Gulf Coast"},"4":{"0":"WKU"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Southern","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Belmont","5":"Harvard","6":"Iowa S","7":"Iona"},"2":{"0":"Southern","1":"La Salle","2":"Harvard","3":"Iona"},"3":{"0":"Southern","1":"Iona"},"4":{"0":"Southern"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"JMU","1":"Temple","2":"Cal","3":"Montana","4":"Bucknell","5":"Davidson","6":"Colorado","7":"Pacific"},"2":{"0":"JMU","1":"Montana","2":"Davidson","3":"Pacific"},"3":{"0":"JMU","1":"Pacific"},"4":{"0":"JMU"}},"f":{"0":{"0":"NC AT","1":"Southern","2":"WKU","3":"JMU"},"1":{"0":"NC AT","1":"JMU"},"2":{"0":"NC AT"}}}
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+  
+  $("#obama").click(function() {
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Miss","2":"OK State","3":"St Louis","4":"Memphis","5":"MSU","6":"Cinn","7":"Duke"},"2":{"0":"Louisville","1":"St Louis","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"Oklahoma","7":"Gtown"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Gtown"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Florida"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Pitt","2":"Wisc","3":"Kstate","4":"Belmont","5":"NM","6":"ND","7":"OSU"},"2":{"0":"Gon","1":"Wisc","2":"NM","3":"OSU"},"3":{"0":"Gon","1":"OSU"},"4":{"0":"OSU"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"UNLV","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Indiana","1":"Miami"},"4":{"0":"Indiana"}},"f":{"0":{"0":"Louisville","1":"OSU","2":"Florida","3":"Indiana"},"1":{"0":"Louisville","1":"Indiana"},"2":{"0":"Louisville"}}}
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+  
+  $("#result").click(function() {
+    bracket = {"m":{"0":{"0":"Louisville","1":"NC AT","2":"Colorado State","3":"Miss","4":"OK State","5":"Oregon","6":"St Louis","7":"NM State","8":"Memphis","9":"St Mary","10":"MSU","11":"Val","12":"Creighton","13":"Cinn","14":"Duke","15":"Albany"},"1":{"0":"Louisville","1":"Colorado State","2":"Oregon","3":"St Louis","4":"Memphis","5":"MSU","6":"Creighton","7":"Duke"},"2":{"0":"Louisville","1":"Oregon","2":"MSU","3":"Duke"},"3":{"0":"Louisville","1":"Duke"},"4":{"0":"Louisville"}},"s":{"0":{"0":"Kansas","1":"WKU","2":"UNC","3":"Nova","4":"VCU","5":"Akron","6":"Michigan","7":"SDS","8":"UCLA","9":"Minn","10":"Florida","11":"NWS","12":"SDSU","13":"Oklahoma","14":"Gtown","15":"Fl Gulf Coast"},"1":{"0":"Kansas","1":"UNC","2":"VCU","3":"Michigan","4":"Minn","5":"Florida","6":"SDSU","7":"Fl Gulf Coast"},"2":{"0":"Kansas","1":"Michigan","2":"Florida","3":"Fl Gulf Coast"},"3":{"0":"Michigan","1":"Florida"},"4":{"0":"Michigan"}},"w":{"0":{"0":"Gon","1":"Southern","2":"Pitt","3":"Wichata","4":"Wisc","5":"Ole Miss","6":"Kstate","7":"La Salle","8":"Arizona","9":"Belmont","10":"NM","11":"Harvard","12":"ND","13":"Iowa S","14":"OSU","15":"Iona"},"1":{"0":"Gon","1":"Wichata","2":"Ole Miss","3":"La Salle","4":"Arizona","5":"Harvard","6":"Iowa S","7":"OSU"},"2":{"0":"Wichata","1":"La Salle","2":"Arizona","3":"OSU"},"3":{"0":"Wichata","1":"OSU"},"4":{"0":"Wichata"}},"e":{"0":{"0":"Indiana","1":"JMU","2":"NCSU","3":"Temple","4":"UNLV","5":"Cal","6":"Syracuse","7":"Montana","8":"Butler","9":"Bucknell","10":"Marquette","11":"Davidson","12":"Illinois","13":"Colorado","14":"Miami","15":"Pacific"},"1":{"0":"Indiana","1":"NCSU","2":"Cal","3":"Syracuse","4":"Butler","5":"Marquette","6":"Illinois","7":"Miami"},"2":{"0":"Indiana","1":"Syracuse","2":"Marquette","3":"Miami"},"3":{"0":"Syracuse","1":"Marquette"},"4":{"0":"Syracuse"}},"f":{"0":{"0":"Louisville","1":"Wichata","2":"Michigan","3":"Syracuse"},"1":{"0":"Louisville","1":"Michigan"},"2":{"0":"Louisville"}}}
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal);
+  })
+
+})
+
+function renderFull(bracket,regions,regionsWithFinal) {
+  bracket = toFF(bracket,regions);
+  renderTeams(bracket);
+  showOdds(bracket,regionsWithFinal);
+  checkOccupied(bracket);
+  checkFinalOccupied(bracket,regions);
+}
+
+function drawSVG() {
+  
+  barMargin = {top: 30, right: 18, bottom: 20, left: 18},
+  barWidth = 200 - barMargin.left - barMargin.right,
+  barHeight = 370 - barMargin.top - barMargin.bottom;
+  
+  var all = ['m','s','w','e','f'],
+      teamData = regionTeams;
+  
+  percentFormat = d3.format("%")
+  
+  all.forEach( function(region,i) {
+    
+    if ( i % 2 == 0) { domain = [1,0]; } else { domain = [0,1]; }
+    
+    xBar = d3.scale.linear()
+        .domain(domain)
+        .range([0,barWidth]);
+  
+    xAxisBar = d3.svg.axis()
+        .scale(xBar)
+        .orient("top")
+        .ticks(2)
+        .tickFormat(percentFormat);
+    
+    if (region == 'f') { 
+      barHeight = 40 + barMargin.top; 
+      teamData = finalTeams;
+    }
+      
+    var location = '#' + region + "-graph";
+    
+    var svgBar = d3.select(location)
+      .append("svg")
+      .attr("height",barHeight + barMargin.top + barMargin.bottom)
+      .attr("width",barWidth + barMargin.left + barMargin.right)
+    .append("g")
+      .attr("transform", "translate(" + barMargin.left + "," + barMargin.top + ")");
+      
+    svgBar.selectAll("rect")
+    .data(teamData)
+      .enter()
+      .append("rect")
+      .attr("width",0)
+      .attr("height",15)
+      .attr("x",function() { 
+        if (i % 2 == 0) { return barWidth; } else { return 0; }
+      })
+      .attr("y",function(d) {return (d*21)})
+      .attr("fill","steelblue")
+      .attr("id",function(d) { return "bar-" + region + "-" + d; });
+      
+    d3.select("#" + region + "-r4-gl")
+      .append("p")
+      .attr("class","missing l team-text")
+      .text("* Not included in odds");
+      
+    svgBar.append("g")
+      .attr("class", "x axis")
+      .attr("id",region + "-axis")
+      .attr("transform", "translate(0,-5)")
+      .call(xAxisBar)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", function() {
+        if (i % 2 == 0) { return barMargin.left + 70; } else { return barWidth + barMargin.left - 30; }
+      })        
+      .attr("y", -6)
+      .style("text-anchor", "end");
+  })
+}
+
+// Fills bracket shell with teams from csv
+function fillBracket(regions,data) {
+  
+  var bracket = createEmptyBracket(regions);
+  
+  regions.forEach( function (region) {
+    var regionTeams = _.select(data, function(d) {return d.bracket == region});
+    
+    regionTeams.forEach( function(team) {
+      bracket[region][0][team.initial_slot] = team.team
+    })
+  })
+  
+  return bracket;
+}
+
+// Creates bracket shell object
+function createEmptyBracket(regions) {
+  
+  var bracket = {};
+  
+  regions.forEach(function(region){
+    
+    var rounds = 5;
+    var obj = {};
+  
+    for (var i=0;i<rounds;i++) {
+    
+      var games = Math.pow(2,rounds-1-i);
+      var gameObj = {};
+    
+      for (var j=0;j<games;j++) { gameObj[j] = ""; }
+    
+      obj[i] = gameObj;
+    }
+    bracket[region] = obj
+  })
+  
+  var obj = {0: {0:"",1:"",2:"",3:""}, 1: {0:"",1:""}, 2: {0:""}};
+  bracket["f"] = obj
+  
+  return bracket;
+}
+
+// Add teams to table
+function renderTeams(bracket) {
+  
+  for (var iRegion in bracket){
+    var region = bracket[iRegion]
+    
+    for (var iRound in region) {
+      var round = region[iRound]
+      
+      for (var slot in round) {
+        
+        var location = "#" + iRegion + "-r" + iRound + "-g" + slot;
+        var team = round[slot];
+        
+        d3.select(location)
+          .append("p")
+          .attr("class","team-text")
+          .style("text-align",function() {
+            if (iRegion == 's' || iRegion == 'e') {return "right";} else { return "left";}
+          })
+          .html(function() { return addTeamText(team,iRegion,iRound); });
+      }
+    }
+  }
+}
+
+// Move team to Final Four if they're regional winners
+function toFF(bracket,regions) {
+  regions.forEach(function(region,i) {
+
+    var teamToFF = bracket[region][4][0];
+    
+    if (teamToFF != "") {
+      if (i == 1) { ff = 2;}
+      else if (i == 2) {ff = 1;}
+      else {ff = i}
+      
+      bracket['f'][0][ff] = teamToFF
+    }
+  })
+  return bracket
+}
+
+// Check if the click is valid to advance
+function checkToAdvance(bracket,region,round,position) {
+  
+  if (region != 'f' && round > 3) { return false; }
+  else if (region == 'f' && round > 1) { return false; }
+  
+  else {
+    
+    var selection = bracket[region][round][position]
+    if (selection == "" || selection == undefined) { return false; }
+    else { return true; }
+  }
+}
+
+// Clears all future instances of the losing team
+function clearFuture(bracket,region,round,position) {
+
+  if (position % 2 == 0) { oppPosition = position + 1; }
+  else { oppPosition = position - 1; }
+  
+  var losingTeam = bracket[region][round][oppPosition];
+  
+  if (region == 'f') {
+    for (var r=round+1;r<3;r++) {
+      var newPosition = Math.floor(position/(Math.pow(2,(r-round))))
+      if (bracket[region][r][newPosition] == losingTeam) { bracket[region][r][newPosition] = ""; }
+    }
+  } else {
+    for (var r=round+1;r<5;r++) {
+      var newPosition = Math.floor(position/(Math.pow(2,(r-round))))
+    
+      if (bracket[region][r][newPosition] == losingTeam) { bracket[region][r][newPosition] = ""; }
+    }  
+    
+    if (bracket["f"][0][0] == losingTeam) { bracket["f"][0][0] = ""; }
+    if (bracket["f"][0][1] == losingTeam) { bracket["f"][0][1] = ""; }
+    if (bracket["f"][0][2] == losingTeam) { bracket["f"][0][2] = ""; }
+    if (bracket["f"][0][3] == losingTeam) { bracket["f"][0][3] = ""; }
+    if (bracket["f"][1][0] == losingTeam) { bracket["f"][1][0] = ""; }
+    if (bracket["f"][1][1] == losingTeam) { bracket["f"][1][1] = ""; }
+    if (bracket["f"][2][0] == losingTeam) { bracket["f"][2][0] = ""; } 
+
+  }
+  return bracket;
+}
+
+function clearTeamText() {
+  var text = document.getElementsByClassName('team-text'),
+      i = text.length;
+  
+  while(i--) {
+    text[i].parentNode.removeChild(text[i]);
+  }
+}
+
+// Given a selected position, advance that team to the next round
+function advanceTeam(bracket,region,round,position) {
+  
+  clearTeamText();
+
+  var teamToAdvance = bracket[region][round][position],
+      newPosition = Math.floor(position/2);
+  
+  bracket[region][round+1][newPosition] = teamToAdvance;
+  
+  return bracket;
+}
+
+// Check occupied for hover and fill
+function checkOccupied(bracket) {
+  $("td").removeClass("occupied");
+  $("td").removeClass("missing");
+
+  
+  showJankyLegend();
+  
+  // For regional brackets
+  for (region in bracket) {
+    
+    $("#" + region + "-r4-gl").removeClass("show");
+    $("#" + region + "-r4-gl").addClass("hide");
+    anyMissing = false;
+    
+    var shouldShowClear = false;
+    
+    for (round in bracket[region]) {
+      for (game in bracket[region][round]) {
+        if (bracket[region][round][game] != "") {
+          
+          var location = "#" + region + "-r" + round + "-g" + game;
+          $(location).addClass("occupied")
+          
+          if (round > 0) {
+            if (checkPrevious(bracket,region,round,game) == false) {
+              $(location).addClass("missing")
+              anyMissing = true
+            }
+            
+            shouldShowClear = true;
+          }
+        }
+      }
+    }
+    showClear(region,shouldShowClear);
+    if (anyMissing == true) { 
+      $("#" + region + "-r4-gl").removeClass("hide");
+      $("#" + region + "-r4-gl").addClass("show"); 
+    }
+  }
+}
+
+function checkFinalOccupied(bracket,regions) {
+  regions.forEach( function(r,i) {
+    if (checkPrevious(bracket,r,4,0) == false) {
+      var location = "#f-r0-g" + i;
+      $(location).addClass("missing");
+    }
+  })
+}
+
+function calculateRegionOdds(bracket,region) {
+  var regionOdds = [],
+      odds = 1;
+  
+  if (region != 'f') { roundCount = 5;} else { roundCount = 3;}
+  
+  for (var r=1;r<roundCount;r++) {
+    var rounds = bracket[region][r];
+    
+    for (z in rounds) {
+  
+      if (rounds[z] != "") {
+    
+        var check = checkPrevious(bracket,region,r,z);
+      
+        if (check == true) {
+          if (region != 'f') { gameOdds = computeOdds(bracket,region,r,z);} 
+          else { gameOdds = computeFinalsOdds(bracket,r,z); }
+          
+          d3.select("#" + region + "-r" + r + "-g" + z)
+            .style("color", function() {return colorScale(gameOdds)})
+          
+          regionOdds.push(gameOdds);
+        } else {
+          d3.select("#" + region + "-r" + r + "-g" + z)
+            .style("color", "grey")
+        }
+      }
+    }
+  }
+  
+  regionOdds.forEach(function(d) { odds = odds*d; })
+  
+  return odds;
+}
+
+function applyRegionOdds(bracket,regionsWithFinal) {
+  
+  var oddsArr = [];
+  
+  regionsWithFinal.forEach(function(region) {
+    regionOdds = calculateRegionOdds(bracket,region);
+    
+    replaceRegionOdds(bracket,region,regionOdds);
+    
+    d3.select("#" + region + "-odds")
+        .text("Region odds: 1 in "+ t(d3.round(1/regionOdds)));
+    
+    oddsArr.push(regionOdds); 
+  })
+  return oddsArr;
+}
+
+// Calculate odds and update text
+function showOdds(bracket,regionsWithFinal) {
+  
+  var oddsArr = applyRegionOdds(bracket,regionsWithFinal);
+  var totalOdds = 1;
+  
+  oddsArr.forEach(function(d) { totalOdds = totalOdds*d; })
+  
+  d3.select("#t-odds")
+      .text("Total odds: 1 in "+ t(d3.round(1/totalOdds)));
+  
+  replaceBracketOdds(bracket,totalOdds);
+  
+  if (d3.round(1/totalOdds) <  9223372036854775808) {
+    d3.select("#coin-flip")
+      .text("Your bracket is more likely than 63 random picks!");
+  } else {
+    d3.select("#coin-flip")
+      .text("Your bracket is less likely than 63 random picks!");
+  }
+  
+  
+  replaceBracketOdds(bracket,totalOdds);
+}
+
+// Checks if game has been picked and odds can be computed
+function checkPrevious(bracket,region,round,position) {
+  
+  var prevPosition1 = position*2,
+      prevPosition2 = position*2 + 1;
+  
+  var team1 = bracket[region][round-1][prevPosition1],
+      team2 = bracket[region][round-1][prevPosition2];
+  
+  if (team1 != "" && team2 != "") { return true; }
+  else { return false}
+  
+}
+
+// Computes odds of result from previous game
+function computeOdds(bracket,region,round,position) {
+
+  var winningTeam = bracket[region][round][position];
+  
+  if (round == 1) {gameOdds = initialByTeam.get(winningTeam)
+  } else {
+    
+    var prevPosition1 = position*2,
+        prevPosition2 = position*2 + 1;
+  
+    var team1 = bracket[region][round-1][prevPosition1],
+        team2 = bracket[region][round-1][prevPosition2];
+  
+    if (team1 == winningTeam) { losingTeam = team2; }
+    if (team2 == winningTeam) { losingTeam = team1; }
+      
+    var winningOddsFF = ffByTeam.get(winningTeam)/totalOddsFF,
+        losingOddsFF = ffByTeam.get(losingTeam)/totalOddsFF;
+    
+    var gameOdds = winningOddsFF/(winningOddsFF+losingOddsFF);
+  }
+  return gameOdds
+}
+
+// Computes odds for final four
+function computeFinalsOdds(bracket,round,position) {
+  var winningTeam = bracket['f'][round][position];
+  
+  var prevPosition1 = position*2,
+      prevPosition2 = position*2 + 1;
+  
+  var team1 = bracket['f'][round-1][prevPosition1],
+      team2 = bracket['f'][round-1][prevPosition2];
+  
+  if (team1 == winningTeam) { losingTeam = team2; }
+  if (team2 == winningTeam) { losingTeam = team1; }
+      
+  var winningOddsShip = shipByTeam.get(winningTeam)/totalOddsShip,
+      losingOddsShip = shipByTeam.get(losingTeam)/totalOddsShip;
+    
+  var gameOdds = winningOddsShip/(winningOddsShip+losingOddsShip);
+  
+  return gameOdds;
+}
+
+// Draw inital brackets
+function drawInitialTable(type,teams,rounds,orientation) {
+  if (type == "f") { orientation = "left"; }
+  
+  table = d3.select("#"+type)
+      .append("table")
+      .attr("cellspacing", 0)
+      .attr("cellpadding", 0)
+      .attr("id","bracket-table-"+type)
+  
+      .selectAll("tr")
+      .data(teams)
+      .enter().append("tr")
+      .attr("class",function(d){ return "g"+d; })
+
+      .selectAll("td")
+      .data(rounds)
+      .enter().append("td")
+      .attr("class",function(d) { 
+        var rowClass = $(this).parent().attr('class'),
+            row = +rowClass.slice(1,3);
+        
+        borderClass = calculateBorder(row,d,orientation,type)
+        return borderClass;
+      })
+      .attr("id",function(d){
+        var rowClass = $(this).parent().attr('class'),
+            row = +rowClass.slice(1,3);
+        idNumber = assignCellIds(row,d,orientation,type);
+        if (orientation == "left") {
+          return type + "-r" + d + "-g" + idNumber;
+        } else {
+          return type + "-r" + (4-d) + "-g" + idNumber;
+        }
+        
+      })
+      
+}
+
+function calculateBorder(row,column,direction,type) {
+  if (direction == "left") {
+    if (column == 0) { return firstRoundBorder(row,direction); } 
+    else if (column == 1) { return secondRoundBorder(row,direction); }
+    else if (column == 2) { return thirdRoundBorder(row,direction,type); }
+    else if (column == 3) { return fourthRoundBorder(row,direction); }
+    else if (column == 4) { return fifthRoundBorder(row,direction); }
+  } else if (direction == "right") {
+    if (column == 0) { return fifthRoundBorder(row,direction); } 
+    else if (column == 1) { return fourthRoundBorder(row,direction); } 
+    else if (column == 2) { return thirdRoundBorder(row,direction); }
+    else if (column == 3) { return secondRoundBorder(row,direction); }
+    else if (column == 4) { return firstRoundBorder(row,direction); }      
+  }
+}
+
+function firstRoundBorder(row,direction) {
+  if (row % 4 == 0) { return direction + "-top normal"}
+  else if (row % 4 == 1) { return direction + "-side narrow"}
+  else if (row % 4 == 2) { return direction + "-bottom normal"}
+  else { return "none narrow"}
+}
+
+function secondRoundBorder(row,direction) {
+  if (row % 8 == 2) { return direction + "-top"}
+  else if (row % 8 == 3) { return direction + "-side"}
+  else if (row % 8 == 4) { return direction + "-bottom"}
+  else { return "none"}
+}
+
+function thirdRoundBorder(row,direction,type) {  
+  if (type == "f") {
+    if (row % 16 == 2) { return "bottom" }
+  } else {
+    if (row % 16 == 4) { return direction + "-top"}
+    else if (row % 16 > 4 && row % 16 < 10) { return direction + "-side"}
+    else if (row % 16 == 10) { return direction + "-bottom"}
+    else { return "none"}
+  }
+
+}
+
+function fourthRoundBorder(row,direction) {
+  if (row % 31 == 8) { return direction + "-top"}
+  else if (row % 31 > 8 && row % 31 < 22) { return direction + "-side"}
+  else if (row % 31 == 22) { return direction + "-bottom"}
+  else { return "none"}
+}
+
+function fifthRoundBorder(row,direction) {
+  if (direction == "left" && row == 16) { return "bottom"}
+  else if (direction == "right" && row == 16) { return "bottom"}
+  else { return "none"}
+}
+
+function assignCellIds(row,column,direction,type) {
+  if ((column == 0 && direction == "left") ||
+      (column == 4 && direction == "right")) {
+    if (row % 2 == 0) {return row/2; }
+    else { return "x"; }
+  }
+  else if ((column == 1 && direction == "left") ||
+           (column == 3 && direction == "right")) {
+    if (row == 2) { return 0;}
+    else if (row == 4) { return 1;}
+    else if (row == 10) { return 2;}
+    else if (row == 12) { return 3;}
+    else if (row == 18) { return 4;}
+    else if (row == 20) { return 5;}
+    else if (row == 26) { return 6;}
+    else if (row == 28) { return 7;}
+    else { return "x"; }
+  }
+  else if (type == 'f' && column == 2) {
+    if (row == 2) { return 0;}
+    else {return "x"}
+  }
+  else if ((column == 2 && direction == "left") ||
+           (column == 2 && direction == "right")) {
+   if (row == 4) { return 0;}
+   else if (row == 10) { return 1;} 
+   else if (row == 20) { return 2;} 
+   else if (row == 26) { return 3;} 
+   else { return "x"; }
+  }
+  else if ((column == 3 && direction == "left") ||
+           (column == 1 && direction == "right")) {
+    if (row == 8) { return 0;}
+    else if (row == 22) { return 1;}
+    else { return "x"; }
+  }
+  else if ((column == 4 && direction == "left") || 
+           (column == 0 && direction == "right")) {
+    if (row == 16) {return 0;}
+    if (row == 0) {return 'l';}
+    else { return "x"; }
+  }
+}
+
+function makeBarsAndCircles(bracket,regions) {
+  regions.forEach(function(region,i) {
+    regionTeams.forEach(function(team) {
+      
+      var barVal = Math.random() * 200;
+      var circleVal = Math.random() * 50
+      
+      d3.select("#c-" + region + "-" + team)
+        .transition()
+        .attr("r",function() { return circleVal; })
+        .duration(1000);
+    })
+  })
+}
+
+function addTeamText(team,region,round) {
+  if (round == 0 & region != 'f') {
+    if (region == 's' || region == 'e') { 
+      return team + " <span class='seed-right'>" + seedByTeam.get(team) + "</span>"; 
+    }
+    else { 
+      return "<span class='seed-left'>" + seedByTeam.get(team) + "</span> " + team; 
+    }
+  } else { 
+    return team;
+  }
+}
+
+function showJankyLegend(){
+  $("#m-r4-gl").addClass("missing")
+  $("#s-r4-gl").addClass("missing")
+  $("#w-r4-gl").addClass("missing")
+  $("#e-r4-gl").addClass("missing")
+}
+
+function clearBracket(bracket,region) {
+  
+  var regionDict = {'m':0,'s':2,'w':1,'e':3};
+  
+  var chosenRegion = bracket[region];
+  
+  for (round in chosenRegion) {
+    if (round != 0) {
+      for (game in chosenRegion[round]) {
+        bracket[region][round][game] = ""
+      }
+    }
+  }
+  
+  bracket['f'][0][regionDict[region]] = "";
+
+  return bracket;
+}
+
+function showClear(region,show) {
+  var p = $("#"+region+"-clear");
+  
+  if (show == true) {
+    p.removeClass("hide")
+    p.addClass("show")
+  } else {
+    p.removeClass("show")
+    p.addClass("hide")
+  }
+}
+
+function renderFinalViz(data,regions,regionTeams) {
+  
+  var regions = ['m','s','w','e']
+  
+  var seeds = []
+  regionTeams.forEach( function(n) { seeds.push(n+1); })
+  
+  var margin = {top: 20, right: 20, bottom: 30, left: 40},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+  
+  x = d3.scale.ordinal()
+      .rangePoints([0,width],1)
+      .domain(seeds);
+  
+  y = d3.scale.ordinal()
+      .rangePoints([0,height],1)
+      .domain(regions);
+      
+  rSize = d3.scale.linear()
+      .domain([0,1])
+      .range([0,50]);
+  
+  var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .html(function(d) { return d.team; })
+  
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+    
+  fv = d3.select("#final-viz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+  fv.call(tip);
+  
+  fv.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Seed");
+      
+  fv.append("g")
+       .attr("class", "y axis")
+       .call(yAxis)
+     .append("text")
+       .attr("class", "label")
+       .attr("transform", "rotate(-90)")
+       .attr("y", 6)
+       .attr("dy", ".71em")
+       .style("text-anchor", "end")
+       .text("Region");
+  
+  fv.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class","dot")
+      .attr("id",function(d) { return "c-" + d.bracket + "-" + d.initial_slot })
+      .attr("r",10)
+      .attr("cx",function(d) { return x(d.seed); })
+      .attr("cy",function(d) { return y(d.bracket); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+}
+
+function replaceRegionOdds(bracket,region,odds) {
+  if (region != 'f') { teams = regionTeams; } else { teams = finalTeams; }
+  if (region == 'e' || region == 's') { bi = 1; } else { bi = 0;}
+  
+  var replaceArr = [];
+  
+  teams.forEach( function(team) {
+    var invertedTeamOdds = replaceTeamOdds(bracket,region,team);
+    
+    var ratioOdds = (invertedTeamOdds/odds)
+    
+    replaceArr.push(ratioOdds)   
+  
+  })
+  var totalReplaceOdds = 0;
+  
+  replaceArr.forEach(function(d) { if (d != 1) {totalReplaceOdds = totalReplaceOdds + d; }});
+  
+  var maxRegionReplace = _.max(replaceArr)/totalReplaceOdds;
+  
+  if (bi % 2 == 0) { 
+    xBar.domain([maxRegionReplace,0]);
+  } else {
+    xBar.domain([0,maxRegionReplace]);
+  }
+  
+  xAxisBar.scale(xBar)
+  
+  d3.select("#" + region + "-axis")
+    .transition()
+    .call(xAxisBar)
+    .duration(1000);
+    
+  replaceArr.forEach(function(d,i) {
+    
+    if (d != 1) {
+      val = d/totalReplaceOdds,
+      barVal = xBar(val)
+    } else {
+      if (bi % 2 == 0) { barVal = 162; } else { barVal = 2; }
+    }
+
+    d3.select("#bar-" + region + "-" + i)
+      .transition()
+      .attr("x",function() {
+        if (bi % 2 == 0) { return barVal; } else { return 0; }
+      })
+      .attr("width",function() {
+        if (bi % 2 == 0) { return barWidth - barVal; } else { return barVal; } 
+      })
+      .duration(1000);
+    
+  })
+      
+}
+
+function replaceTeamOdds(bracket,region,team) {
+  var regionOdds = [],
+      odds = 1,
+      teamName = bracket[region][0][team];  
+  
+  if (region != 'f') { roundCount = 5;} else { roundCount = 3;}
+
+  for (var r=1;r<roundCount;r++) {
+    var rounds = bracket[region][r];
+    
+    for (z in rounds) {
+      if (rounds[z] == teamName) {
+        var check = checkPrevious(bracket,region,r,z);
+        if (check == true) {
+          var gameOdds = 1;
+          regionOdds.push(gameOdds);
+        } 
+      } else if (rounds[z] != "") {
+        var check = checkPrevious(bracket,region,r,z);
+        if (check == true) {
+          if (region != 'f') { var gameOdds = computeOdds(bracket,region,r,z);} 
+          else { var gameOdds = computeFinalsOdds(bracket,r,z); }
+          regionOdds.push(gameOdds);
+        }
+      }
+    }
+  }
+  regionOdds.forEach(function(d) { odds = odds*d; })
+  
+  return odds;
+}
+
+function replaceBracketOdds(bracket,odds) {
+  
+  var regions = ['m','s','w','e'],
+      regionTeams = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+  
+  var replaceDict = {};
+  var replaceArr = [];
+  
+  regions.forEach(function(region) {
+    var regionArr = [];
+    
+    regionTeams.forEach(function(team) {
+      var invertedTeamOdds = replaceAllOdds(bracket,region,team);
+      var ratioOdds = (invertedTeamOdds/odds);
+      regionArr.push(ratioOdds);
+      replaceArr.push(ratioOdds);
+    })
+    replaceDict[region] = regionArr;
+  })
+  
+  var totalReplaceOdds = 0;
+  replaceArr.forEach(function(d) { totalReplaceOdds = totalReplaceOdds + d; });
+  
+  var maxReplace = _.max(replaceArr)/totalReplaceOdds;
+  
+  rSize.domain([0,maxReplace]);
+  
+  for (r in replaceDict) {
+    
+    var regionArr = replaceDict[r];
+    
+    regionArr.forEach(function(d,i) {
+      if (d != 1) {
+        val = d/totalReplaceOdds,
+        radius = Math.max(rSize(val),2);
+      } else {
+        radius = 2
+      }
+      
+      d3.select("#c-" + r + "-" + i)
+        .transition()
+        .attr("r",function() { return radius; })
+        .duration(1000);
+    })
+  }
+}
+
+function replaceAllOdds(bracket,region,team) {
+  var replacedOdds = [],
+      odds = 1,
+      teamName = bracket[region][0][team];  
+  
+  for (region in bracket) {
+    for (round in bracket[region]) {
+      if (round > 0) {
+        for (game in bracket[region][round]) {
+          if (bracket[region][round][game] == teamName) {
+            var check = checkPrevious(bracket,region,round,game);
+            if (check == true) {
+              
+              var gameOdds = 1;
+              replacedOdds.push(gameOdds);
+            }
+          } else if (bracket[region][round][game] != "") {
+            var check = checkPrevious(bracket,region,round,game);
+            if (check == true) {
+              if (region != 'f') { var gameOdds = computeOdds(bracket,region,round,game);} 
+              else { var gameOdds = computeFinalsOdds(bracket,round,game); }
+              replacedOdds.push(gameOdds);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  replacedOdds.forEach(function(d) { odds = odds*d; })
+  
+  return odds;
+}
+
+function clearAll(bracket) {
+  for (region in bracket) {
+    for (round in bracket[region]) {
+      if (round > 0 || region == 'f') {
+        for (game in bracket[region][round]) {
+          bracket[region][round][game] = "";
+        }
+      }
+    }
+  }
+  console.log(bracket);
+  return bracket;
+}
+</script>
+</body>
+</html>
