@@ -43,7 +43,7 @@ Clear all button
       text-align: center;
     }
     
-    .team-text {
+    .team-text, .legend-text {
       margin:0px;
       padding-left:5px;
       padding-right: 5px;
@@ -390,7 +390,7 @@ function drawSVG() {
       
     d3.select("#" + region + "-r4-gl")
       .append("p")
-      .attr("class","missing l team-text")
+      .attr("class","missing l legend-text")
       .text("* Not included in odds");
       
     svgBar.append("g")
@@ -568,9 +568,6 @@ function checkOccupied(bracket) {
   $("td").removeClass("occupied");
   $("td").removeClass("missing");
 
-  
-  showJankyLegend();
-  
   // For regional brackets
   for (region in bracket) {
     
@@ -590,7 +587,7 @@ function checkOccupied(bracket) {
           if (round > 0) {
             if (checkPrevious(bracket,region,round,game) == false) {
               $(location).addClass("missing")
-              anyMissing = true
+              anyMissing = true;
             }
             
             shouldShowClear = true;
@@ -600,6 +597,7 @@ function checkOccupied(bracket) {
     }
     showClear(region,shouldShowClear);
     if (anyMissing == true) { 
+      console.log('here')
       $("#" + region + "-r4-gl").removeClass("hide");
       $("#" + region + "-r4-gl").addClass("show"); 
     }
@@ -919,13 +917,6 @@ function addTeamText(team,region,round) {
   }
 }
 
-function showJankyLegend(){
-  $("#m-r4-gl").addClass("missing")
-  $("#s-r4-gl").addClass("missing")
-  $("#w-r4-gl").addClass("missing")
-  $("#e-r4-gl").addClass("missing")
-}
-
 function clearBracket(bracket,region) {
   
   var regionDict = {'m':0,'s':2,'w':1,'e':3};
@@ -1214,7 +1205,6 @@ function clearAll(bracket) {
       }
     }
   }
-  console.log(bracket);
   return bracket;
 }
 </script>
