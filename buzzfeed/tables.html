@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Buzzfeed</title>
+    <title>BuzzFeed</title>
     
     <link rel="stylesheet" href="buzzfeed.css" type="text/css">
     <link rel="stylesheet" href="chosen.css">
@@ -15,10 +15,11 @@
   </head>
   <body>
     <div class="title">
-      <p style="font-size:24px">The Results of Every Buzzfeed Quiz<p>
+      <p style="font-size:24px">The Results of Every BuzzFeed Quiz<p>
     </div>
     <div class="story">
-      <p>Buzzfeed quizzes 'bout dumb.</p>
+      <p>As it turns out, BuzzFeed quizzes are pretty simple: Each quiz has a set of possible results. Each answer to every question corresponds to one of those results. Whichever result has the most matching answers gets shown at the end of the quiz.</p>
+      <p>But taking quizzes takes time, so why not skip to the end? The graphic reveals the answers to every BuzzFeed quiz. Pick a quiz from the dropdown, and the grid below shows how every question, answser and quiz result are related. Which leaves only one question: why doesn't BuzzFeed think anyone should party with Bill Murray after the Oscars?</p>
     </div>
     
     
@@ -81,7 +82,7 @@ d3.csv('quiz_results.csv', function(results) {
     $("#quiz-link-text").remove();
 
     $("#quiz-name").append("<span id='quiz-title'>" + quizName + "</span>");
-    $("#quiz-link").append("<em><a class='' target='_blank' id='quiz-link-text' href='" + link + "'>See the quiz</a></em>" )
+    $("#quiz-link").append("<em><a class='' target='_blank' id='quiz-link-text' href='" + link + "'>See this quiz</a></em>" )
     
     quesCount = questions.length;
     resCount = results.length;

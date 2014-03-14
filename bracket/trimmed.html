@@ -26,7 +26,7 @@
     }
     
     h1 { 
-      margin: 25px 0px 5px 0px; 
+      margin: 5px 0px 5px 0px; 
       text-align: center;
       font-size: 20px;
     }
@@ -35,6 +35,12 @@
       margin: 10px 0px 0px 0px; 
       text-align: center;
       font-size:12px;
+    }
+    
+    .story {
+      width: 700px;
+      font-size: 14px;
+      margin: 0 auto;
     }
     
     .team-text, .legend-text {
@@ -142,23 +148,26 @@
 <body>
   <div>
     <p class="title">The Exact Odds of Your Bracket<p>
-      <p>This year, Warren Buffett has promised a billion dollars to anyone who picks a perfect bracket. Unfortunately, the odds aren't in your favor&mdash;the chance of picking a perfect bracket if you pick every game at random is one in <a href="http://www.cbssports.com/collegebasketball/eye-on-college-basketball/24441831/bracket-voodoo-why-you-wont-win-the-billion-dollar-bracket" target="_blank">9 quintillion</a> (or 9,000,000,000,000,000,000).</p>
+      <div class="story">
+      <p>This year, Warren Buffett promised a billion dollars to anyone who picks a perfect bracket. Unfortunately, the odds aren't in your favor&mdash;the chance of picking a perfect bracket if you pick every game at random is one in <a href="http://www.cbssports.com/collegebasketball/eye-on-college-basketball/24441831/bracket-voodoo-why-you-wont-win-the-billion-dollar-bracket" target="_blank">9 quintillion</a> (or 9,000,000,000,000,000,000).</p>
       <p>But that's just a hypothetical bracket. What are the odds of <em>your</em> bracket? The interactive below lets you figure that out. Using the betting lines for each game and on each team's chances of the making the Final Four and winning the NCAA Championship, the graphic calculates the odds of every possible NCAA matchup&mdash;and every possible NCAA bracket.</p>
-      <p>As you make your picks, each pick is colored according to that team's odds in the previous matchup. If a team is colored in green, it means you picked the favorite. A team colored in red represents a pick for an underdog. If a pick is <em><span style="color:grey">colored grey</span></em>, it's not included in any odds calculations because it doesn't have an opponent yet.</p>
+      <p>As you make your picks, each pick is colored according to that team's odds in the previous matchup. A green team is a pick for a favorite and a red team is a pick for an underdog. Picks colored grey aren't included in the odds calculations because they don't have an oppenent yet.</p>
       <p style="text-align:center">
         <span style="color:#ba4024">Heavy underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#ff9000">Slight underdog</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color:grey">No oppenent picked</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#7fcb5c">Slight favorite</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span style="color:#588f27">Heavy favorite</span>
       </p>
-      
-      <p>At the bottom of the bracket, you can see how each team contributed to your bracket's overall chances. The bigger a team's circle, the more your picks for that team lower your bracket's chances&mdash;at least in the eyes of the oddsmakers. Don't want to look up your picks? Check out a few of these brackets!</p>
+      <p>At the bottom of the bracket, the graph shows how each team contributes to your bracket's overall chances. The bigger a team's circle, the more your picks for that team lower your bracket's chances&mdash;at least in the eyes of the oddsmakers. Don't want to look up your picks? Check out a few of these brackets!</p>
       <p style="text-align:center">
         <span class="clear" id="obama">President Obama's bracket</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span class="clear" id="favorites">All the favorites</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span class="clear" id="underdogs">All the underdogs</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span class="clear" id="result">Actual tournament results</span>
       </p>
+      <p style="text-align:center; font-size: 12px; color:#545454;"><em>Click on teams to make your picks!</em></p>
+  </div>
   </br> 
   <div style="float:left"id="m">
     <h1>Midwest</h1>
@@ -189,7 +198,7 @@
   <div id="final-viz">
     <h1 id="t-odds">Total odds: 1 in 1</h1>
     <p style="text-align:center;" id="coin-flip">Is your bracket more likely than 63 coin flips?</p>
-    <p style="text-align:center; color:#545454;"><em>The bigger the circle, the more unlikely your picks for that team are.</em></p>
+    <p style="text-align:center; color:#545454;"><em>The bigger the circle, the more unlikely your picks for that team are relative to your other picks.</em></p>
   </div>
   <p class="clear" id="clear-all">Clear all picks and start over!</p>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
