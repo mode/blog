@@ -189,7 +189,7 @@
   
   <div class="title">
     <p style="font-size:24px; margin-bottom: 2px">The Exact Odds of Your Bracket</p>
-    <p style="margin-top: 0px;"><em style="font-size:12px;"><a href="http://blog.modeanalytics.com/bracket-odds/">Read the full post</a></em></br>
+    <p style="margin-top: 0px;"><em style="font-size:12px;"><a href="http://blog.modeanalytics.com/bracket-odds/	">Read the full post</a></em></br>
     <a href="https://twitter.com/modeanalytics" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
   </div>
       <div class="story">
@@ -206,6 +206,10 @@
       <p>At the bottom of the bracket, the graph shows how each team contributes to your bracket's overall chances. The bigger a team's circle, the more your picks for that team lower your bracket's chances&mdash;at least in the eyes of the oddsmakers. Don't want to look up your picks? Check out these brackets!</p>
       <p style="text-align:center">
         <span class="clear" id="favorites">All the favorites</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="clear" id="vitale">Dick Vitale</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="clear" id="davis">Seth Davis</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="clear" id="us-news">U.S. News College Rankings</span></br>
+				<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				<span class="clear" id="silver">The FiveThirtyEight bracket</span>
         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" target="_blank">Last year's bracket</a> -->
       </p>
@@ -248,6 +252,7 @@
     <p style="text-align:center; color:#545454;"><em>The bigger the circle, the more unlikely your picks for that team are relative to your other picks.</em></p>
   </div>
   <p class="clear" id="clear-all">Clear all picks and start over!</p>
+				<p>Bracket sources: <a href="http://bleacherreport.com/articles/1995810-dick-vitale-bracket-espn-analyst-reveals-his-2014-march-madness-bracket-picks" target="_blank">Dick Vitale</a>; <a href="http://sportsillustrated.cnn.com/basketball/ncaa/men/2014/ncaa_tourney/brackets/experts/seth-davis.html" target="_blank">Seth Davis</a>; <a href="http://www.sbnation.com/college-basketball/2014/3/17/5516814/ncaa-bracket-projections-picks-college-rankings" target="_blank">U.S. News</a>; <a href="http://fivethirtyeight.com/interactives/march-madness-predictions/" target="_blank">FiveThirtyEight</a>.</p>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js" type="text/javascript"></script>
 <script>
   
@@ -387,8 +392,23 @@ d3.csv("bracket-2014.csv", function(data) {
     renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
   })
   
-  $("#last").click(function() {
-    bracket = {};
+  $("#vitale").click(function() {
+		firstFourPicks = {"0":"Albany","1":"Cal Poly","2":"NC State","3":"Iowa"}
+    bracket = {"s":{"0":{"0":"Florida","1":"Albany","2":"Colorado","3":"Pittsburgh","4":"VCU","5":"S. F. Austin","6":"UCLA","7":"Tulsa","8":"Ohio State","9":"Dayton","10":"Syracuse","11":"Wester Mich.","12":"New Mexico","13":"Stanford","14":"Kansas","15":"E. Kentucky"},"1":{"0":"Florida","1":"Pittsburgh","2":"VCU","3":"UCLA","4":"Ohio State","5":"Syracuse","6":"New Mexico","7":"Kansas"},"2":{"0":"Florida","1":"VCU","2":"Syracuse","3":"New Mexico"},"3":{"0":"Florida","1":"Syracuse"},"4":{"0":"Florida"}},"w":{"0":{"0":"Arizona","1":"Weber State","2":"Gonzaga","3":"OK State","4":"Oklahoma","5":"ND State","6":"SD State","7":"NM State","8":"Baylor","9":"Nebraska","10":"Creighton","11":"La.-Laf.","12":"Oregon","13":"BYU","14":"Wisconson","15":"American"},"1":{"0":"Arizona","1":"OK State","2":"Oklahoma","3":"SD State","4":"Baylor","5":"Creighton","6":"Oregon","7":"Wisconson"},"2":{"0":"Arizona","1":"SD State","2":"Creighton","3":"Wisconson"},"3":{"0":"Arizona","1":"Wisconson"},"4":{"0":"Arizona"}},"e":{"0":{"0":"Virginia","1":"Cstl. Caro.","2":"Memphis","3":"Geo. Wash.","4":"Cinncinnati","5":"Harvard","6":"Mich. State","7":"Delaware","8":"UNC","9":"Providence","10":"Iowa State","11":"NC Central","12":"Connecticut","13":"St. Joseph's","14":"Villanova","15":"Milwaukee"},"1":{"0":"Virginia","1":"Memphis","2":"Cinncinnati","3":"Mich. State","4":"UNC","5":"Iowa State","6":"Connecticut","7":"Villanova"},"2":{"0":"Virginia","1":"Mich. State","2":"Iowa State","3":"Villanova"},"3":{"0":"Mich. State","1":"Iowa State"},"4":{"0":"Mich. State"}},"m":{"0":{"0":"Wichita St.","1":"Cal Poly","2":"Kentucky","3":"Kansas St.","4":"St Louis","5":"NC State","6":"Louisville","7":"Manhattan","8":"Umass","9":"Iowa","10":"Duke","11":"Mercer","12":"Texas","13":"Arizona St.","14":"Michigan","15":"Wofford"},"1":{"0":"Wichita St.","1":"Kentucky","2":"NC State","3":"Louisville","4":"Iowa","5":"Duke","6":"Arizona St.","7":"Michigan"},"2":{"0":"Kentucky","1":"Louisville","2":"Duke","3":"Michigan"},"3":{"0":"Louisville","1":"Michigan"},"4":{"0":"Louisville"}},"f":{"0":{"0":"Florida","1":"Mich. State","2":"Arizona","3":"Louisville"},"1":{"0":"Mich. State","1":"Louisville"},"2":{"0":"Mich. State"}}};
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
+  })
+	
+  $("#davis").click(function() {
+		firstFourPicks = {"0":"Albany","1":"Cal Poly","2":"Xavier","3":"Iowa"}
+    bracket = {"s":{"0":{"0":"Florida","1":"Albany","2":"Colorado","3":"Pittsburgh","4":"VCU","5":"S. F. Austin","6":"UCLA","7":"Tulsa","8":"Ohio State","9":"Dayton","10":"Syracuse","11":"Wester Mich.","12":"New Mexico","13":"Stanford","14":"Kansas","15":"E. Kentucky"},"1":{"0":"Florida","1":"Pittsburgh","2":"S. F. Austin","3":"UCLA","4":"Ohio State","5":"Syracuse","6":"New Mexico","7":"Kansas"},"2":{"0":"Florida","1":"S. F. Austin","2":"Syracuse","3":"New Mexico"},"3":{"0":"Florida","1":"New Mexico"},"4":{"0":"Florida"}},"w":{"0":{"0":"Arizona","1":"Weber State","2":"Gonzaga","3":"OK State","4":"Oklahoma","5":"ND State","6":"SD State","7":"NM State","8":"Baylor","9":"Nebraska","10":"Creighton","11":"La.-Laf.","12":"Oregon","13":"BYU","14":"Wisconson","15":"American"},"1":{"0":"Arizona","1":"OK State","2":"Oklahoma","3":"SD State","4":"Baylor","5":"Creighton","6":"Oregon","7":"Wisconson"},"2":{"0":"Arizona","1":"Oklahoma","2":"Creighton","3":"Wisconson"},"3":{"0":"Arizona","1":"Wisconson"},"4":{"0":"Wisconson"}},"e":{"0":{"0":"Virginia","1":"Cstl. Caro.","2":"Memphis","3":"Geo. Wash.","4":"Cinncinnati","5":"Harvard","6":"Mich. State","7":"Delaware","8":"UNC","9":"Providence","10":"Iowa State","11":"NC Central","12":"Connecticut","13":"St. Joseph's","14":"Villanova","15":"Milwaukee"},"1":{"0":"Virginia","1":"Memphis","2":"Harvard","3":"Mich. State","4":"Providence","5":"Iowa State","6":"St. Joseph's","7":"Villanova"},"2":{"0":"Virginia","1":"Mich. State","2":"Iowa State","3":"Villanova"},"3":{"0":"Mich. State","1":"Iowa State"},"4":{"0":"Mich. State"}},"m":{"0":{"0":"Wichita St.","1":"Cal Poly","2":"Kentucky","3":"Kansas St.","4":"St Louis","5":"Xavier","6":"Louisville","7":"Manhattan","8":"Umass","9":"Iowa","10":"Duke","11":"Mercer","12":"Texas","13":"Arizona St.","14":"Michigan","15":"Wofford"},"1":{"0":"Wichita St.","1":"Kentucky","2":"St Louis","3":"Louisville","4":"Iowa","5":"Duke","6":"Texas","7":"Michigan"},"2":{"0":"Wichita St.","1":"Louisville","2":"Duke","3":"Michigan"},"3":{"0":"Wichita St.","1":"Michigan"},"4":{"0":"Wichita St."}},"f":{"0":{"0":"Florida","1":"Mich. State","2":"Wisconson","3":"Wichita St."},"1":{"0":"Florida","1":"Wichita St."},"2":{"0":"Florida"}}};
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
+  })
+	
+  $("#us-news").click(function() {
+		firstFourPicks = {"0":"Mt. St. My","1":"Cal Poly","2":"Xavier","3":"Iowa"}
+    bracket = {"s":{"0":{"0":"Florida","1":"Mt. St. My","2":"Colorado","3":"Pittsburgh","4":"VCU","5":"S. F. Austin","6":"UCLA","7":"Tulsa","8":"Ohio State","9":"Dayton","10":"Syracuse","11":"Wester Mich.","12":"New Mexico","13":"Stanford","14":"Kansas","15":"E. Kentucky"},"1":{"0":"Mt. St. My","1":"Pittsburgh","2":"S. F. Austin","3":"UCLA","4":"Ohio State","5":"Syracuse","6":"Stanford","7":"E. Kentucky"},"2":{"0":"Mt. St. My","1":"UCLA","2":"Ohio State","3":"Stanford"},"3":{"0":"UCLA","1":"Stanford"},"4":{"0":"Stanford"}},"w":{"0":{"0":"Arizona","1":"Weber State","2":"Gonzaga","3":"OK State","4":"Oklahoma","5":"ND State","6":"SD State","7":"NM State","8":"Baylor","9":"Nebraska","10":"Creighton","11":"La.-Laf.","12":"Oregon","13":"BYU","14":"Wisconson","15":"American"},"1":{"0":"Arizona","1":"Gonzaga","2":"Oklahoma","3":"SD State","4":"Baylor","5":"Creighton","6":"BYU","7":"Wisconson"},"2":{"0":"Gonzaga","1":"Oklahoma","2":"Creighton","3":"Wisconson"},"3":{"0":"Gonzaga","1":"Creighton"},"4":{"0":"Creighton"}},"e":{"0":{"0":"Virginia","1":"Cstl. Caro.","2":"Memphis","3":"Geo. Wash.","4":"Cinncinnati","5":"Harvard","6":"Mich. State","7":"Delaware","8":"UNC","9":"Providence","10":"Iowa State","11":"NC Central","12":"Connecticut","13":"St. Joseph's","14":"Villanova","15":"Milwaukee"},"1":{"0":"Virginia","1":"Geo. Wash.","2":"Harvard","3":"Mich. State","4":"Providence","5":"Iowa State","6":"St. Joseph's","7":"Villanova"},"2":{"0":"Virginia","1":"Harvard","2":"Providence","3":"Villanova"},"3":{"0":"Harvard","1":"Villanova"},"4":{"0":"Harvard"}},"m":{"0":{"0":"Wichita St.","1":"Cal Poly","2":"Kentucky","3":"Kansas St.","4":"St Louis","5":"Xavier","6":"Louisville","7":"Manhattan","8":"Umass","9":"Iowa","10":"Duke","11":"Mercer","12":"Texas","13":"Arizona St.","14":"Michigan","15":"Wofford"},"1":{"0":"Cal Poly","1":"Kentucky","2":"Xavier","3":"Manhattan","4":"Iowa","5":"Duke","6":"Texas","7":"Michigan"},"2":{"0":"Cal Poly","1":"Xavier","2":"Duke","3":"Michigan"},"3":{"0":"Xavier","1":"Duke"},"4":{"0":"Duke"}},"f":{"0":{"0":"Stanford","1":"Harvard","2":"Creighton","3":"Duke"},"1":{"0":"Harvard","1":"Creighton"},"2":{"0":"Harvard"}}};
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
   })
