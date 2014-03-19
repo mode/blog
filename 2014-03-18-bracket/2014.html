@@ -210,8 +210,9 @@
 				<span class="clear" id="davis">Seth Davis</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<span class="clear" id="us-news">U.S. News College Rankings</span></br>
 				<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-				<span class="clear" id="silver">The FiveThirtyEight bracket</span>
-        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" target="_blank">Last year's bracket</a> -->
+				<span class="clear" id="silver">The FiveThirtyEight bracket</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="clear" id="results">Actual Results</span>
+				<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" target="_blank">Last year's bracket</a> -->
       </p>
       <p style="text-align:center; font-size: 12px; color:#545454;"><em>Click on teams to make your picks!</em></p>
   </div>
@@ -412,6 +413,13 @@ d3.csv("bracket-2014.csv", function(data) {
     clearTeamText();
     renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
   })
+	
+  $("#results").click(function() {
+		firstFourPicks = {"0":"Albany","1":"First Four 2","2":"NC State","3":"First Four 4"};
+    bracket = {"s":{"0":{"0":"Florida","1":"Albany","2":"Colorado","3":"Pittsburgh","4":"VCU","5":"S. F. Austin","6":"UCLA","7":"Tulsa","8":"Ohio State","9":"Dayton","10":"Syracuse","11":"Wester Mich.","12":"New Mexico","13":"Stanford","14":"Kansas","15":"E. Kentucky"},"1":{"0":"","1":"","2":"","3":"","4":"","5":"","6":"","7":""},"2":{"0":"","1":"","2":"","3":""},"3":{"0":"","1":""},"4":{"0":""}},"w":{"0":{"0":"Arizona","1":"Weber State","2":"Gonzaga","3":"OK State","4":"Oklahoma","5":"ND State","6":"SD State","7":"NM State","8":"Baylor","9":"Nebraska","10":"Creighton","11":"La.-Laf.","12":"Oregon","13":"BYU","14":"Wisconson","15":"American"},"1":{"0":"","1":"","2":"","3":"","4":"","5":"","6":"","7":""},"2":{"0":"","1":"","2":"","3":""},"3":{"0":"","1":""},"4":{"0":""}},"e":{"0":{"0":"Virginia","1":"Cstl. Caro.","2":"Memphis","3":"Geo. Wash.","4":"Cinncinnati","5":"Harvard","6":"Mich. State","7":"Delaware","8":"UNC","9":"Providence","10":"Iowa State","11":"NC Central","12":"Connecticut","13":"St. Joseph's","14":"Villanova","15":"Milwaukee"},"1":{"0":"","1":"","2":"","3":"","4":"","5":"","6":"","7":""},"2":{"0":"","1":"","2":"","3":""},"3":{"0":"","1":""},"4":{"0":""}},"m":{"0":{"0":"Wichita St.","1":"First Four 2","2":"Kentucky","3":"Kansas St.","4":"St Louis","5":"NC State","6":"Louisville","7":"Manhattan","8":"Umass","9":"First Four 4","10":"Duke","11":"Mercer","12":"Texas","13":"Arizona St.","14":"Michigan","15":"Wofford"},"1":{"0":"","1":"","2":"","3":"","4":"","5":"","6":"","7":""},"2":{"0":"","1":"","2":"","3":""},"3":{"0":"","1":""},"4":{"0":""}},"f":{"0":{"0":"","1":"","2":"","3":"","undefined":""},"1":{"0":"","1":""},"2":{"0":""}}};
+    clearTeamText();
+    renderFull(bracket,regions,regionsWithFinal,firstFourPicks);
+  })
 
 })
 })
@@ -420,6 +428,7 @@ function renderFull(bracket,regions,regionsWithFinal,firstFourPicks) {
 	clearTeamText();
 	bracket = toFF(bracket,regions);
   renderTeams(bracket);
+	renderFirstFourTeams(firstFourPicks);
   showOdds(bracket,regionsWithFinal);
   checkOccupied(bracket,firstFourPicks);
   checkFinalOccupied(bracket,regions);
@@ -613,7 +622,7 @@ function checkOccupied(bracket,firstFourPicks) {
 }
 
 function checkFinalOccupied(bracket,regions) {
-  var regionDict = {'s':0,'e':1,'w':1,'m':3};
+  var regionDict = {'s':0,'e':1,'w':2,'m':3};
   regions.forEach( function(r) {
     if (checkPrevious(bracket,r,4,0) == false) {
       var location = "#f-r0-g" + regionDict[r];
@@ -926,7 +935,7 @@ function addTeamText(team,region,round) {
 
 function clearBracket(bracket,region) {
 	
-  var regionDict = {'s':0,'e':1,'w':1,'m':3};
+  var regionDict = {'s':0,'e':1,'w':2,'m':3};
   
   var chosenRegion = bracket[region];
   
@@ -1254,28 +1263,7 @@ function defineFF(firstFourPicks,ffPick) {
 	teamName = firstByNumber.get(ffPick);
 	firstFourPicks[pick] = teamName
 	
-	if (ffPick % 2 == 0) {
-		d3.select("#ff-" + ffPick)
-			.style("color", function() { return colorScale(firstMatchupByTeam.get(teamName)); });
-			
-		d3.select("#ff-" + (ffPick + 1))
-			.style("color","black");
-	}
-	
-	if (ffPick % 2 == 1) {
-		d3.select("#ff-" + ffPick)
-			.style("color", function() { return colorScale(firstMatchupByTeam.get(teamName)); });
-			
-		d3.select("#ff-" + (ffPick - 1))
-			.style("color","black");
-	}
-	
-	bracket['s'][0][1] = firstFourPicks[0]
-	bracket['m'][0][1] = firstFourPicks[1]
-	bracket['m'][0][5] = firstFourPicks[2]
-	bracket['m'][0][9] = firstFourPicks[3]
-	
-	return firstFourPicks
+	return firstFourPicks;
 }
 
 function clearFF() {
@@ -1346,6 +1334,41 @@ function showFirstClear(firstFourPicks) {
 		p.removeClass("show")
 		p.addClass("hide")
 	}
+}
+
+function renderFirstFourTeams(firstFourPicks) {
+	console.log(firstFourPicks);
+	
+	var games = [0,2,4,6]
+	
+	games.forEach(function(d,i) {
+		var pick = firstFourPicks[i];
+		console.log(pick)
+		
+		if (pick == firstByNumber.get(d)) { ffPick = d; } else { ffPick = d + 1; }
+		
+		if (ffPick % 2 == 0) {
+			console.log('here')
+			d3.select("#ff-" + ffPick)
+				.style("color", function() { return colorScale(firstMatchupByTeam.get(pick)); });
+			
+			d3.select("#ff-" + (ffPick + 1))
+				.style("color","black");
+		}
+
+		if (ffPick % 2 == 1) {
+			d3.select("#ff-" + ffPick)
+				.style("color", function() { return colorScale(firstMatchupByTeam.get(pick)); });
+			
+			d3.select("#ff-" + (ffPick - 1))
+				.style("color","black");
+		}	
+	})
+
+	bracket['s'][0][1] = firstFourPicks[0]
+	bracket['m'][0][1] = firstFourPicks[1]
+	bracket['m'][0][5] = firstFourPicks[2]
+	bracket['m'][0][9] = firstFourPicks[3]
 }
 
 </script>
