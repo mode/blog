@@ -1,0 +1,193 @@
+<html>
+
+<body>
+  <p>hi</p>
+  
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+d3.json("us-congress-113.json",function(congress) {
+d3.json("us.json",function(us) {
+d3.csv("districts.csv",function(districts) {
+  
+  var path = d3.geo.path()
+      .projection(projection);
+      
+  var projection = d3.geo.albersUsa();
+  
+  stateById = d3.map();
+  districtById = d3.map();
+  stateByStateId = d3.map();
+  
+  districts.forEach(function(d) {
+    stateById.set(d.district_code,d.state_name);
+    stateByStateId.set(d.state_code,d.state_name);
+    districtById.set(d.district_code,d.district);
+  })
+  
+  var district_features = topojson.feature(congress, congress.objects.districts).features;
+  var state_features = topojson.feature(us, us.objects.states).features;
+  
+  districtResults = get_data(district_features,0);
+  stateResults = get_data(state_features,1);
+  
+  
+  function get_data(features,is_state) {
+    
+    var results = []; 
+    
+    features.forEach(function(d) {
+      
+      var id = d.id;
+      
+      if (is_state == 1) {
+        var state = stateByStateId.get(id),
+            district = ""
+      } else {
+        var state = stateById.get(id),
+            district = districtById.get(id);
+      }
+      
+      var area = path.area(d);
+      
+      if (d.geometry.type == 'MultiPolygon') {
+        var vals = multiPerimeter(d);
+        var perimeter = vals[0];
+        var maxFromCenter = vals[1];
+      } else {
+        var vals = featurePerimeter(d);
+        var perimeter = vals[0];
+        var maxFromCenter = vals[1];
+      }
+      
+      entry = {id:id,state:state,district:district,area:area,perimeter:perimeter,maxFromCenter:maxFromCenter}
+      results.push(entry)
+    })
+    
+    return results
+  }
+  
+  function multiPerimeter(feature) {
+
+    var perimeter = 0;
+    var maxDistance = 0;
+    var coordinateSet = feature.geometry.coordinates;
+    var centerPoint = path.centroid(feature);
+    
+    coordinateSet.forEach(function(c) {
+      
+      var coordinates = c[0];
+      var points = coordinates.length;
+  
+      var partialP = 0;
+
+      var partialMax = getMaxFromCenter(centerPoint,coordinates);
+  
+      for (var i=0;i<points;i++) {
+        if (i != points - 1) {
+          l = d3.geo.distance(coordinates[i],coordinates[i+1])
+        } else {
+          l = d3.geo.distance(coordinates[i],coordinates[0])
+        }
+        
+        partialP += l
+      }
+      
+      if (partialMax >= maxDistance) { maxDistance = partialMax; }
+      
+      perimeter += partialP
+      
+    })
+    
+    return [perimeter,maxDistance]
+
+  }
+  
+  function featurePerimeter(feature) {
+    
+    var coordinates = feature.geometry.coordinates[0];
+    var points = coordinates.length;
+    
+    var centerPoint = path.centroid(feature);
+    var maxDistance = getMaxFromCenter(centerPoint,coordinates);
+    
+    var perimeter = 0;
+  
+    for (var i=0;i<points;i++) {
+      if (i != points - 1) {
+        l = d3.geo.distance(coordinates[i],coordinates[i+1])
+      } else {
+        l = d3.geo.distance(coordinates[i],coordinates[0])
+      }
+  
+      perimeter += l
+    }
+    
+    return [perimeter,maxDistance]
+  }
+  
+  function getMaxFromCenter(center,coordinates) {
+    
+    var l = 0;
+    
+    coordinates.forEach(function(c) {
+      nl = d3.geo.distance(c,center)
+      if (nl >= l) { l = nl; }
+    })
+    
+    return l;
+  }
+  
+})
+})
+})
+
+function JSON2CSV(objArray) {
+    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+
+    var str = '';
+    var line = '';
+
+    if ($("#labels").is(':checked')) {
+        var head = array[0];
+        if ($("#quote").is(':checked')) {
+            for (var index in array[0]) {
+                var value = index + "";
+                line += '"' + value.replace(/"/g, '""') + '",';
+            }
+        } else {
+            for (var index in array[0]) {
+                line += index + ',';
+            }
+        }
+
+        line = line.slice(0, -1);
+        str += line + '\r\n';
+    }
+
+    for (var i = 0; i < array.length; i++) {
+        var line = '';
+
+        if ($("#quote").is(':checked')) {
+            for (var index in array[i]) {
+                var value = array[i][index] + "";
+                line += '"' + value.replace(/"/g, '""') + '",';
+            }
+        } else {
+            for (var index in array[i]) {
+                line += array[i][index] + ',';
+            }
+        }
+
+        line = line.slice(0, -1);
+        str += line + '\r\n';
+    }
+    return str;
+  
+}
+
+</script>
+</body>
+<html>
