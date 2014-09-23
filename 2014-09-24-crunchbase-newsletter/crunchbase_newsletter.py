@@ -85,9 +85,6 @@ for i in full_investors:
 write_to_csv("crunchbase_newsletter_rounds.csv",clean_round)
 write_to_csv("crunchbase_newsletter_investors.csv",clean_investor)
 
-# python mode-python-importers/import.py --csv="~/Desktop/crunchbase_newsletter_rounds.csv" --name=crunchbase_newsletters_rounds --desc="Funding rounds in Crunchbase newsletters. Source: Crunchbase" --replace
-# python mode-python-importers/import.py --csv="~/Desktop/crunchbase_newsletter_investors.csv" --name=crunchbase_newsletters_investors --desc="Investors from Crunchbase newsletters. Source: Crunchbase" --replace
-
 def get_top_mentions(soup):
     top = []
     
