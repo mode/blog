@@ -31,7 +31,7 @@ for division in soup.findAll("div", { "class":"span-2" })[0:2]:
                     team_info = (div_name,conf_name,team_name,roster_link)
                     team_table.append(team_info)
 
-write_to_csv("teams.csv",team_table)
+write_to_csv("teams2014.csv",team_table)
 
 ## Gets players for all schools using player table
 player_table = []
@@ -67,8 +67,8 @@ for t in team_table:
             
             player_table.append(player_info)
 
-pt = strip_special(player_table,[0,1,2])
-write_to_csv("players_raw.csv",pt)
+pt = strip_special(player_table,[0,1,2,7])
+write_to_csv("players_raw2014.csv",pt)
 
 ## Loops through towns and gets county
 
@@ -171,10 +171,16 @@ def strip_special(array,columns_with_string):
 
 def get_height(height):
     split = height.split('-')
-    feet = int(split[0])
-    inch = int(split[1])
+    feet = split[0]
+    inch = split[1]
     
-    h = 12 * feet + inch
+    if feet == '':
+        feet = 0
+    
+    if inch == '':
+        inch = 0
+    
+    h = 12 * int(feet) + int(inch)
     return(h)
 
 def get_state(hometown):
