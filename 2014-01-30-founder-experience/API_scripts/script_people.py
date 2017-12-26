@@ -12,7 +12,7 @@ counter = 0
 ## Loop through people
 for p in people:
     print(str(counter) + " - " + p)
-    url = "http://api.crunchbase.com/v/1/person/" + p + ".js?api_key=***REMOVED***"
+    url = "http://api.crunchbase.com/v/1/person/" + p + ".js?api_key=**REMOVED**"
     req = urllib2.Request(url)
     
     ## Check for URL error

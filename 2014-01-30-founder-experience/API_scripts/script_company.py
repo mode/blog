@@ -18,7 +18,7 @@ counter = 0
 ## Loop through companies
 for c in companies:
     print(str(counter) + " - " + c)
-    url = "http://api.crunchbase.com/v/1/company/" + c + ".js?api_key=***REMOVED***"
+    url = "http://api.crunchbase.com/v/1/company/" + c + ".js?api_key=**REMOVED**"
     req = urllib2.Request(url)
     
     ## Check for URL error

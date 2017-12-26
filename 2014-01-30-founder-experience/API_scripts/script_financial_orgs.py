@@ -13,7 +13,7 @@ counter = 0
 ## Loop through financial orgs
 for f in financial_orgs:
     print(str(counter) + " - " + f)
-    url = "http://api.crunchbase.com/v/1/financial-organization/" + f + ".js?api_key=***REMOVED***"
+    url = "http://api.crunchbase.com/v/1/financial-organization/" + f + ".js?api_key=**REMOVED**"
     req = urllib2.Request(url)
     
     ## Check for URL error
